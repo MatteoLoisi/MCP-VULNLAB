@@ -1,0 +1,9 @@
+{
+  "status": "documented-only",
+  "scenario": "TCMCP-323-spear-phishing",
+  "tier": 4,
+  "tier_source": "test.yaml",
+  "executable": false,
+  "message": "Test non eseguibile in Docker. Documentato teoricamente con riferimenti CVE.",
+  "evidence": {}
+}

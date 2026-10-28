@@ -1,0 +1,9 @@
+{
+  "status": "documented-only",
+  "scenario": "NEW-TCMCP-015-json-schema-ref-circular-dos",
+  "tier": 3,
+  "tier_source": "test.yaml",
+  "executable": false,
+  "message": "Test non eseguibile in Docker. Documentato teoricamente con riferimenti CVE.",
+  "evidence": {}
+}

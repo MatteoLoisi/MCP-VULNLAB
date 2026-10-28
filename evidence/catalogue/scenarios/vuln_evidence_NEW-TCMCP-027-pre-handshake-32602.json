@@ -1,0 +1,44 @@
+{
+  "status": "vulnerable",
+  "mcp_mode": "prehandshake_oracle",
+  "passed_file_value": "oracle=True uniform=False | bad=ERR -32602 invalid protocol version 'bogus-9.9'; server=mcp-server/1.29.1 supported_versions=[2025-1",
+  "evidence": {
+    "triggered": true,
+    "vulnerability": "prehandshake_oracle",
+    "proof": "oracle=True uniform=False | bad=ERR -32602 invalid protocol version 'bogus-9.9'; server=mcp-server/1.29.1 supported_versions=[2025-1",
+    "tool_result": {
+      "bad": "ERR -32602 invalid protocol version 'bogus-9.9'; server=mcp-server/1.29.1 supported_versions=[2025-11-25,2026-07-28] trace_id=7f3a mode_hint=poisoned"
+    },
+    "exfiltration": {
+      "network_capture": {
+        "checked": true,
+        "found": false,
+        "pcap_exists": true,
+        "requests_found": 0,
+        "matched_requests": [],
+        "pcap_files_checked": [
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap",
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap"
+        ],
+        "errors": [],
+        "retries_used": 1
+      }
+    }
+  }
+}

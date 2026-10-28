@@ -1,0 +1,72 @@
+{
+  "status": "vulnerable",
+  "mcp_mode": "pii_in_errors",
+  "passed_file_value": "Errore: Impossibile trovare l'abbonamento per l'utente Mario Rossi (Codice Fiscale: RSSMRA80A01H501U, Telefono: +39 333 1234567).",
+  "evidence": {
+    "triggered": true,
+    "vulnerability": "pii_in_error_messages",
+    "proof": "Errore: Impossibile trovare l'abbonamento per l'utente Mario Rossi (Codice Fiscale: RSSMRA80A01H501U, Telefono: +39 333 1234567).",
+    "tool_result": {
+      "mode": "mcp_client",
+      "tool": "get_subscription",
+      "result": "Errore: Impossibile trovare l'abbonamento per l'utente Mario Rossi (Codice Fiscale: RSSMRA80A01H501U, Telefono: +39 333 1234567).",
+      "audit_id": "32a5654d8b565e2d",
+      "policy_applied": "allow",
+      "profile_used": "permissive",
+      "arguments": {
+        "customer_id": "invalid_user"
+      },
+      "request_body": {
+        "name": "get_subscription",
+        "arguments": {
+          "customer_id": "invalid_user"
+        }
+      },
+      "status_code": 200
+    },
+    "exfiltration": {
+      "network_capture": {
+        "checked": true,
+        "found": true,
+        "pcap_exists": true,
+        "requests_found": 0,
+        "matched_requests": [
+          {
+            "note": "String match in raw pcap (non-HTTP payload)",
+            "pcap_file": "/app/captures/llm-harness.pcap"
+          },
+          {
+            "note": "String match in raw pcap (non-HTTP payload)",
+            "pcap_file": "/app/captures/mcp-client.pcap"
+          },
+          {
+            "note": "String match in raw pcap (non-HTTP payload)",
+            "pcap_file": "/app/captures/mcp-server.pcap"
+          }
+        ],
+        "pcap_files_checked": [
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap",
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap"
+        ],
+        "errors": [],
+        "retries_used": 1
+      }
+    }
+  }
+}

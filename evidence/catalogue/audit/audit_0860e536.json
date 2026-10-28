@@ -1,0 +1,14 @@
+{
+  "audit_id": "0860e536a7fcbb85",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:52:30.344589Z",
+  "tool": "send_http_request",
+  "arguments": {
+    "url": "http://vuln-server-no-tls:3200/health",
+    "method": "GET"
+  },
+  "decision": "allow (permissive)",
+  "latency_ms": 18.6,
+  "result_truncated": "{'content': [{'type': 'text', 'text': 'HTTP 200 OK\\nHeaders: {\\'date\\': \\'Thu, 08 Oct 2026 12:52:29 GMT\\', \\'server\\': \\'uvicorn\\', \\'content-length\\': \\'152\\', \\'content-type\\': \\'application/json\\'}\\n\\n{\\n  \"status\": \"healthy\",\\n  \"mode\": \"no-tls\",\\n  \"protocol\": \"http\",\\n  \"tls_enabled\": false,\\n  \"hsts_enabled\": false,\\n  \"secure_cookies\": false,\\n  \"bind_host\": \"0.0.0.0\",\\n  \"port\": 3200\\n}', 'annotations': None, 'meta': None}], 'isError': False}",
+  "scenario_name": "TCMCP-513-llm-notls-discovery"
+}

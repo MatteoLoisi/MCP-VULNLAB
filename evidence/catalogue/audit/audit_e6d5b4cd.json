@@ -1,0 +1,13 @@
+{
+  "audit_id": "e6d5b4cd13e51bc1",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:28:10.922309Z",
+  "tool": "whoami",
+  "arguments": {
+    "session_id": "x-admin-x"
+  },
+  "decision": "allow (permissive)",
+  "latency_ms": 13.3,
+  "result_truncated": "{'content': [{'type': 'text', 'text': 'context=admin routes=admin,billing,users,internal-debug', 'annotations': None, 'meta': None}], 'isError': False}",
+  "scenario_name": "NEW-TCMCP-013-header-routing-spoofing"
+}

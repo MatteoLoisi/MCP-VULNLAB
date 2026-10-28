@@ -1,0 +1,13 @@
+{
+  "audit_id": "4e69ecf841fc110c",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:45:48.470916Z",
+  "tool": "handshake_probe",
+  "arguments": {
+    "version": "2026-07-28"
+  },
+  "decision": "allow (permissive)",
+  "latency_ms": 14.1,
+  "result_truncated": "{'content': [{'type': 'text', 'text': 'ok handshake accepted', 'annotations': None, 'meta': None}], 'isError': False}",
+  "scenario_name": "NEW-TCMCP-027-pre-handshake-32602"
+}

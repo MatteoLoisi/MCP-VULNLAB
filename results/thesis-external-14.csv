@@ -1,0 +1,15 @@
+﻿Target,P1,P2,P3,P4,P5,P6,P7,P8,P9,P10,P11,P12,P13,P14,P15,Original JSON report
+official-filesystem,info,secure,secure,info,info,skipped,not-selected,info,info,info,info,skipped,info,info,secure,evidence/thesis-targets/reports/official-filesystem.json
+official-memory,info,secure,secure,info,skipped,skipped,not-selected,secure,secure,secure,skipped,skipped,info,info,secure,evidence/thesis-targets/reports/official-memory.json
+official-sequential-thinking,info,secure,secure,info,skipped,skipped,not-selected,secure,secure,secure,info,skipped,secure,info,secure,evidence/thesis-targets/reports/official-sequential-thinking.json
+github,info,secure,skipped,skipped,skipped,skipped,not-selected,skipped,skipped,skipped,skipped,skipped,skipped,skipped,skipped,evidence/thesis-targets/reports/github.json
+dvmcp-c1,info,secure,info,info,skipped,skipped,info,secure,secure,info,skipped,skipped,info,info,vulnerable,evidence/thesis-targets/reports/dvmcp-c1.json
+dvmcp-c2,info,vulnerable,secure,info,skipped,skipped,not-selected,secure,secure,info,skipped,skipped,secure,info,secure,evidence/thesis-targets/reports/dvmcp-c2.json
+dvmcp-c3,info,secure,secure,info,vulnerable,skipped,not-selected,secure,secure,info,skipped,skipped,secure,info,secure,evidence/thesis-targets/reports/dvmcp-c3.json
+dvmcp-c4,info,secure,secure,info,skipped,skipped,not-selected,secure,info,info,skipped,skipped,secure,info,vulnerable,evidence/thesis-targets/reports/dvmcp-c4.json
+dvmcp-c5,info,vulnerable,secure,info,skipped,skipped,not-selected,secure,secure,secure,skipped,skipped,secure,info,secure,evidence/thesis-targets/reports/dvmcp-c5.json
+dvmcp-c6,info,secure,secure,info,skipped,skipped,not-selected,info,secure,info,skipped,skipped,secure,info,vulnerable,evidence/thesis-targets/reports/dvmcp-c6.json
+dvmcp-c7,info,secure,secure,info,skipped,skipped,not-selected,secure,secure,info,vulnerable,skipped,secure,info,secure,evidence/thesis-targets/reports/dvmcp-c7.json
+dvmcp-c8,info,secure,secure,info,vulnerable,skipped,not-selected,secure,secure,info,skipped,skipped,secure,info,secure,evidence/thesis-targets/reports/dvmcp-c8.json
+dvmcp-c9,info,secure,secure,info,skipped,info,not-selected,info,info,info,info,skipped,secure,info,secure,evidence/thesis-targets/reports/dvmcp-c9.json
+dvmcp-c10,info,vulnerable,secure,info,skipped,skipped,not-selected,info,secure,info,secure,skipped,info,info,vulnerable,evidence/thesis-targets/reports/dvmcp-c10.json

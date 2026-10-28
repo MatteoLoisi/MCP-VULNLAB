@@ -1,0 +1,13 @@
+{
+  "audit_id": "a0af8a9fb8966724",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:37:04.776272Z",
+  "tool": "traced_op",
+  "arguments": {
+    "traceparent": "00-4bf92f3577b34da6a3ce929d0e0e4736-tenant-evil-01"
+  },
+  "decision": "allow (permissive)",
+  "latency_ms": 8.3,
+  "result_truncated": "{'content': [{'type': 'text', 'text': 'tenant=evil-corp op done trace=00-4bf92f3577b34da6a3ce929d0e0e4736-tenant-evil-01', 'annotations': None, 'meta': None}], 'isError': False}",
+  "scenario_name": "NEW-TCMCP-021-trace-context-poisoning"
+}

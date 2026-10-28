@@ -1,0 +1,45 @@
+{
+  "status": "vulnerable",
+  "mcp_mode": "no_auth",
+  "passed_file_value": "malicious_redirect_registered=True | http=200 | body={\"client_id\":\"dyn_client_open\",\"client_secret\":\"dyn_secret_open\",\"redirect_uris\":[\"http://evil-server:9000/callback\"],\"g",
+  "evidence": {
+    "triggered": true,
+    "vulnerability": "dcr_open_registration",
+    "proof": "malicious_redirect_registered=True | http=200 | body={\"client_id\":\"dyn_client_open\",\"client_secret\":\"dyn_secret_open\",\"redirect_uris\":[\"http://evil-server:9000/callback\"],\"g",
+    "tool_result": {
+      "http": 200,
+      "body": "{\"client_id\":\"dyn_client_open\",\"client_secret\":\"dyn_secret_open\",\"redirect_uris\":[\"http://evil-server:9000/callback\"],\"grant_types\":[\"authorization_code\"]}"
+    },
+    "exfiltration": {
+      "network_capture": {
+        "checked": true,
+        "found": false,
+        "pcap_exists": true,
+        "requests_found": 0,
+        "matched_requests": [],
+        "pcap_files_checked": [
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap",
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap"
+        ],
+        "errors": [],
+        "retries_used": 1
+      }
+    }
+  }
+}

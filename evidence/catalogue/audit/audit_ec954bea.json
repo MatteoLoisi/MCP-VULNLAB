@@ -1,0 +1,11 @@
+{
+  "audit_id": "ec954bea51dced2d",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:51:15.300303Z",
+  "tool": "sensitive_op",
+  "arguments": {},
+  "decision": "allow (permissive)",
+  "latency_ms": 10.7,
+  "result_truncated": "{'content': [{'type': 'text', 'text': 'Sensitive data without authentication', 'annotations': None, 'meta': None}], 'isError': False}",
+  "scenario_name": "TCMCP-402-excessive-agency"
+}

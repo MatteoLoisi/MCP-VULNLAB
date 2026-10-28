@@ -1,0 +1,4 @@
+﻿Target,P1,P2,P3,P4,P5,P6,P7,P8,P9,P10,P11,P12,P13,P14,P15,Original JSON report
+dvmcp-c8-p4,skipped,skipped,skipped,vulnerable,skipped,skipped,not-selected,skipped,skipped,skipped,skipped,skipped,skipped,skipped,skipped,evidence/p4-followups/reports/dvmcp-c8-p4.json
+dvmcp-c9-p4,skipped,skipped,skipped,vulnerable,skipped,skipped,not-selected,skipped,skipped,skipped,skipped,skipped,skipped,skipped,skipped,evidence/p4-followups/reports/dvmcp-c9-p4.json
+dvmcp-c10-p4,skipped,skipped,skipped,secure,skipped,skipped,not-selected,skipped,skipped,skipped,skipped,skipped,skipped,skipped,skipped,evidence/p4-followups/reports/dvmcp-c10-p4.json

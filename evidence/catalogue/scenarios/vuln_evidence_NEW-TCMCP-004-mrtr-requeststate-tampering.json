@@ -1,0 +1,44 @@
+{
+  "status": "vulnerable",
+  "mcp_mode": "mrtr_stateless",
+  "passed_file_value": "tampered_accepted=True | handle=STATE_b6e88d185091d8ec forged=STATE_b6e88d185091d8ec-admin",
+  "evidence": {
+    "triggered": true,
+    "vulnerability": "requeststate_tampering",
+    "proof": "tampered_accepted=True | handle=STATE_b6e88d185091d8ec forged=STATE_b6e88d185091d8ec-admin",
+    "tool_result": {
+      "confirmed": "executed confirm=yes state=STATE_b6e88d185091d8ec-admin"
+    },
+    "exfiltration": {
+      "network_capture": {
+        "checked": true,
+        "found": false,
+        "pcap_exists": true,
+        "requests_found": 0,
+        "matched_requests": [],
+        "pcap_files_checked": [
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap",
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap"
+        ],
+        "errors": [],
+        "retries_used": 1
+      }
+    }
+  }
+}

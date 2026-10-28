@@ -1,0 +1,11 @@
+{
+  "audit_id": "1dfa8b59b505b358",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:44:05.300581Z",
+  "tool": "ping",
+  "arguments": {},
+  "decision": "allow (permissive)",
+  "latency_ms": 10.8,
+  "result_truncated": "{'content': [{'type': 'text', 'text': 'pong', 'annotations': None, 'meta': None}], 'isError': False}",
+  "scenario_name": "TCMCP-104-neighborjack"
+}

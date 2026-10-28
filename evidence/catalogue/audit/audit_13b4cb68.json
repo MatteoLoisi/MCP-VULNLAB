@@ -1,0 +1,14 @@
+{
+  "audit_id": "13b4cb68985b769c",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:44:37.902493Z",
+  "tool": "debug_echo",
+  "arguments": {
+    "payload": "user login token=LOGSECRET_89f677fa",
+    "logLevel": "debug"
+  },
+  "decision": "allow (permissive)",
+  "latency_ms": 9.2,
+  "result_truncated": "{'content': [{'type': 'text', 'text': 'echo ok level=debug', 'annotations': None, 'meta': None}], 'isError': False}",
+  "scenario_name": "NEW-TCMCP-023-loglevel-injection"
+}

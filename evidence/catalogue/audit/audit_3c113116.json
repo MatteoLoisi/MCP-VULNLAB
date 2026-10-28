@@ -1,0 +1,13 @@
+{
+  "audit_id": "3c1131162be2d4fa",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:45:09.329263Z",
+  "tool": "revoke_widget",
+  "arguments": {
+    "name": "legacy-widget"
+  },
+  "decision": "allow (permissive)",
+  "latency_ms": 12.1,
+  "result_truncated": "{'content': [{'type': 'text', 'text': 'revoked legacy-widget from source', 'annotations': None, 'meta': None}], 'isError': False}",
+  "scenario_name": "NEW-TCMCP-024-stale-tools-list-cache"
+}

@@ -1,0 +1,57 @@
+{
+  "status": "vulnerable",
+  "mcp_mode": "no_tls_vuln_server",
+  "passed_file_value": "{\n  \"http_transport\": true,\n  \"tls_enabled\": false,\n  \"protocol_header\": true,\n  \"cookies_set\": true,\n  \"cookies_not_secure\": true,\n  \"cookies_not_httponly\": true,\n  \"cookie_leak\": true,\n  \"sse_stream_accessible\": true,\n  \"sse_has_token_leak\": true,\n  \"sse_has_secret_leak\": false,\n  \"server_info_exposed\": true,\n  \"server_info_has_secrets\": true,\n  \"server_info_has_tokens\": true,\n  \"hsts_missing\": true\n}",
+  "evidence": {
+    "triggered": true,
+    "vulnerability": "no_tls_cleartext",
+    "proof": "{\n  \"http_transport\": true,\n  \"tls_enabled\": false,\n  \"protocol_header\": true,\n  \"cookies_set\": true,\n  \"cookies_not_secure\": true,\n  \"cookies_not_httponly\": true,\n  \"cookie_leak\": true,\n  \"sse_stream_accessible\": true,\n  \"sse_has_token_leak\": true,\n  \"sse_has_secret_leak\": false,\n  \"server_info_exposed\": true,\n  \"server_info_has_secrets\": true,\n  \"server_info_has_tokens\": true,\n  \"hsts_missing\": true\n}",
+    "tool_result": {
+      "http_transport": true,
+      "tls_enabled": false,
+      "protocol_header": true,
+      "cookies_set": true,
+      "cookies_not_secure": true,
+      "cookies_not_httponly": true,
+      "cookie_leak": true,
+      "sse_stream_accessible": true,
+      "sse_has_token_leak": true,
+      "sse_has_secret_leak": false,
+      "server_info_exposed": true,
+      "server_info_has_secrets": true,
+      "server_info_has_tokens": true,
+      "hsts_missing": true
+    },
+    "exfiltration": {
+      "network_capture": {
+        "checked": true,
+        "found": false,
+        "pcap_exists": true,
+        "requests_found": 0,
+        "matched_requests": [],
+        "pcap_files_checked": [
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap",
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap"
+        ],
+        "errors": [],
+        "retries_used": 1
+      }
+    }
+  }
+}

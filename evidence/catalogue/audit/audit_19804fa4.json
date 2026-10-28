@@ -1,0 +1,14 @@
+{
+  "audit_id": "19804fa478673845",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:26:27.256380Z",
+  "tool": "confirm_task",
+  "arguments": {
+    "requestState": "STATE_b6e88d185091d8ec-admin",
+    "confirm": "yes"
+  },
+  "decision": "allow (permissive)",
+  "latency_ms": 8.5,
+  "result_truncated": "{'content': [{'type': 'text', 'text': 'executed confirm=yes state=STATE_b6e88d185091d8ec-admin', 'annotations': None, 'meta': None}], 'isError': False}",
+  "scenario_name": "NEW-TCMCP-004-mrtr-requeststate-tampering"
+}

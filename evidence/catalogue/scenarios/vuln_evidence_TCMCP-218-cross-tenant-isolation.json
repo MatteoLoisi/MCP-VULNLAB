@@ -1,0 +1,68 @@
+{
+  "status": "vulnerable",
+  "mcp_mode": "no_auth",
+  "passed_file_value": "Sensitive data without authentication",
+  "evidence": {
+    "triggered": true,
+    "vulnerability": "privilege_escalation",
+    "proof": "Sensitive data without authentication",
+    "tool_result": {
+      "mode": "mcp_client",
+      "tool": "sensitive_op",
+      "result": "Sensitive data without authentication",
+      "audit_id": "03d2fb3f16e3de29",
+      "policy_applied": "allow",
+      "profile_used": "permissive",
+      "arguments": {},
+      "request_body": {
+        "name": "sensitive_op",
+        "arguments": {}
+      },
+      "status_code": 200
+    },
+    "exfiltration": {
+      "network_capture": {
+        "checked": true,
+        "found": true,
+        "pcap_exists": true,
+        "requests_found": 0,
+        "matched_requests": [
+          {
+            "note": "String match in raw pcap (non-HTTP payload)",
+            "pcap_file": "/app/captures/llm-harness.pcap"
+          },
+          {
+            "note": "String match in raw pcap (non-HTTP payload)",
+            "pcap_file": "/app/captures/mcp-client.pcap"
+          },
+          {
+            "note": "String match in raw pcap (non-HTTP payload)",
+            "pcap_file": "/app/captures/mcp-server.pcap"
+          }
+        ],
+        "pcap_files_checked": [
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap",
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap"
+        ],
+        "errors": [],
+        "retries_used": 1
+      }
+    }
+  }
+}

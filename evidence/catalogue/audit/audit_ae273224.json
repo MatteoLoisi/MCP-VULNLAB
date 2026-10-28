@@ -1,0 +1,13 @@
+{
+  "audit_id": "ae2732247bd819e3",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:27:21.765024Z",
+  "tool": "get_data",
+  "arguments": {
+    "session": "alice-session"
+  },
+  "decision": "allow (permissive)",
+  "latency_ms": 11.5,
+  "result_truncated": "{'content': [{'type': 'text', 'text': 'data-for-alice-session handle=HDL_9c0b8ea1eef2817b', 'annotations': None, 'meta': None}], 'isError': False}",
+  "scenario_name": "NEW-TCMCP-012-state-handle-possession"
+}

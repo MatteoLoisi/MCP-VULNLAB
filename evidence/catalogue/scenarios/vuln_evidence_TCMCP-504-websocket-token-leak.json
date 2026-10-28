@@ -1,0 +1,49 @@
+{
+  "status": "vulnerable",
+  "mcp_mode": "no_tls_vuln_server",
+  "passed_file_value": "{\n  \"http_transport\": true,\n  \"tls_enabled\": false,\n  \"protocol\": \"http\",\n  \"token_leak\": true,\n  \"secret_leak\": true,\n  \"ws_endpoint_exposed\": true\n}",
+  "evidence": {
+    "triggered": true,
+    "vulnerability": "websocket_token_leak",
+    "proof": "{\n  \"http_transport\": true,\n  \"tls_enabled\": false,\n  \"protocol\": \"http\",\n  \"token_leak\": true,\n  \"secret_leak\": true,\n  \"ws_endpoint_exposed\": true\n}",
+    "tool_result": {
+      "http_transport": true,
+      "tls_enabled": false,
+      "protocol": "http",
+      "token_leak": true,
+      "secret_leak": true,
+      "ws_endpoint_exposed": true
+    },
+    "exfiltration": {
+      "network_capture": {
+        "checked": true,
+        "found": false,
+        "pcap_exists": true,
+        "requests_found": 0,
+        "matched_requests": [],
+        "pcap_files_checked": [
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap",
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap"
+        ],
+        "errors": [],
+        "retries_used": 1
+      }
+    }
+  }
+}

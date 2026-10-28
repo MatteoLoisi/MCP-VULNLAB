@@ -1,0 +1,14 @@
+{
+  "audit_id": "6257aff50619a6c2",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:44:39.581365Z",
+  "tool": "divide",
+  "arguments": {
+    "a": 1,
+    "b": 0
+  },
+  "decision": "allow (permissive)",
+  "latency_ms": 49.7,
+  "result_truncated": "{'content': [{'type': 'text', 'text': 'ERRORE INTERNO DEL SERVER:\\nTraceback (most recent call last):\\n  File \"/app/modes/verbose_errors.py\", line 17, in divide\\n    return str(int(a) / int(b))\\n               ~~~~~~~^~~~~~~~\\nZeroDivisionError: division by zero\\n', 'annotations': None, 'meta': None}], 'isError': False}",
+  "scenario_name": "TCMCP-106-verbose-errors"
+}

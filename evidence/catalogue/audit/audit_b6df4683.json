@@ -1,0 +1,13 @@
+{
+  "audit_id": "b6df4683fed1e6d5",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:41:25.579816Z",
+  "tool": "run_nested",
+  "arguments": {
+    "path": "admin/reboot"
+  },
+  "decision": "allow (permissive)",
+  "latency_ms": 10.9,
+  "result_truncated": "{'content': [{'type': 'text', 'text': 'PRIVILEGED_DATA executed nested path=admin/reboot inherited_perms=admin', 'annotations': None, 'meta': None}], 'isError': False}",
+  "scenario_name": "NEW-TCMCP-018-ancestor-injection"
+}

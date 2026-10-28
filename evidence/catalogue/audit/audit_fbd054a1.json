@@ -1,0 +1,13 @@
+{
+  "audit_id": "fbd054a1db0c687a",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:48:00.264162Z",
+  "tool": "get_subscription",
+  "arguments": {
+    "customer_id": "invalid_user"
+  },
+  "decision": "allow (permissive)",
+  "latency_ms": 10.3,
+  "result_truncated": "{'content': [{'type': 'text', 'text': \"Errore: Impossibile trovare l'abbonamento per l'utente Mario Rossi (Codice Fiscale: RSSMRA80A01H501U, Telefono: +39 333 1234567).\", 'annotations': None, 'meta': None}], 'isError': False}",
+  "scenario_name": "TCMCP-301-pii-in-errors"
+}

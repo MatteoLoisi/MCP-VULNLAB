@@ -1,0 +1,9 @@
+{
+  "status": "documented-only",
+  "scenario": "NEW-TCMCP-014-json-schema-ref-remote-ssrf",
+  "tier": 3,
+  "tier_source": "test.yaml",
+  "executable": false,
+  "message": "Test non eseguibile in Docker. Documentato teoricamente con riferimenti CVE.",
+  "evidence": {}
+}

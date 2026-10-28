@@ -1,0 +1,13 @@
+{
+  "audit_id": "ca767b41f66ce49e",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:47:38.292195Z",
+  "tool": "read_file",
+  "arguments": {
+    "path": "/etc/passwd"
+  },
+  "decision": "allow (permissive)",
+  "latency_ms": 8.6,
+  "result_truncated": "{'content': [{'type': 'text', 'text': 'root:x:0:0:root:/root:/bin/bash\\ndaemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin\\nbin:x:2:2:bin:/bin:/usr/sbin/nologin\\nsys:x:3:3:sys:/dev:/usr/sbin/nologin\\nsync:x:4:65534:sync:/bin:/bin/sync\\ngames:x:5:60:games:/usr/games:/usr/sbin/nologin\\nman:x:6:12:man:/var/cache/man:/usr/sbin/nologin\\nlp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin\\nmail:x:8:8:mail:/var/mail:/usr/sbin/nologin\\nnews:x:9:9:news:/var/spool/news:/usr/sbin/nologin\\nuucp:x:10:10:uucp:/var/spoo",
+  "scenario_name": "TCMCP-217-symlink-attack"
+}

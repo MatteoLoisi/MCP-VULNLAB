@@ -1,0 +1,55 @@
+{
+  "status": "vulnerable",
+  "mcp_mode": "secrets_in_output",
+  "passed_file_value": "Server configurato su porta 3000.\nDEBUG: INTERNAL_API_KEY=sk-live-fb792eb278be25120433ecb2a1a10e3ffa468fc3 | audit_files_scanned=23, secret_in_logs=True",
+  "evidence": {
+    "triggered": true,
+    "vulnerability": "sensitive_data_in_logs",
+    "proof": "Server configurato su porta 3000.\nDEBUG: INTERNAL_API_KEY=sk-live-fb792eb278be25120433ecb2a1a10e3ffa468fc3 | audit_files_scanned=23, secret_in_logs=True",
+    "tool_result": {
+      "mode": "mcp_client",
+      "tool": "get_server_config",
+      "result": "Server configurato su porta 3000.\nDEBUG: INTERNAL_API_KEY=sk-live-fb792eb278be25120433ecb2a1a10e3ffa468fc3",
+      "audit_id": "09bf0d21ef781204",
+      "policy_applied": "allow",
+      "profile_used": "permissive",
+      "arguments": {},
+      "request_body": {
+        "name": "get_server_config",
+        "arguments": {}
+      },
+      "status_code": 200
+    },
+    "exfiltration": {
+      "network_capture": {
+        "checked": true,
+        "found": false,
+        "pcap_exists": true,
+        "requests_found": 0,
+        "matched_requests": [],
+        "pcap_files_checked": [
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap",
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap"
+        ],
+        "errors": [],
+        "retries_used": 1
+      }
+    }
+  }
+}

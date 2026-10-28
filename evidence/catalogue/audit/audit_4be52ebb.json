@@ -1,0 +1,13 @@
+{
+  "audit_id": "4be52ebbdd0825b7",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:50:50.350374Z",
+  "tool": "search_knowledge_base",
+  "arguments": {
+    "query": "<script>alert('XSS')</script>"
+  },
+  "decision": "allow (permissive)",
+  "latency_ms": 9.0,
+  "result_truncated": "{'content': [{'type': 'text', 'text': \"Risultati ricerca per '<script>alert('XSS')</script>': nessun risultato trovato.\", 'annotations': None, 'meta': None}], 'isError': False}",
+  "scenario_name": "TCMCP-401-improper-output-handling"
+}

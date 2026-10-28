@@ -1,0 +1,11 @@
+{
+  "audit_id": "aec7bde292c681f5",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:47:22.138692Z",
+  "tool": "read_sandbox_binary",
+  "arguments": {},
+  "decision": "allow (permissive)",
+  "latency_ms": 8.5,
+  "result_truncated": "{'content': [{'type': 'text', 'text': 'ATTACKER_VIA_SYMLINK', 'annotations': None, 'meta': None}], 'isError': False}",
+  "scenario_name": "TCMCP-132-sandbox-escape-cwd"
+}

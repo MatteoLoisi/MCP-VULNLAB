@@ -1,0 +1,48 @@
+{
+  "status": "vulnerable",
+  "mcp_mode": "exec_command_vuln",
+  "passed_file_value": "{\n  \"exec_simple_command\": true,\n  \"exec_status_code\": 200,\n  \"exec_file_read\": true,\n  \"exec_whoami\": true,\n  \"no_auth_required\": true\n}",
+  "evidence": {
+    "triggered": true,
+    "vulnerability": "exec_command_insecure",
+    "proof": "{\n  \"exec_simple_command\": true,\n  \"exec_status_code\": 200,\n  \"exec_file_read\": true,\n  \"exec_whoami\": true,\n  \"no_auth_required\": true\n}",
+    "tool_result": {
+      "exec_simple_command": true,
+      "exec_status_code": 200,
+      "exec_file_read": true,
+      "exec_whoami": true,
+      "no_auth_required": true
+    },
+    "exfiltration": {
+      "network_capture": {
+        "checked": true,
+        "found": false,
+        "pcap_exists": true,
+        "requests_found": 0,
+        "matched_requests": [],
+        "pcap_files_checked": [
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap",
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap"
+        ],
+        "errors": [],
+        "retries_used": 1
+      }
+    }
+  }
+}

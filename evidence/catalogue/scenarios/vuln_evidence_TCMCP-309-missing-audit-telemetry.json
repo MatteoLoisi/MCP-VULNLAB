@@ -1,0 +1,59 @@
+{
+  "status": "vulnerable",
+  "mcp_mode": "legitimate",
+  "passed_file_value": "Meteo a Roma: soleggiato, 24 gradi. | audit_entries_for_scenario=0",
+  "evidence": {
+    "triggered": true,
+    "vulnerability": "missing_audit_telemetry",
+    "proof": "Meteo a Roma: soleggiato, 24 gradi. | audit_entries_for_scenario=0",
+    "tool_result": {
+      "mode": "mcp_client",
+      "tool": "get_weather",
+      "result": "Meteo a Roma: soleggiato, 24 gradi.",
+      "audit_id": "",
+      "policy_applied": "allow",
+      "profile_used": "permissive",
+      "arguments": {
+        "location": "Roma"
+      },
+      "request_body": {
+        "name": "get_weather",
+        "arguments": {
+          "location": "Roma"
+        }
+      },
+      "status_code": 200
+    },
+    "exfiltration": {
+      "network_capture": {
+        "checked": true,
+        "found": false,
+        "pcap_exists": true,
+        "requests_found": 0,
+        "matched_requests": [],
+        "pcap_files_checked": [
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap",
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap"
+        ],
+        "errors": [],
+        "retries_used": 1
+      }
+    }
+  }
+}

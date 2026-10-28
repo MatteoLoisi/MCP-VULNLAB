@@ -1,0 +1,13 @@
+{
+  "audit_id": "750a80ebe38e696a",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:52:48.197161Z",
+  "tool": "probe_vuln_server",
+  "arguments": {
+    "server_name": "insecure"
+  },
+  "decision": "allow (permissive)",
+  "latency_ms": 96.5,
+  "result_truncated": "{'content': [{'type': 'text', 'text': '{\\n  \"server\": \"insecure\",\\n  \"base_url\": \"http://vuln-server-insecure:3100\",\\n  \"description\": \"Server insecure: debug mode, admin senza auth, CORS wildcard, exec command\",\\n  \"health_status\": 200,\\n  \"health_data\": {\\n    \"status\": \"healthy\",\\n    \"mode\": \"insecure\",\\n    \"bind_host\": \"0.0.0.0\",\\n    \"port\": 3100,\\n    \"tools_available\": 7,\\n    \"tools\": [\\n      \"get_weather\",\\n      \"read_file\",\\n      \"write_file\",\\n      \"exec_command\",\\n      \"send_e",
+  "scenario_name": "TCMCP-512-llm-insecure-discovery"
+}

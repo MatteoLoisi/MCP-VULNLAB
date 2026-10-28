@@ -1,0 +1,57 @@
+{
+  "status": "vulnerable",
+  "mcp_mode": "insecure_vuln_server",
+  "passed_file_value": "{\n  \"debug_vars_exposed\": true,\n  \"debug_vars_has_config\": true,\n  \"debug_vars_has_creds\": false,\n  \"admin_admin_config_accessible\": true,\n  \"admin_config_has_secrets\": true,\n  \"admin_admin_users_accessible\": true,\n  \"admin_users_exposed\": true,\n  \"admin_admin_logs_accessible\": true,\n  \"cors_wildcard\": true,\n  \"server_version_leak\": true,\n  \"debug_info_header\": true,\n  \"tool_config_exposed\": true,\n  \"tool_config_has_secrets\": true,\n  \"admin_tool_no_auth\": true\n}",
+  "evidence": {
+    "triggered": true,
+    "vulnerability": "insecure_infrastructure",
+    "proof": "{\n  \"debug_vars_exposed\": true,\n  \"debug_vars_has_config\": true,\n  \"debug_vars_has_creds\": false,\n  \"admin_admin_config_accessible\": true,\n  \"admin_config_has_secrets\": true,\n  \"admin_admin_users_accessible\": true,\n  \"admin_users_exposed\": true,\n  \"admin_admin_logs_accessible\": true,\n  \"cors_wildcard\": true,\n  \"server_version_leak\": true,\n  \"debug_info_header\": true,\n  \"tool_config_exposed\": true,\n  \"tool_config_has_secrets\": true,\n  \"admin_tool_no_auth\": true\n}",
+    "tool_result": {
+      "debug_vars_exposed": true,
+      "debug_vars_has_config": true,
+      "debug_vars_has_creds": false,
+      "admin_admin_config_accessible": true,
+      "admin_config_has_secrets": true,
+      "admin_admin_users_accessible": true,
+      "admin_users_exposed": true,
+      "admin_admin_logs_accessible": true,
+      "cors_wildcard": true,
+      "server_version_leak": true,
+      "debug_info_header": true,
+      "tool_config_exposed": true,
+      "tool_config_has_secrets": true,
+      "admin_tool_no_auth": true
+    },
+    "exfiltration": {
+      "network_capture": {
+        "checked": true,
+        "found": false,
+        "pcap_exists": true,
+        "requests_found": 0,
+        "matched_requests": [],
+        "pcap_files_checked": [
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap",
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap"
+        ],
+        "errors": [],
+        "retries_used": 1
+      }
+    }
+  }
+}

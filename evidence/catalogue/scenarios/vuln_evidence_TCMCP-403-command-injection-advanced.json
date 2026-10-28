@@ -1,0 +1,59 @@
+{
+  "status": "vulnerable",
+  "mcp_mode": "command_injection",
+  "passed_file_value": "mcpuser\nTEST_TOKEN_1b01ff1cb5c4e2e5f7ad8cdbecda7690eb41a019_quarantine_20260911\naudit\nruns\nruntime_secret.txt\nvuln_evidence_NEW-TCMCP-001-elicitation-credential-phishing.json\nvuln_evidence_NEW-TCMCP-002-elicitation-url-mode-token-exfil.json\nvuln_evidence_NEW-TCMCP-003-cache-poisoning-cross-user.json\nvuln_evidence_NEW-TCMCP-004-mrtr-requeststate-tampering.json\nvuln_evidence_NEW-TCMCP-005-subscriptions-unauthorized-listen.json\nvuln_evidence_NEW-TCMCP-006-trustfall-folder-trust-rce.json\nvuln_eviden",
+  "evidence": {
+    "triggered": true,
+    "vulnerability": "command_injection",
+    "proof": "mcpuser\nTEST_TOKEN_1b01ff1cb5c4e2e5f7ad8cdbecda7690eb41a019_quarantine_20260911\naudit\nruns\nruntime_secret.txt\nvuln_evidence_NEW-TCMCP-001-elicitation-credential-phishing.json\nvuln_evidence_NEW-TCMCP-002-elicitation-url-mode-token-exfil.json\nvuln_evidence_NEW-TCMCP-003-cache-poisoning-cross-user.json\nvuln_evidence_NEW-TCMCP-004-mrtr-requeststate-tampering.json\nvuln_evidence_NEW-TCMCP-005-subscriptions-unauthorized-listen.json\nvuln_evidence_NEW-TCMCP-006-trustfall-folder-trust-rce.json\nvuln_evidence_NEW-TCMCP-007-tag-block-approval-gap.json\nvuln_evidence_NEW-TCMCP-008-phantom-task-injection.json\nvuln_evidence_NEW-TCMCP-009-oauth-ato-cookie-injection.json\nvuln_evidence_NEW-TCMCP-010-cimd-metadata-ssrf.json\nvuln_evidence_NEW-TCMCP-011-protocol-pivoting-mcp-a2a.json\nvuln_evidence_NEW-TCMCP-012-state-handle-possession.json\nvuln_evidence_NEW-TCMCP-013-header-routing-spoofing.json\nvuln_evidence_NEW-TCMCP-014-json-schema-ref-remote-ssrf.json\nvuln_evidence_NEW-TCMCP-014.json\nvuln_evidence_NEW-TC",
+    "tool_result": {
+      "mode": "mcp_client",
+      "tool": "network_ping",
+      "result": "mcpuser\nTEST_TOKEN_1b01ff1cb5c4e2e5f7ad8cdbecda7690eb41a019_quarantine_20260911\naudit\nruns\nruntime_secret.txt\nvuln_evidence_NEW-TCMCP-001-elicitation-credential-phishing.json\nvuln_evidence_NEW-TCMCP-002-elicitation-url-mode-token-exfil.json\nvuln_evidence_NEW-TCMCP-003-cache-poisoning-cross-user.json\nvuln_evidence_NEW-TCMCP-004-mrtr-requeststate-tampering.json\nvuln_evidence_NEW-TCMCP-005-subscriptions-unauthorized-listen.json\nvuln_evidence_NEW-TCMCP-006-trustfall-folder-trust-rce.json\nvuln_evidence_NEW-TCMCP-007-tag-block-approval-gap.json\nvuln_evidence_NEW-TCMCP-008-phantom-task-injection.json\nvuln_evidence_NEW-TCMCP-009-oauth-ato-cookie-injection.json\nvuln_evidence_NEW-TCMCP-010-cimd-metadata-ssrf.json\nvuln_evidence_NEW-TCMCP-011-protocol-pivoting-mcp-a2a.json\nvuln_evidence_NEW-TCMCP-012-state-handle-possession.json\nvuln_evidence_NEW-TCMCP-013-header-routing-spoofing.json\nvuln_evidence_NEW-TCMCP-014-json-schema-ref-remote-ssrf.json\nvuln_evidence_NEW-TCMCP-014.json\nvuln_evidence_NEW-TCMCP-015-json-schema-ref-circular-dos.json\nvuln_evidence_NEW-TCMCP-016-task-cross-client-read.json\nvuln_evidence_NEW-TCMCP-017-config-swap-name-keyed-trust.json\nvuln_evidence_NEW-TCMCP-018-ancestor-injection.json\nvuln_evidence_NEW-TCMCP-019-sampling-without-origin-auth.json\nvuln_evidence_NEW-TCMCP-020-capability-attestation.json\nvuln_evidence_NEW-TCMCP-021-trace-context-poisoning.json\nvuln_evidence_NEW-TCMCP-023-loglevel-injection.json\nvuln_evidence_NEW-TCMCP-024-stale-tools-list-cache.json\nvuln_evidence_NEW-TCMCP-025-prompt-mismatch.json\nvuln_evidence_NEW-TCMCP-026-authz-code-replay.json\nvuln_evidence_NEW-TCMCP-027-pre-handshake-32602.json\nvuln_evidence_NON-ESISTE-XYZ.json\nvuln_evidence_TCMCP--1-baseline.json\nvuln_evidence_TCMCP-000-legit-demo.json\nvuln_evidence_TCMCP-001-tool-poisoning.json\nvuln_evidence_TCMCP-001.json\nvuln_evidence_TCMCP-002-tool-name-poisoning.json\nvuln_evidence_TCMCP-003-prompt-injection.json\nvuln_evidence_TCMCP-004-tool-argument-poisoning.json\nvuln_evidence_TCMCP-005-tool-result-poisoning.json\nvuln_evidence_TCMCP-006-chain-poisoning.json\nvuln_evidence_TCMCP-007-indirect-pi-file.json\nvuln_evidence_TCMCP-008-indirect-pi-db.json\nvuln_evidence_TCMCP-009-unicode-invisible.json\nvuln_evidence_TCMCP-010-agentic-demo.json\nvuln_evidence_TCMCP-011-base64-hidden.json\nvuln_evidence_TCMCP-012-whitespace-obfuscated.json\nvuln_evidence_TCMCP-013-rug-pull-behavioral.json\nvuln_evidence_TCMCP-014-rug-pull-metadata.json\nvuln_evidence_TCMCP-015-multi-tool-chain.json\nvuln_evidence_TCMCP-016-shadow-tool.json\nvuln_evidence_TCMCP-017-cross-server-conflict.json\nvuln_evidence_TCMCP-018-json-rpc-batch.json\nvuln_evidence_TCMCP-019-notification-injection.json\nvuln_evidence_TCMCP-020-shadow-server.json\nvuln_evidence_TCMCP-021-etdi-bypass.json\nvuln_evidence_TCMCP-022-typosquatting.json\nvuln_evidence_TCMCP-023-marketplace-poisoning.json\nvuln_evidence_TCMCP-024-zero-click-mcp-json.json\nvuln_evidence_TCMCP-024a-wasi-sandbox-escape.json\nvuln_evidence_TCMCP-100-no-auth.json\nvuln_evidence_TCMCP-101-excessive-permissions.json\nvuln_evidence_TCMCP-102-missing-rate-limiting.json\nvuln_evidence_TCMCP-103-insecure-defaults.json\nvuln_evidence_TCMCP-104-neighborjack.json\nvuln_evidence_TCMCP-105-ssl-not-enabled.json\nvuln_evidence_TCMCP-106-verbose-errors.json\nvuln_evidence_TCMCP-107-log-injection.json\nvuln_evidence_TCMCP-108-missing-input-validation.json\nvuln_evidence_TCMCP-109-default-jwt-secret.json\nvuln_evidence_TCMCP-110-sse-no-auth.json\nvuln_evidence_TCMCP-111-neighborjack-noauth.json\nvuln_evidence_TCMCP-118-oauth-pkce-bypass.json\nvuln_evidence_TCMCP-119-jwt-algorithm-confusion.json\nvuln_evidence_TCMCP-120-token-replay.json\nvuln_evidence_TCMCP-121-scope-escalation.json\nvuln_evidence_TCMCP-122-dcr-abuse.json\nvuln_evidence_TCMCP-123-missing-origin-validation.json\nvuln_evidence_TCMCP-124-missing-audience-binding.json\nvuln_evidence_TCMCP-125-websocket-no-tls.json\nvuln_evidence_TCMCP-126-dns-rebinding.json\nvuln_evidence_TCMCP-127-registry-path-traversal.json\nvuln_evidence_",
+      "audit_id": "31e6c4eb382a7d51",
+      "policy_applied": "allow",
+      "profile_used": "permissive",
+      "arguments": {
+        "host": "127.0.0.1; cat /app/logs/runtime_secret.txt"
+      },
+      "request_body": {
+        "name": "network_ping",
+        "arguments": {
+          "host": "127.0.0.1; cat /app/logs/runtime_secret.txt"
+        }
+      },
+      "status_code": 200
+    },
+    "exfiltration": {
+      "network_capture": {
+        "checked": true,
+        "found": false,
+        "pcap_exists": true,
+        "requests_found": 0,
+        "matched_requests": [],
+        "pcap_files_checked": [
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap",
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap"
+        ],
+        "errors": [],
+        "retries_used": 1
+      }
+    }
+  }
+}

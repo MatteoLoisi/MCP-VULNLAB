@@ -1,0 +1,11 @@
+{
+  "audit_id": "83a2a0b52e6830ba",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:47:52.968170Z",
+  "tool": "sensitive_op",
+  "arguments": {},
+  "decision": "allow (permissive)",
+  "latency_ms": 9.5,
+  "result_truncated": "{'content': [{'type': 'text', 'text': 'Sensitive data without authentication', 'annotations': None, 'meta': None}], 'isError': False}",
+  "scenario_name": "TCMCP-221-secret-injection-env"
+}

@@ -1,0 +1,11 @@
+{
+  "audit_id": "bb4f3740f8c0ba5f",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:52:33.782526Z",
+  "tool": "ping",
+  "arguments": {},
+  "decision": "allow (permissive)",
+  "latency_ms": 7.9,
+  "result_truncated": "{'content': [{'type': 'text', 'text': 'pong', 'annotations': None, 'meta': None}], 'isError': False}",
+  "scenario_name": "TCMCP-405-dns-rebinding-advanced"
+}

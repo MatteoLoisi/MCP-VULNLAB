@@ -1,0 +1,75 @@
+{
+  "status": "vulnerable",
+  "mcp_mode": "vuln_explore",
+  "passed_file_value": "{\n  \"open_proxy_external\": true,\n  \"open_proxy_response\": \"{\\\"exfil_count\\\":0,\\\"exfil_dir\\\":\\\"/data/exfiltration\\\",\\\"service\\\":\\\"evil-server-collector\\\",\\\"status\\\":\\\"ok\\\"}\\n\",\n  \"ssrf_to_ollama\": true,\n  \"ssrf_ollama_response\": \"{\\\"models\\\":[{\\\"name\\\":\\\"llama3.2:3b\\\",\\\"model\\\":\\\"llama3.2:3b\\\",\\\"modified_at\\\":\\\"2026-09-04T16:30:40.995635984Z\\\",\\\"size\\\":2019393189,\\\"digest\\\":\\\"a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72\\\",\\\"det\",\n  \"internal_service_enumeration\": true,\n  \"reac",
+  "evidence": {
+    "triggered": true,
+    "vulnerability": "ssrf_proxy",
+    "proof": "{\n  \"open_proxy_external\": true,\n  \"open_proxy_response\": \"{\\\"exfil_count\\\":0,\\\"exfil_dir\\\":\\\"/data/exfiltration\\\",\\\"service\\\":\\\"evil-server-collector\\\",\\\"status\\\":\\\"ok\\\"}\\n\",\n  \"ssrf_to_ollama\": true,\n  \"ssrf_ollama_response\": \"{\\\"models\\\":[{\\\"name\\\":\\\"llama3.2:3b\\\",\\\"model\\\":\\\"llama3.2:3b\\\",\\\"modified_at\\\":\\\"2026-09-04T16:30:40.995635984Z\\\",\\\"size\\\":2019393189,\\\"digest\\\":\\\"a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72\\\",\\\"det\",\n  \"internal_service_enumeration\": true,\n  \"reachable_services\": [\n    \"ollama\",\n    \"mcp-server\",\n    \"mcp-client\",\n    \"evil-server\",\n    \"llm-harness\",\n    \"oauth-mock\"\n  ],\n  \"internal_services_total\": 6,\n  \"cloud_metadata_probed\": false,\n  \"cloud_metadata_results\": [\n    {\n      \"endpoint\": \"http://169.254.169.254/latest/meta-data/\",\n      \"reachable\": false,\n      \"error\": \"All connection attempts failed\"\n    },\n    {\n      \"endpoint\": \"http://169.254.169.254/latest/user-data/\",\n      \"reachable\": false,\n      \"error\": \"All connection a",
+    "tool_result": {
+      "open_proxy_external": true,
+      "open_proxy_response": "{\"exfil_count\":0,\"exfil_dir\":\"/data/exfiltration\",\"service\":\"evil-server-collector\",\"status\":\"ok\"}\n",
+      "ssrf_to_ollama": true,
+      "ssrf_ollama_response": "{\"models\":[{\"name\":\"llama3.2:3b\",\"model\":\"llama3.2:3b\",\"modified_at\":\"2026-09-04T16:30:40.995635984Z\",\"size\":2019393189,\"digest\":\"a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72\",\"det",
+      "internal_service_enumeration": true,
+      "reachable_services": [
+        "ollama",
+        "mcp-server",
+        "mcp-client",
+        "evil-server",
+        "llm-harness",
+        "oauth-mock"
+      ],
+      "internal_services_total": 6,
+      "cloud_metadata_probed": false,
+      "cloud_metadata_results": [
+        {
+          "endpoint": "http://169.254.169.254/latest/meta-data/",
+          "reachable": false,
+          "error": "All connection attempts failed"
+        },
+        {
+          "endpoint": "http://169.254.169.254/latest/user-data/",
+          "reachable": false,
+          "error": "All connection attempts failed"
+        },
+        {
+          "endpoint": "http://metadata.google.internal/computeMetadata/v1/",
+          "reachable": false,
+          "error": "[Errno -2] Name or service not known"
+        }
+      ]
+    },
+    "exfiltration": {
+      "network_capture": {
+        "checked": true,
+        "found": false,
+        "pcap_exists": true,
+        "requests_found": 0,
+        "matched_requests": [],
+        "pcap_files_checked": [
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap",
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap"
+        ],
+        "errors": [],
+        "retries_used": 1
+      }
+    }
+  }
+}

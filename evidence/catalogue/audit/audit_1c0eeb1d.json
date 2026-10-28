@@ -1,0 +1,11 @@
+{
+  "audit_id": "1c0eeb1df5c2b80f",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:36:10.917746Z",
+  "tool": "admin_action",
+  "arguments": {},
+  "decision": "allow (permissive)",
+  "latency_ms": 8.5,
+  "result_truncated": "{'content': [{'type': 'text', 'text': 'ERR unknown tool admin_action', 'annotations': None, 'meta': None}], 'isError': False}",
+  "scenario_name": "NEW-TCMCP-020-capability-attestation"
+}

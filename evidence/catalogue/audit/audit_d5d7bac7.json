@@ -1,0 +1,14 @@
+{
+  "audit_id": "d5d7bac770a87cbd",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:28:10.951621Z",
+  "tool": "call_route",
+  "arguments": {
+    "route": "nope",
+    "session_id": "attacker-session"
+  },
+  "decision": "allow (permissive)",
+  "latency_ms": 11.1,
+  "result_truncated": "{'content': [{'type': 'text', 'text': \"ERR -32001 unknown route 'nope', available: admin,billing,users,internal-debug\", 'annotations': None, 'meta': None}], 'isError': False}",
+  "scenario_name": "NEW-TCMCP-013-header-routing-spoofing"
+}

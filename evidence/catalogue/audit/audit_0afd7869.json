@@ -1,0 +1,13 @@
+{
+  "audit_id": "0afd7869ab0f1175",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:45:10.981140Z",
+  "tool": "get_weather",
+  "arguments": {
+    "location": null
+  },
+  "decision": "allow (permissive)",
+  "latency_ms": 27.0,
+  "result_truncated": "{'content': [{'type': 'text', 'text': 'Error executing tool get_weather: 1 validation error for get_weatherArguments\\nlocation\\n  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]\\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type', 'annotations': None, 'meta': None}], 'isError': True}",
+  "scenario_name": "TCMCP-108-missing-input-validation"
+}

@@ -1,0 +1,13 @@
+{
+  "audit_id": "d383b48769f305d8",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:35:16.064802Z",
+  "tool": "use_handle",
+  "arguments": {
+    "handle": "HDL_947d48512c293cfd"
+  },
+  "decision": "allow (permissive)",
+  "latency_ms": 10.2,
+  "result_truncated": "{'content': [{'type': 'text', 'text': 'access-granted handle=HDL_947d48512c293cfd', 'annotations': None, 'meta': None}], 'isError': False}",
+  "scenario_name": "NEW-TCMCP-012-state-handle-possession"
+}

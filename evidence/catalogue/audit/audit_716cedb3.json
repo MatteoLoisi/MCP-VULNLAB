@@ -1,0 +1,11 @@
+{
+  "audit_id": "716cedb3303c0a0b",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:52:48.089779Z",
+  "tool": "list_vuln_targets",
+  "arguments": {},
+  "decision": "allow (permissive)",
+  "latency_ms": 37.4,
+  "result_truncated": "{'content': [{'type': 'text', 'text': '{\\n  \"insecure\": {\\n    \"url\": \"http://vuln-server-insecure:3100\",\\n    \"description\": \"Server insecure: debug mode, admin senza auth, CORS wildcard, exec command\",\\n    \"endpoints\": [\\n      \"/health\",\\n      \"/debug/vars\",\\n      \"/debug/health/detail\",\\n      \"/admin/config\",\\n      \"/admin/users\",\\n      \"/admin/logs\",\\n      \"/tools\",\\n      \"/invoke/{tool_name}\"\\n    ],\\n    \"healthy\": true\\n  },\\n  \"no-tls\": {\\n    \"url\": \"http://vuln-server-no-tls:3",
+  "scenario_name": "TCMCP-512-llm-insecure-discovery"
+}

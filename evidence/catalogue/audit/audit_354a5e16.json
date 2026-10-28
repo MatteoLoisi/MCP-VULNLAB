@@ -1,0 +1,13 @@
+{
+  "audit_id": "354a5e16068aeda2",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:45:11.071005Z",
+  "tool": "get_weather",
+  "arguments": {
+    "location": "../../../../etc/passwd%00null"
+  },
+  "decision": "allow (permissive)",
+  "latency_ms": 10.2,
+  "result_truncated": "{'content': [{'type': 'text', 'text': 'Meteo a ../../../../etc/passwd%00null: soleggiato, 24 gradi.', 'annotations': None, 'meta': None}], 'isError': False}",
+  "scenario_name": "TCMCP-108-missing-input-validation"
+}

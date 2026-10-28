@@ -1,0 +1,56 @@
+{
+  "status": "vulnerable",
+  "mcp_mode": "vuln_explore",
+  "passed_file_value": "{\n  \"scenario_type\": \"llm-insecure-discovery\",\n  \"target_server\": \"insecure\",\n  \"vuln_targets_listed\": true,\n  \"vuln_targets\": \"{\\n  \\\"insecure\\\": {\\n    \\\"url\\\": \\\"http://vuln-server-insecure:3100\\\",\\n    \\\"description\\\": \\\"Server insecure: debug mode, admin senza auth, CORS wildcard, exec command\\\",\\n    \\\"endpoints\\\": [\\n      \\\"/health\\\",\\n      \\\"/debug/vars\\\",\\n      \\\"/debug/health/detail\\\",\\n      \\\"/admin/config\\\",\\n      \\\"/admin/users\\\",\\n      \\\"/admin/logs\\\",\\n      \\\"/tools\\\",\\n   ",
+  "evidence": {
+    "triggered": true,
+    "vulnerability": "insecure_discovery",
+    "proof": "{\n  \"scenario_type\": \"llm-insecure-discovery\",\n  \"target_server\": \"insecure\",\n  \"vuln_targets_listed\": true,\n  \"vuln_targets\": \"{\\n  \\\"insecure\\\": {\\n    \\\"url\\\": \\\"http://vuln-server-insecure:3100\\\",\\n    \\\"description\\\": \\\"Server insecure: debug mode, admin senza auth, CORS wildcard, exec command\\\",\\n    \\\"endpoints\\\": [\\n      \\\"/health\\\",\\n      \\\"/debug/vars\\\",\\n      \\\"/debug/health/detail\\\",\\n      \\\"/admin/config\\\",\\n      \\\"/admin/users\\\",\\n      \\\"/admin/logs\\\",\\n      \\\"/tools\\\",\\n      \\\"/invoke/{tool_name}\\\"\\n    ],\\n    \\\"healthy\\\": true\\n  },\\n  \\\"no-tls\\\": {\\n    \\\"url\\\": \\\"http://vuln-server-no-tls:3200\\\",\\n    \\\"description\\\": \\\"Server no-TLS: HTTP cleartext, SSE token leak, WS senza TLS, cookie senza Secure\\\",\\n    \\\"endpoints\\\": [\\n      \\\"/health\\\",\\n      \\\"/http-only\\\",\\n      \\\"/sse\\\",\\n      \\\"/tools\\\",\\n      \\\"/cookie/set\\\",\\n      \\\"/cookie/get\\\",\\n      \\\"/ws\\\"\\n    ],\\n    \\\"healthy\\\": true\\n  },\\n  \\\"ssrf-proxy\\\": {\\n    \\\"url\\\": \\\"http://vuln-server-ssrf",
+    "tool_result": {
+      "scenario_type": "llm-insecure-discovery",
+      "target_server": "insecure",
+      "vuln_targets_listed": true,
+      "vuln_targets": "{\n  \"insecure\": {\n    \"url\": \"http://vuln-server-insecure:3100\",\n    \"description\": \"Server insecure: debug mode, admin senza auth, CORS wildcard, exec command\",\n    \"endpoints\": [\n      \"/health\",\n      \"/debug/vars\",\n      \"/debug/health/detail\",\n      \"/admin/config\",\n      \"/admin/users\",\n      \"/admin/logs\",\n      \"/tools\",\n      \"/invoke/{tool_name}\"\n    ],\n    \"healthy\": true\n  },\n  \"no-tls\": {\n    \"url\": \"http://vuln-server-no-tls:3200\",\n    \"description\": \"Server no-TLS: HTTP cleartext, SSE token leak, WS senza TLS, cookie senza Secure\",\n    \"endpoints\": [\n      \"/health\",\n      \"/http-only\",\n      \"/sse\",\n      \"/tools\",\n      \"/cookie/set\",\n      \"/cookie/get\",\n      \"/ws\"\n    ],\n    \"healthy\": true\n  },\n  \"ssrf-proxy\": {\n    \"url\": \"http://vuln-server-ssrf-proxy:3300\",\n    \"description\": \"Server SSRF proxy: open proxy, fetch URL arbitrari, internal service enum\",\n    \"endpoints\": [\n      \"/health\",\n      \"/fetch\",\n      \"/tools\",\n      \"/invoke/{tool_name}\"\n    ],\n    \"heal",
+      "server_probed": true,
+      "probe_data": "{\n  \"server\": \"insecure\",\n  \"base_url\": \"http://vuln-server-insecure:3100\",\n  \"description\": \"Server insecure: debug mode, admin senza auth, CORS wildcard, exec command\",\n  \"health_status\": 200,\n  \"health_data\": {\n    \"status\": \"healthy\",\n    \"mode\": \"insecure\",\n    \"bind_host\": \"0.0.0.0\",\n    \"port\": 3100,\n    \"tools_available\": 7,\n    \"tools\": [\n      \"get_weather\",\n      \"read_file\",\n      \"write_file\",\n      \"exec_command\",\n      \"send_email\",\n      \"admin_shutdown\",\n      \"get_server_config\"\n    ]\n  },\n  \"reachable_endpoints\": [\n    {\n      \"endpoint\": \"/health\",\n      \"status\": 200\n    },\n    {\n      \"endpoint\": \"/debug/vars\",\n      \"status\": 200\n    },\n    {\n      \"endpoint\": \"/debug/health/detail\",\n      \"status\": 200\n    },\n    {\n      \"endpoint\": \"/admin/config\",\n      \"status\": 200\n    },\n    {\n      \"endpoint\": \"/admin/users\",\n      \"status\": 200\n    },\n    {\n      \"endpoint\": \"/admin/logs\",\n      \"status\": 200\n    },\n    {\n      \"endpoint\": \"/tools\",\n      \"status\": 200\n    }\n  ]\n}",
+      "health_reachable": true,
+      "health_response": "HTTP 200 OK\nHeaders: {'date': 'Thu, 08 Oct 2026 12:52:47 GMT', 'server': 'uvicorn, MCP-Server/1.0', 'content-length': '206', 'content-type': 'application/json', 'x-powered-by': 'MCP-Server/v1.0 (Insecure Edition)', 'x-debug-info': 'debug_mode=enabled', 'access-control-allow-origin': '*', 'access-control-allow-methods': '*', 'access-control-allow-headers': '*'}\n\n{\n  \"status\": \"healthy\",\n  \"mode\": \"insecure\",\n  \"bind_host\": \"0.0.0.0\",\n  \"port\": 3100,\n  \"tools_available\": 7,\n  \"tools\": [\n    \"get_w",
+      "debug_endpoint": true,
+      "debug_has_creds": true,
+      "debug_evidence": "HTTP 200 OK\nHeaders: {'date': 'Thu, 08 Oct 2026 12:52:47 GMT', 'server': 'uvicorn, MCP-Server/1.0', 'content-length': '743', 'content-type': 'application/json', 'x-powered-by': 'MCP-Server/v1.0 (Insecure Edition)', 'x-debug-info': 'debug_mode=enabled', 'access-control-allow-origin': '*', 'access-control-allow-methods': '*', 'access-control-allow-headers': '*'}\n\n{\n  \"environment\": {\n    \"GPG_KEY\": \"A035C8C19219BA821ECEA86B64E628F8D684696D\",\n    \"HOME\": \"/root\",\n    \"HOSTNAME\": \"df1b01bef147\",\n   ",
+      "admin_config": true,
+      "admin_evidence": "HTTP 200 OK\nHeaders: {'date': 'Thu, 08 Oct 2026 12:52:47 GMT', 'server': 'uvicorn, MCP-Server/1.0', 'content-length': '324', 'content-type': 'application/json', 'x-powered-by': 'MCP-Server/v1.0 (Insecure Edition)', 'x-debug-info': 'debug_mode=enabled', 'access-control-allow-origin': '*', 'access-control-allow-methods': '*', 'access-control-allow-headers': '*'}\n\n{\n  \"config\": {\n    \"db_host\": \"postgres.internal\",\n    \"db_password\": \"super_secret_db_pass_123\",\n    \"api_key\": \"sk-internal-test-key-"
+    },
+    "exfiltration": {
+      "network_capture": {
+        "checked": true,
+        "found": false,
+        "pcap_exists": true,
+        "requests_found": 0,
+        "matched_requests": [],
+        "pcap_files_checked": [
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap",
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap"
+        ],
+        "errors": [],
+        "retries_used": 1
+      }
+    }
+  }
+}

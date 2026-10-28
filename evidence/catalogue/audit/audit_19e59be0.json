@@ -1,0 +1,11 @@
+{
+  "audit_id": "19e59be027d9643e",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:48:38.667315Z",
+  "tool": "sensitive_op",
+  "arguments": {},
+  "decision": "allow (permissive)",
+  "latency_ms": 10.3,
+  "result_truncated": "{'content': [{'type': 'text', 'text': 'Sensitive data without authentication', 'annotations': None, 'meta': None}], 'isError': False}",
+  "scenario_name": "TCMCP-214-rbac-bypass"
+}

@@ -1,0 +1,11 @@
+{
+  "audit_id": "be77f082edf7e9a0",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:50:18.840496Z",
+  "tool": "get_server_config",
+  "arguments": {},
+  "decision": "allow (permissive)",
+  "latency_ms": 9.8,
+  "result_truncated": "{'content': [{'type': 'text', 'text': 'Server configurato su porta 3000.\\nDEBUG: INTERNAL_API_KEY=sk-live-bf609b26fe4f5fb045d552d6ac6fffd988eb89c6', 'annotations': None, 'meta': None}], 'isError': False}",
+  "scenario_name": "TCMCP-303-missing-output-sanitization"
+}

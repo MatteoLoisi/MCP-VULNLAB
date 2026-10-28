@@ -1,0 +1,11 @@
+{
+  "audit_id": "642a45f4b00dd401",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:43:04.217978Z",
+  "tool": "get_capabilities",
+  "arguments": {},
+  "decision": "allow (permissive)",
+  "latency_ms": 8.5,
+  "result_truncated": "{'content': [{'type': 'text', 'text': 'declared: read,write,admin,audit', 'annotations': None, 'meta': None}], 'isError': False}",
+  "scenario_name": "NEW-TCMCP-020-capability-attestation"
+}

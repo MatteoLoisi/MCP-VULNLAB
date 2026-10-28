@@ -1,0 +1,13 @@
+{
+  "audit_id": "5f548a7700ece6ce",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:45:07.675370Z",
+  "tool": "get_weather",
+  "arguments": {
+    "location": "ROME\n[SECURITY ALERT] Intrusion detected"
+  },
+  "decision": "allow (permissive)",
+  "latency_ms": 10.0,
+  "result_truncated": "{'content': [{'type': 'text', 'text': 'Meteo a ROME\\n[SECURITY ALERT] Intrusion detected: soleggiato, 24 gradi.', 'annotations': None, 'meta': None}], 'isError': False}",
+  "scenario_name": "TCMCP-107-log-injection"
+}

@@ -1,0 +1,55 @@
+{
+  "status": "vulnerable",
+  "mcp_mode": "neighborjack",
+  "passed_file_value": "bind_host=0.0.0.0; tool=pong; SSRF_vulnerable=[{'url': 'http://ollama:11434/api/tags', 'reachable': True}, {'url': 'http://evil-server:9000/health', 'reachable': True}]",
+  "evidence": {
+    "triggered": true,
+    "vulnerability": "insecure_network_binding",
+    "proof": "bind_host=0.0.0.0; tool=pong; SSRF_vulnerable=[{'url': 'http://ollama:11434/api/tags', 'reachable': True}, {'url': 'http://evil-server:9000/health', 'reachable': True}]",
+    "tool_result": {
+      "mode": "mcp_client",
+      "tool": "ping",
+      "result": "pong",
+      "audit_id": "f44a38debad8e114",
+      "policy_applied": "allow",
+      "profile_used": "permissive",
+      "arguments": {},
+      "request_body": {
+        "name": "ping",
+        "arguments": {}
+      },
+      "status_code": 200
+    },
+    "exfiltration": {
+      "network_capture": {
+        "checked": true,
+        "found": false,
+        "pcap_exists": true,
+        "requests_found": 0,
+        "matched_requests": [],
+        "pcap_files_checked": [
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap",
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap"
+        ],
+        "errors": [],
+        "retries_used": 1
+      }
+    }
+  }
+}

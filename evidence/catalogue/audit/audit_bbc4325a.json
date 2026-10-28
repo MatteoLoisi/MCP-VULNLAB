@@ -1,0 +1,11 @@
+{
+  "audit_id": "bbc4325a35112748",
+  "run_id": "validation-full-8a62f4d1",
+  "timestamp": "2026-10-08T12:47:44.552223Z",
+  "tool": "sensitive_op",
+  "arguments": {},
+  "decision": "allow (permissive)",
+  "latency_ms": 8.9,
+  "result_truncated": "{'content': [{'type': 'text', 'text': 'Sensitive data without authentication', 'annotations': None, 'meta': None}], 'isError': False}",
+  "scenario_name": "TCMCP-218-cross-tenant-isolation"
+}
