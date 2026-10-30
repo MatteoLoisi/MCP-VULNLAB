@@ -1,0 +1,36 @@
+﻿target,expected_vulnerability,"scanner (detected yes/no, evidence type)","our probes (detected yes/no, evidence type)"
+ssrf-1-webresearch (@mzxrai/mcp-webresearch@0.1.7),vulnerable,MCTS 0.1.4: not_applicable; metadata; completed,P6: yes; token_received_in_response; vulnerable
+ssrf-1-webresearch (@mzxrai/mcp-webresearch@0.1.7),vulnerable,Cisco YARA 4.8.6: not_applicable; metadata; finished,P6: yes; token_received_in_response; vulnerable
+ssrf-1-webresearch (@mzxrai/mcp-webresearch@0.1.7),vulnerable,MCP-Shield without Claude 1.0.4: not_applicable; metadata; finished,P6: yes; token_received_in_response; vulnerable
+ssrf-1-webresearch (@mzxrai/mcp-webresearch@0.1.7),vulnerable,"MCP Fuzzer, realistic seed 42 0.7.0: not_applicable; schema_protocol_fuzzing; finished",P6: yes; token_received_in_response; vulnerable
+ssrf-1-webresearch (@mzxrai/mcp-webresearch@0.1.7),vulnerable,"MCP Guard, static without dependencies 2.0.0: not_applicable; source_analysis; finished",P6: yes; token_received_in_response; vulnerable
+ssrf-1-webresearch (@mzxrai/mcp-webresearch@0.1.7),vulnerable,RedCell 0.1.0: yes; local_callback_with_witness; finished,P6: yes; token_received_in_response; vulnerable
+ssrf-1-webresearch (@mzxrai/mcp-webresearch@0.1.7),vulnerable,"Mcpwn, API SSRFTest 1.0: yes; correlated_local_callback; finished",P6: yes; token_received_in_response; vulnerable
+ssrf-2-openwebsearch-216 (open-websearch@2.1.6),vulnerable,MCTS 0.1.4: not_applicable; metadata; completed,P6: yes; token_received_in_response; vulnerable
+ssrf-2-openwebsearch-216 (open-websearch@2.1.6),vulnerable,Cisco YARA 4.8.6: not_applicable; metadata; finished,P6: yes; token_received_in_response; vulnerable
+ssrf-2-openwebsearch-216 (open-websearch@2.1.6),vulnerable,MCP-Shield without Claude 1.0.4: not_applicable; metadata; finished,P6: yes; token_received_in_response; vulnerable
+ssrf-2-openwebsearch-216 (open-websearch@2.1.6),vulnerable,"MCP Fuzzer, realistic seed 42 0.7.0: not_applicable; schema_protocol_fuzzing; finished",P6: yes; token_received_in_response; vulnerable
+ssrf-2-openwebsearch-216 (open-websearch@2.1.6),vulnerable,"MCP Guard, static without dependencies 2.0.0: not_applicable; source_analysis; finished",P6: yes; token_received_in_response; vulnerable
+ssrf-2-openwebsearch-216 (open-websearch@2.1.6),vulnerable,RedCell 0.1.0: not_observed; no_ssrf_evidence; finished,P6: yes; token_received_in_response; vulnerable
+ssrf-2-openwebsearch-216 (open-websearch@2.1.6),vulnerable,"Mcpwn, API SSRFTest 1.0: not_observed; no_ssrf_evidence; finished",P6: yes; token_received_in_response; vulnerable
+ssrf-3-openwebsearch-217 (open-websearch@2.1.7),vulnerable,MCTS 0.1.4: not_applicable; metadata; completed,P6: yes; token_received_in_response; vulnerable
+ssrf-3-openwebsearch-217 (open-websearch@2.1.7),vulnerable,Cisco YARA 4.8.6: not_applicable; metadata; finished,P6: yes; token_received_in_response; vulnerable
+ssrf-3-openwebsearch-217 (open-websearch@2.1.7),vulnerable,MCP-Shield without Claude 1.0.4: not_applicable; metadata; finished,P6: yes; token_received_in_response; vulnerable
+ssrf-3-openwebsearch-217 (open-websearch@2.1.7),vulnerable,"MCP Fuzzer, realistic seed 42 0.7.0: not_applicable; schema_protocol_fuzzing; finished",P6: yes; token_received_in_response; vulnerable
+ssrf-3-openwebsearch-217 (open-websearch@2.1.7),vulnerable,"MCP Guard, static without dependencies 2.0.0: not_applicable; source_analysis; finished",P6: yes; token_received_in_response; vulnerable
+ssrf-3-openwebsearch-217 (open-websearch@2.1.7),vulnerable,RedCell 0.1.0: not_observed; no_ssrf_evidence; finished,P6: yes; token_received_in_response; vulnerable
+ssrf-3-openwebsearch-217 (open-websearch@2.1.7),vulnerable,"Mcpwn, API SSRFTest 1.0: not_observed; no_ssrf_evidence; finished",P6: yes; token_received_in_response; vulnerable
+ssrf-4-openwebsearch-218 (open-websearch@2.1.8),secure,MCTS 0.1.4: not_applicable; metadata; completed,P6: not_in_sweep; complete_sweep_negative; secure
+ssrf-4-openwebsearch-218 (open-websearch@2.1.8),secure,Cisco YARA 4.8.6: not_applicable; metadata; finished,P6: not_in_sweep; complete_sweep_negative; secure
+ssrf-4-openwebsearch-218 (open-websearch@2.1.8),secure,MCP-Shield without Claude 1.0.4: not_applicable; metadata; finished,P6: not_in_sweep; complete_sweep_negative; secure
+ssrf-4-openwebsearch-218 (open-websearch@2.1.8),secure,"MCP Fuzzer, realistic seed 42 0.7.0: not_applicable; schema_protocol_fuzzing; finished",P6: not_in_sweep; complete_sweep_negative; secure
+ssrf-4-openwebsearch-218 (open-websearch@2.1.8),secure,"MCP Guard, static without dependencies 2.0.0: not_applicable; source_analysis; finished",P6: not_in_sweep; complete_sweep_negative; secure
+ssrf-4-openwebsearch-218 (open-websearch@2.1.8),secure,RedCell 0.1.0: not_observed; no_ssrf_evidence; finished,P6: not_in_sweep; complete_sweep_negative; secure
+ssrf-4-openwebsearch-218 (open-websearch@2.1.8),secure,"Mcpwn, API SSRFTest 1.0: not_observed; no_ssrf_evidence; finished",P6: not_in_sweep; complete_sweep_negative; secure
+ssrf-5-openwebsearch-2111 (open-websearch@2.1.11),secure,MCTS 0.1.4: not_applicable; metadata; completed,P6: not_in_sweep; complete_sweep_negative; secure
+ssrf-5-openwebsearch-2111 (open-websearch@2.1.11),secure,Cisco YARA 4.8.6: not_applicable; metadata; finished,P6: not_in_sweep; complete_sweep_negative; secure
+ssrf-5-openwebsearch-2111 (open-websearch@2.1.11),secure,MCP-Shield without Claude 1.0.4: not_applicable; metadata; finished,P6: not_in_sweep; complete_sweep_negative; secure
+ssrf-5-openwebsearch-2111 (open-websearch@2.1.11),secure,"MCP Fuzzer, realistic seed 42 0.7.0: not_applicable; schema_protocol_fuzzing; finished",P6: not_in_sweep; complete_sweep_negative; secure
+ssrf-5-openwebsearch-2111 (open-websearch@2.1.11),secure,"MCP Guard, static without dependencies 2.0.0: not_applicable; source_analysis; finished",P6: not_in_sweep; complete_sweep_negative; secure
+ssrf-5-openwebsearch-2111 (open-websearch@2.1.11),secure,RedCell 0.1.0: not_observed; no_ssrf_evidence; finished,P6: not_in_sweep; complete_sweep_negative; secure
+ssrf-5-openwebsearch-2111 (open-websearch@2.1.11),secure,"Mcpwn, API SSRFTest 1.0: not_observed; no_ssrf_evidence; finished",P6: not_in_sweep; complete_sweep_negative; secure

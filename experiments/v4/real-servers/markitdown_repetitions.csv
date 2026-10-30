@@ -1,0 +1,7 @@
+﻿repetition,package,probe,status,evidence
+1,markitdown-mcp,P5-tool-traversal,vulnerable,canary read via tool traversal: ['convert_to_markdown.uri=file:///work/fixture-secret/canary.txt']
+1,markitdown-mcp,P6-ssrf-collaborator,vulnerable,internal SSRF demonstrated: token returned via ['convert_to_markdown.uri=http://127.0.0.1:37791/internal/ops']
+2,markitdown-mcp,P5-tool-traversal,vulnerable,canary read via tool traversal: ['convert_to_markdown.uri=file:///work/fixture-secret/canary.txt']
+2,markitdown-mcp,P6-ssrf-collaborator,vulnerable,internal SSRF demonstrated: token returned via ['convert_to_markdown.uri=http://127.0.0.1:39473/internal/ops']
+3,markitdown-mcp,P5-tool-traversal,vulnerable,canary read via tool traversal: ['convert_to_markdown.uri=file:///work/fixture-secret/canary.txt']
+3,markitdown-mcp,P6-ssrf-collaborator,vulnerable,internal SSRF demonstrated: token returned via ['convert_to_markdown.uri=http://127.0.0.1:43575/internal/ops']

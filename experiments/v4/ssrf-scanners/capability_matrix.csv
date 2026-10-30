@@ -1,0 +1,9 @@
+﻿scanner,ssrf-1-webresearch,ssrf-2-openwebsearch-216,ssrf-3-openwebsearch-217,ssrf-4-openwebsearch-218,ssrf-5-openwebsearch-2111
+Cisco YARA,not_applicable,not_applicable,not_applicable,not_applicable,not_applicable
+"MCP Fuzzer, realistic seed 42",not_applicable,not_applicable,not_applicable,not_applicable,not_applicable
+"MCP Guard, static without dependencies",not_applicable,not_applicable,not_applicable,not_applicable,not_applicable
+MCP-Shield without Claude,not_applicable,not_applicable,not_applicable,not_applicable,not_applicable
+MCTS,not_applicable,not_applicable,not_applicable,not_applicable,not_applicable
+"Mcpwn, API SSRFTest",yes,not_observed,not_observed,not_observed,not_observed
+RedCell,yes,not_observed,not_observed,not_observed,not_observed
+Local P6 probes,yes,yes,yes,not_in_sweep,not_in_sweep

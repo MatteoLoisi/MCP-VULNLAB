@@ -9,7 +9,7 @@ Data and evidence from MCP-VulnLab, a laboratory for testing the security of LLM
 | [matrix.xlsx](matrix.xlsx) | Test matrix: 136 scenarios, external targets and SSRF configurations, with classifications, verdicts and file references. The **Legend** sheet explains codes and verdicts. |
 | [results/](results/) | Result tables of the scenario catalogue and of the external-target probes, in CSV format. |
 | [evidence/](evidence/) | Original reports of the catalogue campaign, and the complete P5 sweep on Filesystem `1.0.0` (17/17 tool–argument combinations): [p5-filesystem-20261025/](evidence/p5-filesystem-20261025/README.md). |
-| [experiments/](experiments/) | Data of the three experiments: agentic runs, content classification, scanners and probes. |
+| [experiments/](experiments/) | Data of the three experiments: agentic runs, content classification, scanners and probes. Later executions are in [experiments/v4/](experiments/v4/README.md). |
 | [supplementary/](supplementary/) | Notes on the catalogue taxonomy, a quantitative comparison with related benchmarks, and the agentic version of the laboratory. |
 
 ## Scenario catalogue
@@ -36,7 +36,7 @@ Each scenario has one primary category; related aspects are described by its CWE
 
 ## Experiments
 
-The experiment package is in [experiments/](experiments/). Its guide, [LEGGIMI.md](experiments/LEGGIMI.md), and its summary, [RISULTATI.md](experiments/RISULTATI.md), are in Italian. Formatted tables are in [risultati.pdf](experiments/risultati.pdf) and [tabelle.xlsx](experiments/tabelle.xlsx), and the limits of each conclusion are in [LIMITI.md](experiments/LIMITI.md). Data available on 23 October 2026.
+The experiment package is in [experiments/](experiments/). Its guide is [README.md](experiments/README.md) and its summary is [RESULTS.md](experiments/RESULTS.md). Formatted tables are in [results.pdf](experiments/results.pdf) and [tables.xlsx](experiments/tables.xlsx), and the limits of each conclusion are in [LIMITATIONS.md](experiments/LIMITATIONS.md). Data available on 23 October 2026.
 
 ### Experiment 1: agentic runs
 
@@ -54,11 +54,11 @@ In the `default` client profile of the JSON arms, A = E = 0. The chain batch is 
 
 | Data | File |
 | --- | --- |
-| Main matrix, one row per run (960 rows, 14 columns) | [exp1_runs.csv](experiments/Exp1/dati_per_run/exp1_runs.csv) |
-| Rates by model, scenario and profile | [exp1_summary.csv](experiments/Exp1/riepiloghi_ricalcolati/exp1_summary.csv) |
-| Other campaigns (seed, temperature 0.7, JSON arms, chains) | [altre_campagne/](experiments/Exp1/dati_per_run/altre_campagne/) |
-| Three example transcripts | [transcript_esemplari/](experiments/Exp1/transcript_esemplari/indice.csv) |
-| Evidence by campaign and run identifier | [evidenze_per_run/](experiments/Exp1/evidenze_per_run/indice.csv) |
+| Main matrix, one row per run (960 rows, 14 columns) | [exp1_runs.csv](experiments/Exp1/per_run_data/exp1_runs.csv) |
+| Rates by model, scenario and profile | [exp1_summary.csv](experiments/Exp1/recomputed_summaries/exp1_summary.csv) |
+| Other campaigns (seed, temperature 0.7, JSON arms, chains) | [other_campaigns/](experiments/Exp1/per_run_data/other_campaigns/) |
+| Three example transcripts | [example_transcripts/](experiments/Exp1/example_transcripts/index.csv) |
+| Evidence by campaign and run identifier | [per_run_evidence/](experiments/Exp1/per_run_evidence/index.csv) |
 
 ### Experiment 2: content classification
 
@@ -87,12 +87,12 @@ On the same 24 validation texts, protocol v4 has 80/120 correct answers and v5 1
 
 | Data | File |
 | --- | --- |
-| Results of the 29 scenarios | [exp2_risultati_29_scenari.csv](experiments/Exp2/catalogo_storico/exp2_risultati_29_scenari.csv) |
-| 29 reports with parameters and complete answers | [indice_report.csv](experiments/Exp2/catalogo_storico/indice_report.csv) |
-| All raw answers of catalogue and controls | [risposte_grezze_complete.csv](experiments/Exp2/catalogo_storico/risposte_grezze_complete.csv) |
-| Benign controls | [controlli_benigni/](experiments/Exp2/controlli_benigni/) |
-| v5 populations, per-query results, v4 comparison | [classificazione_semantica_v5/](experiments/Exp2/classificazione_semantica_v5/riepilogo_popolazioni.csv) |
-| Coverage of the 29 identifiers | [copertura.csv](experiments/Exp2/copertura_29_id/copertura.csv) |
+| Results of the 29 scenarios | [exp2_results_29_scenarios.csv](experiments/Exp2/historical_catalogue/exp2_results_29_scenarios.csv) |
+| 29 reports with parameters and complete answers | [report_index.csv](experiments/Exp2/historical_catalogue/report_index.csv) |
+| All raw answers of catalogue and controls | [complete_raw_answers.csv](experiments/Exp2/historical_catalogue/complete_raw_answers.csv) |
+| Benign controls | [benign_controls/](experiments/Exp2/benign_controls/) |
+| v5 populations, per-query results, v4 comparison | [semantic_classification_v5/](experiments/Exp2/semantic_classification_v5/population_summary.csv) |
+| Coverage of the 29 identifiers | [coverage.csv](experiments/Exp2/coverage_29_ids/coverage.csv) |
 
 ### Experiment 3: scanners and probes
 
@@ -108,18 +108,30 @@ The diagnostic uses twelve synthetic texts and 36 scans, separately from the com
 
 | Data | File |
 | --- | --- |
-| Comparison of the 14 targets | [exp3_confronto_target.csv](experiments/Exp3/confronto_14_target/exp3_confronto_target.csv) |
-| Scanner details and evidence references | [exp3_dettaglio_evidenze.csv](experiments/Exp3/confronto_14_target/exp3_dettaglio_evidenze.csv) |
-| Effect probes | [risultati_sonde.csv](experiments/Exp3/sonde_ed_effetti/risultati_sonde.csv) |
-| SSRF configurations | [risultati_ssrf.csv](experiments/Exp3/configurazioni_ssrf/risultati_ssrf.csv) |
-| Scanner diagnostic, per scan | [risultati_per_scansione.csv](experiments/Exp3/diagnostica_scanner/risultati_per_scansione.csv) |
-| RedCell and Mcpwn pilot | [RISULTATI_SONDE_ESTERNE.md](experiments/Exp3/sonde_esterne/RISULTATI_SONDE_ESTERNE.md) |
-| MCP Guard and MCP Server Fuzzer | [guard_e_fuzzer/](experiments/Exp3/guard_e_fuzzer/RISULTATI.md) |
-| Blind review of P2 descriptions (AI-assisted, 14/14 agreement) | [revisione_descrizioni_P2/](experiments/Exp3/revisione_descrizioni_P2/RISULTATI.md) |
+| Comparison of the 14 targets | [exp3_target_comparison.csv](experiments/Exp3/comparison_14_targets/exp3_target_comparison.csv) |
+| Scanner details and evidence references | [exp3_evidence_detail.csv](experiments/Exp3/comparison_14_targets/exp3_evidence_detail.csv) |
+| Effect probes | [probe_results.csv](experiments/Exp3/probes_and_effects/probe_results.csv) |
+| SSRF configurations | [ssrf_results.csv](experiments/Exp3/ssrf_configurations/ssrf_results.csv) |
+| Scanner diagnostic, per scan | [per_scan_results.csv](experiments/Exp3/scanner_diagnostics/per_scan_results.csv) |
+| RedCell and Mcpwn pilot | [EXTERNAL_PROBE_RESULTS.md](experiments/Exp3/external_probes/EXTERNAL_PROBE_RESULTS.md) |
+| MCP Guard and MCP Server Fuzzer | [guard_and_fuzzer/](experiments/Exp3/guard_and_fuzzer/RESULTS.md) |
+| Blind review of P2 descriptions (AI-assisted, 14/14 agreement) | [p2_description_review/](experiments/Exp3/p2_description_review/RESULTS.md) |
 
 ### Supporting evidence
 
-[experiments/Evidenze/](experiments/Evidenze/LEGGIMI.md) holds earlier exploratory pilots, the raw files of the chain batch and of the v4 comparison, and the inputs of Experiment 2. Source codes S01–S26 used in the Excel tables are listed in [fonti_dei_risultati.csv](experiments/Evidenze/fonti_dei_risultati.csv).
+[experiments/evidence/](experiments/evidence/README.md) holds earlier exploratory pilots, the raw files of the chain batch and of the v4 comparison, and the inputs of Experiment 2. Source codes S01–S26 used in the Excel tables are listed in [result_sources.csv](experiments/evidence/result_sources.csv).
+
+### Later executions (laboratory v4)
+
+Executions run between 25 and 30 October 2026 are in [experiments/v4/](experiments/v4/README.md), separate from the 23 October package. Each folder has one CSV row per run or probe position, summary tables and a report.
+
+| Folder | Content | Rows |
+| --- | --- | ---: |
+| [client-defenses/](experiments/v4/client-defenses/README.md) | Client-side controls tested one at a time on the JSON variant of the hostile tool result | 320 runs |
+| [external-host/](experiments/v4/external-host/README.md) | The same scenarios on the laboratory harness and on LangChain/LangGraph | 160 runs |
+| [real-servers/](experiments/v4/real-servers/README.md) | The probe battery on 22 open-source MCP servers from npm and PyPI | 286 positions |
+| [fourteen-targets/](experiments/v4/fourteen-targets/README.md) | All probes on the 14 targets, three replicas | 564 executions |
+| [ssrf-scanners/](experiments/v4/ssrf-scanners/README.md) | Seven scanners and probe P6 on the five SSRF configurations | 40 positions |
 
 ## Reading notes
 
@@ -129,4 +141,4 @@ The diagnostic uses twelve synthetic texts and 36 scans, separately from the com
 - The `Tier 4` value in the matrix is a catalogue label for documentary cases. Documentary cases also occur under Tier 3; the `Status` and `E2E verdict` columns indicate whether a case was executed.
 - CWE associations are indicative classifications. Documentary cases were not executed in the laboratory. Inconclusive results and probe errors establish neither a vulnerability nor security.
 - The case-to-target mapping of the blind P2 review (`private/mapping.json`) is withheld, so that the same package can still be used for an independent review.
-- The matrix, catalogue tables and this guide are in English. The experiment package and the original reports are preserved unchanged and may contain Italian text or historical execution paths.
+- All documents, tables and file names are in English. The experiment package was translated from Italian on 30 October 2026 (file names, CSV headers and values, reports, PDF and Excel). Raw evidence (JSON, logs, captures and archives) is unchanged and may contain Italian prompts, model outputs or historical execution paths. [experiments/MANIFEST.csv](experiments/MANIFEST.csv) lists every file of the package with its original path and SHA-256 before and after translation.

@@ -1,0 +1,15 @@
+﻿target,expected vulnerability,"scanner (detected yes/no, evidence type)","our probes (detected yes/no, evidence type)"
+R1-filesystem,hypothesis: absence of vulnerabilities, to be verified,Yes: generic MCTS 0.1.4 textual indicator; effect not demonstrated,Not verifiable: incomplete probe coverage; P5-tool-traversal effect cannot be certified
+R2-memory,hypothesis: absence of vulnerabilities, to be verified,Yes: generic MCTS 0.1.4 textual indicator; effect not demonstrated,No: no indicator in the selected checks
+R3-sequential-thinking,hypothesis: absence of vulnerabilities, to be verified,Yes: generic MCTS 0.1.4 textual indicator; effect not demonstrated,No: no indicator in the selected checks
+R4-everything,hypothesis: absence of vulnerabilities, to be verified,Yes: generic MCTS 0.1.4 textual indicator; effect not demonstrated,No: no indicator in the selected checks
+c1,exfiltration through a listed resource,Yes: generic MCTS 0.1.4 textual indicator; effect not demonstrated,No: no indicator in the selected checks
+c2,tool poisoning,Yes: generic MCTS 0.1.4 textual indicator; effect not demonstrated,Yes: P2 textual indicator; P4-arg-injection effect cannot be certified
+c3,file scope: traversal from the public directory,Yes: generic MCTS 0.1.4 textual indicator; effect not demonstrated,Yes: observed effect
+c4,rug pull + AWS key in a listed resource,Yes: generic MCTS 0.1.4 textual indicator; effect not demonstrated,No: no indicator in the selected checks
+c5,shadowing + secret in an unlisted resource,Yes: generic MCTS 0.1.4 textual indicator; effect not demonstrated,Yes: P2 textual indicator
+c6,indirect injection + unlabelled keys,Yes: generic MCTS 0.1.4 textual indicator; effect not demonstrated,No: no indicator in the selected checks
+c7,token theft in outputs,Yes: generic MCTS 0.1.4 textual indicator; effect not demonstrated,No: no indicator in the selected checks
+c8,RCE: exec python/shell + path traversal,Yes: generic MCTS 0.1.4 textual indicator; effect not demonstrated,Yes: observed effect
+c9,command injection on host/target,Yes: generic MCTS 0.1.4 textual indicator; effect not demonstrated,Yes: observed effect
+c10,multi-vector: description + resources + exec,Yes: generic MCTS 0.1.4 textual indicator; effect not demonstrated,Yes: P2 textual indicator; P4-arg-injection effect cannot be certified

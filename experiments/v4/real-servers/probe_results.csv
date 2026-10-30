@@ -1,0 +1,287 @@
+﻿package,version,probe,finding,status,evidence,duration_s
+@agent-infra/mcp-server-browser,1.2.29,P1,P1-fingerprint,info,era=legacy transport=stdio,2.4
+@agent-infra/mcp-server-browser,1.2.29,P2,P2-tool-poisoning,secure,no suspicious instruction in 21 DESCRIPTION (avg_score=100),2.4
+@agent-infra/mcp-server-browser,1.2.29,P9,P9-behavioral,info,"P9: incomplete sweep — plan capped at 4 tools (8 eligible); coverage 4/4 units, 20 attempts (cap 20)",2.4
+@agent-infra/mcp-server-browser,1.2.29,P10,P10-influence,info,"P10: incomplete sweep — plan capped at 4 tools (8 eligible); coverage 4/4 units, 8 attempts (cap 4)",2.4
+@agent-infra/mcp-server-browser,1.2.29,P11,P11-token-shape,info,auth-named tier absent (0 auth-like tools); no secret delivered in 5 calls with the arguments declared by the target,2.4
+@agent-infra/mcp-server-browser,1.2.29,P3,P3-resource-traversal,secure,traversal failed on 10 URIs from 2 templates,2.4
+@agent-infra/mcp-server-browser,1.2.29,P15,P15-resource-content,secure,no secret or instruction in the descriptions and contents of 1 listed resources,2.4
+@agent-infra/mcp-server-browser,1.2.29,P4,P4-arg-injection,info,exec capability exposed but not probed in black-box: ['browser_evaluate'] (rerun with --allow-write for the marker probe),2.4
+@agent-infra/mcp-server-browser,1.2.29,P5,P5-tool-traversal,info,"P5: incomplete sweep — payloads not delivered to the tool body: 20 rejected before the handler; coverage 105/106 units, 390 attempts (cap 4096)",2.4
+@agent-infra/mcp-server-browser,1.2.29,P6,P6-ssrf-collaborator,info,"incomplete sweep (0/2 URL/host-like arguments tried with all forms, 12 attempts, 12 inconclusive errors, cap 60)",2.4
+@agent-infra/mcp-server-browser,1.2.29,P8,P8-sqli,info,"P8: incomplete sweep — cap of 24 attempts; coverage 3/11 units, 24 attempts (cap 24)",2.4
+@agent-infra/mcp-server-browser,1.2.29,P13,P13-authz,info,"P13: no HIT, 3 inconclusive checks: ['confused-deputy', 'idor', 'no-auth']",2.4
+@agent-infra/mcp-server-browser,1.2.29,P14,P14-dos,info,"P14: no HIT, 2 inconclusive checks: ['rate-limit', 'schema-ref-cycle']",2.4
+@agent-infra/mcp-server-filesystem,1.2.29,P1,P1-fingerprint,info,era=legacy transport=stdio,1.3
+@agent-infra/mcp-server-filesystem,1.2.29,P2,P2-tool-poisoning,secure,no suspicious instruction in 11 DESCRIPTION (avg_score=99),1.3
+@agent-infra/mcp-server-filesystem,1.2.29,P9,P9-behavioral,info,"P9: incomplete sweep — plan capped at 4 tools (5 eligible); coverage 4/4 units, 20 attempts (cap 20)",1.3
+@agent-infra/mcp-server-filesystem,1.2.29,P10,P10-influence,info,"influence channel: input drives output in ['read_file', 'list_directory', 'directory_tree', 'search_files'] (indirect-injection precondition, to be reviewed)",1.3
+@agent-infra/mcp-server-filesystem,1.2.29,P11,P11-token-shape,info,auth-named tier absent (0 auth-like tools); no secret delivered in 2 calls with the arguments declared by the target,1.3
+@agent-infra/mcp-server-filesystem,1.2.29,P3,P3-resource-traversal,secure,resources/list not implemented: resources/read surface absent,1.3
+@agent-infra/mcp-server-filesystem,1.2.29,P15,P15-resource-content,secure,resources/list not implemented: resource surface absent,1.3
+@agent-infra/mcp-server-filesystem,1.2.29,P4,P4-arg-injection,info,"exec capability exposed but not probed in black-box: ['move_file', 'search_files'] (rerun with --allow-write for the marker probe); write-like: ['write_file', 'edit_file', 'create_directory', 'move_file']",1.3
+@agent-infra/mcp-server-filesystem,1.2.29,P5,P5-tool-traversal,secure,"tool traversal failed (124 attempts on 13 path-like arguments, 1 schema-opaque tools; prefix searched: 'R5_CANARY')",1.3
+@agent-infra/mcp-server-filesystem,1.2.29,P6,P6-ssrf-collaborator,skipped,no URL-like or host-like argument to probe: SSRF surface absent (or names not recognised by URL_ARG_RE/HOST_ARG_RE),1.3
+@agent-infra/mcp-server-filesystem,1.2.29,P8,P8-sqli,info,"P8: incomplete sweep — plan capped at 8 tools (6 planned units); coverage 3/6 units, 21 attempts (cap 24)",1.3
+@agent-infra/mcp-server-filesystem,1.2.29,P13,P13-authz,info,"P13: no HIT, 3 inconclusive checks: ['confused-deputy', 'idor', 'no-auth']",1.3
+@agent-infra/mcp-server-filesystem,1.2.29,P14,P14-dos,info,"P14: no HIT, 2 inconclusive checks: ['rate-limit', 'schema-ref-cycle']",1.3
+awslabs.aws-documentation-mcp-server,1.2.3,P1,P1-fingerprint,info,era=modern transport=stdio,2.9
+awslabs.aws-documentation-mcp-server,1.2.3,P2,P2-tool-poisoning,secure,no suspicious instruction in 5 DESCRIPTION (avg_score=90),2.9
+awslabs.aws-documentation-mcp-server,1.2.3,P9,P9-behavioral,info,"P9: incomplete sweep — plan capped at 4 tools (5 eligible); coverage 4/4 units, 20 attempts (cap 20)",2.9
+awslabs.aws-documentation-mcp-server,1.2.3,P10,P10-influence,info,"P10: incomplete sweep — plan capped at 4 tools (5 eligible); coverage 4/4 units, 8 attempts (cap 4)",2.9
+awslabs.aws-documentation-mcp-server,1.2.3,P11,P11-token-shape,info,auth-named tier absent (0 auth-like tools); no secret delivered in 3 calls with the arguments declared by the target,2.9
+awslabs.aws-documentation-mcp-server,1.2.3,P3,P3-resource-traversal,secure,no resource template exposed: resources/read surface absent (the content of listed resources is covered by P15),2.9
+awslabs.aws-documentation-mcp-server,1.2.3,P15,P15-resource-content,skipped,no concrete resource listed (templates only or surface absent): nothing to read,2.9
+awslabs.aws-documentation-mcp-server,1.2.3,P4,P4-arg-injection,info,exec capability exposed but not probed in black-box: ['search_table'] (rerun with --allow-write for the marker probe),2.9
+awslabs.aws-documentation-mcp-server,1.2.3,P5,P5-tool-traversal,secure,"tool traversal failed (109 attempts on 11 path-like arguments, 1 schema-opaque tools; prefix searched: 'R5_CANARY')",2.9
+awslabs.aws-documentation-mcp-server,1.2.3,P6,P6-ssrf-collaborator,info,"incomplete sweep (1/4 URL/host-like arguments tried with all forms, 24 attempts, 18 inconclusive errors, cap 60)",2.9
+awslabs.aws-documentation-mcp-server,1.2.3,P8,P8-sqli,info,"P8: incomplete sweep — cap of 24 attempts; coverage 3/7 units, 24 attempts (cap 24)",2.9
+awslabs.aws-documentation-mcp-server,1.2.3,P13,P13-authz,secure,P13: 3 checks passed (black-box),2.9
+awslabs.aws-documentation-mcp-server,1.2.3,P14,P14-dos,info,"P14: no HIT, 1 inconclusive checks: ['rate-limit']",2.9
+@browsermcp/mcp,2.1.0,P1,P1-fingerprint,info,era=legacy transport=stdio,2.5
+@browsermcp/mcp,2.1.0,P2,P2-tool-poisoning,secure,no suspicious instruction in 1 DESCRIPTION (avg_score=100),2.5
+@browsermcp/mcp,2.1.0,P9,P9-behavioral,secure,stable behaviour on 1 tool (0 errors),2.5
+@browsermcp/mcp,2.1.0,P10,P10-influence,secure,no influence detected (2 comparisons),2.5
+@browsermcp/mcp,2.1.0,P11,P11-token-shape,skipped,no auth-like tool and no probeable argument: 'token' surface absent,2.5
+@browsermcp/mcp,2.1.0,P3,P3-resource-traversal,secure,resources/list not implemented: resources/read surface absent,2.5
+@browsermcp/mcp,2.1.0,P15,P15-resource-content,secure,resources/list not implemented: resource surface absent,2.5
+@browsermcp/mcp,2.1.0,P4,P4-arg-injection,info,"no exec-like candidate or sink parameter among 1 tool with string arguments: the gap is the selector's (tool name or parameter name), not a measurement on ['browser']",2.5
+@browsermcp/mcp,2.1.0,P5,P5-tool-traversal,secure,"tool traversal failed (18 attempts on 6 path-like arguments, 1 schema-opaque tools; prefix searched: 'R5_CANARY')",2.5
+@browsermcp/mcp,2.1.0,P6,P6-ssrf-collaborator,skipped,no URL-like or host-like argument to probe: SSRF surface absent (or names not recognised by URL_ARG_RE/HOST_ARG_RE),2.5
+@browsermcp/mcp,2.1.0,P8,P8-sqli,secure,no DB error on string args (7 attempts on 1 string arguments),2.5
+@browsermcp/mcp,2.1.0,P13,P13-authz,secure,P13: 3 checks passed (black-box),2.5
+@browsermcp/mcp,2.1.0,P14,P14-dos,info,"P14: no HIT, 1 inconclusive checks: ['rate-limit']",2.5
+chrome-devtools-mcp,1.12.0,P1,P1-fingerprint,info,era=legacy transport=stdio,8.8
+chrome-devtools-mcp,1.12.0,P2,P2-tool-poisoning,secure,no suspicious instruction in 32 DESCRIPTION (avg_score=100),8.8
+chrome-devtools-mcp,1.12.0,P9,P9-behavioral,info,"P9: incomplete sweep — plan capped at 4 tools (23 eligible); coverage 4/4 units, 20 attempts (cap 20)",8.8
+chrome-devtools-mcp,1.12.0,P10,P10-influence,info,"P10: incomplete sweep — plan capped at 4 tools (23 eligible); coverage 4/4 units, 8 attempts (cap 4)",8.8
+chrome-devtools-mcp,1.12.0,P11,P11-token-shape,info,auth-named tier absent (0 auth-like tools); no secret delivered in 17 calls with the arguments declared by the target,8.8
+chrome-devtools-mcp,1.12.0,P3,P3-resource-traversal,secure,resources/list not implemented: resources/read surface absent,8.8
+chrome-devtools-mcp,1.12.0,P15,P15-resource-content,secure,resources/list not implemented: resource surface absent,8.8
+chrome-devtools-mcp,1.12.0,P4,P4-arg-injection,info,"exec capability exposed but not probed in black-box: ['evaluate_script', 'take_screenshot'] (rerun with --allow-write for the marker probe)",8.8
+chrome-devtools-mcp,1.12.0,P5,P5-tool-traversal,info,"P5: incomplete sweep — payloads not delivered to the tool body: 280 rejected before the handler; coverage 18/100 units, 593 attempts (cap 4096)",8.8
+chrome-devtools-mcp,1.12.0,P6,P6-ssrf-collaborator,info,"incomplete sweep (0/2 URL/host-like arguments tried with all forms, 12 attempts, 12 inconclusive errors, cap 60)",8.8
+chrome-devtools-mcp,1.12.0,P8,P8-sqli,info,"P8: incomplete sweep — cap of 24 attempts; coverage 3/35 units, 24 attempts (cap 24)",8.8
+chrome-devtools-mcp,1.12.0,P13,P13-authz,info,"P13: no HIT, 3 inconclusive checks: ['confused-deputy', 'idor', 'no-auth']",8.8
+chrome-devtools-mcp,1.12.0,P14,P14-dos,info,"P14: no HIT, 2 inconclusive checks: ['rate-limit', 'schema-ref-cycle']",8.8
+@cyanheads/git-mcp-server,2.15.3,P1,P1-fingerprint,info,era=legacy transport=stdio,3.7
+@cyanheads/git-mcp-server,2.15.3,P2,P2-tool-poisoning,secure,no suspicious instruction in 28 DESCRIPTION (avg_score=98),3.7
+@cyanheads/git-mcp-server,2.15.3,P9,P9-behavioral,info,"P9: incomplete sweep — plan capped at 4 tools (24 eligible); coverage 4/4 units, 20 attempts (cap 20)",3.7
+@cyanheads/git-mcp-server,2.15.3,P10,P10-influence,info,"influence channel: input drives output in ['git_branch'] (indirect-injection precondition, to be reviewed)",3.7
+@cyanheads/git-mcp-server,2.15.3,P11,P11-token-shape,info,partial coverage: secret sweep truncated at the cap of 18 calls (31 planned); no auth-like tool exposed,3.7
+@cyanheads/git-mcp-server,2.15.3,P3,P3-resource-traversal,secure,no resource template exposed: resources/read surface absent (the content of listed resources is covered by P15),3.7
+@cyanheads/git-mcp-server,2.15.3,P15,P15-resource-content,secure,no secret or instruction in the descriptions and contents of 1 listed resources,3.7
+@cyanheads/git-mcp-server,2.15.3,P4,P4-arg-injection,info,"exec capability exposed but not probed in black-box: ['git_diff', 'git_reset', 'git_show'] (rerun with --allow-write for the marker probe); write-like: ['git_add', 'git_commit', 'git_push', 'git_set_working_dir']",3.7
+@cyanheads/git-mcp-server,2.15.3,P5,P5-tool-traversal,info,"P5: incomplete sweep — payloads not delivered to the tool body: 213 rejected before the handler; coverage 35/54 units, 795 attempts (cap 4096)",3.7
+@cyanheads/git-mcp-server,2.15.3,P6,P6-ssrf-collaborator,info,"incomplete sweep (0/4 URL/host-like arguments tried with all forms, 18 attempts, 18 inconclusive errors, cap 60)",3.7
+@cyanheads/git-mcp-server,2.15.3,P8,P8-sqli,info,"P8: incomplete sweep — cap of 24 attempts; coverage 3/43 units, 24 attempts (cap 24)",3.7
+@cyanheads/git-mcp-server,2.15.3,P13,P13-authz,info,"P13: no HIT, 3 inconclusive checks: ['confused-deputy', 'idor', 'no-auth']",3.7
+@cyanheads/git-mcp-server,2.15.3,P14,P14-dos,info,"P14: no HIT, 2 inconclusive checks: ['rate-limit', 'schema-ref-cycle']",3.7
+@eslint/mcp,0.3.15,P1,P1-fingerprint,info,era=legacy transport=stdio,1.2
+@eslint/mcp,0.3.15,P2,P2-tool-poisoning,secure,no suspicious instruction in 1 DESCRIPTION (avg_score=100),1.2
+@eslint/mcp,0.3.15,P9,P9-behavioral,skipped,no tool with string arguments: differential surface absent,1.2
+@eslint/mcp,0.3.15,P10,P10-influence,secure,no influence detected (0 comparisons),1.2
+@eslint/mcp,0.3.15,P11,P11-token-shape,skipped,no auth-like tool and no probeable argument: 'token' surface absent,1.2
+@eslint/mcp,0.3.15,P3,P3-resource-traversal,secure,resources/list not implemented: resources/read surface absent,1.2
+@eslint/mcp,0.3.15,P15,P15-resource-content,secure,resources/list not implemented: resource surface absent,1.2
+@eslint/mcp,0.3.15,P4,P4-arg-injection,skipped,no tool with string arguments: exec surface absent,1.2
+@eslint/mcp,0.3.15,P5,P5-tool-traversal,secure,"tool traversal failed (3 attempts on 1 path-like arguments, 0 tools schema-opachi; prefix searched: 'R5_CANARY')",1.2
+@eslint/mcp,0.3.15,P6,P6-ssrf-collaborator,skipped,no URL-like or host-like argument to probe: SSRF surface absent (or names not recognised by URL_ARG_RE/HOST_ARG_RE),1.2
+@eslint/mcp,0.3.15,P8,P8-sqli,skipped,no tool with string arguments: arg-injection surface absent,1.2
+@eslint/mcp,0.3.15,P13,P13-authz,secure,P13: 3 checks passed (black-box),1.2
+@eslint/mcp,0.3.15,P14,P14-dos,info,"P14: no HIT, 1 inconclusive checks: ['rate-limit']",1.2
+@executeautomation/playwright-mcp-server,1.0.12,P1,P1-fingerprint,info,era=legacy transport=stdio,902.5
+@executeautomation/playwright-mcp-server,1.0.12,P2,P2-tool-poisoning,secure,no suspicious instruction in 33 DESCRIPTION (avg_score=100),902.5
+@executeautomation/playwright-mcp-server,1.0.12,P9,P9-behavioral,info,"behavioural triage: divergent look-alikes: [['end_codegen_session', 'get_codegen_session'], ['end_codegen_session', 'clear_codegen_session']]",902.5
+@executeautomation/playwright-mcp-server,1.0.12,P10,P10-influence,info,"influence channel: input drives output in ['end_codegen_session', 'get_codegen_session', 'clear_codegen_session'] (indirect-injection precondition, to be reviewed)",902.5
+@executeautomation/playwright-mcp-server,1.0.12,P11,P11-token-shape,info,opaque tokens in auth-like output ['start_codegen_session']: check predictability by hand,902.5
+@executeautomation/playwright-mcp-server,1.0.12,P3,P3-resource-traversal,secure,no resource template exposed: resources/read surface absent (the content of listed resources is covered by P15),902.5
+@executeautomation/playwright-mcp-server,1.0.12,P15,P15-resource-content,secure,no secret or instruction in the descriptions and contents of 1 listed resources,902.5
+@executeautomation/playwright-mcp-server,1.0.12,P4,P4-arg-injection,info,"exec capability exposed but not probed in black-box: ['end_codegen_session', 'get_codegen_session', 'clear_codegen_session', 'playwright_evaluate', 'playwright_save_as_pdf'] (rerun with --allow-write for the marker probe); write-like: ['playwright_post', 'playwright_delete']",902.5
+@executeautomation/playwright-mcp-server,1.0.12,P5,P5-tool-traversal,info,"P5: incomplete sweep — 3 consecutive timeouts; coverage 24/139 units, 75 attempts (cap 4096), 3 timeout",902.5
+@executeautomation/playwright-mcp-server,1.0.12,P6,P6-ssrf-collaborator,info,"incomplete sweep (3/5 URL/host-like arguments tried with all forms, 20 attempts, 2 inconclusive errors, cap 60)",902.5
+@executeautomation/playwright-mcp-server,1.0.12,P8,P8-sqli,info,"P8: incomplete sweep — cap of 24 attempts; coverage 3/43 units, 24 attempts (cap 24)",902.5
+@executeautomation/playwright-mcp-server,1.0.12,P13,P13-authz,info,"P13: no HIT, 3 inconclusive checks: ['confused-deputy', 'idor', 'no-auth']",902.5
+@executeautomation/playwright-mcp-server,1.0.12,P14,P14-dos,info,"P14: no HIT, 2 inconclusive checks: ['rate-limit', 'schema-ref-cycle']",902.5
+markitdown-mcp,0.0.1a8,P1,P1-fingerprint,info,era=modern transport=stdio,9.1
+markitdown-mcp,0.0.1a8,P2,P2-tool-poisoning,secure,no suspicious instruction in 1 DESCRIPTION (avg_score=100),9.1
+markitdown-mcp,0.0.1a8,P9,P9-behavioral,secure,stable behaviour on 1 tool (0 errors),9.1
+markitdown-mcp,0.0.1a8,P10,P10-influence,info,"influence channel: input drives output in ['convert_to_markdown'] (indirect-injection precondition, to be reviewed)",9.1
+markitdown-mcp,0.0.1a8,P11,P11-token-shape,skipped,no auth-like tool and no probeable argument: 'token' surface absent,9.1
+markitdown-mcp,0.0.1a8,P3,P3-resource-traversal,secure,no resource template exposed: resources/read surface absent (the content of listed resources is covered by P15),9.1
+markitdown-mcp,0.0.1a8,P15,P15-resource-content,skipped,no concrete resource listed (templates only or surface absent): nothing to read,9.1
+markitdown-mcp,0.0.1a8,P4,P4-arg-injection,info,"no exec-like candidate or sink parameter among 1 tool with string arguments: the gap is the selector's (tool name or parameter name), not a measurement on ['convert_to_markdown']",9.1
+markitdown-mcp,0.0.1a8,P5,P5-tool-traversal,vulnerable,canary read via tool traversal: ['convert_to_markdown.uri=file:///work/fixture-secret/canary.txt'],9.1
+markitdown-mcp,0.0.1a8,P6,P6-ssrf-collaborator,vulnerable,internal SSRF demonstrated: token returned via ['convert_to_markdown.uri=http://127.0.0.1:39171/internal/ops'],9.1
+markitdown-mcp,0.0.1a8,P8,P8-sqli,secure,no DB error on string args (7 attempts on 1 string arguments),9.1
+markitdown-mcp,0.0.1a8,P13,P13-authz,secure,P13: 3 checks passed (black-box),9.1
+markitdown-mcp,0.0.1a8,P14,P14-dos,info,"P14: no HIT, 1 inconclusive checks: ['rate-limit']",9.1
+@mastra/mcp-docs-server,1.3.10,P1,P1-fingerprint,info,era=modern transport=stdio,2.5
+@mastra/mcp-docs-server,1.3.10,P2,P2-tool-poisoning,secure,no suspicious instruction in 13 DESCRIPTION (avg_score=98),2.5
+@mastra/mcp-docs-server,1.3.10,P9,P9-behavioral,info,"behavioural triage: divergent look-alikes: [['startMastraCourse', 'startMastraCourseLesson']]",2.5
+@mastra/mcp-docs-server,1.3.10,P10,P10-influence,info,"influence channel: input drives output in ['mastraMigration', 'startMastraCourse', 'getMastraHelp'] (indirect-injection precondition, to be reviewed)",2.5
+@mastra/mcp-docs-server,1.3.10,P11,P11-token-shape,info,auth-named tier absent (0 auth-like tools); no secret delivered in 5 calls with the arguments declared by the target,2.5
+@mastra/mcp-docs-server,1.3.10,P3,P3-resource-traversal,secure,resources/list not implemented: resources/read surface absent,2.5
+@mastra/mcp-docs-server,1.3.10,P15,P15-resource-content,secure,resources/list not implemented: resource surface absent,2.5
+@mastra/mcp-docs-server,1.3.10,P4,P4-arg-injection,info,exec capability exposed but not probed in black-box: ['searchMastraDocs'] (rerun with --allow-write for the marker probe),2.5
+@mastra/mcp-docs-server,1.3.10,P5,P5-tool-traversal,secure,"tool traversal failed (284 attempts on 38 path-like arguments, 4 tools schema-opachi; prefix searched: 'R5_CANARY')",2.5
+@mastra/mcp-docs-server,1.3.10,P6,P6-ssrf-collaborator,skipped,no URL-like or host-like argument to probe: SSRF surface absent (or names not recognised by URL_ARG_RE/HOST_ARG_RE),2.5
+@mastra/mcp-docs-server,1.3.10,P8,P8-sqli,info,"P8: incomplete sweep — cap of 24 attempts; coverage 3/13 units, 24 attempts (cap 24)",2.5
+@mastra/mcp-docs-server,1.3.10,P13,P13-authz,info,"P13: no HIT, 3 inconclusive checks: ['confused-deputy', 'idor', 'no-auth']",2.5
+@mastra/mcp-docs-server,1.3.10,P14,P14-dos,info,"P14: no HIT, 3 inconclusive checks: ['rate-limit', 'schema-ref-cycle', 'unbounded-input']",2.5
+mcp-mermaid,0.4.1,P1,P1-fingerprint,info,era=legacy transport=stdio,1.9
+mcp-mermaid,0.4.1,P2,P2-tool-poisoning,secure,no suspicious instruction in 1 DESCRIPTION (avg_score=95),1.9
+mcp-mermaid,0.4.1,P9,P9-behavioral,secure,stable behaviour on 1 tool (0 errors),1.9
+mcp-mermaid,0.4.1,P10,P10-influence,secure,no influence detected (2 comparisons),1.9
+mcp-mermaid,0.4.1,P11,P11-token-shape,info,auth-named tier absent (0 auth-like tools); no secret delivered in 1 calls with the arguments declared by the target,1.9
+mcp-mermaid,0.4.1,P3,P3-resource-traversal,secure,resources/list not implemented: resources/read surface absent,1.9
+mcp-mermaid,0.4.1,P15,P15-resource-content,secure,resources/list not implemented: resource surface absent,1.9
+mcp-mermaid,0.4.1,P4,P4-arg-injection,info,"no exec-like candidate or sink parameter among 1 tool with string arguments: the gap is the selector's (tool name or parameter name), not a measurement on ['generate_mermaid_diagram']",1.9
+mcp-mermaid,0.4.1,P5,P5-tool-traversal,error,"no call reached the tool body: the surface was not tested (18 rejected by the server, 0 transport errors over 18 attempts); examples: ['generate_mermaid_diagram.path: JSON-RPC {\'code\': -32603, \'message\': ""MCP error -32603: Failed to generate merm', 'generate_mermaid_diagram.",1.9
+mcp-mermaid,0.4.1,P6,P6-ssrf-collaborator,skipped,no URL-like or host-like argument to probe: SSRF surface absent (or names not recognised by URL_ARG_RE/HOST_ARG_RE),1.9
+mcp-mermaid,0.4.1,P8,P8-sqli,secure,no DB error on string args (14 attempts on 2 string arguments),1.9
+mcp-mermaid,0.4.1,P13,P13-authz,secure,P13: 3 checks passed (black-box),1.9
+mcp-mermaid,0.4.1,P14,P14-dos,info,"P14: no HIT, 1 inconclusive checks: ['rate-limit']",1.9
+mcp-pandoc,0.11.1,P1,P1-fingerprint,info,era=modern transport=stdio,3.3
+mcp-pandoc,0.11.1,P2,P2-tool-poisoning,secure,no suspicious instruction in 1 DESCRIPTION (avg_score=75),3.3
+mcp-pandoc,0.11.1,P9,P9-behavioral,secure,stable behaviour on 1 tool (0 errors),3.3
+mcp-pandoc,0.11.1,P10,P10-influence,secure,no influence detected (2 comparisons),3.3
+mcp-pandoc,0.11.1,P11,P11-token-shape,info,auth-named tier absent (0 auth-like tools); no secret delivered in 1 calls with the arguments declared by the target,3.3
+mcp-pandoc,0.11.1,P3,P3-resource-traversal,secure,resources/list not implemented: resources/read surface absent,3.3
+mcp-pandoc,0.11.1,P15,P15-resource-content,secure,resources/list not implemented: resource surface absent,3.3
+mcp-pandoc,0.11.1,P4,P4-arg-injection,info,"no exec-like candidate or sink parameter among 1 tool with string arguments: the gap is the selector's (tool name or parameter name), not a measurement on ['convert-contents']",3.3
+mcp-pandoc,0.11.1,P5,P5-tool-traversal,secure,"tool traversal failed (83 attempts on 5 path-like arguments, 0 tools schema-opachi; prefix searched: 'R5_CANARY')",3.3
+mcp-pandoc,0.11.1,P6,P6-ssrf-collaborator,skipped,no URL-like or host-like argument to probe: SSRF surface absent (or names not recognised by URL_ARG_RE/HOST_ARG_RE),3.3
+mcp-pandoc,0.11.1,P8,P8-sqli,secure,no DB error on string args (14 attempts on 2 string arguments),3.3
+mcp-pandoc,0.11.1,P13,P13-authz,secure,P13: 3 checks passed (black-box),3.3
+mcp-pandoc,0.11.1,P14,P14-dos,info,"P14: no HIT, 1 inconclusive checks: ['rate-limit']",3.3
+mcp-ripgrep,0.4.0,P1,P1-fingerprint,info,era=legacy transport=stdio,2.2
+mcp-ripgrep,0.4.0,P2,P2-tool-poisoning,secure,no suspicious instruction in 5 DESCRIPTION (avg_score=100),2.2
+mcp-ripgrep,0.4.0,P9,P9-behavioral,secure,stable behaviour on 4 tools (0 errors),2.2
+mcp-ripgrep,0.4.0,P10,P10-influence,secure,no influence detected (8 comparisons),2.2
+mcp-ripgrep,0.4.0,P11,P11-token-shape,info,auth-named tier absent (0 auth-like tools); no secret delivered in 4 calls with the arguments declared by the target,2.2
+mcp-ripgrep,0.4.0,P3,P3-resource-traversal,secure,resources/list not implemented: resources/read surface absent,2.2
+mcp-ripgrep,0.4.0,P15,P15-resource-content,secure,resources/list not implemented: resource surface absent,2.2
+mcp-ripgrep,0.4.0,P4,P4-arg-injection,info,"exec capability exposed but not probed in black-box: ['search', 'advanced-search', 'count-matches'] (rerun with --allow-write for the marker probe)",2.2
+mcp-ripgrep,0.4.0,P5,P5-tool-traversal,secure,"tool traversal failed (218 attempts on 16 path-like arguments, 1 schema-opaque tools; prefix searched: 'R5_CANARY')",2.2
+mcp-ripgrep,0.4.0,P6,P6-ssrf-collaborator,skipped,no URL-like or host-like argument to probe: SSRF surface absent (or names not recognised by URL_ARG_RE/HOST_ARG_RE),2.2
+mcp-ripgrep,0.4.0,P8,P8-sqli,info,"P8: incomplete sweep — cap of 24 attempts; coverage 3/8 units, 24 attempts (cap 24)",2.2
+mcp-ripgrep,0.4.0,P13,P13-authz,secure,P13: 3 checks passed (black-box),2.2
+mcp-ripgrep,0.4.0,P14,P14-dos,info,"P14: no HIT, 1 inconclusive checks: ['rate-limit']",2.2
+mcp-server-calculator,0.2.1,P1,P1-fingerprint,info,era=legacy transport=stdio,1.5
+mcp-server-calculator,0.2.1,P2,P2-tool-poisoning,secure,no suspicious instruction in 1 DESCRIPTION (avg_score=100),1.5
+mcp-server-calculator,0.2.1,P9,P9-behavioral,secure,stable behaviour on 1 tool (0 errors),1.5
+mcp-server-calculator,0.2.1,P10,P10-influence,secure,no influence detected (2 comparisons),1.5
+mcp-server-calculator,0.2.1,P11,P11-token-shape,skipped,no auth-like tool and no probeable argument: 'token' surface absent,1.5
+mcp-server-calculator,0.2.1,P3,P3-resource-traversal,secure,no resource template exposed: resources/read surface absent (the content of listed resources is covered by P15),1.5
+mcp-server-calculator,0.2.1,P15,P15-resource-content,skipped,no concrete resource listed (templates only or surface absent): nothing to read,1.5
+mcp-server-calculator,0.2.1,P4,P4-arg-injection,info,exec capability exposed but not probed in black-box: ['calculate'] (rerun with --allow-write for the marker probe),1.5
+mcp-server-calculator,0.2.1,P5,P5-tool-traversal,secure,"tool traversal failed (18 attempts on 6 path-like arguments, 1 schema-opaque tools; prefix searched: 'R5_CANARY')",1.5
+mcp-server-calculator,0.2.1,P6,P6-ssrf-collaborator,skipped,no URL-like or host-like argument to probe: SSRF surface absent (or names not recognised by URL_ARG_RE/HOST_ARG_RE),1.5
+mcp-server-calculator,0.2.1,P8,P8-sqli,secure,no DB error on string args (7 attempts on 1 string arguments),1.5
+mcp-server-calculator,0.2.1,P13,P13-authz,secure,P13: 3 checks passed (black-box),1.5
+mcp-server-calculator,0.2.1,P14,P14-dos,info,"P14: no HIT, 1 inconclusive checks: ['rate-limit']",1.5
+mcp-server-code-runner,0.1.8,P1,P1-fingerprint,info,era=legacy transport=stdio,2.4
+mcp-server-code-runner,0.1.8,P2,P2-tool-poisoning,secure,no suspicious instruction in 1 DESCRIPTION (avg_score=100),2.4
+mcp-server-code-runner,0.1.8,P9,P9-behavioral,secure,stable behaviour on 1 tool (0 errors),2.4
+mcp-server-code-runner,0.1.8,P10,P10-influence,info,"influence channel: input drives output in ['run-code'] (indirect-injection precondition, to be reviewed)",2.4
+mcp-server-code-runner,0.1.8,P11,P11-token-shape,skipped,no auth-like tool and no probeable argument: 'token' surface absent,2.4
+mcp-server-code-runner,0.1.8,P3,P3-resource-traversal,secure,resources/list not implemented: resources/read surface absent,2.4
+mcp-server-code-runner,0.1.8,P15,P15-resource-content,secure,resources/list not implemented: resource surface absent,2.4
+mcp-server-code-runner,0.1.8,P4,P4-arg-injection,info,exec capability exposed but not probed in black-box: ['run-code'] (rerun with --allow-write for the marker probe),2.4
+mcp-server-code-runner,0.1.8,P5,P5-tool-traversal,secure,"tool traversal failed (18 attempts on 6 path-like arguments, 1 schema-opaque tools; prefix searched: 'R5_CANARY')",2.4
+mcp-server-code-runner,0.1.8,P6,P6-ssrf-collaborator,skipped,no URL-like or host-like argument to probe: SSRF surface absent (or names not recognised by URL_ARG_RE/HOST_ARG_RE),2.4
+mcp-server-code-runner,0.1.8,P8,P8-sqli,secure,no DB error on string args (14 attempts on 2 string arguments),2.4
+mcp-server-code-runner,0.1.8,P13,P13-authz,secure,P13: 3 checks passed (black-box),2.4
+mcp-server-code-runner,0.1.8,P14,P14-dos,info,"P14: no HIT, 1 inconclusive checks: ['rate-limit']",2.4
+mcp-server-kubernetes,4.2.1,P1,P1-fingerprint,info,era=legacy transport=stdio,6.6
+mcp-server-kubernetes,4.2.1,P2,P2-tool-poisoning,secure,no suspicious instruction in 23 DESCRIPTION (avg_score=98),6.6
+mcp-server-kubernetes,4.2.1,P9,P9-behavioral,info,"P9: incomplete sweep — plan capped at 4 tools (16 eligible); coverage 4/4 units, 20 attempts (cap 20)",6.6
+mcp-server-kubernetes,4.2.1,P10,P10-influence,info,"P10: incomplete sweep — plan capped at 4 tools (16 eligible); coverage 4/4 units, 8 attempts (cap 4)",6.6
+mcp-server-kubernetes,4.2.1,P11,P11-token-shape,info,auth-named tier absent (0 auth-like tools); no secret delivered in 15 calls with the arguments declared by the target,6.6
+mcp-server-kubernetes,4.2.1,P3,P3-resource-traversal,secure,no resource template exposed: resources/read surface absent (the content of listed resources is covered by P15),6.6
+mcp-server-kubernetes,4.2.1,P15,P15-resource-content,info,resource triage: 5 listed resources not readable,6.6
+mcp-server-kubernetes,4.2.1,P4,P4-arg-injection,info,"exec capability exposed but not probed in black-box: ['exec_in_pod', 'kubectl_generic'] (rerun with --allow-write for the marker probe); write-like: ['kubectl_delete', 'kubectl_create', 'node_management', 'exec_in_pod']",6.6
+mcp-server-kubernetes,4.2.1,P5,P5-tool-traversal,info,"P5: incomplete sweep — payloads not delivered to the tool body: 504 rejected before the handler; coverage 31/63 units, 818 attempts (cap 4096)",6.6
+mcp-server-kubernetes,4.2.1,P6,P6-ssrf-collaborator,skipped,no URL-like or host-like argument to probe: SSRF surface absent (or names not recognised by URL_ARG_RE/HOST_ARG_RE),6.6
+mcp-server-kubernetes,4.2.1,P8,P8-sqli,info,"P8: incomplete sweep — cap of 24 attempts; coverage 3/31 units, 24 attempts (cap 24)",6.6
+mcp-server-kubernetes,4.2.1,P13,P13-authz,info,"P13: no HIT, 3 inconclusive checks: ['confused-deputy', 'idor', 'no-auth']",6.6
+mcp-server-kubernetes,4.2.1,P14,P14-dos,info,"P14: no HIT, 2 inconclusive checks: ['rate-limit', 'schema-ref-cycle']",6.6
+mcp-shell-server,1.1.14,P1,P1-fingerprint,info,era=legacy transport=stdio,7.1
+mcp-shell-server,1.1.14,P2,P2-tool-poisoning,secure,no suspicious instruction in 1 DESCRIPTION (avg_score=95),7.1
+mcp-shell-server,1.1.14,P9,P9-behavioral,info,1 tool excluded by the black-box guard (write/exec-like name): no call was made,7.1
+mcp-shell-server,1.1.14,P10,P10-influence,secure,no influence detected (0 comparisons),7.1
+mcp-shell-server,1.1.14,P11,P11-token-shape,skipped,no auth-like tool and no probeable argument: 'token' surface absent,7.1
+mcp-shell-server,1.1.14,P3,P3-resource-traversal,secure,resources/list not implemented: resources/read surface absent,7.1
+mcp-shell-server,1.1.14,P15,P15-resource-content,secure,resources/list not implemented: resource surface absent,7.1
+mcp-shell-server,1.1.14,P4,P4-arg-injection,info,exec capability exposed but not probed in black-box: ['shell_execute'] (rerun with --allow-write for the marker probe); write-like: ['shell_execute'],7.1
+mcp-shell-server,1.1.14,P5,P5-tool-traversal,info,"1 tool with path-like arguments excluded by the black-box guard (write/exec-like name): no call was made — the surface remains unprobed, retry with --allow-write",7.1
+mcp-shell-server,1.1.14,P6,P6-ssrf-collaborator,skipped,no URL-like or host-like argument to probe: SSRF surface absent (or names not recognised by URL_ARG_RE/HOST_ARG_RE),7.1
+mcp-shell-server,1.1.14,P8,P8-sqli,info,1 tool with string arguments excluded by the black-box guard (write/exec-like name): no call was made,7.1
+mcp-shell-server,1.1.14,P13,P13-authz,secure,P13: 3 checks passed (black-box),7.1
+mcp-shell-server,1.1.14,P14,P14-dos,info,"P14: no HIT, 1 inconclusive checks: ['rate-limit']",7.1
+@modelcontextprotocol/server-puppeteer,2025.5.12,P1,P1-fingerprint,info,era=legacy transport=stdio,1.7
+@modelcontextprotocol/server-puppeteer,2025.5.12,P2,P2-tool-poisoning,secure,no suspicious instruction in 7 DESCRIPTION (avg_score=99),1.7
+@modelcontextprotocol/server-puppeteer,2025.5.12,P9,P9-behavioral,info,"P9: incomplete sweep — plan capped at 4 tools (7 eligible); coverage 4/4 units, 20 attempts (cap 20)",1.7
+@modelcontextprotocol/server-puppeteer,2025.5.12,P10,P10-influence,info,"P10: incomplete sweep — plan capped at 4 tools (7 eligible); coverage 4/4 units, 8 attempts (cap 4)",1.7
+@modelcontextprotocol/server-puppeteer,2025.5.12,P11,P11-token-shape,info,auth-named tier absent (0 auth-like tools); no secret delivered in 1 calls with the arguments declared by the target,1.7
+@modelcontextprotocol/server-puppeteer,2025.5.12,P3,P3-resource-traversal,secure,no resource template exposed: resources/read surface absent (the content of listed resources is covered by P15),1.7
+@modelcontextprotocol/server-puppeteer,2025.5.12,P15,P15-resource-content,secure,no secret or instruction in the descriptions and contents of 1 listed resources,1.7
+@modelcontextprotocol/server-puppeteer,2025.5.12,P4,P4-arg-injection,info,exec capability exposed but not probed in black-box: ['puppeteer_evaluate'] (rerun with --allow-write for the marker probe),1.7
+@modelcontextprotocol/server-puppeteer,2025.5.12,P5,P5-tool-traversal,error,"no call reached the tool body: the surface was not tested (132 rejected by the server, 0 transport errors over 132 attempts); examples: [""puppeteer_navigate.url: JSON-RPC {'code': -32603, 'message': 'Could not find Chrome (ver. 131.0.6778.20"", ""puppeteer_navigate.url: JSON-RPC {",1.7
+@modelcontextprotocol/server-puppeteer,2025.5.12,P6,P6-ssrf-collaborator,info,"incomplete sweep (0/1 URL/host-like arguments tried with all forms, 6 attempts, 6 inconclusive errors, cap 60)",1.7
+@modelcontextprotocol/server-puppeteer,2025.5.12,P8,P8-sqli,info,"P8: incomplete sweep — cap of 24 attempts; coverage 3/10 units, 24 attempts (cap 24)",1.7
+@modelcontextprotocol/server-puppeteer,2025.5.12,P13,P13-authz,secure,P13: 3 checks passed (black-box),1.7
+@modelcontextprotocol/server-puppeteer,2025.5.12,P14,P14-dos,info,"P14: no HIT, 1 inconclusive checks: ['rate-limit']",1.7
+@mzxrai/mcp-webresearch,0.1.7,P1,P1-fingerprint,info,era=legacy transport=stdio,7.0
+@mzxrai/mcp-webresearch,0.1.7,P2,P2-tool-poisoning,secure,no suspicious instruction in 3 DESCRIPTION (avg_score=100),7.0
+@mzxrai/mcp-webresearch,0.1.7,P9,P9-behavioral,secure,stable behaviour on 2 tools (0 errors),7.0
+@mzxrai/mcp-webresearch,0.1.7,P10,P10-influence,secure,no influence detected (4 comparisons),7.0
+@mzxrai/mcp-webresearch,0.1.7,P11,P11-token-shape,skipped,no auth-like tool and no probeable argument: 'token' surface absent,7.0
+@mzxrai/mcp-webresearch,0.1.7,P3,P3-resource-traversal,secure,no resource template exposed: resources/read surface absent (the content of listed resources is covered by P15),7.0
+@mzxrai/mcp-webresearch,0.1.7,P15,P15-resource-content,skipped,no concrete resource listed (templates only or surface absent): nothing to read,7.0
+@mzxrai/mcp-webresearch,0.1.7,P4,P4-arg-injection,info,exec capability exposed but not probed in black-box: ['search_google'] (rerun with --allow-write for the marker probe),7.0
+@mzxrai/mcp-webresearch,0.1.7,P5,P5-tool-traversal,error,"no call reached the tool body: the surface was not tested (58 rejected by the server, 0 transport errors over 58 attempts); examples: ['search_google.path: JSON-RPC {\'code\': -32603, \'message\': ""browserType.launch: Executable doesn\'t ex', 'search_google.path: JSON-RPC {\'cod",7.0
+@mzxrai/mcp-webresearch,0.1.7,P6,P6-ssrf-collaborator,info,"incomplete sweep (0/1 URL/host-like arguments tried with all forms, 6 attempts, 6 inconclusive errors, cap 60)",7.0
+@mzxrai/mcp-webresearch,0.1.7,P8,P8-sqli,secure,no DB error on string args (14 attempts on 2 string arguments),7.0
+@mzxrai/mcp-webresearch,0.1.7,P13,P13-authz,secure,P13: 3 checks passed (black-box),7.0
+@mzxrai/mcp-webresearch,0.1.7,P14,P14-dos,info,"P14: no HIT, 1 inconclusive checks: ['rate-limit']",7.0
+@playwright/mcp,0.0.83,P1,P1-fingerprint,info,era=legacy transport=stdio,3.0
+@playwright/mcp,0.0.83,P2,P2-tool-poisoning,secure,no suspicious instruction in 25 DESCRIPTION (avg_score=99),3.0
+@playwright/mcp,0.0.83,P9,P9-behavioral,info,"P9: incomplete sweep — plan capped at 4 tools (17 eligible); coverage 4/4 units, 20 attempts (cap 20)",3.0
+@playwright/mcp,0.0.83,P10,P10-influence,info,"P10: incomplete sweep — plan capped at 4 tools (17 eligible); coverage 4/4 units, 8 attempts (cap 4)",3.0
+@playwright/mcp,0.0.83,P11,P11-token-shape,info,auth-named tier absent (0 auth-like tools); no secret delivered in 15 calls with the arguments declared by the target,3.0
+@playwright/mcp,0.0.83,P3,P3-resource-traversal,secure,resources/list not implemented: resources/read surface absent,3.0
+@playwright/mcp,0.0.83,P15,P15-resource-content,secure,resources/list not implemented: resource surface absent,3.0
+@playwright/mcp,0.0.83,P4,P4-arg-injection,info,"exec capability exposed but not probed in black-box: ['browser_evaluate', 'browser_drop', 'browser_type', 'browser_run_code_unsafe', 'browser_take_screenshot', 'browser_snapshot', 'browser_click', 'browser_hover', 'browser_select_option'] (rerun with --allow-write for the marker probe); write-like: ['br",3.0
+@playwright/mcp,0.0.83,P5,P5-tool-traversal,secure,"tool traversal failed (519 attempts on 64 path-like arguments, 7 tools schema-opachi; prefix searched: 'R5_CANARY')",3.0
+@playwright/mcp,0.0.83,P6,P6-ssrf-collaborator,info,"incomplete sweep (0/9 URL/host-like arguments tried with all forms, 33 attempts, 33 inconclusive errors, cap 60)",3.0
+@playwright/mcp,0.0.83,P8,P8-sqli,info,"P8: incomplete sweep — cap of 24 attempts; coverage 3/31 units, 24 attempts (cap 24)",3.0
+@playwright/mcp,0.0.83,P13,P13-authz,info,"P13: no HIT, 3 inconclusive checks: ['confused-deputy', 'idor', 'no-auth']",3.0
+@playwright/mcp,0.0.83,P14,P14-dos,info,"P14: no HIT, 2 inconclusive checks: ['rate-limit', 'schema-ref-cycle']",3.0
+@sylphlab/pdf-reader-mcp,0.3.23,P1,P1-fingerprint,info,era=legacy transport=stdio,5.2
+@sylphlab/pdf-reader-mcp,0.3.23,P2,P2-tool-poisoning,secure,no suspicious instruction in 1 DESCRIPTION (avg_score=100),5.2
+@sylphlab/pdf-reader-mcp,0.3.23,P9,P9-behavioral,skipped,no tool with string arguments: differential surface absent,5.2
+@sylphlab/pdf-reader-mcp,0.3.23,P10,P10-influence,secure,no influence detected (0 comparisons),5.2
+@sylphlab/pdf-reader-mcp,0.3.23,P11,P11-token-shape,skipped,no auth-like tool and no probeable argument: 'token' surface absent,5.2
+@sylphlab/pdf-reader-mcp,0.3.23,P3,P3-resource-traversal,secure,resources/list not implemented: resources/read surface absent,5.2
+@sylphlab/pdf-reader-mcp,0.3.23,P15,P15-resource-content,secure,resources/list not implemented: resource surface absent,5.2
+@sylphlab/pdf-reader-mcp,0.3.23,P4,P4-arg-injection,skipped,no tool with string arguments: exec surface absent,5.2
+@sylphlab/pdf-reader-mcp,0.3.23,P5,P5-tool-traversal,error,"no call reached the tool body: the surface was not tested (18 rejected by the server, 0 transport errors over 18 attempts); examples: ['read_pdf.path: JSON-RPC {\'code\': -32602, \'message\': ""MCP error -32602: Invalid arguments: sour', 'read_pdf.path: JSON-RPC {\'code\': -32602",5.2
+@sylphlab/pdf-reader-mcp,0.3.23,P6,P6-ssrf-collaborator,skipped,no URL-like or host-like argument to probe: SSRF surface absent (or names not recognised by URL_ARG_RE/HOST_ARG_RE),5.2
+@sylphlab/pdf-reader-mcp,0.3.23,P8,P8-sqli,skipped,no tool with string arguments: arg-injection surface absent,5.2
+@sylphlab/pdf-reader-mcp,0.3.23,P13,P13-authz,secure,P13: 3 checks passed (black-box),5.2
+@sylphlab/pdf-reader-mcp,0.3.23,P14,P14-dos,info,"P14: no HIT, 1 inconclusive checks: ['rate-limit']",5.2
+@upstash/context7-mcp,4.4.4,P1,P1-fingerprint,info,era=modern transport=stdio,1.8
+@upstash/context7-mcp,4.4.4,P2,P2-tool-poisoning,secure,no suspicious instruction in 2 DESCRIPTION (avg_score=100),1.8
+@upstash/context7-mcp,4.4.4,P9,P9-behavioral,secure,stable behaviour on 2 tools (0 errors),1.8
+@upstash/context7-mcp,4.4.4,P10,P10-influence,secure,no influence detected (4 comparisons),1.8
+@upstash/context7-mcp,4.4.4,P11,P11-token-shape,info,auth-named tier absent (0 auth-like tools); no secret delivered in 1 calls with the arguments declared by the target,1.8
+@upstash/context7-mcp,4.4.4,P3,P3-resource-traversal,secure,no resource template exposed: resources/read surface absent (the content of listed resources is covered by P15),1.8
+@upstash/context7-mcp,4.4.4,P15,P15-resource-content,skipped,no concrete resource listed (templates only or surface absent): nothing to read,1.8
+@upstash/context7-mcp,4.4.4,P4,P4-arg-injection,info,"exec capability exposed but not probed in black-box: ['resolve-library-id', 'query-docs'] (rerun with --allow-write for the marker probe)",1.8
+@upstash/context7-mcp,4.4.4,P5,P5-tool-traversal,secure,"tool traversal failed (38 attempts on 7 path-like arguments, 1 schema-opaque tools; prefix searched: 'R5_CANARY')",1.8
+@upstash/context7-mcp,4.4.4,P6,P6-ssrf-collaborator,skipped,no URL-like or host-like argument to probe: SSRF surface absent (or names not recognised by URL_ARG_RE/HOST_ARG_RE),1.8
+@upstash/context7-mcp,4.4.4,P8,P8-sqli,info,"P8: incomplete sweep — cap of 24 attempts; coverage 3/4 units, 24 attempts (cap 24)",1.8
+@upstash/context7-mcp,4.4.4,P13,P13-authz,secure,P13: 3 checks passed (black-box),1.8
+@upstash/context7-mcp,4.4.4,P14,P14-dos,info,"P14: no HIT, 1 inconclusive checks: ['rate-limit']",1.8

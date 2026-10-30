@@ -36,7 +36,7 @@ The 17 units are: `directory_tree` (`excludePatterns`, `path`), `get_file_info` 
 
 | File | Content |
 | --- | --- |
-| [LEGGIMI.md](LEGGIMI.md) | Original report (Italian) |
+| [original_report.md](original_report.md) | Original sweep report (translated from Italian) |
 | [audit/filesystem_p5.csv](audit/filesystem_p5.csv) | One row per call: arguments, response, error, status, hash |
 | [audit/audit.json](audit/audit.json) | Sweep summary |
 | [probes/battery-npm-filesystem.json](probes/battery-npm-filesystem.json) | Probe report |

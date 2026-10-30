@@ -1,0 +1,30 @@
+﻿package,version,ecosystem,started,protocol,server_name,server_version,tools,resources,prompts,error
+@playwright/mcp,0.0.83,npm,True,2025-11-25,Playwright,1.64.0-alpha-1790635538000,25,0,0,
+@modelcontextprotocol/server-puppeteer,2025.5.12,npm,True,2024-11-05,example-servers/puppeteer,0.1.0,7,1,0,
+@agent-infra/mcp-server-browser,1.2.29,npm,True,2025-06-18,Web Browser,1.2.29,21,1,0,
+@browsermcp/mcp,2.1.0,npm,True,2025-11-25,Browser MCP,2.1.0,1,0,0,
+chrome-devtools-mcp,1.12.0,npm,True,2025-11-25,chrome_devtools,1.12.0,32,0,0,
+@upstash/context7-mcp,4.4.4,npm,True,2025-11-25,Context7,4.4.4,2,0,0,
+@mzxrai/mcp-webresearch,0.1.7,npm,True,2024-11-05,webresearch,0.1.7,3,0,1,
+@mastra/mcp-docs-server,1.3.10,npm,True,2025-11-25,Mastra Documentation Server,1.3.10,13,0,2,
+@cyanheads/git-mcp-server,2.15.3,npm,True,2025-11-25,@cyanheads/git-mcp-server,2.15.3,28,1,1,
+mcp-server-kubernetes,4.2.1,npm,True,2025-11-25,kubernetes,4.2.1,23,5,1,
+mcp-server-code-runner,0.1.8,npm,True,2025-11-25,Code Runner,0.1.0,1,0,0,
+@eslint/mcp,0.3.15,npm,True,2025-11-25,ESLint,0.3.15,1,0,0,
+@agent-infra/mcp-server-filesystem,1.2.29,npm,True,2025-06-18,secure-filesystem-server,1.2.29,11,0,0,
+mcp-ripgrep,0.4.0,npm,True,2025-11-25,ripgrep-search,1.0.0,5,0,0,
+@sylphlab/pdf-reader-mcp,0.3.23,npm,True,2024-11-05,filesystem-mcp,0.4.0,1,0,0,
+mcp-mermaid,0.4.1,npm,True,2025-11-25,mcp-mermaid,0.1.3,1,0,0,
+mcp-server-sqlite-npx,0.8.0,npm,False,,,,0,0,0,ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+@tokenizin/mcp-npx-fetch,1.0.0,npm,True,2025-11-25,@tokenizin/mcp-npx-fetch,0.13.37,0,0,0,ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+@executeautomation/playwright-mcp-server,1.0.12,npm,True,2025-11-25,playwright-mcp,1.0.11,33,1,0,
+mcp-server-sqlite,2025.4.25,pypi,False,,,,0,0,0,ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+mcp-server-duckdb,1.1.0,pypi,False,,,,0,0,0,ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+mcp-server-qdrant,0.8.1,pypi,False,,,,0,0,0,ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+markitdown-mcp,0.0.1a8,pypi,True,2025-11-25,markitdown,,1,0,0,
+mcp-pandoc,0.11.1,pypi,True,2025-11-25,mcp-pandoc,0.11.1,1,0,0,
+mcp-server-docker,0.3.0,pypi,False,,,,0,0,0,ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+mcp-server-tree-sitter,0.7.0,pypi,False,,,,0,0,0,ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+mcp-server-calculator,0.2.1,pypi,True,2025-11-25,calculator,1.30.0,1,0,0,
+mcp-shell-server,1.1.14,pypi,True,2025-11-25,mcp-shell-server,1.30.0,1,0,0,
+awslabs.aws-documentation-mcp-server,1.2.3,pypi,True,2025-11-25,awslabs.aws-documentation-mcp-server,,5,0,0,

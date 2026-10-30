@@ -1,0 +1,26 @@
+﻿source,description,result_files
+S01,Standard 0.2,Exp1/per_run_data/exp1_runs.csv
+S02,"Seed replication, 0.2",Exp1/per_run_data/other_campaigns/seed_replication.csv
+S03,Standard Qwen 0.7,Exp1/per_run_data/other_campaigns/qwen_temperature07.csv
+S04,JSON 0.2,Exp1/per_run_data/other_campaigns/json_temperature02.csv
+S05,JSON 0.7,Exp1/per_run_data/other_campaigns/json_temperature07.csv
+S06,Historical chain closure,Exp1/chain_closure.json
+S07,Historical catalogue,Exp2/historical_catalogue/exp2_results_29_scenarios.csv
+S08,Benign control,Exp2/benign_controls/benign_llama32_temperature02.csv
+S10,"v5, validation (24 texts)",Exp2/semantic_classification_v5/per_query_results.csv
+S11,"v5, development",Exp2/semantic_classification_v5/per_query_results.csv
+S12,"v5, MCP captures",Exp2/semantic_classification_v5/per_query_results.csv
+S13,"v5, static artifacts",Exp2/semantic_classification_v5/per_query_results.csv
+S14,"v5, files and SQLite",Exp2/semantic_classification_v5/per_query_results.csv
+S15,v5 coverage of the 29 IDs,Exp2/coverage_29_ids/coverage.csv
+S16,STDIO comparison of MCTS and probes,Exp3/comparison_14_targets/exp3_target_comparison.csv
+S17,Cisco and Shield scans,Exp3/comparison_14_targets/additional_scanners.csv
+S18,Effects verified by the probes,Exp3/probes_and_effects/probe_results.csv
+S19,Five SSRF configurations,Exp3/ssrf_configurations/ssrf_results.csv
+S20,P2 diagnostic checks,Exp3/scanner_diagnostics/per_scan_results.csv
+S21,"Historical catalogue, llama3.2:3b, temperature 0.7",Exp2/historical_catalogue/llama32_temperature07.csv
+S22,"Historical benign controls, llama3.2:3b, temperature 0.7",Exp2/benign_controls/benign_llama32_temperature07.csv
+S23,"Historical catalogue, qwen2.5:7b, temperature 0.2",Exp2/historical_catalogue/qwen25_temperature02.csv
+S24,"Historical benign controls, qwen2.5:7b, temperature 0.2",Exp2/benign_controls/benign_qwen25_temperature02.csv
+S25,"Historical catalogue, qwen2.5:7b, temperature 0.7",Exp2/historical_catalogue/qwen25_temperature07.csv
+S26,"Historical benign controls, qwen2.5:7b, temperature 0.7",Exp2/benign_controls/benign_qwen25_temperature07.csv

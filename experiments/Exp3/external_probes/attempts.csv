@@ -1,0 +1,27 @@
+﻿run,scanner,exit_code,valid_session,report_ref,report_sha256,native_findings,notes
+local-c3,local,0,True,Exp3/external_probes/runs/local-c3/report.json,81732cd02be09a5cf3df64ae74046cb61a87a9ddc36fb22fbca3630d460e7151,,Native CLI; selected probes only; see coverage flags
+local-c8,local,0,True,Exp3/external_probes/runs/local-c8/report.json,d1393bd02e1390101cad88b81af891d096ec80ac6df768646abb2006c5caf176,,Native CLI; selected probes only; see coverage flags
+local-c9,local,0,True,Exp3/external_probes/runs/local-c9/report.json,37705573dfcdb8943698daa297d7643d0c4aaf6b7bc618fe482ee0cb51fcc551,,Native CLI; selected probes only; see coverage flags
+local-fetch,local,0,True,Exp3/external_probes/runs/local-fetch/report.json,a3115b4669e470ecd5446decde720a3132ad6690acac6b4f806ab6d8bd3bc0ec,,Native CLI; selected probes only; see coverage flags
+mcpwn-c3-full,mcpwn,0,True,Exp3/external_probes/runs/mcpwn-c3-full/report.json,04e137af5b7f6452c30d4bcacd69c873f1b0936bf11ff0611ee270438ccecc85,68,
+mcpwn-c8,mcpwn,0,False,Exp3/external_probes/runs/mcpwn-c8/report.json,dae3276c98916753f63a2b12fe53f35ac29465221e0c6aee04f06f5e6a17b038,0,Technical failure; not a security-negative result
+mcpwn-c8-retry30,mcpwn,0,True,Exp3/external_probes/runs/mcpwn-c8-retry30/report.json,b5e9948563ab18485fa52d4f49a558f2c722a16b37f9153875f3bdb05595aeb2,10,
+mcpwn-c9-full,mcpwn,124,False,,,,Technical failure; not a security-negative result
+mcpwn-c9-quick,mcpwn,0,True,Exp3/external_probes/runs/mcpwn-c9-quick/report.json,37f3c78529730b4073772196b6c011e9ed6a5458ac670d6d9d704f93830ae9f3,1,
+mcpwn-control-hardened,mcpwn,0,True,Exp3/external_probes/runs/mcpwn-control-hardened/report.json,dba0f797edf7a657ae04568c9e9534fcf046973aba98b44bb76107104c43f928,0,
+mcpwn-control-vulnerable,mcpwn,0,True,Exp3/external_probes/runs/mcpwn-control-vulnerable/report.json,583df660d44a9c9f4a010f244bc827b421c30568bde7c5fb8d6d300d29e9f0cd,1,
+redcell-c1,redcell,0,True,Exp3/external_probes/runs/redcell-c1/report.json,97cf4780266e2c736da8cb1a7efb6d764e200c7c38b3a38a17ec2a672c8cd7d1,0,
+redcell-c10,redcell,1,True,Exp3/external_probes/runs/redcell-c10/report.json,a1a61a7cdb902070744c81691c81f8df2c466e53e9890a736cf4596dd88349aa,3,
+redcell-c2,redcell,1,True,Exp3/external_probes/runs/redcell-c2/report.json,230639778b01a042c37b19b944473aef0682e412f56beed92815545f721a531e,2,
+redcell-c3,redcell,2,False,,,,Technical failure; not a security-negative result
+redcell-c3-retry30,redcell,1,True,Exp3/external_probes/runs/redcell-c3-retry30/report.json,2dc1b6e095e4cd7a9749fe2e2e00d8f538f805fcce497bf87ce6801d959bf3b3,1,
+redcell-c4,redcell,0,True,Exp3/external_probes/runs/redcell-c4/report.json,e73138376df7d67d56e4e69fe1b17dc66f7589230d150a2d2726c855178678b1,0,
+redcell-c5,redcell,1,True,Exp3/external_probes/runs/redcell-c5/report.json,6460c7bf66740860db68c154dc0fabab40e8782e1ecc851fbdbdfdd17b65feff,1,
+redcell-c6,redcell,1,True,Exp3/external_probes/runs/redcell-c6/report.json,cd3bed831bc1969b1e25dcc2320800fb3c6236917dfc25649a4e17854647be12,2,
+redcell-c7,redcell,0,True,Exp3/external_probes/runs/redcell-c7/report.json,18bbe2ced806cfa73c500a386fa577bab0250ccec487cb216113e190cb8e422a,0,
+redcell-c8,redcell,1,True,Exp3/external_probes/runs/redcell-c8/report.json,7a8eed9df60439f6ac3c7b5558636833f7206e578c178fa595b86af33820d6f4,2,
+redcell-c9,redcell,1,True,Exp3/external_probes/runs/redcell-c9/report.json,be3cf43f290ae28e791cf690bf8b7aa82cab344530b8c47e40cc8935efe6a30b,4,
+redcell-control-hardened,redcell,0,True,Exp3/external_probes/runs/redcell-control-hardened/report.json,ea49e2dcd9b06d0ff90f018d97cc6d6cdf31ad2915895d9ff1594db6bc3e7348,0,
+redcell-control-vulnerable,redcell,1,True,Exp3/external_probes/runs/redcell-control-vulnerable/report.json,56e4f2e1eb62baf436dd1269c22468b0554d9df75b61834113176a80daacf264,6,
+redcell-fetch,redcell,2,False,,,,Technical failure; not a security-negative result
+redcell-fetch-retry,redcell,1,True,Exp3/external_probes/runs/redcell-fetch-retry/report.json,fc8e486b6f9779d72281ac0b178cfc2ad6b0d20022426cc07b18491296d45333,1,

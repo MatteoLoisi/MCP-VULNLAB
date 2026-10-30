@@ -1,0 +1,9 @@
+﻿scanner,version,scanner_class,positions,observed_effect,not_observed,sweep_negative,not_applicable,proofs_with_receipt,evidence_types,limitation
+Cisco YARA,4.8.6,metadata_analysis,5,0,0,0,5,0,metadata,Metadata analysis: not applicable to the active SSRF test; alarms are not SSRF findings.
+"MCP Fuzzer, realistic seed 42",0.7.0,fuzzing,5,0,0,0,5,0,schema_protocol_fuzzing,Schema/protocol fuzzing: errors and hangs do not demonstrate SSRF.
+"MCP Guard, static without dependencies",2.0.0,static_analysis,5,0,0,0,5,0,source_analysis,"Static source analysis: indicators, not an observed effect."
+MCP-Shield without Claude,1.0.4,metadata_analysis,5,0,0,0,5,0,metadata,Metadata analysis: not applicable to the active SSRF test; alarms are not SSRF findings.
+MCTS,0.1.4,metadata_analysis,5,0,0,0,5,0,metadata,Metadata analysis: not applicable to the active SSRF test; alarms are not SSRF findings.
+"Mcpwn, API SSRFTest",1.0,active_ssrf,5,1,4,0,0,1,correlated_local_callback;no_ssrf_evidence,"SSRFTest module invoked directly, not the standard CLI; configurations without a callback remain unobserved."
+RedCell,0.1.0,active_ssrf,5,1,4,0,0,1,local_callback_with_witness;no_ssrf_evidence,"Linux runtime in a container, different from the Windows baseline; configurations without a callback remain unobserved."
+Local P6 probes,3.1.0,active_ssrf,5,3,0,2,0,3,complete_sweep_negative;token_received_in_response,"Local Windows/Node probe; complete sweep only on 2.1.8 and 2.1.11. For 2.1.6/2.1.7 the callback uses an IPv4-mapped IPv6 address, a variant absent from the native payloads."

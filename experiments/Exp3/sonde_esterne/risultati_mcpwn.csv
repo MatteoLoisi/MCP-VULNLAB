@@ -1,6 +1,0 @@
-﻿run,profilo,segnalazioni,conteggi_per_tipo,report_json
-mcpwn-c3-full,"--safe-mode, timeout 15 s",68,"{""STATE_RESET"": 1, ""CAPABILITY_VALIDATION_BYPASS"": 10, ""TIMING"": 51, ""MARKDOWN_IMAGE_INJECTION"": 2, ""DELIMITER_BREAKOUT"": 2, ""POSSIBLE_CONTEXT_CONFUSION"": 2}",Exp3/sonde_esterne/runs/mcpwn-c3-full/report.json
-mcpwn-c8-retry30,"--safe-mode, --rce-only, timeout 30 s",10,"{""RCE"": 6, ""BLIND_RCE_TIMING"": 2, ""TIMING"": 2}",Exp3/sonde_esterne/runs/mcpwn-c8-retry30/report.json
-mcpwn-c9-quick,"--safe-mode, --quick, --rce-only",1,"{""RCE"": 1}",Exp3/sonde_esterne/runs/mcpwn-c9-quick/report.json
-mcpwn-control-hardened,"--safe-mode, --quick, --rce-only",0,{},Exp3/sonde_esterne/runs/mcpwn-control-hardened/report.json
-mcpwn-control-vulnerable,"--safe-mode, --quick, --rce-only",1,"{""RCE"": 1}",Exp3/sonde_esterne/runs/mcpwn-control-vulnerable/report.json
