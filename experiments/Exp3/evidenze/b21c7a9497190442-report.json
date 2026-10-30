@@ -1,0 +1,72 @@
+{
+  "schema": "exp3-probe-report-v1",
+  "producer": "exp3-probe-worker-v1",
+  "target": "c7",
+  "attempt_id": "46f6a15438e84092bdd3da41ba2c6b9a",
+  "status": "completed",
+  "target_identity": {
+    "target": "c7",
+    "definition_sha256": "dfef734c1dee3ed4676e9760593426fd69ecb49e2c41c9248c0b8fb1f94ae1e9",
+    "manifest_sha256": "71156adadb7e944ec4e76beb135ac2d9913523bce20628bb3fc13eccbcb803d9",
+    "transport": "stdio",
+    "version": "79734c19f5104cd11486c90926d245560f53befa",
+    "shim_sha256": "da2c7bfdcb3b319bf3efc0df6f9a1fa1f5b79058ce619860f3821a93739a7766",
+    "configuration_sha256": "1fdadc10a6ba67ad44486f3d7829f9e5f4d5560a2be1f3e33e6b9aafd7fc76d9"
+  },
+  "target_command": [
+    "python",
+    "D:\\docker_proget\\V3\\tools\\dvmcp_stdio.py",
+    "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\medium\\challenge7"
+  ],
+  "scan_target": "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\medium\\challenge7",
+  "planned_findings": [
+    "P2-tool-poisoning"
+  ],
+  "profile": "black-box",
+  "raw_ref": "capture.json",
+  "raw_sha256": "5cade3ba046d836d5a83ece05430625de1aad27afaee77ac230a8ea734ad1780",
+  "findings": {
+    "P2-tool-poisoning": {
+      "status": "secure",
+      "proof": "nessuna istruzione sospetta in 4 DESCRIPTION (avg_score=99)",
+      "details": {
+        "count": 4,
+        "avg_score": 99,
+        "by_severity": {
+          "low": 1
+        },
+        "audit": [
+          {
+            "tool": "send_email",
+            "score": 95,
+            "flags": [
+              {
+                "code": "privileged-no-readonly-hint",
+                "severity": "low",
+                "detail": "verbo privilegiato senza readOnlyHint: verificare least-privilege"
+              }
+            ]
+          },
+          {
+            "tool": "check_email",
+            "score": 100,
+            "flags": []
+          },
+          {
+            "tool": "check_service_status",
+            "score": 100,
+            "flags": []
+          },
+          {
+            "tool": "view_system_logs",
+            "score": 100,
+            "flags": []
+          }
+        ]
+      },
+      "evidence_reason": "derived from captured call",
+      "evidence_ref": "evidence/1.json",
+      "evidence_sha256": "d44c46fc3e959de274aa063bfa2223b21d67913e58b0528c6438a8f79ddbc2ce"
+    }
+  }
+}

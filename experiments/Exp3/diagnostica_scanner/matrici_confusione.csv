@@ -1,0 +1,4 @@
+﻿scanner,TP,TN,FP,FN
+mcts,4,5,1,2
+cisco,2,6,0,4
+shield,5,5,1,1

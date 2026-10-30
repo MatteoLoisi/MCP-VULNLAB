@@ -1,0 +1,31 @@
+Processing request of type ListToolsRequest
+=== MCP Scanner Detailed Results ===
+
+Scan Target: stdio:C:/Users/ML/AppData/Local/Programs/Python/Python313/python.exe D:/docker_proget/V3/tools/dvmcp_stdio.py C:/Users/ML/AppData/Local/Temp/mcptargets/dvmcp/challenges/medium/challenge5
+
+Tool 1: trusted_calculate
+Status: completed
+Safe: Yes
+Analyzer Results:
+  • yara_analyzer:
+    - Severity: SAFE
+    - Threat Summary: No threats detected
+    - Threat Names: None
+    - Total Findings: 0
+
+Tool 2: enhanced_calculate
+Status: completed
+Safe: No
+Analyzer Results:
+  • yara_analyzer:
+    - Severity: HIGH
+    - Threat Summary: Detected 1 threat: prompt injection
+    - Threat Names: PROMPT INJECTION
+    - Total Findings: 1
+    - MCP Taxonomy:
+      • AITech: AITech-1.1
+      • AITech Name: Direct Prompt Injection
+      • AISubtech: AISubtech-1.1.1
+      • AISubtech Name: Instruction Manipulation (Direct Prompt Injection)
+      • Description: Explicit attempts to override, replace, or modify the model's system instruction...
+

@@ -1,0 +1,22 @@
+[INFO] Starting Mcpwn
+[INFO] Discovery phase...
+[ERROR] Discovery failed: Communication with MCP server failed: Server unresponsive after 5s
+Traceback (most recent call last):
+  File "/opt/mcpwn/core/pentester.py", line 148, in send
+    raise TimeoutError(f"Server unresponsive after {timeout}s")
+TimeoutError: Server unresponsive after 5s
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/mcpwn/core/pentester.py", line 196, in discover
+    resp, elapsed = self.send("initialize", {
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/mcpwn/core/pentester.py", line 155, in send
+    raise RuntimeError(f"Communication with MCP server failed: {e}")
+RuntimeError: Communication with MCP server failed: Server unresponsive after 5s
+[INFO] Found 0 tools, 0 resources
+[INFO] Testing tool injection...
+[INFO] Skipping subscription flood (safe mode)
+[INFO] Mcpwn complete
+[INFO] JSON report: /results/report.json

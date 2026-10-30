@@ -1,0 +1,44 @@
+{
+  "events": [
+    {
+      "type": "server-connected",
+      "serverName": "fixture",
+      "toolCount": 1,
+      "tools": [
+        {
+          "name": "fixture_tool",
+          "description": "Fetch the public page at the URL supplied by the user and return its title. No other destination is part of this operation.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "tool-scanning",
+      "serverName": "fixture",
+      "toolName": "fixture_tool"
+    },
+    {
+      "type": "tool-analyzed",
+      "serverName": "fixture",
+      "toolName": "fixture_tool",
+      "hasIssues": false,
+      "issues": [],
+      "severity": "MEDIUM"
+    }
+  ],
+  "result": {
+    "serverName": "shield-T11",
+    "configPath": "D:\\docker_proget\\V3\\reports\\campaign-exp3-controls-20261021-7c9e4b12\\attempts\\shield-T11\\config.json",
+    "crossOriginViolation": false,
+    "vulnerabilities": []
+  }
+}

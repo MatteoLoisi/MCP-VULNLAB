@@ -1,0 +1,65 @@
+{
+  "findings": [
+    {
+      "category": "accepted_malformed",
+      "severity": "medium",
+      "kind": "tool",
+      "target": "get_company_data",
+      "run": null,
+      "detail": "Server returned a non-error response to an attack-pattern or schema-invalid fuzz input.",
+      "evidence": {
+        "input": {
+          "data_type": "' OR '1'='1"
+        },
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "No data available for type: ' OR '1'='1"
+            }
+          ],
+          "structuredContent": {
+            "result": "No data available for type: ' OR '1'='1"
+          },
+          "isError": false
+        },
+        "runs": [
+          1,
+          2
+        ],
+        "count": 2
+      }
+    },
+    {
+      "category": "accepted_malformed",
+      "severity": "medium",
+      "kind": "tool",
+      "target": "search_company_database",
+      "run": null,
+      "detail": "Server returned a non-error response to an attack-pattern or schema-invalid fuzz input.",
+      "evidence": {
+        "input": {
+          "query": "' OR '1'='1"
+        },
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "Search results for '' OR '1'='1':\n- Regular company information matching your query\n- Public records and documents"
+            }
+          ],
+          "structuredContent": {
+            "result": "Search results for '' OR '1'='1':\n- Regular company information matching your query\n- Public records and documents"
+          },
+          "isError": false
+        },
+        "runs": [
+          1,
+          2
+        ],
+        "count": 2
+      }
+    }
+  ],
+  "count": 2
+}

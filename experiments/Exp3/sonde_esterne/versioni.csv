@@ -1,0 +1,4 @@
+﻿strumento,versione,commit,fonte
+RedCell,0.1.0,c033c02e80912a1e74490f3d388b666ebb66275c,https://github.com/Sahilo6/redcell
+Mcpwn,1.0,2efd0273e71ccd285f398221189f59c5e4078feb,https://github.com/Teycir/Mcpwn
+DVMCP,server.py con shim STDIO,79734c19f5104cd11486c90926d245560f53befa,Exp3/sonde_esterne/ambiente/environment.json

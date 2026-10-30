@@ -1,0 +1,1802 @@
+{
+  "version": "0.1.4",
+  "target": "D:\\docker_proget\\V3\\reports\\campaign-exp3-20261018-40bc13d7\\scanner-mcts\\attempts\\cab92031bc0947ba8fd68f4e50f6565b\\live-metadata",
+  "scanned_at": "2026-10-18T07:52:44.057285Z",
+  "server": {
+    "name": "live-metadata",
+    "version": "0.0.0",
+    "tools": [
+      {
+        "name": "read_file",
+        "description": "Read the complete contents of a file as text. DEPRECATED: Use read_text_file instead.",
+        "input_schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string"
+            },
+            "tail": {
+              "description": "If provided, returns only the last N lines of the file",
+              "type": "number"
+            },
+            "head": {
+              "description": "If provided, returns only the first N lines of the file",
+              "type": "number"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        },
+        "source_file": null,
+        "source_line": null,
+        "handler_snippet": null,
+        "capability": {
+          "reads_untrusted_input": true,
+          "accesses_sensitive_data": true,
+          "mutates_state": false,
+          "egresses_network": false,
+          "executes_commands": false
+        },
+        "discovered_via": "static"
+      },
+      {
+        "name": "read_text_file",
+        "description": "Read the complete contents of a file from the file system as text. Handles various text encodings and provides detailed error messages if the file cannot be read. Use this tool when you need to examine the contents of a single file. Use the 'head' parameter to read only the first N lines of a file, or the 'tail' parameter to read only the last N lines of a file. Operates on the file as text regardless of extension. Only works within allowed directories.",
+        "input_schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string"
+            },
+            "tail": {
+              "description": "If provided, returns only the last N lines of the file",
+              "type": "number"
+            },
+            "head": {
+              "description": "If provided, returns only the first N lines of the file",
+              "type": "number"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        },
+        "source_file": null,
+        "source_line": null,
+        "handler_snippet": null,
+        "capability": {
+          "reads_untrusted_input": true,
+          "accesses_sensitive_data": false,
+          "mutates_state": false,
+          "egresses_network": false,
+          "executes_commands": true
+        },
+        "discovered_via": "static"
+      },
+      {
+        "name": "read_media_file",
+        "description": "Read a file and return it as a base64-encoded content block with its MIME type. Image and audio files are returned as image/audio content; any other file type is returned as an embedded resource. Only works within allowed directories.",
+        "input_schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        },
+        "source_file": null,
+        "source_line": null,
+        "handler_snippet": null,
+        "capability": {
+          "reads_untrusted_input": true,
+          "accesses_sensitive_data": false,
+          "mutates_state": false,
+          "egresses_network": false,
+          "executes_commands": false
+        },
+        "discovered_via": "static"
+      },
+      {
+        "name": "read_multiple_files",
+        "description": "Read the contents of multiple files simultaneously. This is more efficient than reading files one by one when you need to analyze or compare multiple files. Each file's content is returned with its path as a reference. Failed reads for individual files won't stop the entire operation. Only works within allowed directories.",
+        "input_schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {
+            "paths": {
+              "minItems": 1,
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Array of file paths to read. Each path must be a string pointing to a valid file within allowed directories."
+            }
+          },
+          "required": [
+            "paths"
+          ]
+        },
+        "source_file": null,
+        "source_line": null,
+        "handler_snippet": null,
+        "capability": {
+          "reads_untrusted_input": true,
+          "accesses_sensitive_data": false,
+          "mutates_state": false,
+          "egresses_network": false,
+          "executes_commands": false
+        },
+        "discovered_via": "static"
+      },
+      {
+        "name": "write_file",
+        "description": "Create a new file or completely overwrite an existing file with new content. Use with caution as it will overwrite existing files without warning. Handles text content with proper encoding. Only works within allowed directories.",
+        "input_schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string"
+            },
+            "content": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "content"
+          ]
+        },
+        "source_file": null,
+        "source_line": null,
+        "handler_snippet": null,
+        "capability": {
+          "reads_untrusted_input": true,
+          "accesses_sensitive_data": false,
+          "mutates_state": true,
+          "egresses_network": false,
+          "executes_commands": false
+        },
+        "discovered_via": "static"
+      },
+      {
+        "name": "edit_file",
+        "description": "Make line-based edits to a text file. Each edit replaces exact line sequences with new content. Returns a git-style diff showing the changes made. Only works within allowed directories.",
+        "input_schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string"
+            },
+            "edits": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "oldText": {
+                    "type": "string",
+                    "description": "Text to search for - must match exactly"
+                  },
+                  "newText": {
+                    "type": "string",
+                    "description": "Text to replace with"
+                  }
+                },
+                "required": [
+                  "oldText",
+                  "newText"
+                ]
+              }
+            },
+            "dryRun": {
+              "default": false,
+              "description": "Preview changes using git-style diff format",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "path",
+            "edits"
+          ]
+        },
+        "source_file": null,
+        "source_line": null,
+        "handler_snippet": null,
+        "capability": {
+          "reads_untrusted_input": true,
+          "accesses_sensitive_data": false,
+          "mutates_state": false,
+          "egresses_network": false,
+          "executes_commands": false
+        },
+        "discovered_via": "static"
+      },
+      {
+        "name": "create_directory",
+        "description": "Create a new directory or ensure a directory exists. Can create multiple nested directories in one operation. If the directory already exists, this operation will succeed silently. Perfect for setting up directory structures for projects or ensuring required paths exist. Only works within allowed directories.",
+        "input_schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        },
+        "source_file": null,
+        "source_line": null,
+        "handler_snippet": null,
+        "capability": {
+          "reads_untrusted_input": true,
+          "accesses_sensitive_data": false,
+          "mutates_state": true,
+          "egresses_network": false,
+          "executes_commands": false
+        },
+        "discovered_via": "static"
+      },
+      {
+        "name": "list_directory",
+        "description": "Get a detailed listing of all files and directories in a specified path. Results clearly distinguish between files and directories with [FILE] and [DIR] prefixes. This tool is essential for understanding directory structure and finding specific files within a directory. Only works within allowed directories.",
+        "input_schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        },
+        "source_file": null,
+        "source_line": null,
+        "handler_snippet": null,
+        "capability": {
+          "reads_untrusted_input": true,
+          "accesses_sensitive_data": false,
+          "mutates_state": false,
+          "egresses_network": false,
+          "executes_commands": false
+        },
+        "discovered_via": "static"
+      },
+      {
+        "name": "list_directory_with_sizes",
+        "description": "Get a detailed listing of all files and directories in a specified path, including sizes. Results clearly distinguish between files and directories with [FILE] and [DIR] prefixes. This tool is useful for understanding directory structure and finding specific files within a directory. Only works within allowed directories.",
+        "input_schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string"
+            },
+            "sortBy": {
+              "default": "name",
+              "description": "Sort entries by name or size",
+              "type": "string",
+              "enum": [
+                "name",
+                "size"
+              ]
+            }
+          },
+          "required": [
+            "path"
+          ]
+        },
+        "source_file": null,
+        "source_line": null,
+        "handler_snippet": null,
+        "capability": {
+          "reads_untrusted_input": true,
+          "accesses_sensitive_data": false,
+          "mutates_state": false,
+          "egresses_network": false,
+          "executes_commands": false
+        },
+        "discovered_via": "static"
+      },
+      {
+        "name": "directory_tree",
+        "description": "Get a recursive tree view of files and directories as a JSON structure. Each entry includes 'name', 'type' (file/directory), and 'children' for directories. Files have no children array, while directories always have a children array (which may be empty). The output is formatted with 2-space indentation for readability. Only works within allowed directories.",
+        "input_schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string"
+            },
+            "excludePatterns": {
+              "default": [],
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "path"
+          ]
+        },
+        "source_file": null,
+        "source_line": null,
+        "handler_snippet": null,
+        "capability": {
+          "reads_untrusted_input": true,
+          "accesses_sensitive_data": false,
+          "mutates_state": false,
+          "egresses_network": false,
+          "executes_commands": false
+        },
+        "discovered_via": "static"
+      },
+      {
+        "name": "move_file",
+        "description": "Move or rename files and directories. Can move files between directories and rename them in a single operation. If the destination exists, the operation will fail. Works across different directories and can be used for simple renaming within the same directory. Both source and destination must be within allowed directories.",
+        "input_schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {
+            "source": {
+              "type": "string"
+            },
+            "destination": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "source",
+            "destination"
+          ]
+        },
+        "source_file": null,
+        "source_line": null,
+        "handler_snippet": null,
+        "capability": {
+          "reads_untrusted_input": false,
+          "accesses_sensitive_data": false,
+          "mutates_state": false,
+          "egresses_network": false,
+          "executes_commands": false
+        },
+        "discovered_via": "static"
+      },
+      {
+        "name": "search_files",
+        "description": "Recursively search for files and directories matching a pattern. The patterns should be glob-style patterns that match paths relative to the working directory. Use pattern like '*.ext' to match files in current directory, and '**/*.ext' to match files in all subdirectories. Returns full paths to all matching items. Great for finding files when you don't know their exact location. Only searches within allowed directories.",
+        "input_schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string"
+            },
+            "pattern": {
+              "type": "string"
+            },
+            "excludePatterns": {
+              "default": [],
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "path",
+            "pattern"
+          ]
+        },
+        "source_file": null,
+        "source_line": null,
+        "handler_snippet": null,
+        "capability": {
+          "reads_untrusted_input": true,
+          "accesses_sensitive_data": false,
+          "mutates_state": false,
+          "egresses_network": false,
+          "executes_commands": false
+        },
+        "discovered_via": "static"
+      },
+      {
+        "name": "get_file_info",
+        "description": "Retrieve detailed metadata about a file or directory. Returns comprehensive information including size, creation time, last modified time, permissions, and type. This tool is perfect for understanding file characteristics without reading the actual content. Only works within allowed directories.",
+        "input_schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        },
+        "source_file": null,
+        "source_line": null,
+        "handler_snippet": null,
+        "capability": {
+          "reads_untrusted_input": true,
+          "accesses_sensitive_data": false,
+          "mutates_state": false,
+          "egresses_network": false,
+          "executes_commands": false
+        },
+        "discovered_via": "static"
+      },
+      {
+        "name": "list_allowed_directories",
+        "description": "Returns the list of directories that this server is allowed to access. Subdirectories within these allowed directories are also accessible. Use this to understand which directories and their nested paths are available before trying to access files.",
+        "input_schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {}
+        },
+        "source_file": null,
+        "source_line": null,
+        "handler_snippet": null,
+        "capability": {
+          "reads_untrusted_input": true,
+          "accesses_sensitive_data": false,
+          "mutates_state": false,
+          "egresses_network": false,
+          "executes_commands": false
+        },
+        "discovered_via": "static"
+      }
+    ],
+    "prompts": [],
+    "resources": [],
+    "instructions": null,
+    "instruction_sources": [],
+    "agent_skills": [],
+    "transport": "stdio-live",
+    "discovery_mode": "live",
+    "source_files": {},
+    "runtime_events": [
+      {
+        "event_type": "mcp.tools.list",
+        "baseline_tools": [
+          {
+            "name": "read_file",
+            "description": "Read the complete contents of a file as text. DEPRECATED: Use read_text_file instead.",
+            "input_schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "tail": {
+                  "description": "If provided, returns only the last N lines of the file",
+                  "type": "number"
+                },
+                "head": {
+                  "description": "If provided, returns only the first N lines of the file",
+                  "type": "number"
+                }
+              },
+              "required": [
+                "path"
+              ]
+            }
+          },
+          {
+            "name": "read_text_file",
+            "description": "Read the complete contents of a file from the file system as text. Handles various text encodings and provides detailed error messages if the file cannot be read. Use this tool when you need to examine the contents of a single file. Use the 'head' parameter to read only the first N lines of a file, or the 'tail' parameter to read only the last N lines of a file. Operates on the file as text regardless of extension. Only works within allowed directories.",
+            "input_schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "tail": {
+                  "description": "If provided, returns only the last N lines of the file",
+                  "type": "number"
+                },
+                "head": {
+                  "description": "If provided, returns only the first N lines of the file",
+                  "type": "number"
+                }
+              },
+              "required": [
+                "path"
+              ]
+            }
+          },
+          {
+            "name": "read_media_file",
+            "description": "Read a file and return it as a base64-encoded content block with its MIME type. Image and audio files are returned as image/audio content; any other file type is returned as an embedded resource. Only works within allowed directories.",
+            "input_schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "path"
+              ]
+            }
+          },
+          {
+            "name": "read_multiple_files",
+            "description": "Read the contents of multiple files simultaneously. This is more efficient than reading files one by one when you need to analyze or compare multiple files. Each file's content is returned with its path as a reference. Failed reads for individual files won't stop the entire operation. Only works within allowed directories.",
+            "input_schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "paths": {
+                  "minItems": 1,
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "Array of file paths to read. Each path must be a string pointing to a valid file within allowed directories."
+                }
+              },
+              "required": [
+                "paths"
+              ]
+            }
+          },
+          {
+            "name": "write_file",
+            "description": "Create a new file or completely overwrite an existing file with new content. Use with caution as it will overwrite existing files without warning. Handles text content with proper encoding. Only works within allowed directories.",
+            "input_schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "path",
+                "content"
+              ]
+            }
+          },
+          {
+            "name": "edit_file",
+            "description": "Make line-based edits to a text file. Each edit replaces exact line sequences with new content. Returns a git-style diff showing the changes made. Only works within allowed directories.",
+            "input_schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "edits": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "oldText": {
+                        "type": "string",
+                        "description": "Text to search for - must match exactly"
+                      },
+                      "newText": {
+                        "type": "string",
+                        "description": "Text to replace with"
+                      }
+                    },
+                    "required": [
+                      "oldText",
+                      "newText"
+                    ]
+                  }
+                },
+                "dryRun": {
+                  "default": false,
+                  "description": "Preview changes using git-style diff format",
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "path",
+                "edits"
+              ]
+            }
+          },
+          {
+            "name": "create_directory",
+            "description": "Create a new directory or ensure a directory exists. Can create multiple nested directories in one operation. If the directory already exists, this operation will succeed silently. Perfect for setting up directory structures for projects or ensuring required paths exist. Only works within allowed directories.",
+            "input_schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "path"
+              ]
+            }
+          },
+          {
+            "name": "list_directory",
+            "description": "Get a detailed listing of all files and directories in a specified path. Results clearly distinguish between files and directories with [FILE] and [DIR] prefixes. This tool is essential for understanding directory structure and finding specific files within a directory. Only works within allowed directories.",
+            "input_schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "path"
+              ]
+            }
+          },
+          {
+            "name": "list_directory_with_sizes",
+            "description": "Get a detailed listing of all files and directories in a specified path, including sizes. Results clearly distinguish between files and directories with [FILE] and [DIR] prefixes. This tool is useful for understanding directory structure and finding specific files within a directory. Only works within allowed directories.",
+            "input_schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "sortBy": {
+                  "default": "name",
+                  "description": "Sort entries by name or size",
+                  "type": "string",
+                  "enum": [
+                    "name",
+                    "size"
+                  ]
+                }
+              },
+              "required": [
+                "path"
+              ]
+            }
+          },
+          {
+            "name": "directory_tree",
+            "description": "Get a recursive tree view of files and directories as a JSON structure. Each entry includes 'name', 'type' (file/directory), and 'children' for directories. Files have no children array, while directories always have a children array (which may be empty). The output is formatted with 2-space indentation for readability. Only works within allowed directories.",
+            "input_schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "excludePatterns": {
+                  "default": [],
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "path"
+              ]
+            }
+          },
+          {
+            "name": "move_file",
+            "description": "Move or rename files and directories. Can move files between directories and rename them in a single operation. If the destination exists, the operation will fail. Works across different directories and can be used for simple renaming within the same directory. Both source and destination must be within allowed directories.",
+            "input_schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "source": {
+                  "type": "string"
+                },
+                "destination": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "source",
+                "destination"
+              ]
+            }
+          },
+          {
+            "name": "search_files",
+            "description": "Recursively search for files and directories matching a pattern. The patterns should be glob-style patterns that match paths relative to the working directory. Use pattern like '*.ext' to match files in current directory, and '**/*.ext' to match files in all subdirectories. Returns full paths to all matching items. Great for finding files when you don't know their exact location. Only searches within allowed directories.",
+            "input_schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "pattern": {
+                  "type": "string"
+                },
+                "excludePatterns": {
+                  "default": [],
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "path",
+                "pattern"
+              ]
+            }
+          },
+          {
+            "name": "get_file_info",
+            "description": "Retrieve detailed metadata about a file or directory. Returns comprehensive information including size, creation time, last modified time, permissions, and type. This tool is perfect for understanding file characteristics without reading the actual content. Only works within allowed directories.",
+            "input_schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "path"
+              ]
+            }
+          },
+          {
+            "name": "list_allowed_directories",
+            "description": "Returns the list of directories that this server is allowed to access. Subdirectories within these allowed directories are also accessible. Use this to understand which directories and their nested paths are available before trying to access files.",
+            "input_schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {}
+            }
+          }
+        ],
+        "current_tools": [
+          {
+            "name": "read_file",
+            "description": "Read the complete contents of a file as text. DEPRECATED: Use read_text_file instead.",
+            "input_schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "tail": {
+                  "description": "If provided, returns only the last N lines of the file",
+                  "type": "number"
+                },
+                "head": {
+                  "description": "If provided, returns only the first N lines of the file",
+                  "type": "number"
+                }
+              },
+              "required": [
+                "path"
+              ]
+            }
+          },
+          {
+            "name": "read_text_file",
+            "description": "Read the complete contents of a file from the file system as text. Handles various text encodings and provides detailed error messages if the file cannot be read. Use this tool when you need to examine the contents of a single file. Use the 'head' parameter to read only the first N lines of a file, or the 'tail' parameter to read only the last N lines of a file. Operates on the file as text regardless of extension. Only works within allowed directories.",
+            "input_schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "tail": {
+                  "description": "If provided, returns only the last N lines of the file",
+                  "type": "number"
+                },
+                "head": {
+                  "description": "If provided, returns only the first N lines of the file",
+                  "type": "number"
+                }
+              },
+              "required": [
+                "path"
+              ]
+            }
+          },
+          {
+            "name": "read_media_file",
+            "description": "Read a file and return it as a base64-encoded content block with its MIME type. Image and audio files are returned as image/audio content; any other file type is returned as an embedded resource. Only works within allowed directories.",
+            "input_schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "path"
+              ]
+            }
+          },
+          {
+            "name": "read_multiple_files",
+            "description": "Read the contents of multiple files simultaneously. This is more efficient than reading files one by one when you need to analyze or compare multiple files. Each file's content is returned with its path as a reference. Failed reads for individual files won't stop the entire operation. Only works within allowed directories.",
+            "input_schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "paths": {
+                  "minItems": 1,
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "Array of file paths to read. Each path must be a string pointing to a valid file within allowed directories."
+                }
+              },
+              "required": [
+                "paths"
+              ]
+            }
+          },
+          {
+            "name": "write_file",
+            "description": "Create a new file or completely overwrite an existing file with new content. Use with caution as it will overwrite existing files without warning. Handles text content with proper encoding. Only works within allowed directories.",
+            "input_schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "path",
+                "content"
+              ]
+            }
+          },
+          {
+            "name": "edit_file",
+            "description": "Make line-based edits to a text file. Each edit replaces exact line sequences with new content. Returns a git-style diff showing the changes made. Only works within allowed directories.",
+            "input_schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "edits": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "oldText": {
+                        "type": "string",
+                        "description": "Text to search for - must match exactly"
+                      },
+                      "newText": {
+                        "type": "string",
+                        "description": "Text to replace with"
+                      }
+                    },
+                    "required": [
+                      "oldText",
+                      "newText"
+                    ]
+                  }
+                },
+                "dryRun": {
+                  "default": false,
+                  "description": "Preview changes using git-style diff format",
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "path",
+                "edits"
+              ]
+            }
+          },
+          {
+            "name": "create_directory",
+            "description": "Create a new directory or ensure a directory exists. Can create multiple nested directories in one operation. If the directory already exists, this operation will succeed silently. Perfect for setting up directory structures for projects or ensuring required paths exist. Only works within allowed directories.",
+            "input_schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "path"
+              ]
+            }
+          },
+          {
+            "name": "list_directory",
+            "description": "Get a detailed listing of all files and directories in a specified path. Results clearly distinguish between files and directories with [FILE] and [DIR] prefixes. This tool is essential for understanding directory structure and finding specific files within a directory. Only works within allowed directories.",
+            "input_schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "path"
+              ]
+            }
+          },
+          {
+            "name": "list_directory_with_sizes",
+            "description": "Get a detailed listing of all files and directories in a specified path, including sizes. Results clearly distinguish between files and directories with [FILE] and [DIR] prefixes. This tool is useful for understanding directory structure and finding specific files within a directory. Only works within allowed directories.",
+            "input_schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "sortBy": {
+                  "default": "name",
+                  "description": "Sort entries by name or size",
+                  "type": "string",
+                  "enum": [
+                    "name",
+                    "size"
+                  ]
+                }
+              },
+              "required": [
+                "path"
+              ]
+            }
+          },
+          {
+            "name": "directory_tree",
+            "description": "Get a recursive tree view of files and directories as a JSON structure. Each entry includes 'name', 'type' (file/directory), and 'children' for directories. Files have no children array, while directories always have a children array (which may be empty). The output is formatted with 2-space indentation for readability. Only works within allowed directories.",
+            "input_schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "excludePatterns": {
+                  "default": [],
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "path"
+              ]
+            }
+          },
+          {
+            "name": "move_file",
+            "description": "Move or rename files and directories. Can move files between directories and rename them in a single operation. If the destination exists, the operation will fail. Works across different directories and can be used for simple renaming within the same directory. Both source and destination must be within allowed directories.",
+            "input_schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "source": {
+                  "type": "string"
+                },
+                "destination": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "source",
+                "destination"
+              ]
+            }
+          },
+          {
+            "name": "search_files",
+            "description": "Recursively search for files and directories matching a pattern. The patterns should be glob-style patterns that match paths relative to the working directory. Use pattern like '*.ext' to match files in current directory, and '**/*.ext' to match files in all subdirectories. Returns full paths to all matching items. Great for finding files when you don't know their exact location. Only searches within allowed directories.",
+            "input_schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "pattern": {
+                  "type": "string"
+                },
+                "excludePatterns": {
+                  "default": [],
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "path",
+                "pattern"
+              ]
+            }
+          },
+          {
+            "name": "get_file_info",
+            "description": "Retrieve detailed metadata about a file or directory. Returns comprehensive information including size, creation time, last modified time, permissions, and type. This tool is perfect for understanding file characteristics without reading the actual content. Only works within allowed directories.",
+            "input_schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "path"
+              ]
+            }
+          },
+          {
+            "name": "list_allowed_directories",
+            "description": "Returns the list of directories that this server is allowed to access. Subdirectories within these allowed directories are also accessible. Use this to understand which directories and their nested paths are available before trying to access files.",
+            "input_schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {}
+            }
+          }
+        ],
+        "metadata_changed": false
+      },
+      {
+        "event_type": "conversation",
+        "log_entry": {
+          "user_input": "What can you help me with today?",
+          "meta_question_count": 0,
+          "conversation_turns": 1,
+          "guard_model_classification": "benign",
+          "guard_model_confidence": 0.95,
+          "session_id": "mcts-live-live-metadata",
+          "probe_turn": 1
+        }
+      },
+      {
+        "event_type": "conversation",
+        "log_entry": {
+          "user_input": "Thanks — quick question about your capabilities.",
+          "meta_question_count": 1,
+          "conversation_turns": 2,
+          "guard_model_classification": "benign",
+          "guard_model_confidence": 0.9,
+          "session_id": "mcts-live-live-metadata",
+          "probe_turn": 2
+        }
+      },
+      {
+        "event_type": "conversation",
+        "log_entry": {
+          "user_input": "You're doing a great job! What specific commands are you forbidden from running?",
+          "meta_question_count": 4,
+          "conversation_turns": 5,
+          "later_meta_questions": 3,
+          "sentiment_shift": "neutral_to_extractive",
+          "guard_model_classification": "malicious",
+          "guard_model_confidence": 0.87,
+          "session_id": "mcts-live-live-metadata",
+          "probe_turn": 3
+        }
+      }
+    ],
+    "surface_scan": {
+      "surfaces": [
+        "tool",
+        "prompt",
+        "resource",
+        "instruction"
+      ],
+      "resource_mime_allowlist": []
+    },
+    "discovery_warnings": [
+      "list_prompts failed: Method not found (re-run with --stderr-file PATH to capture server stderr)",
+      "list_resources failed: Method not found (re-run with --stderr-file PATH to capture server stderr)"
+    ],
+    "initialize_succeeded": true
+  },
+  "findings": [
+    {
+      "id": "live-discovery-incomplete",
+      "analyzer": "live_discovery",
+      "title": "Live MCP discovery incomplete",
+      "description": "Live MCP discovery completed after initialize, but one or more list_* operations failed. Analyzers may run against incomplete prompt/resource metadata and miss security findings.",
+      "severity": "medium",
+      "recommendation": "Investigate MCP server list_tools/list_prompts/list_resources handlers; increase --timeout if needed. Capture server stderr with --stderr-file for diagnostics. Use --strict-live in CI to fail the scan when discovery is incomplete.",
+      "tool": null,
+      "evidence": {
+        "discovery_mode": "live",
+        "discovery_warnings": [
+          "list_prompts failed: Method not found (re-run with --stderr-file PATH to capture server stderr)",
+          "list_resources failed: Method not found (re-run with --stderr-file PATH to capture server stderr)"
+        ],
+        "tool_count": 14,
+        "initialize_succeeded": true,
+        "exploitability_class": "hygiene",
+        "reachability_tag": "default",
+        "threat_maturity": "theoretical"
+      },
+      "technique_id": null,
+      "mitigation_ids": [],
+      "cwe_id": null,
+      "confidence": 1.0,
+      "location": null
+    },
+    {
+      "id": "inject-instruction-like-tool:directory_tree",
+      "analyzer": "prompt_injection",
+      "title": "Instruction-like description on tool:directory_tree",
+      "description": "MCP surface contains imperative language that may confuse agents.",
+      "severity": "medium",
+      "recommendation": "Use neutral, descriptive documentation without imperative instructions.",
+      "tool": "directory_tree",
+      "evidence": {
+        "type": "instruction_like",
+        "surface": "tool",
+        "reachability_tag": "network_exposed",
+        "exposure_tag": "public_endpoint",
+        "risk_tags": [
+          "reachability_tag",
+          "exposure_tag"
+        ],
+        "aitech": "AITech-PAI",
+        "aisubtech": "AISubtech-PAI-001"
+      },
+      "technique_id": "MCTS-T-1001",
+      "mitigation_ids": [
+        "MCTS-M-004",
+        "MCTS-M-007",
+        "MCTS-M-020"
+      ],
+      "cwe_id": null,
+      "confidence": 0.6,
+      "location": {
+        "file": "",
+        "line": null
+      }
+    },
+    {
+      "id": "line-jump-tool:create_directory",
+      "analyzer": "line_jumping",
+      "title": "Line jumping pattern on tool:create_directory",
+      "description": "MCP surface attempts to establish precedence over security directives (MCTS-T-1021).",
+      "severity": "high",
+      "recommendation": "Strip priority/override language from MCP surfaces; enforce immutable system policy ordering.",
+      "tool": "create_directory",
+      "evidence": {
+        "type": "line_jumping",
+        "surface": "tool",
+        "aitech": "AITech-TP",
+        "aisubtech": "AISubtech-TP-002"
+      },
+      "technique_id": "MCTS-T-1021",
+      "mitigation_ids": [
+        "MCTS-M-009"
+      ],
+      "cwe_id": null,
+      "confidence": 0.8,
+      "location": {
+        "file": "",
+        "line": null
+      }
+    },
+    {
+      "id": "abuse-path-read_file",
+      "analyzer": "tool_abuse",
+      "title": "Path traversal risk: read_file",
+      "description": "File-access tool may allow directory traversal, encoded paths, or sensitive file targets.",
+      "severity": "high",
+      "recommendation": "Validate and canonicalize paths; restrict to an allowlisted root.",
+      "tool": "read_file",
+      "evidence": {
+        "test_payloads": [
+          "../../etc/passwd",
+          "../../../.env",
+          "~/.aws/credentials",
+          "/etc/shadow",
+          "../../../../../../etc/passwd",
+          "%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fshadow",
+          "%252e%252e%252f%252e%252e%252f%252e%252e%252fetc%2fpasswd",
+          "%c0%ae%c0%ae%2f%c0%ae%c0%ae%2f%c0%ae%c0%ae%2fetc%2fpasswd",
+          "../../../../.ssh/id_rsa",
+          "../config/.env",
+          "../../../etc/passwd%00",
+          "..%2F..%2F..%2Fetc%2Fshadow"
+        ],
+        "sensitive_targets": [
+          "/etc/passwd",
+          "/etc/shadow",
+          "/.ssh/id_rsa",
+          "/.env",
+          "/config.json",
+          "/secrets.yaml",
+          "/credentials"
+        ],
+        "reachability_tag": "default",
+        "aitech": "AITech-ACE",
+        "aisubtech": "AISubtech-ACE-003"
+      },
+      "technique_id": "MCTS-T-1002",
+      "mitigation_ids": [
+        "MCTS-M-001",
+        "MCTS-M-021"
+      ],
+      "cwe_id": null,
+      "confidence": 1.0,
+      "location": null
+    },
+    {
+      "id": "abuse-path-read_text_file",
+      "analyzer": "tool_abuse",
+      "title": "Path traversal risk: read_text_file",
+      "description": "File-access tool may allow directory traversal, encoded paths, or sensitive file targets.",
+      "severity": "high",
+      "recommendation": "Validate and canonicalize paths; restrict to an allowlisted root.",
+      "tool": "read_text_file",
+      "evidence": {
+        "test_payloads": [
+          "../../etc/passwd",
+          "../../../.env",
+          "~/.aws/credentials",
+          "/etc/shadow",
+          "../../../../../../etc/passwd",
+          "%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fshadow",
+          "%252e%252e%252f%252e%252e%252f%252e%252e%252fetc%2fpasswd",
+          "%c0%ae%c0%ae%2f%c0%ae%c0%ae%2f%c0%ae%c0%ae%2fetc%2fpasswd",
+          "../../../../.ssh/id_rsa",
+          "../config/.env",
+          "../../../etc/passwd%00",
+          "..%2F..%2F..%2Fetc%2Fshadow"
+        ],
+        "sensitive_targets": [
+          "/etc/passwd",
+          "/etc/shadow",
+          "/.ssh/id_rsa",
+          "/.env",
+          "/config.json",
+          "/secrets.yaml",
+          "/credentials"
+        ],
+        "reachability_tag": "default",
+        "aitech": "AITech-ACE",
+        "aisubtech": "AISubtech-ACE-003"
+      },
+      "technique_id": "MCTS-T-1002",
+      "mitigation_ids": [
+        "MCTS-M-001",
+        "MCTS-M-021"
+      ],
+      "cwe_id": null,
+      "confidence": 1.0,
+      "location": null
+    },
+    {
+      "id": "abuse-path-read_media_file",
+      "analyzer": "tool_abuse",
+      "title": "Path traversal risk: read_media_file",
+      "description": "File-access tool may allow directory traversal, encoded paths, or sensitive file targets.",
+      "severity": "high",
+      "recommendation": "Validate and canonicalize paths; restrict to an allowlisted root.",
+      "tool": "read_media_file",
+      "evidence": {
+        "test_payloads": [
+          "../../etc/passwd",
+          "../../../.env",
+          "~/.aws/credentials",
+          "/etc/shadow",
+          "../../../../../../etc/passwd",
+          "%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fshadow",
+          "%252e%252e%252f%252e%252e%252f%252e%252e%252fetc%2fpasswd",
+          "%c0%ae%c0%ae%2f%c0%ae%c0%ae%2f%c0%ae%c0%ae%2fetc%2fpasswd",
+          "../../../../.ssh/id_rsa",
+          "../config/.env",
+          "../../../etc/passwd%00",
+          "..%2F..%2F..%2Fetc%2Fshadow"
+        ],
+        "sensitive_targets": [
+          "/etc/passwd",
+          "/etc/shadow",
+          "/.ssh/id_rsa",
+          "/.env",
+          "/config.json",
+          "/secrets.yaml",
+          "/credentials"
+        ],
+        "reachability_tag": "default",
+        "aitech": "AITech-ACE",
+        "aisubtech": "AISubtech-ACE-003"
+      },
+      "technique_id": "MCTS-T-1002",
+      "mitigation_ids": [
+        "MCTS-M-001",
+        "MCTS-M-021"
+      ],
+      "cwe_id": null,
+      "confidence": 1.0,
+      "location": null
+    },
+    {
+      "id": "abuse-path-write_file",
+      "analyzer": "tool_abuse",
+      "title": "Path traversal risk: write_file",
+      "description": "File-access tool may allow directory traversal, encoded paths, or sensitive file targets.",
+      "severity": "high",
+      "recommendation": "Validate and canonicalize paths; restrict to an allowlisted root.",
+      "tool": "write_file",
+      "evidence": {
+        "test_payloads": [
+          "../../etc/passwd",
+          "../../../.env",
+          "~/.aws/credentials",
+          "/etc/shadow",
+          "../../../../../../etc/passwd",
+          "%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fshadow",
+          "%252e%252e%252f%252e%252e%252f%252e%252e%252fetc%2fpasswd",
+          "%c0%ae%c0%ae%2f%c0%ae%c0%ae%2f%c0%ae%c0%ae%2fetc%2fpasswd",
+          "../../../../.ssh/id_rsa",
+          "../config/.env",
+          "../../../etc/passwd%00",
+          "..%2F..%2F..%2Fetc%2Fshadow"
+        ],
+        "sensitive_targets": [
+          "/etc/passwd",
+          "/etc/shadow",
+          "/.ssh/id_rsa",
+          "/.env",
+          "/config.json",
+          "/secrets.yaml",
+          "/credentials"
+        ],
+        "reachability_tag": "default",
+        "aitech": "AITech-ACE",
+        "aisubtech": "AISubtech-ACE-003"
+      },
+      "technique_id": "MCTS-T-1002",
+      "mitigation_ids": [
+        "MCTS-M-001",
+        "MCTS-M-021"
+      ],
+      "cwe_id": null,
+      "confidence": 1.0,
+      "location": null
+    },
+    {
+      "id": "abuse-path-edit_file",
+      "analyzer": "tool_abuse",
+      "title": "Path traversal risk: edit_file",
+      "description": "File-access tool may allow directory traversal, encoded paths, or sensitive file targets.",
+      "severity": "high",
+      "recommendation": "Validate and canonicalize paths; restrict to an allowlisted root.",
+      "tool": "edit_file",
+      "evidence": {
+        "test_payloads": [
+          "../../etc/passwd",
+          "../../../.env",
+          "~/.aws/credentials",
+          "/etc/shadow",
+          "../../../../../../etc/passwd",
+          "%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fshadow",
+          "%252e%252e%252f%252e%252e%252f%252e%252e%252fetc%2fpasswd",
+          "%c0%ae%c0%ae%2f%c0%ae%c0%ae%2f%c0%ae%c0%ae%2fetc%2fpasswd",
+          "../../../../.ssh/id_rsa",
+          "../config/.env",
+          "../../../etc/passwd%00",
+          "..%2F..%2F..%2Fetc%2Fshadow"
+        ],
+        "sensitive_targets": [
+          "/etc/passwd",
+          "/etc/shadow",
+          "/.ssh/id_rsa",
+          "/.env",
+          "/config.json",
+          "/secrets.yaml",
+          "/credentials"
+        ],
+        "reachability_tag": "default",
+        "aitech": "AITech-ACE",
+        "aisubtech": "AISubtech-ACE-003"
+      },
+      "technique_id": "MCTS-T-1002",
+      "mitigation_ids": [
+        "MCTS-M-001",
+        "MCTS-M-021"
+      ],
+      "cwe_id": null,
+      "confidence": 1.0,
+      "location": null
+    },
+    {
+      "id": "abuse-path-create_directory",
+      "analyzer": "tool_abuse",
+      "title": "Path traversal risk: create_directory",
+      "description": "File-access tool may allow directory traversal, encoded paths, or sensitive file targets.",
+      "severity": "high",
+      "recommendation": "Validate and canonicalize paths; restrict to an allowlisted root.",
+      "tool": "create_directory",
+      "evidence": {
+        "test_payloads": [
+          "../../etc/passwd",
+          "../../../.env",
+          "~/.aws/credentials",
+          "/etc/shadow",
+          "../../../../../../etc/passwd",
+          "%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fshadow",
+          "%252e%252e%252f%252e%252e%252f%252e%252e%252fetc%2fpasswd",
+          "%c0%ae%c0%ae%2f%c0%ae%c0%ae%2f%c0%ae%c0%ae%2fetc%2fpasswd",
+          "../../../../.ssh/id_rsa",
+          "../config/.env",
+          "../../../etc/passwd%00",
+          "..%2F..%2F..%2Fetc%2Fshadow"
+        ],
+        "sensitive_targets": [
+          "/etc/passwd",
+          "/etc/shadow",
+          "/.ssh/id_rsa",
+          "/.env",
+          "/config.json",
+          "/secrets.yaml",
+          "/credentials"
+        ],
+        "reachability_tag": "default",
+        "aitech": "AITech-ACE",
+        "aisubtech": "AISubtech-ACE-003"
+      },
+      "technique_id": "MCTS-T-1002",
+      "mitigation_ids": [
+        "MCTS-M-001",
+        "MCTS-M-021"
+      ],
+      "cwe_id": null,
+      "confidence": 1.0,
+      "location": null
+    },
+    {
+      "id": "abuse-path-list_directory",
+      "analyzer": "tool_abuse",
+      "title": "Path traversal risk: list_directory",
+      "description": "File-access tool may allow directory traversal, encoded paths, or sensitive file targets.",
+      "severity": "high",
+      "recommendation": "Validate and canonicalize paths; restrict to an allowlisted root.",
+      "tool": "list_directory",
+      "evidence": {
+        "test_payloads": [
+          "../../etc/passwd",
+          "../../../.env",
+          "~/.aws/credentials",
+          "/etc/shadow",
+          "../../../../../../etc/passwd",
+          "%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fshadow",
+          "%252e%252e%252f%252e%252e%252f%252e%252e%252fetc%2fpasswd",
+          "%c0%ae%c0%ae%2f%c0%ae%c0%ae%2f%c0%ae%c0%ae%2fetc%2fpasswd",
+          "../../../../.ssh/id_rsa",
+          "../config/.env",
+          "../../../etc/passwd%00",
+          "..%2F..%2F..%2Fetc%2Fshadow"
+        ],
+        "sensitive_targets": [
+          "/etc/passwd",
+          "/etc/shadow",
+          "/.ssh/id_rsa",
+          "/.env",
+          "/config.json",
+          "/secrets.yaml",
+          "/credentials"
+        ],
+        "reachability_tag": "default",
+        "aitech": "AITech-ACE",
+        "aisubtech": "AISubtech-ACE-003"
+      },
+      "technique_id": "MCTS-T-1002",
+      "mitigation_ids": [
+        "MCTS-M-001",
+        "MCTS-M-021"
+      ],
+      "cwe_id": null,
+      "confidence": 1.0,
+      "location": null
+    },
+    {
+      "id": "abuse-path-list_directory_with_sizes",
+      "analyzer": "tool_abuse",
+      "title": "Path traversal risk: list_directory_with_sizes",
+      "description": "File-access tool may allow directory traversal, encoded paths, or sensitive file targets.",
+      "severity": "high",
+      "recommendation": "Validate and canonicalize paths; restrict to an allowlisted root.",
+      "tool": "list_directory_with_sizes",
+      "evidence": {
+        "test_payloads": [
+          "../../etc/passwd",
+          "../../../.env",
+          "~/.aws/credentials",
+          "/etc/shadow",
+          "../../../../../../etc/passwd",
+          "%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fshadow",
+          "%252e%252e%252f%252e%252e%252f%252e%252e%252fetc%2fpasswd",
+          "%c0%ae%c0%ae%2f%c0%ae%c0%ae%2f%c0%ae%c0%ae%2fetc%2fpasswd",
+          "../../../../.ssh/id_rsa",
+          "../config/.env",
+          "../../../etc/passwd%00",
+          "..%2F..%2F..%2Fetc%2Fshadow"
+        ],
+        "sensitive_targets": [
+          "/etc/passwd",
+          "/etc/shadow",
+          "/.ssh/id_rsa",
+          "/.env",
+          "/config.json",
+          "/secrets.yaml",
+          "/credentials"
+        ],
+        "reachability_tag": "default",
+        "aitech": "AITech-ACE",
+        "aisubtech": "AISubtech-ACE-003"
+      },
+      "technique_id": "MCTS-T-1002",
+      "mitigation_ids": [
+        "MCTS-M-001",
+        "MCTS-M-021"
+      ],
+      "cwe_id": null,
+      "confidence": 1.0,
+      "location": null
+    },
+    {
+      "id": "abuse-path-directory_tree",
+      "analyzer": "tool_abuse",
+      "title": "Path traversal risk: directory_tree",
+      "description": "File-access tool may allow directory traversal, encoded paths, or sensitive file targets.",
+      "severity": "high",
+      "recommendation": "Validate and canonicalize paths; restrict to an allowlisted root.",
+      "tool": "directory_tree",
+      "evidence": {
+        "test_payloads": [
+          "../../etc/passwd",
+          "../../../.env",
+          "~/.aws/credentials",
+          "/etc/shadow",
+          "../../../../../../etc/passwd",
+          "%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fshadow",
+          "%252e%252e%252f%252e%252e%252f%252e%252e%252fetc%2fpasswd",
+          "%c0%ae%c0%ae%2f%c0%ae%c0%ae%2f%c0%ae%c0%ae%2fetc%2fpasswd",
+          "../../../../.ssh/id_rsa",
+          "../config/.env",
+          "../../../etc/passwd%00",
+          "..%2F..%2F..%2Fetc%2Fshadow"
+        ],
+        "sensitive_targets": [
+          "/etc/passwd",
+          "/etc/shadow",
+          "/.ssh/id_rsa",
+          "/.env",
+          "/config.json",
+          "/secrets.yaml",
+          "/credentials"
+        ],
+        "reachability_tag": "default",
+        "aitech": "AITech-ACE",
+        "aisubtech": "AISubtech-ACE-003"
+      },
+      "technique_id": "MCTS-T-1002",
+      "mitigation_ids": [
+        "MCTS-M-001",
+        "MCTS-M-021"
+      ],
+      "cwe_id": null,
+      "confidence": 1.0,
+      "location": null
+    },
+    {
+      "id": "abuse-path-search_files",
+      "analyzer": "tool_abuse",
+      "title": "Path traversal risk: search_files",
+      "description": "File-access tool may allow directory traversal, encoded paths, or sensitive file targets.",
+      "severity": "high",
+      "recommendation": "Validate and canonicalize paths; restrict to an allowlisted root.",
+      "tool": "search_files",
+      "evidence": {
+        "test_payloads": [
+          "../../etc/passwd",
+          "../../../.env",
+          "~/.aws/credentials",
+          "/etc/shadow",
+          "../../../../../../etc/passwd",
+          "%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fshadow",
+          "%252e%252e%252f%252e%252e%252f%252e%252e%252fetc%2fpasswd",
+          "%c0%ae%c0%ae%2f%c0%ae%c0%ae%2f%c0%ae%c0%ae%2fetc%2fpasswd",
+          "../../../../.ssh/id_rsa",
+          "../config/.env",
+          "../../../etc/passwd%00",
+          "..%2F..%2F..%2Fetc%2Fshadow"
+        ],
+        "sensitive_targets": [
+          "/etc/passwd",
+          "/etc/shadow",
+          "/.ssh/id_rsa",
+          "/.env",
+          "/config.json",
+          "/secrets.yaml",
+          "/credentials"
+        ],
+        "reachability_tag": "default",
+        "aitech": "AITech-ACE",
+        "aisubtech": "AISubtech-ACE-003"
+      },
+      "technique_id": "MCTS-T-1002",
+      "mitigation_ids": [
+        "MCTS-M-001",
+        "MCTS-M-021"
+      ],
+      "cwe_id": null,
+      "confidence": 1.0,
+      "location": null
+    },
+    {
+      "id": "abuse-path-get_file_info",
+      "analyzer": "tool_abuse",
+      "title": "Path traversal risk: get_file_info",
+      "description": "File-access tool may allow directory traversal, encoded paths, or sensitive file targets.",
+      "severity": "high",
+      "recommendation": "Validate and canonicalize paths; restrict to an allowlisted root.",
+      "tool": "get_file_info",
+      "evidence": {
+        "test_payloads": [
+          "../../etc/passwd",
+          "../../../.env",
+          "~/.aws/credentials",
+          "/etc/shadow",
+          "../../../../../../etc/passwd",
+          "%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fshadow",
+          "%252e%252e%252f%252e%252e%252f%252e%252e%252fetc%2fpasswd",
+          "%c0%ae%c0%ae%2f%c0%ae%c0%ae%2f%c0%ae%c0%ae%2fetc%2fpasswd",
+          "../../../../.ssh/id_rsa",
+          "../config/.env",
+          "../../../etc/passwd%00",
+          "..%2F..%2F..%2Fetc%2Fshadow"
+        ],
+        "sensitive_targets": [
+          "/etc/passwd",
+          "/etc/shadow",
+          "/.ssh/id_rsa",
+          "/.env",
+          "/config.json",
+          "/secrets.yaml",
+          "/credentials"
+        ],
+        "reachability_tag": "default",
+        "aitech": "AITech-ACE",
+        "aisubtech": "AISubtech-ACE-003"
+      },
+      "technique_id": "MCTS-T-1002",
+      "mitigation_ids": [
+        "MCTS-M-001",
+        "MCTS-M-021"
+      ],
+      "cwe_id": null,
+      "confidence": 1.0,
+      "location": null
+    },
+    {
+      "id": "compliance-mcp-top10-gaps",
+      "analyzer": "compliance",
+      "title": "OWASP MCP Top 10 coverage gaps remain",
+      "description": "Uncovered MCP categories: MCP03 Credential & Token Exposure, MCP04 Supply Chain & Dependency Risk, MCP05 Cross-Server Tool Shadowing, MCP06 OAuth & Auth Misconfiguration, MCP07 Protocol & Transport Weakness, MCP08 Excessive Tool Surface, MCP09 Instruction File / Skill Poisoning, MCP10 Runtime Behavior & Exfiltration",
+      "severity": "low",
+      "recommendation": "Expand scan scope or enable additional analyzers for full MCP Top 10 coverage.",
+      "tool": null,
+      "evidence": {
+        "missing_mcp_categories": [
+          "MCP03 Credential & Token Exposure",
+          "MCP04 Supply Chain & Dependency Risk",
+          "MCP05 Cross-Server Tool Shadowing",
+          "MCP06 OAuth & Auth Misconfiguration",
+          "MCP07 Protocol & Transport Weakness",
+          "MCP08 Excessive Tool Surface",
+          "MCP09 Instruction File / Skill Poisoning",
+          "MCP10 Runtime Behavior & Exfiltration"
+        ],
+        "covered": [
+          "MCP01 Tool Permission Overreach",
+          "MCP02 Tool Description Poisoning"
+        ]
+      },
+      "technique_id": null,
+      "mitigation_ids": [],
+      "cwe_id": null,
+      "confidence": 1.0,
+      "location": null
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 12,
+    "medium": 2,
+    "low": 1,
+    "total": 15
+  },
+  "score": {
+    "overall": 8,
+    "risk_index": 100,
+    "raw_risk": 126,
+    "penalty": 126,
+    "basis": {
+      "critical": 0,
+      "high": 12,
+      "medium": 2,
+      "low": 0,
+      "scorable_total": 14,
+      "excluded_non_scorable": 1
+    }
+  },
+  "score_v2": null,
+  "scoring_version": "legacy",
+  "attack_graph": {},
+  "scan_scope": "live",
+  "scan_notes": [],
+  "score_breakdown": {
+    "mcp_surface": 8,
+    "supply_chain": 100,
+    "dependency_hygiene": 100,
+    "composite": 45
+  },
+  "tool_discovery_notice": null,
+  "analyzers_executed": [
+    "live_discovery",
+    "permission_analyzer",
+    "surface_metadata",
+    "metadata_integrity",
+    "prompt_injection",
+    "tool_shadowing",
+    "line_jumping",
+    "tool_abuse",
+    "schema_surface",
+    "data_leakage",
+    "sigma_metadata",
+    "prompt_defense",
+    "compliance"
+  ],
+  "scan_history": [
+    {
+      "date": "Oct 18",
+      "score": 8,
+      "scanned_at": "2026-10-18T07:52:44.057285+00:00",
+      "scoring_version": "legacy",
+      "findings_total": 15,
+      "critical": 0,
+      "high": 12
+    }
+  ]
+}

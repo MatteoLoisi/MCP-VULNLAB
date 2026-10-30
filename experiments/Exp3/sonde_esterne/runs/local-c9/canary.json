@@ -1,0 +1,6 @@
+{
+  "canary": "EXT_CANARY_f6a90ffdae3746b3ade18d16fbe299be",
+  "target": "c9",
+  "scope": "public tool contract",
+  "path": "/tmp/probe-canary.txt"
+}

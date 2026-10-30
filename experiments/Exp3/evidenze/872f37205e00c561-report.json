@@ -1,0 +1,82 @@
+{
+  "schema": "exp3-probe-report-v1",
+  "producer": "exp3-probe-worker-v1",
+  "target": "R4-everything",
+  "attempt_id": "030d8abc6df04c39a22a39a6a966ba16",
+  "status": "completed",
+  "target_identity": {
+    "target": "R4-everything",
+    "definition_sha256": "7061fa393f2c70af6528af34a344b8c34ff8bf70076a42733b9917064e0b3cf9",
+    "manifest_sha256": "71156adadb7e944ec4e76beb135ac2d9913523bce20628bb3fc13eccbcb803d9",
+    "transport": "stdio",
+    "version": "1.0.0",
+    "configuration_sha256": "499db8d4494aff247c2e78c9372855d3ef3b6a2a9548449a571117b5e0dc52c6"
+  },
+  "target_command": [
+    "npx",
+    "-y",
+    "@modelcontextprotocol/server-everything@1.0.0"
+  ],
+  "scan_target": ".",
+  "planned_findings": [
+    "P2-tool-poisoning"
+  ],
+  "profile": "black-box",
+  "raw_ref": "capture.json",
+  "raw_sha256": "5a05e4fcb02ed061d0fcf674df8cd46ab7be8000b418d959293194f378fd672d",
+  "findings": {
+    "P2-tool-poisoning": {
+      "status": "secure",
+      "proof": "nessuna istruzione sospetta in 13 DESCRIPTION (avg_score=99)",
+      "details": {
+        "count": 13,
+        "avg_score": 99,
+        "by_severity": {
+          "low": 2
+        },
+        "audit": [
+          {
+            "tool": "toggle-subscriber-updates",
+            "score": 95,
+            "flags": [
+              {
+                "code": "privileged-no-readonly-hint",
+                "severity": "low",
+                "detail": "verbo privilegiato senza readOnlyHint: verificare least-privilege"
+              }
+            ]
+          },
+          {
+            "tool": "simulate-research-query",
+            "score": 95,
+            "flags": [
+              {
+                "code": "privileged-no-readonly-hint",
+                "severity": "low",
+                "detail": "verbo privilegiato senza readOnlyHint: verificare least-privilege"
+              }
+            ]
+          },
+          {
+            "tool": "echo",
+            "score": 100,
+            "flags": []
+          },
+          {
+            "tool": "get-annotated-message",
+            "score": 100,
+            "flags": []
+          },
+          {
+            "tool": "get-env",
+            "score": 100,
+            "flags": []
+          }
+        ]
+      },
+      "evidence_reason": "derived from captured call",
+      "evidence_ref": "evidence/1.json",
+      "evidence_sha256": "ed03480846f683672a7f9c0b01bc28a7af9c753237c42a760a7d954d4b9ecd9f"
+    }
+  }
+}

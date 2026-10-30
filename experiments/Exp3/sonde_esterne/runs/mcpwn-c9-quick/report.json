@@ -1,0 +1,43 @@
+{
+  "tool": "Mcpwn",
+  "version": "1.0",
+  "timestamp": "2026-10-19T17:22:04.611069+00:00",
+  "findings": [
+    {
+      "tool": "ping_host",
+      "arg": "host",
+      "payload": "; id",
+      "type": "RCE",
+      "category": "command_injection",
+      "severity": "CRITICAL",
+      "detections": [
+        {
+          "type": "RCE",
+          "indicator": "uid=\\d+\\([^)]+\\)",
+          "match": "uid=1001(targetuser)"
+        },
+        {
+          "type": "RCE",
+          "indicator": "gid=\\d+\\([^)]+\\)",
+          "match": "gid=1001(targetuser)"
+        },
+        {
+          "type": "RCE",
+          "indicator": "groups=\\d+",
+          "match": "groups=1001"
+        }
+      ],
+      "test": "tool_injection",
+      "timestamp": "2026-10-19T17:22:04.602797+00:00"
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "by_type": {
+      "RCE": 1
+    },
+    "by_severity": {
+      "CRITICAL": 1
+    }
+  }
+}

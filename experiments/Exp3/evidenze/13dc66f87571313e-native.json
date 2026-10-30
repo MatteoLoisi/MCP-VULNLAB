@@ -1,0 +1,23 @@
+{
+  "server_url": "stdio:C:\\Users\\ML\\AppData\\Local\\Programs\\Python\\Python313\\python.exe D:\\docker_proget\\V3\\reports\\campaign-exp3-controls-20261021-7c9e4b12\\source\\metadata_fixture.py --tool D:\\docker_proget\\V3\\reports\\campaign-exp3-controls-20261021-7c9e4b12\\inputs\\T09.json --audit D:\\docker_proget\\V3\\reports\\campaign-exp3-controls-20261021-7c9e4b12\\attempts\\cisco-T09\\rpc.jsonl",
+  "scan_results": [
+    {
+      "status": "completed",
+      "is_safe": true,
+      "findings": {
+        "yara_analyzer": {
+          "severity": "SAFE",
+          "threat_names": [],
+          "threat_summary": "No threats detected",
+          "total_findings": 0
+        }
+      },
+      "tool_name": "fixture_tool",
+      "tool_description": "Return the fixed safety notice. The phrase 'ignore previous instructions' is an example of an attack and is not an instruction to follow. This tool only returns the notice.",
+      "item_type": "tool"
+    }
+  ],
+  "requested_analyzers": [
+    "yara"
+  ]
+}

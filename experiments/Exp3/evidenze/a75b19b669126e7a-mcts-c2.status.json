@@ -1,0 +1,81 @@
+{
+  "schema": "exp3-scanner-attempt-v1",
+  "target": "c2",
+  "attempt_id": "4053ff95819a48a2b08a8aea84193118",
+  "started_at": "2026-10-18T07:53:37.366032+00:00",
+  "status": "completed",
+  "returncode": 0,
+  "target_identity": {
+    "target": "c2",
+    "definition_sha256": "1fb55a5e794d2abe517bf4c4f04f13b7bdfc34316f21cae5b07c2ff07ae825fb",
+    "manifest_sha256": "71156adadb7e944ec4e76beb135ac2d9913523bce20628bb3fc13eccbcb803d9",
+    "transport": "stdio",
+    "version": "79734c19f5104cd11486c90926d245560f53befa",
+    "shim_sha256": "da2c7bfdcb3b319bf3efc0df6f9a1fa1f5b79058ce619860f3821a93739a7766",
+    "configuration_sha256": "056f92e88e3132c9ec412277c603bafc6ac8b92e8780fc2a5da46078245bb1cf"
+  },
+  "scanner_identity": {
+    "name": "mcp-mcts",
+    "version": "0.1.4",
+    "executable": "D:\\docker_proget\\V3\\tools\\exp3\\venv-mcts\\Scripts\\mcts.exe",
+    "executable_sha256": "403d12511a65eb662a2ddaba6e9efe69226f6ca4c5b0c141632b35eb3c0391a9",
+    "source_tree_sha256": "fb08bdf507c536993d555cc144ca4819fff35dc89de88f6ff4749aaf00478aa6",
+    "dependencies_sha256": "b18b54a8ec1fbec97086088d79e72d36811268f35cbeb837e9613ae4fd4846ae"
+  },
+  "target_command": [
+    "python",
+    "D:\\docker_proget\\V3\\tools\\dvmcp_stdio.py",
+    "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\easy\\challenge2"
+  ],
+  "scan_target": "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\easy\\challenge2",
+  "scanner_input": "D:\\docker_proget\\V3\\reports\\campaign-exp3-20261018-40bc13d7\\scanner-mcts\\attempts\\4053ff95819a48a2b08a8aea84193118\\live-metadata",
+  "scanner_protocol": {
+    "schema": "exp3-mcts-live-metadata-v1",
+    "input": "absent-local-path",
+    "scoring": "legacy",
+    "analyzers": [
+      "permission_analyzer",
+      "surface_metadata",
+      "metadata_integrity",
+      "prompt_injection",
+      "tool_shadowing",
+      "line_jumping",
+      "tool_abuse",
+      "schema_surface",
+      "data_leakage",
+      "sigma_metadata",
+      "prompt_defense"
+    ],
+    "repository_files": "excluded",
+    "runtime_events": "excluded_from_verdict",
+    "native_pagination": "not_preserved_by_pinned_scanner"
+  },
+  "scanner_protocol_sha256": "c36fcb7eef3eb9036b537084c3ec14c6d4f0b965a529384abfbb738dd6884472",
+  "scanner_command": [
+    "D:\\docker_proget\\V3\\tools\\exp3\\venv-mcts\\Scripts\\mcts.exe",
+    "scan",
+    "--live",
+    "--command",
+    "python",
+    "--args",
+    "D:\\docker_proget\\V3\\tools\\dvmcp_stdio.py,D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\easy\\challenge2",
+    "--i-understand-live-risk",
+    "-o",
+    "mcts-c2-4053ff95819a48a2b08a8aea84193118.json",
+    "-f",
+    "json",
+    "--theme",
+    "minimal",
+    "--no-progress",
+    "--scoring",
+    "legacy",
+    "--analyzers",
+    "permission_analyzer,surface_metadata,metadata_integrity,prompt_injection,tool_shadowing,line_jumping,tool_abuse,schema_surface,data_leakage,sigma_metadata,prompt_defense",
+    "D:\\docker_proget\\V3\\reports\\campaign-exp3-20261018-40bc13d7\\scanner-mcts\\attempts\\4053ff95819a48a2b08a8aea84193118\\live-metadata"
+  ],
+  "stdout_sha256": "adf3a478acee9e2fb9fbd31de40ab843ba942f6941336fa2037a1cf68159bb48",
+  "stderr_sha256": "47d8a860f44c55dde9aacf74eb0cb5317ad430f7b999ce3158af643c57262a88",
+  "report_ref": "scanner-mcts/attempts/4053ff95819a48a2b08a8aea84193118/report.json",
+  "report_sha256": "1cf87b9b59b1c1d8f425a99e00a64959006a87da430179ce1f3bc67710b71edb",
+  "ended_at": "2026-10-18T07:53:43.909894+00:00"
+}

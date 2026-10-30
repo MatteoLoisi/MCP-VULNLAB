@@ -1,0 +1,24 @@
+{
+  "schema": "exp3-evidence-v1",
+  "target": "c1",
+  "attempt_id": "878c46339ebb489d84553b2f442e979d",
+  "finding_id": "P2-tool-poisoning",
+  "type": "negative_check",
+  "applicable": true,
+  "scope": "textual",
+  "request": {
+    "id": "796351a893e44875951c0fa19434a92e",
+    "captured_args": [],
+    "captured_kwargs": {}
+  },
+  "response": {
+    "request_id": "796351a893e44875951c0fa19434a92e",
+    "completed": true,
+    "outcome": "no_indicator",
+    "observed": "[{\"name\": \"get_user_info\", \"description\": \"Get information about a user\", \"inputSchema\": {\"properties\": {\"username\": {\"title\": \"Username\", \"type\": \"string\"}}, \"required\": [\"username\"], \"title\": \"get_user_infoArguments\", \"type\": \"object\"}, \"outputSchema\": {\"properties\": {\"result\": {\"title\": \"Result\", \"type\": \"string\"}}, \"required\": [\"result\"], \"title\": \"get_user_infoOutput\", \"type\": \"object\"}}]"
+  },
+  "coverage_complete": true,
+  "capture_ref": "capture.json",
+  "capture_sha256": "64affc489399519844d1bfc96b4d8cc4c40e19460a2a7635345bc5a203ee4f8c",
+  "source_call_index": 1
+}

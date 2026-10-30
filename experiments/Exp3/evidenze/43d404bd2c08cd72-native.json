@@ -1,0 +1,71 @@
+{
+  "events": [
+    {
+      "type": "server-connected",
+      "serverName": "fixture",
+      "toolCount": 1,
+      "tools": [
+        {
+          "name": "fixture_tool",
+          "description": "Validate a password supplied by the user against a local length policy. The password and token values are not retained in the returned result.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "tool-scanning",
+      "serverName": "fixture",
+      "toolName": "fixture_tool"
+    },
+    {
+      "type": "tool-analyzed",
+      "serverName": "fixture",
+      "toolName": "fixture_tool",
+      "hasIssues": true,
+      "issues": [
+        "sensitive-file-access"
+      ],
+      "severity": "HIGH"
+    }
+  ],
+  "result": {
+    "serverName": "shield-T07",
+    "configPath": "D:\\docker_proget\\V3\\reports\\campaign-exp3-controls-20261021-7c9e4b12\\attempts\\shield-T07\\config.json",
+    "crossOriginViolation": false,
+    "vulnerabilities": [
+      {
+        "severity": "HIGH",
+        "server": "fixture",
+        "tool": "fixture_tool",
+        "detectionDetails": {
+          "hiddenInstructions": [],
+          "exfiltrationChannels": [],
+          "shadowing": [],
+          "sensitiveFileAccess": [
+            {
+              "type": "Password access",
+              "pattern": "\\bpassword\\b",
+              "match": "password",
+              "context": "...Validate a password supplied by the use..."
+            },
+            {
+              "type": "Token access",
+              "pattern": "\\btoken\\b",
+              "match": "token",
+              "context": "...y. The password and token values are not reta..."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

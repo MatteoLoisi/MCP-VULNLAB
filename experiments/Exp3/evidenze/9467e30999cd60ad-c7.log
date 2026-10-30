@@ -1,0 +1,45 @@
+Processing request of type ListToolsRequest
+=== MCP Scanner Detailed Results ===
+
+Scan Target: stdio:C:/Users/ML/AppData/Local/Programs/Python/Python313/python.exe D:/docker_proget/V3/tools/dvmcp_stdio.py C:/Users/ML/AppData/Local/Temp/mcptargets/dvmcp/challenges/medium/challenge7
+
+Tool 1: check_email
+Status: completed
+Safe: Yes
+Analyzer Results:
+  • yara_analyzer:
+    - Severity: SAFE
+    - Threat Summary: No threats detected
+    - Threat Names: None
+    - Total Findings: 0
+
+Tool 2: send_email
+Status: completed
+Safe: Yes
+Analyzer Results:
+  • yara_analyzer:
+    - Severity: SAFE
+    - Threat Summary: No threats detected
+    - Threat Names: None
+    - Total Findings: 0
+
+Tool 3: check_service_status
+Status: completed
+Safe: Yes
+Analyzer Results:
+  • yara_analyzer:
+    - Severity: SAFE
+    - Threat Summary: No threats detected
+    - Threat Names: None
+    - Total Findings: 0
+
+Tool 4: view_system_logs
+Status: completed
+Safe: Yes
+Analyzer Results:
+  • yara_analyzer:
+    - Severity: SAFE
+    - Threat Summary: No threats detected
+    - Threat Names: None
+    - Total Findings: 0
+

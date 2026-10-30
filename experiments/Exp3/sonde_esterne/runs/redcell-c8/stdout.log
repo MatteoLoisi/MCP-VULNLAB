@@ -1,0 +1,16 @@
+
+[1mRedCell MCP scan — DVMCP-c8[0m
+[2m3 tool(s) enumerated · 19 probe call(s) · static + dynamic exploit · OWASP MCP Top 10[0m
+
+  [31m✗ CRITICAL[0m [1mOS Command Injection[0m [2m· tool 'execute_shell_command' · OWASP MCP05 — OS Command Injection · conf 0.97[0m
+      [2mAn injected shell expression executed on the host: 4191022*8032479 resolved to 33664296203538 in the tool output. This is OS command execution.[0m
+      [2m↳ Payload: command='`echo $((4191022*8032479))`'[0m
+      [2m↳ Shell evaluated 4191022*8032479 → 33664296203538 (proof of execution): Error executing command: /bin/sh: 1: 33664296203538: not found[0m
+  [31m✗ CRITICAL[0m [1mPath Traversal / Unsandboxed File Read[0m [2m· tool 'analyze_log_file' · Path Traversal / Unsandboxed File Access (not MCP-specific — see category description) · conf 0.99[0m
+      [2mThe tool returned the contents of a file outside any intended directory — path traversal / missing sandboxing (proven read).[0m
+      [2m↳ Payload: log_path='/tmp/redcell-canary-rire6bg2/.redcell-f83f389c.canary'[0m
+      [2m↳ Observed the unpredictable canary value written by the scanner[0m
+      [2m↳ Leaked content: Log File Analysis: /tmp/redcell-canary-rire6bg2/.redcell-f83f389c.canary ⏎ -------------------------- ⏎ Lines: 1 ⏎ Words: 1 ⏎ Characters: 35 ⏎  ⏎ Sample Content (first 500 characters): ⏎ RCX8fc2d647efe424c226cec5e2ea7439cd... ⏎  ⏎ Analysis …[0m
+
+[31m[1m2 vulnerability(s) proven.[0m
+[2mHTML report: /results/report.html[0m

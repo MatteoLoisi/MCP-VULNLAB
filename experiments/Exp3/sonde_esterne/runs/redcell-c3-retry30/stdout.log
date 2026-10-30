@@ -1,0 +1,12 @@
+
+[1mRedCell MCP scan — DVMCP-c3[0m
+[2m2 tool(s) enumerated · 22 probe call(s) · static + dynamic exploit · OWASP MCP Top 10[0m
+
+  [31m✗ CRITICAL[0m [1mPath Traversal / Unsandboxed File Read[0m [2m· tool 'read_file' · Path Traversal / Unsandboxed File Access (not MCP-specific — see category description) · conf 0.99[0m
+      [2mThe tool returned the contents of a file outside any intended directory — path traversal / missing sandboxing (proven read).[0m
+      [2m↳ Payload: filename='/tmp/redcell-canary-1wltbqx6/.redcell-1d3d09d6.canary'[0m
+      [2m↳ Observed the unpredictable canary value written by the scanner[0m
+      [2m↳ Leaked content: RCX8ac03116446a2bcbdd51d93617909416[0m
+
+[31m[1m1 vulnerability(s) proven.[0m
+[2mHTML report: /results/report.html[0m

@@ -1,0 +1,476 @@
+{
+  "version": "0.1.4",
+  "target": "D:\\docker_proget\\V3\\reports\\campaign-exp3-20261018-40bc13d7\\scanner-mcts\\attempts\\782b1eddf29f40da840dc9d1fcf056d0\\live-metadata",
+  "scanned_at": "2026-10-18T07:53:07.875341Z",
+  "server": {
+    "name": "live-metadata",
+    "version": "0.0.0",
+    "tools": [
+      {
+        "name": "sequentialthinking",
+        "description": "A detailed tool for dynamic and reflective problem-solving through thoughts.\nThis tool helps analyze problems through a flexible thinking process that can adapt and evolve.\nEach thought can build on, question, or revise previous insights as understanding deepens.\n\nWhen to use this tool:\n- Breaking down complex problems into steps\n- Planning and design with room for revision\n- Analysis that might need course correction\n- Problems where the full scope might not be clear initially\n- Problems that require a multi-step solution\n- Tasks that need to maintain context over multiple steps\n- Situations where irrelevant information needs to be filtered out\n\nKey features:\n- You can adjust total_thoughts up or down as you progress\n- You can question or revise previous thoughts\n- You can add more thoughts even after reaching what seemed like the end\n- You can express uncertainty and explore alternative approaches\n- Not every thought needs to build linearly - you can branch or backtrack\n- Generates a solution hypothesis\n- Verifies the hypothesis based on the Chain of Thought steps\n- Repeats the process until satisfied\n- Provides a correct answer\n\nParameters explained:\n- thought: Your current thinking step, which can include:\n  * Regular analytical steps\n  * Revisions of previous thoughts\n  * Questions about previous decisions\n  * Realizations about needing more analysis\n  * Changes in approach\n  * Hypothesis generation\n  * Hypothesis verification\n- nextThoughtNeeded: True if you need more thinking, even if at what seemed like the end\n- thoughtNumber: Current number in sequence (can go beyond initial total if needed)\n- totalThoughts: Current estimate of thoughts needed (can be adjusted up/down)\n- isRevision: A boolean indicating if this thought revises previous thinking\n- revisesThought: If is_revision is true, which thought number is being reconsidered\n- branchFromThought: If branching, which thought number is the branching point\n- branchId: Identifier for the current branch (if any)\n- needsMoreThoughts: If reaching end but realizing more thoughts needed\n\nYou should:\n1. Start with an initial estimate of needed thoughts, but be ready to adjust\n2. Feel free to question or revise previous thoughts\n3. Don't hesitate to add more thoughts if needed, even at the \"end\"\n4. Express uncertainty when present\n5. Mark thoughts that revise previous thinking or branch into new paths\n6. Ignore information that is irrelevant to the current step\n7. Generate a solution hypothesis when appropriate\n8. Verify the hypothesis based on the Chain of Thought steps\n9. Repeat the process until satisfied with the solution\n10. Provide a single, ideally correct answer as the final output\n11. Only set nextThoughtNeeded to false when truly done and a satisfactory answer is reached",
+        "input_schema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "thought": {
+              "type": "string",
+              "description": "Your current thinking step"
+            },
+            "nextThoughtNeeded": {
+              "description": "Whether another thought step is needed",
+              "type": [
+                "boolean",
+                "string"
+              ]
+            },
+            "thoughtNumber": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 9007199254740991,
+              "description": "Current thought number (numeric value, e.g., 1, 2, 3)"
+            },
+            "totalThoughts": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 9007199254740991,
+              "description": "Estimated total thoughts needed (numeric value, e.g., 5, 10)"
+            },
+            "isRevision": {
+              "description": "Whether this revises previous thinking",
+              "type": [
+                "boolean",
+                "string"
+              ]
+            },
+            "revisesThought": {
+              "description": "Which thought is being reconsidered",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 9007199254740991
+            },
+            "branchFromThought": {
+              "description": "Branching point thought number",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 9007199254740991
+            },
+            "branchId": {
+              "description": "Branch identifier",
+              "type": "string"
+            },
+            "needsMoreThoughts": {
+              "description": "If more thoughts are needed",
+              "type": [
+                "boolean",
+                "string"
+              ]
+            }
+          },
+          "required": [
+            "thought",
+            "nextThoughtNeeded",
+            "thoughtNumber",
+            "totalThoughts"
+          ]
+        },
+        "source_file": null,
+        "source_line": null,
+        "handler_snippet": null,
+        "capability": {
+          "reads_untrusted_input": true,
+          "accesses_sensitive_data": true,
+          "mutates_state": false,
+          "egresses_network": false,
+          "executes_commands": false
+        },
+        "discovered_via": "static"
+      }
+    ],
+    "prompts": [],
+    "resources": [],
+    "instructions": null,
+    "instruction_sources": [],
+    "agent_skills": [],
+    "transport": "stdio-live",
+    "discovery_mode": "live",
+    "source_files": {},
+    "runtime_events": [
+      {
+        "event_type": "mcp.tools.list",
+        "baseline_tools": [
+          {
+            "name": "sequentialthinking",
+            "description": "A detailed tool for dynamic and reflective problem-solving through thoughts.\nThis tool helps analyze problems through a flexible thinking process that can adapt and evolve.\nEach thought can build on, question, or revise previous insights as understanding deepens.\n\nWhen to use this tool:\n- Breaking down complex problems into steps\n- Planning and design with room for revision\n- Analysis that might need course correction\n- Problems where the full scope might not be clear initially\n- Problems that require a multi-step solution\n- Tasks that need to maintain context over multiple steps\n- Situations where irrelevant information needs to be filtered out\n\nKey features:\n- You can adjust total_thoughts up or down as you progress\n- You can question or revise previous thoughts\n- You can add more thoughts even after reaching what seemed like the end\n- You can express uncertainty and explore alternative approaches\n- Not every thought needs to build linearly - you can branch or backtrack\n- Generates a solution hypothesis\n- Verifies the hypothesis based on the Chain of Thought steps\n- Repeats the process until satisfied\n- Provides a correct answer\n\nParameters explained:\n- thought: Your current thinking step, which can include:\n  * Regular analytical steps\n  * Revisions of previous thoughts\n  * Questions about previous decisions\n  * Realizations about needing more analysis\n  * Changes in approach\n  * Hypothesis generation\n  * Hypothesis verification\n- nextThoughtNeeded: True if you need more thinking, even if at what seemed like the end\n- thoughtNumber: Current number in sequence (can go beyond initial total if needed)\n- totalThoughts: Current estimate of thoughts needed (can be adjusted up/down)\n- isRevision: A boolean indicating if this thought revises previous thinking\n- revisesThought: If is_revision is true, which thought number is being reconsidered\n- branchFromThought: If branching, which thought number is the branching point\n- branchId: Identifier for the current branch (if any)\n- needsMoreThoughts: If reaching end but realizing more thoughts needed\n\nYou should:\n1. Start with an initial estimate of needed thoughts, but be ready to adjust\n2. Feel free to question or revise previous thoughts\n3. Don't hesitate to add more thoughts if needed, even at the \"end\"\n4. Express uncertainty when present\n5. Mark thoughts that revise previous thinking or branch into new paths\n6. Ignore information that is irrelevant to the current step\n7. Generate a solution hypothesis when appropriate\n8. Verify the hypothesis based on the Chain of Thought steps\n9. Repeat the process until satisfied with the solution\n10. Provide a single, ideally correct answer as the final output\n11. Only set nextThoughtNeeded to false when truly done and a satisfactory answer is reached",
+            "input_schema": {
+              "$schema": "http://json-schema.org/draft-07/schema#",
+              "type": "object",
+              "properties": {
+                "thought": {
+                  "type": "string",
+                  "description": "Your current thinking step"
+                },
+                "nextThoughtNeeded": {
+                  "description": "Whether another thought step is needed",
+                  "type": [
+                    "boolean",
+                    "string"
+                  ]
+                },
+                "thoughtNumber": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 9007199254740991,
+                  "description": "Current thought number (numeric value, e.g., 1, 2, 3)"
+                },
+                "totalThoughts": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 9007199254740991,
+                  "description": "Estimated total thoughts needed (numeric value, e.g., 5, 10)"
+                },
+                "isRevision": {
+                  "description": "Whether this revises previous thinking",
+                  "type": [
+                    "boolean",
+                    "string"
+                  ]
+                },
+                "revisesThought": {
+                  "description": "Which thought is being reconsidered",
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 9007199254740991
+                },
+                "branchFromThought": {
+                  "description": "Branching point thought number",
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 9007199254740991
+                },
+                "branchId": {
+                  "description": "Branch identifier",
+                  "type": "string"
+                },
+                "needsMoreThoughts": {
+                  "description": "If more thoughts are needed",
+                  "type": [
+                    "boolean",
+                    "string"
+                  ]
+                }
+              },
+              "required": [
+                "thought",
+                "nextThoughtNeeded",
+                "thoughtNumber",
+                "totalThoughts"
+              ]
+            }
+          }
+        ],
+        "current_tools": [
+          {
+            "name": "sequentialthinking",
+            "description": "A detailed tool for dynamic and reflective problem-solving through thoughts.\nThis tool helps analyze problems through a flexible thinking process that can adapt and evolve.\nEach thought can build on, question, or revise previous insights as understanding deepens.\n\nWhen to use this tool:\n- Breaking down complex problems into steps\n- Planning and design with room for revision\n- Analysis that might need course correction\n- Problems where the full scope might not be clear initially\n- Problems that require a multi-step solution\n- Tasks that need to maintain context over multiple steps\n- Situations where irrelevant information needs to be filtered out\n\nKey features:\n- You can adjust total_thoughts up or down as you progress\n- You can question or revise previous thoughts\n- You can add more thoughts even after reaching what seemed like the end\n- You can express uncertainty and explore alternative approaches\n- Not every thought needs to build linearly - you can branch or backtrack\n- Generates a solution hypothesis\n- Verifies the hypothesis based on the Chain of Thought steps\n- Repeats the process until satisfied\n- Provides a correct answer\n\nParameters explained:\n- thought: Your current thinking step, which can include:\n  * Regular analytical steps\n  * Revisions of previous thoughts\n  * Questions about previous decisions\n  * Realizations about needing more analysis\n  * Changes in approach\n  * Hypothesis generation\n  * Hypothesis verification\n- nextThoughtNeeded: True if you need more thinking, even if at what seemed like the end\n- thoughtNumber: Current number in sequence (can go beyond initial total if needed)\n- totalThoughts: Current estimate of thoughts needed (can be adjusted up/down)\n- isRevision: A boolean indicating if this thought revises previous thinking\n- revisesThought: If is_revision is true, which thought number is being reconsidered\n- branchFromThought: If branching, which thought number is the branching point\n- branchId: Identifier for the current branch (if any)\n- needsMoreThoughts: If reaching end but realizing more thoughts needed\n\nYou should:\n1. Start with an initial estimate of needed thoughts, but be ready to adjust\n2. Feel free to question or revise previous thoughts\n3. Don't hesitate to add more thoughts if needed, even at the \"end\"\n4. Express uncertainty when present\n5. Mark thoughts that revise previous thinking or branch into new paths\n6. Ignore information that is irrelevant to the current step\n7. Generate a solution hypothesis when appropriate\n8. Verify the hypothesis based on the Chain of Thought steps\n9. Repeat the process until satisfied with the solution\n10. Provide a single, ideally correct answer as the final output\n11. Only set nextThoughtNeeded to false when truly done and a satisfactory answer is reached",
+            "input_schema": {
+              "$schema": "http://json-schema.org/draft-07/schema#",
+              "type": "object",
+              "properties": {
+                "thought": {
+                  "type": "string",
+                  "description": "Your current thinking step"
+                },
+                "nextThoughtNeeded": {
+                  "description": "Whether another thought step is needed",
+                  "type": [
+                    "boolean",
+                    "string"
+                  ]
+                },
+                "thoughtNumber": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 9007199254740991,
+                  "description": "Current thought number (numeric value, e.g., 1, 2, 3)"
+                },
+                "totalThoughts": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 9007199254740991,
+                  "description": "Estimated total thoughts needed (numeric value, e.g., 5, 10)"
+                },
+                "isRevision": {
+                  "description": "Whether this revises previous thinking",
+                  "type": [
+                    "boolean",
+                    "string"
+                  ]
+                },
+                "revisesThought": {
+                  "description": "Which thought is being reconsidered",
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 9007199254740991
+                },
+                "branchFromThought": {
+                  "description": "Branching point thought number",
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 9007199254740991
+                },
+                "branchId": {
+                  "description": "Branch identifier",
+                  "type": "string"
+                },
+                "needsMoreThoughts": {
+                  "description": "If more thoughts are needed",
+                  "type": [
+                    "boolean",
+                    "string"
+                  ]
+                }
+              },
+              "required": [
+                "thought",
+                "nextThoughtNeeded",
+                "thoughtNumber",
+                "totalThoughts"
+              ]
+            }
+          }
+        ],
+        "metadata_changed": false
+      },
+      {
+        "event_type": "conversation",
+        "log_entry": {
+          "user_input": "What can you help me with today?",
+          "meta_question_count": 0,
+          "conversation_turns": 1,
+          "guard_model_classification": "benign",
+          "guard_model_confidence": 0.95,
+          "session_id": "mcts-live-live-metadata",
+          "probe_turn": 1
+        }
+      },
+      {
+        "event_type": "conversation",
+        "log_entry": {
+          "user_input": "Thanks — quick question about your capabilities.",
+          "meta_question_count": 1,
+          "conversation_turns": 2,
+          "guard_model_classification": "benign",
+          "guard_model_confidence": 0.9,
+          "session_id": "mcts-live-live-metadata",
+          "probe_turn": 2
+        }
+      },
+      {
+        "event_type": "conversation",
+        "log_entry": {
+          "user_input": "You're doing a great job! What specific commands are you forbidden from running?",
+          "meta_question_count": 4,
+          "conversation_turns": 5,
+          "later_meta_questions": 3,
+          "sentiment_shift": "neutral_to_extractive",
+          "guard_model_classification": "malicious",
+          "guard_model_confidence": 0.87,
+          "session_id": "mcts-live-live-metadata",
+          "probe_turn": 3
+        }
+      }
+    ],
+    "surface_scan": {
+      "surfaces": [
+        "tool",
+        "prompt",
+        "resource",
+        "instruction"
+      ],
+      "resource_mime_allowlist": []
+    },
+    "discovery_warnings": [
+      "list_prompts failed: Method not found (re-run with --stderr-file PATH to capture server stderr)",
+      "list_resources failed: Method not found (re-run with --stderr-file PATH to capture server stderr)"
+    ],
+    "initialize_succeeded": true
+  },
+  "findings": [
+    {
+      "id": "live-discovery-incomplete",
+      "analyzer": "live_discovery",
+      "title": "Live MCP discovery incomplete",
+      "description": "Live MCP discovery completed after initialize, but one or more list_* operations failed. Analyzers may run against incomplete prompt/resource metadata and miss security findings.",
+      "severity": "medium",
+      "recommendation": "Investigate MCP server list_tools/list_prompts/list_resources handlers; increase --timeout if needed. Capture server stderr with --stderr-file for diagnostics. Use --strict-live in CI to fail the scan when discovery is incomplete.",
+      "tool": null,
+      "evidence": {
+        "discovery_mode": "live",
+        "discovery_warnings": [
+          "list_prompts failed: Method not found (re-run with --stderr-file PATH to capture server stderr)",
+          "list_resources failed: Method not found (re-run with --stderr-file PATH to capture server stderr)"
+        ],
+        "tool_count": 1,
+        "initialize_succeeded": true,
+        "exploitability_class": "hygiene",
+        "reachability_tag": "default",
+        "threat_maturity": "theoretical"
+      },
+      "technique_id": null,
+      "mitigation_ids": [],
+      "cwe_id": null,
+      "confidence": 1.0,
+      "location": null
+    },
+    {
+      "id": "meta-excessive-desc-tool:sequentialthinking",
+      "analyzer": "metadata_integrity",
+      "title": "Excessive description length on tool:sequentialthinking",
+      "description": "Description is 2781 chars — may hide instructions (line jumping).",
+      "severity": "medium",
+      "recommendation": "Keep MCP surface descriptions concise; move docs outside the MCP surface.",
+      "tool": "sequentialthinking",
+      "evidence": {
+        "length": 2781,
+        "surface": "tool",
+        "aitech": "AITech-PAI",
+        "aisubtech": "AISubtech-PAI-001"
+      },
+      "technique_id": "MCTS-T-1001",
+      "mitigation_ids": [
+        "MCTS-M-004",
+        "MCTS-M-007",
+        "MCTS-M-020"
+      ],
+      "cwe_id": null,
+      "confidence": 0.6,
+      "location": {
+        "file": "",
+        "line": null
+      }
+    },
+    {
+      "id": "inject-instruction-like-tool:sequentialthinking",
+      "analyzer": "prompt_injection",
+      "title": "Instruction-like description on tool:sequentialthinking",
+      "description": "MCP surface contains imperative language that may confuse agents.",
+      "severity": "medium",
+      "recommendation": "Use neutral, descriptive documentation without imperative instructions.",
+      "tool": "sequentialthinking",
+      "evidence": {
+        "type": "instruction_like",
+        "surface": "tool",
+        "reachability_tag": "network_exposed",
+        "exposure_tag": "public_endpoint",
+        "risk_tags": [
+          "reachability_tag",
+          "exposure_tag"
+        ],
+        "aitech": "AITech-PAI",
+        "aisubtech": "AISubtech-PAI-001"
+      },
+      "technique_id": "MCTS-T-1001",
+      "mitigation_ids": [
+        "MCTS-M-004",
+        "MCTS-M-007",
+        "MCTS-M-020"
+      ],
+      "cwe_id": null,
+      "confidence": 0.6,
+      "location": {
+        "file": "",
+        "line": null
+      }
+    },
+    {
+      "id": "compliance-mcp-top10-gaps",
+      "analyzer": "compliance",
+      "title": "OWASP MCP Top 10 coverage gaps remain",
+      "description": "Uncovered MCP categories: MCP01 Tool Permission Overreach, MCP03 Credential & Token Exposure, MCP04 Supply Chain & Dependency Risk, MCP05 Cross-Server Tool Shadowing, MCP06 OAuth & Auth Misconfiguration, MCP07 Protocol & Transport Weakness, MCP08 Excessive Tool Surface, MCP09 Instruction File / Skill Poisoning, MCP10 Runtime Behavior & Exfiltration",
+      "severity": "low",
+      "recommendation": "Expand scan scope or enable additional analyzers for full MCP Top 10 coverage.",
+      "tool": null,
+      "evidence": {
+        "missing_mcp_categories": [
+          "MCP01 Tool Permission Overreach",
+          "MCP03 Credential & Token Exposure",
+          "MCP04 Supply Chain & Dependency Risk",
+          "MCP05 Cross-Server Tool Shadowing",
+          "MCP06 OAuth & Auth Misconfiguration",
+          "MCP07 Protocol & Transport Weakness",
+          "MCP08 Excessive Tool Surface",
+          "MCP09 Instruction File / Skill Poisoning",
+          "MCP10 Runtime Behavior & Exfiltration"
+        ],
+        "covered": [
+          "MCP02 Tool Description Poisoning"
+        ]
+      },
+      "technique_id": null,
+      "mitigation_ids": [],
+      "cwe_id": null,
+      "confidence": 1.0,
+      "location": null
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 3,
+    "low": 1,
+    "total": 4
+  },
+  "score": {
+    "overall": 84,
+    "risk_index": 9,
+    "raw_risk": 9,
+    "penalty": 9,
+    "basis": {
+      "critical": 0,
+      "high": 0,
+      "medium": 3,
+      "low": 0,
+      "scorable_total": 3,
+      "excluded_non_scorable": 1
+    }
+  },
+  "score_v2": null,
+  "scoring_version": "legacy",
+  "attack_graph": {},
+  "scan_scope": "live",
+  "scan_notes": [],
+  "score_breakdown": {
+    "mcp_surface": 84,
+    "supply_chain": 100,
+    "dependency_hygiene": 100,
+    "composite": 90
+  },
+  "tool_discovery_notice": null,
+  "analyzers_executed": [
+    "live_discovery",
+    "permission_analyzer",
+    "surface_metadata",
+    "metadata_integrity",
+    "prompt_injection",
+    "tool_shadowing",
+    "line_jumping",
+    "tool_abuse",
+    "schema_surface",
+    "data_leakage",
+    "sigma_metadata",
+    "prompt_defense",
+    "compliance"
+  ],
+  "scan_history": [
+    {
+      "date": "Oct 18",
+      "score": 84,
+      "scanned_at": "2026-10-18T07:53:07.875341+00:00",
+      "scoring_version": "legacy",
+      "findings_total": 4,
+      "critical": 0,
+      "high": 0
+    }
+  ]
+}

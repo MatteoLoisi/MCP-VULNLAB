@@ -1,0 +1,39 @@
+{
+  "schema": "r6-p5-audit-v1",
+  "target": "R1-filesystem",
+  "attempt_id": "acd01232676f408b92b65422fbbdd0fa",
+  "finding": {
+    "status": "secure",
+    "proof": "traversal via tool non riuscito (187 tentativi su 17 argomenti path-like, 1 tool schema-opachi; prefisso cercato: 'EXP3_CANARY_acd01232676f408b92b65422fbbdd0fa_0dd5a50b330541baa2391812e50d512b')"
+  },
+  "coverage": {
+    "planned": 17,
+    "swept": 17,
+    "tried": 187,
+    "max_attempts": 4096,
+    "complete": true,
+    "reason": "",
+    "undelivered": 0,
+    "errors": 0,
+    "opaque": 1
+  },
+  "canary": {
+    "path": "D:\\docker_proget\\V4\\output\\r6-p5-filesystem-20261025-01\\probes\\attempts\\acd01232676f408b92b65422fbbdd0fa\\canary.txt",
+    "content_sha256": "f47b7fbece31db86b8ee9c5bdf8bb9e6c1cd3ac710654a6934a3af14aa2c24ec",
+    "read_back": true,
+    "allowed_root": "C:\\Users\\ML\\AppData\\Local\\Temp\\mcptargets\\fsroot",
+    "outside_allowed_root": true
+  },
+  "executed_units": 17,
+  "missing_units": 0,
+  "calls": 187,
+  "outcomes": {
+    "tool_error": 166,
+    "delivered_no_effect": 21
+  },
+  "files": {
+    "report_sha256": "1ce271182936939d439eb8a8943f46f7a73ea9479633436c26ddc812408103fd",
+    "capture_sha256": "9af97a50d440c205216c56a833f1db7a82ec4b7778a9e535f4648b27adde661f",
+    "context_sha256": "c7cf5a613216db8a38041b5273021bb04c36a4759a6ec087085438bde7a56fb0"
+  }
+}

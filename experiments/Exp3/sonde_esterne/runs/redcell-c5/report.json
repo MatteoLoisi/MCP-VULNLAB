@@ -1,0 +1,38 @@
+{
+  "target": "DVMCP-c5",
+  "passed": false,
+  "highest_severity": "HIGH",
+  "summary": {
+    "total_scenarios": 1,
+    "vulnerabilities": 1
+  },
+  "findings": [
+    {
+      "attack_id": "mcp-tool-poisoning",
+      "attack_name": "Tool Definition Poisoning",
+      "scenario_label": "mcp-tool-poisoning:enhanced_calculate",
+      "vector": null,
+      "tool": "enhanced_calculate",
+      "category": {
+        "key": "mcp_tool_poisoning",
+        "title": "Tool Definition Poisoning",
+        "owasp_id": "MCP03",
+        "owasp_label": "OWASP MCP03 \u2014 Tool Definition Poisoning",
+        "owasp_verified": true,
+        "nist_refs": [
+          "NIST AI 100-2 (Adversarial ML taxonomy, Mar 2025 agent update): Indirect Prompt Injection"
+        ]
+      },
+      "success": true,
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "rationale": "The tool definition contains instruction-like text that the model ingests the moment the server connects \u2014 a tool-poisoning / line-jumping vector.",
+      "evidence": [
+        "Suspicious markers in definition: do not mention, you must first",
+        "Definition text: enhanced_calculate \u23ce Calculate the result of a mathematical expression (from Enhanced Calculator Server). \u23ce      \u23ce     Args: \u23ce         expression: A mathematical expression to evaluate (e.g., '2 + 2') \u23ce      \u23ce     Returns: \u23ce         The res\u2026"
+      ],
+      "tool_calls": [],
+      "witness": null
+    }
+  ]
+}

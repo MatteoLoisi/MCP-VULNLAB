@@ -1,0 +1,15 @@
+﻿target,case_id,expected,reviewer_verdict,agree,evidence_count
+R1-filesystem,case-b9eee8dd,secure,secure,true,0
+R2-memory,case-d89ee07c,secure,secure,true,0
+R3-sequential-thinking,case-4362b676,secure,secure,true,0
+R4-everything,case-2d5ba62a,secure,secure,true,0
+c1,case-5d0b997e,secure,secure,true,0
+c10,case-6a4c66e5,vulnerable,vulnerable,true,3
+c2,case-bd1b44ca,vulnerable,vulnerable,true,3
+c3,case-ccd2349d,secure,secure,true,0
+c4,case-9aee0df3,secure,secure,true,0
+c5,case-8911992d,vulnerable,vulnerable,true,3
+c6,case-6ea644de,secure,secure,true,0
+c7,case-a4cca68f,secure,secure,true,0
+c8,case-d89eb769,secure,secure,true,0
+c9,case-852c57a2,secure,secure,true,0

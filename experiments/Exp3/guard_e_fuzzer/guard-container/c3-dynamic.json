@@ -1,0 +1,274 @@
+{
+  "schema_version": "2.0.0",
+  "tool_version": "2.0.0",
+  "target": "/target",
+  "target_commit": null,
+  "started_at": "2026-10-20T15:27:39.856537+00:00",
+  "finished_at": "2026-10-20T15:27:52.218287+00:00",
+  "server_info": {
+    "root": "/target",
+    "server_type": "python",
+    "is_mcp_server": true,
+    "name": null,
+    "version": null,
+    "entrypoint": "--entrypoint: python dvmcp_stdio.py .",
+    "launch_argv": [
+      "python",
+      "dvmcp_stdio.py",
+      "."
+    ],
+    "launch_candidates": [
+      {
+        "source": "--entrypoint override",
+        "argv": [
+          "python",
+          "dvmcp_stdio.py",
+          "."
+        ],
+        "requires_build": false,
+        "note": ""
+      }
+    ],
+    "launch_python": "/tmp/mcpguard-venvs/937456f730114c41/bin/python",
+    "build_argv": null,
+    "install_argv": null,
+    "transport": "stdio",
+    "manifest_files": [
+      "requirements.txt"
+    ],
+    "lockfiles": [
+      "requirements.txt"
+    ],
+    "dependencies": {
+      "mcp": "1.28.0"
+    },
+    "detection_notes": [
+      "no [project.scripts] entry, no importable __main__ module and no mcp.json; nothing in the project declares how to start it"
+    ]
+  },
+  "stages": [
+    {
+      "stage": "acquire",
+      "ran": true,
+      "reason": null,
+      "duration_s": 0.006,
+      "artifacts": {
+        "root": "/target"
+      }
+    },
+    {
+      "stage": "detect",
+      "ran": true,
+      "reason": null,
+      "duration_s": 0.009,
+      "artifacts": {
+        "server_type": "python",
+        "is_mcp_server": true,
+        "entrypoint": null,
+        "notes": [
+          "no [project.scripts] entry, no importable __main__ module and no mcp.json; nothing in the project declares how to start it"
+        ]
+      }
+    },
+    {
+      "stage": "static",
+      "ran": false,
+      "reason": "disabled by --no-static",
+      "duration_s": 0.0,
+      "artifacts": {}
+    },
+    {
+      "stage": "dependencies",
+      "ran": false,
+      "reason": "OSError: [Errno 30] Read-only file system: '/.cache'",
+      "duration_s": 0.023,
+      "artifacts": {}
+    },
+    {
+      "stage": "dynamic",
+      "ran": true,
+      "reason": null,
+      "duration_s": 12.346,
+      "artifacts": {
+        "probes_run": 8,
+        "handshake_rtt_ms": 390.0,
+        "venv": "/tmp/mcpguard-venvs/937456f730114c41",
+        "python_install_source": "requirements.txt",
+        "python_install_mode": "wheels-only",
+        "candidates_tried": [
+          {
+            "source": "--entrypoint override",
+            "argv": "python dvmcp_stdio.py .",
+            "ok": true,
+            "reason": null
+          }
+        ],
+        "launch_argv": "/tmp/mcpguard-venvs/937456f730114c41/bin/python dvmcp_stdio.py .",
+        "launch_source": "--entrypoint override",
+        "server_name": "Challenge 3 - Excessive Permission Scope",
+        "capabilities": [
+          "experimental",
+          "prompts",
+          "resources",
+          "tools"
+        ],
+        "tools_discovered": 2,
+        "resources_discovered": 2,
+        "stderr_tail": "  Field required [type=missing, input_value={'id': 902, 'method': 'ping'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing\nJSONRPCResponse.result\n  Field required [type=missing, input_value={'id': 902, 'method': 'ping'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing\nJSONRPCError.jsonrpc\n  Field required [type=missing, input_value={'id': 902, 'method': 'ping'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing\nJSONRPCError.error\n  Field required [type=missing, input_value={'id': 902, 'method': 'ping'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing\nProcessing request of type PingRequest\nReceived exception from stream: 1 validation error for JSONRPCMessage\n  Invalid JSON: expected ident at line 1 column 2 [type=json_invalid, input_value='not json at all\\n', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/json_invalid\nProcessing request of type PingRequest\nProcessing request of type PingRequest\nProcessing request of type PingRequest\nProcessing request of type PingRequest\nProcessing request of type PingRequest"
+      }
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "by_severity": {
+      "none": 0,
+      "low": 0,
+      "medium": 0,
+      "high": 1,
+      "critical": 0
+    },
+    "by_source": {
+      "static": 0,
+      "dynamic": 1,
+      "dependency": 0
+    }
+  },
+  "findings": [
+    {
+      "rule_id": "MCPG-DYN-PATHTRAVERSAL",
+      "title": "Resource/tool path escapes the server root (proven by canary file) -- tools/call read_file.filename (canary path)",
+      "description": "Contents of a canary file written outside the target root came back.",
+      "cwe": "CWE-22",
+      "cvss_vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:H/SI:N/SA:N",
+      "cvss_score": 8.2,
+      "severity": "high",
+      "remediation": "Resolve the path and verify it is contained by an allowed root (os.path.realpath + prefix check / path.resolve + startsWith) before reading.",
+      "references": [],
+      "evidence": {
+        "request_json": "{\"jsonrpc\": \"2.0\", \"id\": 13, \"method\": \"tools/call\", \"params\": {\"name\": \"read_file\", \"arguments\": {\"filename\": \"/tmp/mcpguard_canary_i2haqrrd.txt\"}}}",
+        "response_raw": "{\"jsonrpc\":\"2.0\",\"id\":13,\"result\":{\"content\":[{\"type\":\"text\",\"text\":\"MCPGUARD-CANARY-d78e2c5983d040d5a59de19cee55c720-DO-NOT-SERVE\"}],\"structuredContent\":{\"result\":\"MCPGUARD-CANARY-d78e2c5983d040d5a59de19cee55c720-DO-NOT-SERVE\"},\"isError\":false}}\n",
+        "response_parsed": {
+          "jsonrpc": "2.0",
+          "id": 13,
+          "result": {
+            "content": [
+              {
+                "type": "text",
+                "text": "MCPGUARD-CANARY-d78e2c5983d040d5a59de19cee55c720-DO-NOT-SERVE"
+              }
+            ],
+            "structuredContent": {
+              "result": "MCPGUARD-CANARY-d78e2c5983d040d5a59de19cee55c720-DO-NOT-SERVE"
+            },
+            "isError": false
+          }
+        },
+        "oracle_id": "tool-path-canary",
+        "why_this_proves_it": "response contains the contents of /tmp/mcpguard_canary_i2haqrrd.txt, a file written outside the target root. The server read a path that escaped its own directory.",
+        "kind": "dynamic"
+      },
+      "aivss": {
+        "spec": "OWASP AIVSS v0.8",
+        "spec_title": "AIVSS Scoring System For OWASP Agentic AI Core Security Risks",
+        "spec_url": "https://aivss.owasp.org/",
+        "vector": "AIVSS:0.8/AU:X/TO:0.5/LA:0.0/CX:0.0/ND:0.0/OP:0.0/PE:X/ID:0.0/MA:0.0/SM:0.0",
+        "complete": false,
+        "partial": true,
+        "score": null,
+        "score_low": 8.3,
+        "score_high": 8.6,
+        "severity_low": "high",
+        "severity_high": "high",
+        "cvss_base": 8.2,
+        "threat_multiplier": {
+          "key": "poc",
+          "value": 0.97
+        },
+        "mitigation_factor": {
+          "key": "none",
+          "value": 1.0
+        },
+        "factor_sum_low": 0.5,
+        "factor_sum_high": 2.5,
+        "aars_low": 0.0873,
+        "aars_high": 0.4365,
+        "unobserved_factors": [
+          "autonomy",
+          "persistence"
+        ],
+        "factors": [
+          {
+            "factor": "autonomy",
+            "name": "Execution Autonomy",
+            "status": "unobserved",
+            "value": null,
+            "source": "whether a human co-signs actions is a deployment choice"
+          },
+          {
+            "factor": "tools",
+            "name": "External Tool Control Surface",
+            "status": "observed",
+            "value": 0.5,
+            "source": "tools/list declared 2 tool(s); no probe proved shell or filesystem escape, so breadth is partial"
+          },
+          {
+            "factor": "language",
+            "name": "Natural Language Interface",
+            "status": "not-applicable",
+            "value": 0.0,
+            "source": "not applicable to this finding class"
+          },
+          {
+            "factor": "context",
+            "name": "Contextual Awareness",
+            "status": "not-applicable",
+            "value": 0.0,
+            "source": "not applicable to this finding class"
+          },
+          {
+            "factor": "non_determinism",
+            "name": "Behavioral Non-Determinism",
+            "status": "not-applicable",
+            "value": 0.0,
+            "source": "not applicable to this finding class"
+          },
+          {
+            "factor": "opacity",
+            "name": "Opacity and Reflexivity",
+            "status": "not-applicable",
+            "value": 0.0,
+            "source": "not applicable to this finding class"
+          },
+          {
+            "factor": "persistence",
+            "name": "Persistent State Retention",
+            "status": "unobserved",
+            "value": null,
+            "source": "memory across sessions is a deployment property"
+          },
+          {
+            "factor": "identity",
+            "name": "Dynamic Identity",
+            "status": "not-applicable",
+            "value": 0.0,
+            "source": "not applicable to this finding class"
+          },
+          {
+            "factor": "multi_agent",
+            "name": "Multi-Agent Interactions",
+            "status": "not-applicable",
+            "value": 0.0,
+            "source": "not applicable to this finding class"
+          },
+          {
+            "factor": "self_mod",
+            "name": "Self-Modification",
+            "status": "not-applicable",
+            "value": 0.0,
+            "source": "not applicable to this finding class"
+          }
+        ]
+      }
+    }
+  ]
+}

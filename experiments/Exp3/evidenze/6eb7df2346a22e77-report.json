@@ -1,0 +1,61 @@
+{
+  "schema": "exp3-probe-report-v1",
+  "producer": "exp3-probe-worker-v1",
+  "target": "R1-filesystem",
+  "attempt_id": "310d8efe319345469511db5a74bde806",
+  "status": "completed",
+  "target_identity": {
+    "target": "R1-filesystem",
+    "definition_sha256": "f2226e3862e7259c5ebb2e91d0be27a512552691bb26dd494c81ac85b169f7ec",
+    "manifest_sha256": "71156adadb7e944ec4e76beb135ac2d9913523bce20628bb3fc13eccbcb803d9",
+    "transport": "stdio",
+    "version": "1.0.0",
+    "configuration_sha256": "64ef1662a81b9491c141c91a8e7ddfee96b55a3fff354d738f514d4a22af6b42"
+  },
+  "target_command": [
+    "npx",
+    "-y",
+    "@modelcontextprotocol/server-filesystem@1.0.0",
+    "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\fsroot"
+  ],
+  "scan_target": ".",
+  "planned_findings": [
+    "P5-tool-traversal"
+  ],
+  "profile": "black-box",
+  "raw_ref": "capture.json",
+  "raw_sha256": "4417111f17bea4e96d0f7a90904e994e2f584fac00da1d09e4cb2edfd8e912fd",
+  "findings": {
+    "P5-tool-traversal": {
+      "status": "info",
+      "proof": "P5: sweep incompleto — tetto di 60 tentativi; copertura 3/17 unità, 60 tentativi (tetto 60)",
+      "details": {
+        "swept": 3,
+        "planned": 17,
+        "tried": 60,
+        "max_attempts": 60,
+        "reason": "tetto di 60 tentativi",
+        "complete": false,
+        "blocked": 0,
+        "opaque": 1,
+        "timeouts": 0,
+        "undelivered": [],
+        "errors": [],
+        "payloads_undelivered": 0,
+        "payloads_errored": 0,
+        "defended": 0,
+        "payloads_defended": 0,
+        "schema_defenses": [],
+        "baseline_rejected": [],
+        "baseline_inconclusive": [],
+        "baseline_calls": 0,
+        "max_baselines": 9,
+        "baseline_cap": 0,
+        "baseline_declared_calls": 0,
+        "baseline_guessed_calls": 0,
+        "baseline_declared_units": 0
+      },
+      "evidence_reason": "no supported complete observation for automatic proof"
+    }
+  }
+}

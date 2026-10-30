@@ -1,0 +1,135 @@
+[INFO] Starting Mcpwn
+[INFO] Testing state desync...
+[WARNING] State desync: {'type': 'STATE_RESET', 'detail': 'Server accepted double initialization', 'severity': 'MEDIUM', 'test': 'state_desync', 'timestamp': '2026-10-19T17:20:48.644980+00:00'}
+[INFO] Testing capability fuzzing...
+[WARNING] Capability issue: CAPABILITY_VALIDATION_BYPASS
+[WARNING] Capability issue: CAPABILITY_VALIDATION_BYPASS
+[WARNING] Capability issue: CAPABILITY_VALIDATION_BYPASS
+[WARNING] Capability issue: CAPABILITY_VALIDATION_BYPASS
+[WARNING] Capability issue: CAPABILITY_VALIDATION_BYPASS
+[WARNING] Capability issue: CAPABILITY_VALIDATION_BYPASS
+[WARNING] Capability issue: CAPABILITY_VALIDATION_BYPASS
+[WARNING] Capability issue: CAPABILITY_VALIDATION_BYPASS
+[WARNING] Capability issue: CAPABILITY_VALIDATION_BYPASS
+[WARNING] Capability issue: CAPABILITY_VALIDATION_BYPASS
+[INFO] Discovery phase...
+[INFO] Found 2 tools, 2 resources
+[INFO] Testing tool injection...
+[WARNING] read_file: command_injection via filename
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.002980470657348633}
+[WARNING] read_file: command_injection via filename
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0032978057861328125}
+[WARNING] read_file: command_injection via filename
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.003296375274658203}
+[WARNING] read_file: command_injection via filename
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.003847837448120117}
+[WARNING] read_file: command_injection via filename
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0031709671020507812}
+[WARNING] read_file: command_injection via filename
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0026884078979492188}
+[WARNING] read_file: command_injection via filename
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.003576517105102539}
+[WARNING] read_file: command_injection via filename
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.003103017807006836}
+[WARNING] read_file: command_injection via filename
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.002866029739379883}
+[WARNING] read_file: command_injection via filename
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.004020214080810547}
+[WARNING] read_file: command_injection via filename
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.003557920455932617}
+[WARNING] read_file: command_injection via filename
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.002721548080444336}
+[WARNING] read_file: command_injection via filename
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0027687549591064453}
+[WARNING] read_file: command_injection via filename
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0031604766845703125}
+[WARNING] read_file: command_injection via filename
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.003781557083129883}
+[WARNING] read_file: command_injection via filename
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.00292205810546875}
+[WARNING] read_file: command_injection via filename
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0032241344451904297}
+[WARNING] read_file: command_injection via filename
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0030670166015625}
+[WARNING] read_file: command_injection via filename
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0028295516967773438}
+[WARNING] read_file: command_injection via filename
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0032973289489746094}
+[WARNING] read_file: command_injection via filename
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.003015279769897461}
+[WARNING] read_file: command_injection via filename
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.002801656723022461}
+[WARNING] read_file: command_injection via filename
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.00393986701965332}
+[WARNING] read_file: command_injection via filename
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0029649734497070312}
+[WARNING] read_file: command_injection via filename
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0035653114318847656}
+[WARNING] search_files: command_injection via keyword
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0038781166076660156}
+[WARNING] search_files: command_injection via keyword
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0059604644775390625}
+[WARNING] search_files: command_injection via keyword
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0035407543182373047}
+[WARNING] search_files: command_injection via keyword
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0030469894409179688}
+[WARNING] search_files: command_injection via keyword
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.004171848297119141}
+[WARNING] search_files: command_injection via keyword
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0035686492919921875}
+[WARNING] search_files: command_injection via keyword
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0031821727752685547}
+[WARNING] search_files: command_injection via keyword
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.002981424331665039}
+[WARNING] search_files: command_injection via keyword
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.002892017364501953}
+[WARNING] search_files: command_injection via keyword
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0037801265716552734}
+[WARNING] search_files: command_injection via keyword
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0032460689544677734}
+[WARNING] search_files: command_injection via keyword
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0032045841217041016}
+[WARNING] search_files: command_injection via keyword
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0028808116912841797}
+[WARNING] search_files: command_injection via keyword
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.004122495651245117}
+[WARNING] search_files: command_injection via keyword
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0030527114868164062}
+[WARNING] search_files: command_injection via keyword
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0029397010803222656}
+[WARNING] search_files: command_injection via keyword
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0032646656036376953}
+[WARNING] search_files: command_injection via keyword
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0029799938201904297}
+[WARNING] search_files: command_injection via keyword
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.003708362579345703}
+[WARNING] search_files: command_injection via keyword
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0031676292419433594}
+[WARNING] search_files: command_injection via keyword
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.00330352783203125}
+[WARNING] search_files: command_injection via keyword
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0032606124877929688}
+[WARNING] search_files: command_injection via keyword
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0035474300384521484}
+[WARNING] search_files: command_injection via keyword
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.003114938735961914}
+[WARNING] search_files: command_injection via keyword
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.003215789794921875}
+[WARNING] search_files: command_injection via keyword
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0034384727478027344}
+[INFO] Testing path traversal...
+[INFO] Testing side channels...
+[INFO] Skipping subscription flood (safe mode)
+[INFO] Testing prompt injection...
+[WARNING] read_file: MARKDOWN_IMAGE_INJECTION
+[WARNING] read_file: DELIMITER_BREAKOUT
+[WARNING] read_file: POSSIBLE_CONTEXT_CONFUSION
+[WARNING] search_files: MARKDOWN_IMAGE_INJECTION
+[WARNING] search_files: DELIMITER_BREAKOUT
+[WARNING] search_files: POSSIBLE_CONTEXT_CONFUSION
+[INFO] Skipping protocol fuzzing (safe mode)
+[INFO] Testing OOB DNS exfiltration...
+[INFO] Testing race conditions...
+[INFO] Skipping resource exhaustion tests (safe mode)
+[INFO] Mcpwn complete
+[INFO] JSON report: /results/report.json

@@ -1,0 +1,171 @@
+{
+  "findings": {
+    "by_category": {
+      "accepted_malformed": 14,
+      "injection_reflection": 5
+    },
+    "total": 19
+  },
+  "mode": "tools",
+  "protocols": {
+    "by_type": {},
+    "total": 0,
+    "total_runs": 0
+  },
+  "status": "completed",
+  "tool_discovery": {
+    "detail": "Discovered 9 tool(s)",
+    "failure": "none",
+    "tool_count": 9
+  },
+  "tools": {
+    "by_name": {
+      "add_observations": {
+        "exceptions": 0,
+        "failures": 0,
+        "outcomes": {
+          "accepted_malformed": 0,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0,
+          "server_rejected": 2
+        },
+        "safety_blocked": 0,
+        "success_rate": 100.0,
+        "successful": 2,
+        "total_runs": 2
+      },
+      "create_entities": {
+        "exceptions": 0,
+        "failures": 2,
+        "outcomes": {
+          "accepted_malformed": 2,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0,
+          "server_rejected": 0
+        },
+        "safety_blocked": 0,
+        "success_rate": 0.0,
+        "successful": 0,
+        "total_runs": 2
+      },
+      "create_relations": {
+        "exceptions": 0,
+        "failures": 1,
+        "outcomes": {
+          "accepted_malformed": 1,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0,
+          "server_rejected": 1
+        },
+        "safety_blocked": 0,
+        "success_rate": 50.0,
+        "successful": 1,
+        "total_runs": 2
+      },
+      "delete_entities": {
+        "exceptions": 0,
+        "failures": 2,
+        "outcomes": {
+          "accepted_malformed": 2,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0,
+          "server_rejected": 0
+        },
+        "safety_blocked": 0,
+        "success_rate": 0.0,
+        "successful": 0,
+        "total_runs": 2
+      },
+      "delete_observations": {
+        "exceptions": 0,
+        "failures": 2,
+        "outcomes": {
+          "accepted_malformed": 2,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0,
+          "server_rejected": 0
+        },
+        "safety_blocked": 0,
+        "success_rate": 0.0,
+        "successful": 0,
+        "total_runs": 2
+      },
+      "delete_relations": {
+        "exceptions": 0,
+        "failures": 2,
+        "outcomes": {
+          "accepted_malformed": 2,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0,
+          "server_rejected": 0
+        },
+        "safety_blocked": 0,
+        "success_rate": 0.0,
+        "successful": 0,
+        "total_runs": 2
+      },
+      "open_nodes": {
+        "exceptions": 0,
+        "failures": 2,
+        "outcomes": {
+          "accepted_malformed": 2,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0,
+          "server_rejected": 0
+        },
+        "safety_blocked": 0,
+        "success_rate": 0.0,
+        "successful": 0,
+        "total_runs": 2
+      },
+      "read_graph": {
+        "exceptions": 0,
+        "failures": 2,
+        "outcomes": {
+          "accepted_malformed": 2,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0,
+          "server_rejected": 0
+        },
+        "safety_blocked": 0,
+        "success_rate": 0.0,
+        "successful": 0,
+        "total_runs": 2
+      },
+      "search_nodes": {
+        "exceptions": 0,
+        "failures": 2,
+        "outcomes": {
+          "accepted_malformed": 2,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0,
+          "server_rejected": 0
+        },
+        "safety_blocked": 0,
+        "success_rate": 0.0,
+        "successful": 0,
+        "total_runs": 2
+      }
+    },
+    "total": 9,
+    "total_runs": 18
+  }
+}

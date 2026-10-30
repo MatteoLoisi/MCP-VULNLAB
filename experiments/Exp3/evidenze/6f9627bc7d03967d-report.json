@@ -1,0 +1,43 @@
+{
+  "schema": "exp3-probe-report-v1",
+  "producer": "exp3-probe-worker-v1",
+  "target": "c9",
+  "attempt_id": "5c52251547634d09a4eacc8b7909f12a",
+  "status": "completed",
+  "target_identity": {
+    "target": "c9",
+    "definition_sha256": "f32bb01f0f741f1c5ba840e64825bcde554995d55fdeaf14a93222d9a84cf0f3",
+    "manifest_sha256": "71156adadb7e944ec4e76beb135ac2d9913523bce20628bb3fc13eccbcb803d9",
+    "transport": "stdio",
+    "version": "79734c19f5104cd11486c90926d245560f53befa",
+    "shim_sha256": "da2c7bfdcb3b319bf3efc0df6f9a1fa1f5b79058ce619860f3821a93739a7766",
+    "configuration_sha256": "a4116e53f96c1be0b246c813c14e63e5510a22c3a69a483e1b8f5ba41f944554"
+  },
+  "target_command": [
+    "python",
+    "D:\\docker_proget\\V3\\tools\\dvmcp_stdio.py",
+    "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\hard\\challenge9"
+  ],
+  "scan_target": "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\hard\\challenge9",
+  "planned_findings": [
+    "P4-arg-injection"
+  ],
+  "profile": "grey-box",
+  "raw_ref": "capture.json",
+  "raw_sha256": "f8af6291da6b82076b9e383ee84590578dc0e2c978d7e3cf94d1fcab37de551f",
+  "findings": {
+    "P4-arg-injection": {
+      "status": "vulnerable",
+      "proof": "esecuzione marcata via ping_host.host (marker senza wrapper)",
+      "details": {
+        "tool": "ping_host",
+        "arg": "host",
+        "tried": 1,
+        "output": "Ping result:\n\nAccesso negato. Per l'opzione -c sono necessari privilegi amministrativi.\r\nEXP3_CMD_5c52251547634d09a4eacc8b7909f12a \r\n"
+      },
+      "evidence_reason": "derived from captured call",
+      "evidence_ref": "evidence/3.json",
+      "evidence_sha256": "acc705b6b587ae2baf15dc8b7498b1e27878ed077f6e3378bd0261fd05af9e46"
+    }
+  }
+}

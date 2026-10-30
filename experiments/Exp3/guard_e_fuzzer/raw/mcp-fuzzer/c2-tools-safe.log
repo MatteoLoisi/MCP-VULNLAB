@@ -1,0 +1,90 @@
+MCP Fuzzer v0.7.0 - Configuration Used:
+
+                       MCP Fuzzer Complete Configuration                       
++-----------------------------------------------------------------------------+
+| Category | Parameter                | Value                                 |
+|----------+--------------------------+---------------------------------------|
+| Core     | Mode                     | TOOLS                                 |
+| Core     | Phase                    | REALISTIC                             |
+| Core     | Protocol Phase           | REALISTIC                             |
+| Core     | Protocol                 | STDIO                                 |
+| Core     | Endpoint                 | C:/Users/ML/AppData/Local/Programs/P… |
+|          |                          | D:/docker_proget/V3/tools/dvmcp_stdi… |
+|          |                          | C:/Users/ML/AppData/Local/Temp/mcpta… |
+| Auth     | Status                   | No authentication configured          |
+| Timing   | Timeout                  | 30.0                                  |
+| Fuzzing  | Runs                     | 2                                     |
+| Fuzzing  | Runs Per Type            | 5                                     |
+| Fuzzing  | Stateful                 | False                                 |
+| Fuzzing  | Stateful Runs            | 5                                     |
+| Fuzzing  | Havoc                    | False                                 |
+| Fuzzing  | Corpus                   | True                                  |
+| Safety   | Enable Safety System     | True                                  |
+| Safety   | Fs Root                  | C:/Users/ML/AppData/Local/Temp/mcpfu… |
+| Safety   | No Network               | True                                  |
+| Output   | Output Dir               | reports/campaign-exp3-effect-tools-2… |
+| Process  | Watchdog Check Interval  | 1.0                                   |
+| Process  | Watchdog Process Timeout | 30.0                                  |
+| Process  | Watchdog Extra Buffer    | 5.0                                   |
+| Process  | Watchdog Max Hang Time   | 60.0                                  |
+| Process  | Max Concurrency          | 5                                     |
+| Advanced | Log Level                | INFO                                  |
++-----------------------------------------------------------------------------+
+
+                            Built Command Arguments                            
++-----------------------------------------------------------------------------+
+| Final Command Line                                                          |
+|-----------------------------------------------------------------------------|
+| C:\Users\ML\AppData\Local\uv\cache\archive-v0\r6IQj9WIgRWExWUY\Scripts\mcp… |
+| --mode tools --phase realistic --protocol-phase realistic --protocol stdio  |
+| --endpoint C:/Users/ML/AppData/Local/Programs/Python/Python313/python.exe   |
+| D:/docker_proget/V3/tools/dvmcp_stdio.py                                    |
+| C:/Users/ML/AppData/Local/Temp/mcptargets/dvmcp/challenges/easy/challenge2  |
+| --runs 2 --runs-per-type 5 --timeout 30.0 --fs-root                         |
+| C:/Users/ML/AppData/Local/Temp/mcpfuzz-fsroot --output-dir                  |
+| reports/campaign-exp3-effect-tools-20261020-b6e2a1/raw/mcp-fuzzer/c2-tools… |
+| --log-level INFO --enable-safety-system --no-network                        |
++-----------------------------------------------------------------------------+
+
+This argv will be passed to the internal fuzzer process.
+
+Starting MCP Fuzzer...
+
+2026-10-20 16:18:29,293 - root - WARNING - Recorded 2 finding(s) across 1 categor(y/ies) in reports\campaign-exp3-effect-tools-20261020-b6e2a1\raw\mcp-fuzzer\c2-tools-safe\findings.json (get_company_data:accepted_malformed, search_company_database:accepted_malformed)
+                           MCP Tool Fuzzing Summary                            
++-----------------------------------------------------------------------------+
+|                         |      |        | Accep… |        |        |        |
+| Tool                    | Runs | Rejec… | Bad    | Anoma… | Excep… | Safety |
+|-------------------------+------+--------+--------+--------+--------+--------|
+| get_company_data        | 2    | 0      | 2      | 0      | 0      | 0      |
+| search_company_database | 2    | 0      | 2      | 0      | 0      | 0      |
++-----------------------------------------------------------------------------+
+
+Tool Execution Statistics
+Total Tools Tested: 2
+Total Fuzzing Runs: 4
+Total Server-Rejected Inputs: 0
+Total Accepted-Malformed Findings: 4
+Total Transport/Protocol Anomalies: 0
+Total Crashes: 0
+Total Exceptions: 0
+Total Safety Blocked: 0
+Overall Handled-Correctly Rate: 0.0%
+
+Vulnerabilities Found: 2
+  • get_company_data: 2/2 failed runs (100.0%)
+  • search_company_database: 2/2 failed runs (100.0%)
+
+=== MCP Fuzzer Summary ===
+Mode: tools
+Status: completed — 2 tool(s) fuzzed
+
+Tool Results:
+  get_company_data: 2 runs, 0 handled correctly, 2 findings/failures, 0 safety-blocked
+      (0 server-rejected input, 2 accepted-malformed findings, 0 transport/protocol anomalies, 0 crashes)
+  search_company_database: 2 runs, 0 handled correctly, 2 findings/failures, 0 safety-blocked
+      (0 server-rejected input, 2 accepted-malformed findings, 0 transport/protocol anomalies, 0 crashes)
+
+Findings by category:
+  accepted_malformed: 2
+

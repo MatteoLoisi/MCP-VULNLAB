@@ -1,0 +1,16 @@
+{
+  "findings": [
+    {
+      "category": "injection_reflection",
+      "severity": "high",
+      "kind": "tool",
+      "target": "sequentialthinking",
+      "run": 2,
+      "detail": "A dangerous input token was reflected verbatim in the response (missing sanitization boundary).",
+      "evidence": {
+        "marker": "<script>"
+      }
+    }
+  ],
+  "count": 1
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "exp3-evidence-v1",
+  "target": "c7",
+  "attempt_id": "46f6a15438e84092bdd3da41ba2c6b9a",
+  "finding_id": "P2-tool-poisoning",
+  "type": "negative_check",
+  "applicable": true,
+  "scope": "textual",
+  "request": {
+    "id": "272980181bb541cb9a8c8d6260658d2f",
+    "captured_args": [],
+    "captured_kwargs": {}
+  },
+  "response": {
+    "request_id": "272980181bb541cb9a8c8d6260658d2f",
+    "completed": true,
+    "outcome": "no_indicator",
+    "observed": "[{\"name\": \"check_email\", \"description\": \"Check emails in the specified folder.\\n\\nArgs:\\n    folder: Email folder to check (inbox, sent, drafts, etc.)\\n\\nReturns:\\n    List of emails in the specified folder\\n\", \"inputSchema\": {\"properties\": {\"folder\": {\"default\": \"inbox\", \"title\": \"Folder\", \"type\": \"string\"}}, \"title\": \"check_emailArguments\", \"type\": \"object\"}, \"outputSchema\": {\"properties\": {\"result\": {\"title\": \"Result\", \"type\": \"string\"}}, \"required\": [\"result\"], \"title\": \"check_emailOutput\", \"type\": \"object\"}}, {\"name\": \"send_email\", \"description\": \"Send an email.\\n\\nArgs:\\n    to: Recipient email address\\n    subject: Email subject\\n    body: Email body content\\n\\nReturns:\\n    Confirmation of email sent\\n\", \"inputSchema\": {\"properties\": {\"to\": {\"title\": \"To\", \"type\": \"string\"}, \"subject\": {\"title\": \"Subject\", \"type\": \"string\"}, \"body\": {\"title\": \"Body\", \"type\": \"string\"}}, \"required\": [\"to\", \"subject\", \"body\"], \"title\": \"send_emailArguments\", \"type\": \"object\"}, \"outputSchema\": {\"properties\": {\"result\": {\"title\": \"Result\", \"type\": \"string\"}}, \"required\": [\"result\"], \"title\": \"send_emailOutput\", \"type\": \"object\"}}, {\"name\": \"check_service_status\", \"description\": \"Check the status of an integrated external service.\\n\\nArgs:\\n    service_id: ID of the service to check (email_service, cloud_storage, analytics_platform)\\n\\nReturns:\\n    Status information for the specified service\\n\", \"inputSchema\": {\"properties\": {\"service_id\": {\"title\": \"Service Id\", \"type\": \"string\"}}, \"required\": [\"service_id\"], \"title\": \"check_service_statusArguments\", \"type\": \"object\"}, \"outputSchema\": {\"properties\": {\"result\": {\"title\": \"Result\", \"type\": \"string\"}}, \"required\": [\"result\"], \"title\": \"check_service_statusOutput\", \"type\": \"object\"}}, {\"name\": \"view_system_logs\", \"description\": \"View system logs.\\n\\nArgs:\\n    log_type: Type of logs to view (system, access, error)\\n\\nReturns:\\n    Recent log entries of the specified type\\n\", \"inputSchema\": {\"properties\": {\"log_type\": {\"default\": \"system\", \"title\": \"Log Type\", \"type\": \"string\"}}, \"title\": \"view_system_logsArguments\", \"type\": \"object\"}, \"outputSchema\": {\"properties\": {\"result\": {\"title\": \"Result\", \"type\": \"string\"}}, \"required\": [\"result\"], \"title\": \"view_system_logsOutput\", \"type\": \"object\"}}]"
+  },
+  "coverage_complete": true,
+  "capture_ref": "capture.json",
+  "capture_sha256": "5cade3ba046d836d5a83ece05430625de1aad27afaee77ac230a8ea734ad1780",
+  "source_call_index": 1
+}

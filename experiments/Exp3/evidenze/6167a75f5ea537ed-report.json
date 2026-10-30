@@ -1,0 +1,66 @@
+{
+  "schema": "exp3-probe-report-v1",
+  "producer": "exp3-probe-worker-v1",
+  "target": "c3",
+  "attempt_id": "d903353394c04571814886dccda235b2",
+  "status": "completed",
+  "target_identity": {
+    "target": "c3",
+    "definition_sha256": "f6ea05e52a7ab4dcf374c9ee9fd0859bc674944545a1c25c00e7439b0089ffb0",
+    "manifest_sha256": "71156adadb7e944ec4e76beb135ac2d9913523bce20628bb3fc13eccbcb803d9",
+    "transport": "stdio",
+    "version": "79734c19f5104cd11486c90926d245560f53befa",
+    "shim_sha256": "da2c7bfdcb3b319bf3efc0df6f9a1fa1f5b79058ce619860f3821a93739a7766",
+    "configuration_sha256": "c0c03b1e23fc4395c9ca4816750ef50558fb15bc89005571fd288231e0b14687"
+  },
+  "target_command": [
+    "python",
+    "D:\\docker_proget\\V3\\tools\\dvmcp_stdio.py",
+    "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\easy\\challenge3"
+  ],
+  "scan_target": "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\easy\\challenge3",
+  "planned_findings": [
+    "P5-tool-traversal"
+  ],
+  "profile": "black-box",
+  "raw_ref": "capture.json",
+  "raw_sha256": "5362454908ebc1bd1c799ee69be71c260aa8987cfc3b231f958ad357a18fe76f",
+  "findings": {
+    "P5-tool-traversal": {
+      "status": "vulnerable",
+      "proof": "canarino letto via tool traversal: ['read_file.filename=D:\\\\docker_proget\\\\V3\\\\reports\\\\campaign-exp3-20261018-40bc13d7\\\\effects\\\\P5-c3\\\\attempts\\\\d903353394c04571814886dccda235b2\\\\canary.txt']",
+      "details": {
+        "hits": [
+          "read_file.filename=D:\\docker_proget\\V3\\reports\\campaign-exp3-20261018-40bc13d7\\effects\\P5-c3\\attempts\\d903353394c04571814886dccda235b2\\canary.txt"
+        ],
+        "swept": 1,
+        "planned": 2,
+        "tried": 1,
+        "max_attempts": 60,
+        "reason": "",
+        "complete": false,
+        "blocked": 0,
+        "opaque": 0,
+        "timeouts": 0,
+        "undelivered": [],
+        "errors": [],
+        "payloads_undelivered": 0,
+        "payloads_errored": 0,
+        "defended": 0,
+        "payloads_defended": 0,
+        "schema_defenses": [],
+        "baseline_rejected": [],
+        "baseline_inconclusive": [],
+        "baseline_calls": 0,
+        "max_baselines": 9,
+        "baseline_cap": 0,
+        "baseline_declared_calls": 0,
+        "baseline_guessed_calls": 0,
+        "baseline_declared_units": 0
+      },
+      "evidence_reason": "derived from captured call",
+      "evidence_ref": "evidence/2.json",
+      "evidence_sha256": "16b750744dde9ff60373da4bd6a7cf1f29ce209db6bb0a0c630b05b3f7ca57dd"
+    }
+  }
+}

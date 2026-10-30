@@ -1,0 +1,66 @@
+{
+  "protocol_version": "1.0.0",
+  "timestamp": "2026-10-20T16:18:29.302761",
+  "tool_version": "0.7.0",
+  "session_id": "50f7e953-1af7-4ab1-86dc-54cbf8aacd46",
+  "output_type": "fuzzing_results",
+  "data": {
+    "mode": "tools",
+    "protocol": "stdio",
+    "endpoint": "C:/Users/ML/AppData/Local/Programs/Python/Python313/python.exe D:/docker_proget/V3/tools/dvmcp_stdio.py C:/Users/ML/AppData/Local/Temp/mcptargets/dvmcp/challenges/easy/challenge2",
+    "total_tools": 2,
+    "total_protocol_types": 0,
+    "tools_tested": [
+      {
+        "name": "get_company_data",
+        "runs": 2,
+        "successful": 0,
+        "exceptions": 0,
+        "safety_blocked": 0,
+        "outcomes": {
+          "server_rejected": 0,
+          "accepted_malformed": 2,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0
+        },
+        "success_rate": 0.0,
+        "exception_details": []
+      },
+      {
+        "name": "search_company_database",
+        "runs": 2,
+        "successful": 0,
+        "exceptions": 0,
+        "safety_blocked": 0,
+        "outcomes": {
+          "server_rejected": 0,
+          "accepted_malformed": 2,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0
+        },
+        "success_rate": 0.0,
+        "exception_details": []
+      }
+    ],
+    "protocol_types_tested": [],
+    "spec_summary": {
+      "totals": {
+        "total": 0,
+        "failed": 0,
+        "warned": 0,
+        "passed": 0
+      },
+      "by_spec_id": {}
+    }
+  },
+  "metadata": {
+    "execution_time": "PT2.521039S",
+    "total_tests": 4,
+    "success_rate": 0.0,
+    "safety_enabled": false
+  }
+}

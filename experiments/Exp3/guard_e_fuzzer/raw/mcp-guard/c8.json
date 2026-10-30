@@ -1,0 +1,126 @@
+{
+  "schema_version": "2.0.0",
+  "tool_version": "2.0.0",
+  "target": "reports/campaign-exp3-effect-tools-20261020-b6e2a1/targets/c8",
+  "target_commit": null,
+  "started_at": "2026-10-20T14:12:25.610901+00:00",
+  "finished_at": "2026-10-20T14:13:59.188275+00:00",
+  "server_info": {
+    "root": "D:\\docker_proget\\V3\\reports\\campaign-exp3-effect-tools-20261020-b6e2a1\\targets\\c8",
+    "server_type": "python",
+    "is_mcp_server": true,
+    "name": null,
+    "version": null,
+    "entrypoint": "--entrypoint: python dvmcp_stdio.py .",
+    "launch_argv": [
+      "python",
+      "dvmcp_stdio.py",
+      "."
+    ],
+    "launch_candidates": [
+      {
+        "source": "--entrypoint override",
+        "argv": [
+          "python",
+          "dvmcp_stdio.py",
+          "."
+        ],
+        "requires_build": false,
+        "note": ""
+      }
+    ],
+    "launch_python": "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpguard-venvs\\cd65c1bd9d9406c5\\Scripts\\python.exe",
+    "build_argv": null,
+    "install_argv": null,
+    "transport": "stdio",
+    "manifest_files": [
+      "requirements.txt"
+    ],
+    "lockfiles": [
+      "requirements.txt"
+    ],
+    "dependencies": {
+      "mcp": "1.28.0"
+    },
+    "detection_notes": [
+      "no [project.scripts] entry, no importable __main__ module and no mcp.json; nothing in the project declares how to start it"
+    ]
+  },
+  "stages": [
+    {
+      "stage": "acquire",
+      "ran": true,
+      "reason": null,
+      "duration_s": 0.025,
+      "artifacts": {
+        "root": "D:\\docker_proget\\V3\\reports\\campaign-exp3-effect-tools-20261020-b6e2a1\\targets\\c8"
+      }
+    },
+    {
+      "stage": "detect",
+      "ran": true,
+      "reason": null,
+      "duration_s": 0.006,
+      "artifacts": {
+        "server_type": "python",
+        "is_mcp_server": true,
+        "entrypoint": null,
+        "notes": [
+          "no [project.scripts] entry, no importable __main__ module and no mcp.json; nothing in the project declares how to start it"
+        ]
+      }
+    },
+    {
+      "stage": "static",
+      "ran": false,
+      "reason": "disabled by --no-static",
+      "duration_s": 0.0,
+      "artifacts": {}
+    },
+    {
+      "stage": "dependencies",
+      "ran": false,
+      "reason": "disabled by --no-deps",
+      "duration_s": 0.0,
+      "artifacts": {}
+    },
+    {
+      "stage": "dynamic",
+      "ran": false,
+      "reason": "handshake failed: no answer to initialize within 15s. The process is running but silent, which usually means it needs configuration it did not announce (an API key, a database URL). Raise --handshake-timeout if the server is simply slow to boot.",
+      "duration_s": 93.546,
+      "artifacts": {
+        "venv": "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpguard-venvs\\cd65c1bd9d9406c5",
+        "python_install_source": "requirements.txt",
+        "python_install_mode": "wheels-only",
+        "candidates_tried": [
+          {
+            "source": "--entrypoint override",
+            "argv": "python dvmcp_stdio.py .",
+            "ok": false,
+            "reason": "handshake failed: no answer to initialize within 15s. The process is running but silent, which usually means it needs configuration it did not announce (an API key, a database URL). Raise --handshake-timeout if the server is simply slow to boot."
+          }
+        ],
+        "launch_argv": "docker run --rm -i --user 1000:1000 --memory 512m --pids-limit 256 --cap-drop ALL --security-opt no-new-privileges --read-only --tmpfs /work:rw,exec,size=256m -v D:\\docker_proget\\V3\\reports\\campaign-exp3-effect-tools-20261020-b6e2a1\\targets\\c8:/src:ro -w /work --network none python:3.11-alpine sh -c cp -a /src/. /work 2>/dev/null; C:\\Users\\ML\\AppData\\Local\\Temp\\mcpguard-venvs\\cd65c1bd9d9406c5\\Scripts\\python.exe dvmcp_stdio.py .",
+        "exit_code": null,
+        "stderr_tail": ""
+      }
+    }
+  ],
+  "summary": {
+    "total": 0,
+    "by_severity": {
+      "none": 0,
+      "low": 0,
+      "medium": 0,
+      "high": 0,
+      "critical": 0
+    },
+    "by_source": {
+      "static": 0,
+      "dynamic": 0,
+      "dependency": 0
+    }
+  },
+  "findings": []
+}

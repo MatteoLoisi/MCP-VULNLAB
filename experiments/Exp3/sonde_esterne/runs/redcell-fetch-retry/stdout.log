@@ -1,0 +1,10 @@
+
+[1mRedCell MCP scan — mcp-server-fetch-local[0m
+[2m1 tool(s) enumerated · 9 probe call(s) · static + dynamic exploit · OWASP MCP Top 10[0m
+
+  [31m✗ HIGH[0m [1mServer-Side Request Forgery[0m [2m· tool 'fetch' · Server-Side Request Forgery (not MCP-specific — see category description) · conf 0.98[0m
+      [2mThe tool issued an outbound request to an attacker-chosen URL with no allow-listing — SSRF (a real request reached our loopback oracle).[0m
+      [2m↳ Payload: url='http://127.0.0.1:38261/RCXbd699ac35bf7a5479ea7f5c28b91bdb4'[0m
+      [2m↳ The MCP server made a live request to our callback (token RCXbd699ac35bf7a5479ea7f5c28b91bdb4 received) — it would equally reach http://169.254.169.254/ cloud metadata.[0m
+
+[31m[1m1 vulnerability(s) proven.[0m

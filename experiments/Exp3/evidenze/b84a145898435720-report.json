@@ -1,0 +1,54 @@
+{
+  "schema": "exp3-probe-report-v1",
+  "producer": "exp3-probe-worker-v1",
+  "target": "c4",
+  "attempt_id": "f20cdc7f3379490cbd3b0bb21ea1e18b",
+  "status": "completed",
+  "target_identity": {
+    "target": "c4",
+    "definition_sha256": "b6e0c65233ba2cdf2f2a795ab34f9e495a7d0f0e42c6842adcaf268b6b3680c3",
+    "manifest_sha256": "71156adadb7e944ec4e76beb135ac2d9913523bce20628bb3fc13eccbcb803d9",
+    "transport": "stdio",
+    "version": "79734c19f5104cd11486c90926d245560f53befa",
+    "shim_sha256": "da2c7bfdcb3b319bf3efc0df6f9a1fa1f5b79058ce619860f3821a93739a7766",
+    "configuration_sha256": "6a5c4e3ae2a31905490517353b559c11c74843c649488507c9ff238543e71539"
+  },
+  "target_command": [
+    "python",
+    "D:\\docker_proget\\V3\\tools\\dvmcp_stdio.py",
+    "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\medium\\challenge4"
+  ],
+  "scan_target": "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\medium\\challenge4",
+  "planned_findings": [
+    "P2-tool-poisoning"
+  ],
+  "profile": "black-box",
+  "raw_ref": "capture.json",
+  "raw_sha256": "37a6cbedf5542a959c0e6b7a3a8e79d7f56ce7a2f7da54e8f4a0a382e337a2ef",
+  "findings": {
+    "P2-tool-poisoning": {
+      "status": "secure",
+      "proof": "nessuna istruzione sospetta in 2 DESCRIPTION (avg_score=100)",
+      "details": {
+        "count": 2,
+        "avg_score": 100,
+        "by_severity": {},
+        "audit": [
+          {
+            "tool": "get_weather_forecast",
+            "score": 100,
+            "flags": []
+          },
+          {
+            "tool": "reset_challenge",
+            "score": 100,
+            "flags": []
+          }
+        ]
+      },
+      "evidence_reason": "derived from captured call",
+      "evidence_ref": "evidence/1.json",
+      "evidence_sha256": "9c203dde5cdc9fe00ee5b410c2a711d670b786eaca4db88c86d5ef40ed6646f0"
+    }
+  }
+}

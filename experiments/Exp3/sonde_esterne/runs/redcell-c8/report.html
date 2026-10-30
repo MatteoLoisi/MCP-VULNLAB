@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RedCell report — DVMCP-c8</title>
+</head>
+<body style="font-family:-apple-system,Segoe UI,Roboto,sans-serif;background:#f8fafc;
+             color:#0f172a;margin:0;padding:32px">
+  <div style="max-width:880px;margin:0 auto">
+    <h1 style="margin:0 0 4px">RedCell <span style="color:#6366f1">agent red-team</span></h1>
+    <p style="color:#64748b;margin:0 0 18px">Target: <strong>DVMCP-c8</strong>
+       &nbsp;·&nbsp; 2 scenarios run</p>
+    <div style="background:#dc2626;color:#fff;padding:14px 20px;border-radius:10px;
+                font-weight:700;font-size:18px">2 VULNERABILITY(S) FOUND</div>
+    <h2 style="margin:26px 0 4px">Findings</h2>
+    
+    <div style="border:1px solid #e2e8f0;border-left:5px solid #dc2626;border-radius:10px;
+                padding:16px 20px;margin:14px 0;background:#fff">
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+        <span style="background:#dc2626;color:#fff;padding:2px 8px;border-radius:6px;font-size:12px;font-weight:600;white-space:nowrap">VULNERABLE</span> <span style="background:#dc2626;color:#fff;padding:2px 8px;border-radius:6px;font-size:12px;font-weight:600;white-space:nowrap">CRITICAL</span> <span style="background:#6366f1;color:#fff;padding:2px 8px;border-radius:6px;font-size:12px;font-weight:600;white-space:nowrap">OWASP MCP05 — OS Command Injection</span> <span style="background:#0891b2;color:#fff;padding:2px 8px;border-radius:6px;font-size:12px;font-weight:600;white-space:nowrap">witnessed · deterministic</span>
+        <span style="font-weight:600;font-size:15px">OS Command Injection</span>
+        <span style="color:#64748b;font-size:13px">[mcp-command-injection:execute_shell_command]</span>
+      </div>
+      <p style="color:#475569;margin:10px 0 6px">Injects benign shell metacharacters and proves execution when a unique canary echoes back.</p>
+      <p style="margin:6px 0"><strong>Verdict:</strong> An injected shell expression executed on the host: 4191022*8032479 resolved to 33664296203538 in the tool output. This is OS command execution.
+         <span style="color:#94a3b8">(confidence 0.97)</span></p>
+      <details style="margin-top:8px">
+        <summary style="cursor:pointer;color:#334155;font-weight:600">Evidence &amp; transcript</summary>
+        <div style="margin-top:8px;font-size:14px;color:#334155">
+          <p style="margin:4px 0"><strong>User input:</strong> execute_shell_command(command=&#x27;`echo $((4191022*8032479))`&#x27;)</p>
+          <p style="margin:4px 0"><strong>Injection vector:</strong>
+             tool output of <code>None</code></p>
+          <p style="margin:4px 0"><strong>Tool calls:</strong></p>
+          <ul style="margin:4px 0"><li><code>execute_shell_command({&#x27;command&#x27;: &#x27;`echo $((4191022*8032479))`&#x27;})</code></li></ul>
+          <p style="margin:4px 0"><strong>Evidence:</strong></p>
+          <ul style="margin:4px 0"><li>Payload: command=&#x27;`echo $((4191022*8032479))`&#x27;</li><li>Shell evaluated 4191022*8032479 → 33664296203538 (proof of execution): Error executing command: /bin/sh: 1: 33664296203538: not found</li></ul>
+          <p style="margin:4px 0"><strong>Final output:</strong></p>
+          <pre style="background:#f1f5f9;padding:10px;border-radius:6px;white-space:pre-wrap;
+                      font-size:13px"></pre>
+          <p style="margin:4px 0"><strong>NIST references:</strong></p>
+          <ul style="margin:4px 0"><li>NIST AI 100-2 (Adversarial ML taxonomy, Mar 2025 agent update): Excessive Agency</li></ul>
+          
+    <p style="margin:10px 0 0;color:#0891b2;font-size:13px">
+      <strong>Exploit witness</strong> — oracle: <code>arith</code>,
+      soundness: <code>deterministic</code>. A non-vulnerable server cannot produce this observation by construction.
+    </p>
+    <details style="margin-top:4px">
+      <summary style="cursor:pointer;color:#0891b2;font-size:13px">Witness certificate (JSON)</summary>
+      <pre style="background:#f0fdfa;padding:10px;border-radius:6px;white-space:pre-wrap;
+                  font-size:12px;max-height:280px;overflow:auto">{
+  &quot;version&quot;: 1,
+  &quot;tool&quot;: {
+    &quot;name&quot;: &quot;execute_shell_command&quot;,
+    &quot;schema_sha256&quot;: &quot;fc947ad9f74bb3b92b564d3665a163a0723c7f818ba2ad25b7519fd56cd9f277&quot;
+  },
+  &quot;sigma&quot;: {
+    &quot;target_path&quot;: [
+      &quot;command&quot;
+    ],
+    &quot;arguments&quot;: {
+      &quot;command&quot;: &quot;`echo $((4191022*8032479))`&quot;
+    }
+  },
+  &quot;payload&quot;: {
+    &quot;class&quot;: &quot;cmd-arith&quot;,
+    &quot;text&quot;: &quot;`echo $((4191022*8032479))`&quot;
+  },
+  &quot;trace&quot;: [
+    {
+      &quot;dir&quot;: &quot;out&quot;,
+      &quot;t&quot;: 3744.010095,
+      &quot;msg&quot;: {
+        &quot;jsonrpc&quot;: &quot;2.0&quot;,
+        &quot;id&quot;: 12,
+        &quot;method&quot;: &quot;tools/call&quot;,
+        &quot;params&quot;: {
+          &quot;name&quot;: &quot;execute_shell_command&quot;,
+          &quot;arguments&quot;: {
+            &quot;command&quot;: &quot;`echo $((4191022*8032479))`&quot;
+          }
+        }
+      }
+    },
+    {
+      &quot;dir&quot;: &quot;in&quot;,
+      &quot;t&quot;: 3744.014146,
+      &quot;msg&quot;: {
+        &quot;jsonrpc&quot;: &quot;2.0&quot;,
+        &quot;id&quot;: 12,
+        &quot;result&quot;: {
+          &quot;content&quot;: [
+            {
+              &quot;type&quot;: &quot;text&quot;,
+              &quot;text&quot;: &quot;Error executing command: /bin/sh: 1: 33664296203538: not found\n&quot;
+            }
+          ],
+          &quot;structuredContent&quot;: {
+            &quot;result&quot;: &quot;Error executing command: /bin/sh: 1: 33664296203538: not found\n&quot;
+          },
+          &quot;isError&quot;: false
+        }
+      }
+    }
+  ],
+  &quot;oracle&quot;: {
+    &quot;type&quot;: &quot;arith&quot;,
+    &quot;soundness&quot;: &quot;deterministic&quot;,
+    &quot;a&quot;: 4191022,
+    &quot;b&quot;: 8032479,
+    &quot;product&quot;: 33664296203538
+  },
+  &quot;session_sha256&quot;: &quot;06f373d2e2b2d83ed6b828a7bd27e6288c3d2186e5ca160334be0cf261d6b5b9&quot;
+}</pre>
+    </details>
+    
+        </div>
+      </details>
+    </div>
+    
+    <div style="border:1px solid #e2e8f0;border-left:5px solid #dc2626;border-radius:10px;
+                padding:16px 20px;margin:14px 0;background:#fff">
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+        <span style="background:#dc2626;color:#fff;padding:2px 8px;border-radius:6px;font-size:12px;font-weight:600;white-space:nowrap">VULNERABLE</span> <span style="background:#dc2626;color:#fff;padding:2px 8px;border-radius:6px;font-size:12px;font-weight:600;white-space:nowrap">CRITICAL</span> <span style="background:#6366f1;color:#fff;padding:2px 8px;border-radius:6px;font-size:12px;font-weight:600;white-space:nowrap">Path Traversal / Unsandboxed File Access (not MCP-specific — see category description)</span> <span style="background:#0891b2;color:#fff;padding:2px 8px;border-radius:6px;font-size:12px;font-weight:600;white-space:nowrap">witnessed · deterministic</span>
+        <span style="font-weight:600;font-size:15px">Path Traversal / Unsandboxed File Read</span>
+        <span style="color:#64748b;font-size:13px">[mcp-path-traversal:analyze_log_file]</span>
+      </div>
+      <p style="color:#475569;margin:10px 0 6px">Calls file-accessing tools with traversal payloads and proves arbitrary file reads.</p>
+      <p style="margin:6px 0"><strong>Verdict:</strong> The tool returned the contents of a file outside any intended directory — path traversal / missing sandboxing (proven read).
+         <span style="color:#94a3b8">(confidence 0.99)</span></p>
+      <details style="margin-top:8px">
+        <summary style="cursor:pointer;color:#334155;font-weight:600">Evidence &amp; transcript</summary>
+        <div style="margin-top:8px;font-size:14px;color:#334155">
+          <p style="margin:4px 0"><strong>User input:</strong> analyze_log_file(log_path=&#x27;/tmp/redcell-canary-rire6bg2/.redcell-f83f389c.canary&#x27;)</p>
+          <p style="margin:4px 0"><strong>Injection vector:</strong>
+             tool output of <code>None</code></p>
+          <p style="margin:4px 0"><strong>Tool calls:</strong></p>
+          <ul style="margin:4px 0"><li><code>analyze_log_file({&#x27;log_path&#x27;: &#x27;/tmp/redcell-canary-rire6bg2/.redcell-f83f389c.canary&#x27;})</code></li></ul>
+          <p style="margin:4px 0"><strong>Evidence:</strong></p>
+          <ul style="margin:4px 0"><li>Payload: log_path=&#x27;/tmp/redcell-canary-rire6bg2/.redcell-f83f389c.canary&#x27;</li><li>Observed the unpredictable canary value written by the scanner</li><li>Leaked content: Log File Analysis: /tmp/redcell-canary-rire6bg2/.redcell-f83f389c.canary ⏎ -------------------------- ⏎ Lines: 1 ⏎ Words: 1 ⏎ Characters: 35 ⏎  ⏎ Sample Content (first 500 characters): ⏎ RCX8fc2d647efe424c226cec5e2ea7439cd... ⏎  ⏎ Analysis …</li></ul>
+          <p style="margin:4px 0"><strong>Final output:</strong></p>
+          <pre style="background:#f1f5f9;padding:10px;border-radius:6px;white-space:pre-wrap;
+                      font-size:13px"></pre>
+          <p style="margin:4px 0"><strong>NIST references:</strong></p>
+          <ul style="margin:4px 0"><li>NIST AI 100-2 (Adversarial ML taxonomy, Mar 2025 agent update): Excessive Agency</li></ul>
+          
+    <p style="margin:10px 0 0;color:#0891b2;font-size:13px">
+      <strong>Exploit witness</strong> — oracle: <code>canary</code>,
+      soundness: <code>deterministic</code>. A non-vulnerable server cannot produce this observation by construction.
+    </p>
+    <details style="margin-top:4px">
+      <summary style="cursor:pointer;color:#0891b2;font-size:13px">Witness certificate (JSON)</summary>
+      <pre style="background:#f0fdfa;padding:10px;border-radius:6px;white-space:pre-wrap;
+                  font-size:12px;max-height:280px;overflow:auto">{
+  &quot;version&quot;: 1,
+  &quot;tool&quot;: {
+    &quot;name&quot;: &quot;analyze_log_file&quot;,
+    &quot;schema_sha256&quot;: &quot;8a833a9a9363077de802af70ccdd1bdcb667ff1362555a6ac4128f10c349dad5&quot;
+  },
+  &quot;sigma&quot;: {
+    &quot;target_path&quot;: [
+      &quot;log_path&quot;
+    ],
+    &quot;arguments&quot;: {
+      &quot;log_path&quot;: &quot;/tmp/redcell-canary-rire6bg2/.redcell-f83f389c.canary&quot;
+    }
+  },
+  &quot;payload&quot;: {
+    &quot;class&quot;: &quot;path-traversal&quot;,
+    &quot;text&quot;: &quot;/tmp/redcell-canary-rire6bg2/.redcell-f83f389c.canary&quot;
+  },
+  &quot;trace&quot;: [
+    {
+      &quot;dir&quot;: &quot;out&quot;,
+      &quot;t&quot;: 3744.018671,
+      &quot;msg&quot;: {
+        &quot;jsonrpc&quot;: &quot;2.0&quot;,
+        &quot;id&quot;: 14,
+        &quot;method&quot;: &quot;tools/call&quot;,
+        &quot;params&quot;: {
+          &quot;name&quot;: &quot;analyze_log_file&quot;,
+          &quot;arguments&quot;: {
+            &quot;log_path&quot;: &quot;/tmp/redcell-canary-rire6bg2/.redcell-f83f389c.canary&quot;
+          }
+        }
+      }
+    },
+    {
+      &quot;dir&quot;: &quot;in&quot;,
+      &quot;t&quot;: 3744.021751,
+      &quot;msg&quot;: {
+        &quot;jsonrpc&quot;: &quot;2.0&quot;,
+        &quot;id&quot;: 14,
+        &quot;result&quot;: {
+          &quot;content&quot;: [
+            {
+              &quot;type&quot;: &quot;text&quot;,
+              &quot;text&quot;: &quot;\nLog File Analysis: /tmp/redcell-canary-rire6bg2/.redcell-f83f389c.canary\n--------------------------\nLines: 1\nWords: 1\nCharacters: 35\n\nSample Content (first 500 characters):\nRCX8fc2d647efe424c226cec5e2ea7439cd...\n\nAnalysis Complete.\n&quot;
+            }
+          ],
+          &quot;structuredContent&quot;: {
+            &quot;result&quot;: &quot;\nLog File Analysis: /tmp/redcell-canary-rire6bg2/.redcell-f83f389c.canary\n--------------------------\nLines: 1\nWords: 1\nCharacters: 35\n\nSample Content (first 500 characters):\nRCX8fc2d647efe424c226cec5e2ea7439cd...\n\nAnalysis Complete.\n&quot;
+          },
+          &quot;isError&quot;: false
+        }
+      }
+    }
+  ],
+  &quot;oracle&quot;: {
+    &quot;type&quot;: &quot;canary&quot;,
+    &quot;soundness&quot;: &quot;deterministic&quot;,
+    &quot;canary&quot;: &quot;RCX8fc2d647efe424c226cec5e2ea7439cd&quot;,
+    &quot;canary_path&quot;: &quot;/tmp/redcell-canary-rire6bg2/.redcell-f83f389c.canary&quot;
+  },
+  &quot;session_sha256&quot;: &quot;1c5924026abc9b22092f1292b6a14ca6a32dadfed4244a07565674ac1a080a2b&quot;
+}</pre>
+    </details>
+    
+        </div>
+      </details>
+    </div>
+    
+    <p style="color:#94a3b8;font-size:12px;margin-top:28px">
+      Mapped to OWASP Top 10 for Agentic Applications (2026) &amp; NIST AI 100-2.
+      Defensive / authorized use only.
+    </p>
+  </div>
+</body>
+</html>

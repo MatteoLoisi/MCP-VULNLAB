@@ -1,0 +1,21 @@
+{
+  "schema": "exp3-p2-blind-summary-v1",
+  "campaign": "campaign-exp3-p2-blind-20261020-f9fa3d41",
+  "cases": 14,
+  "agreement": 14,
+  "agreement_ratio": 1.0,
+  "descriptive_confusion": {
+    "expected_vulnerable_reviewed_vulnerable": 3,
+    "expected_secure_reviewed_secure": 11,
+    "expected_secure_reviewed_vulnerable": 0,
+    "expected_vulnerable_reviewed_secure": 0
+  },
+  "reviewer": "blind-subagent",
+  "human_independent": false,
+  "blind": true,
+  "tool_names_removed": true,
+  "target_identity_removed": true,
+  "order_randomized": true,
+  "cases_sha256": "d98538f69bc95b6b7afeb75a18d3c25b52c521ef072b8840c79d7c744aef672d",
+  "reviewer_output_sha256": "1f9176cfe05919895982430d3bcead439b0272e6c297d3652e961cd8c4ec672b"
+}

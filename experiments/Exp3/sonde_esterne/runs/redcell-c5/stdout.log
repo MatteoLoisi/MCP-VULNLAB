@@ -1,0 +1,11 @@
+
+[1mRedCell MCP scan — DVMCP-c5[0m
+[2m2 tool(s) enumerated · 14 probe call(s) · static + dynamic exploit · OWASP MCP Top 10[0m
+
+  [31m✗ HIGH[0m [1mTool Definition Poisoning[0m [2m· tool 'enhanced_calculate' · OWASP MCP03 — Tool Definition Poisoning · conf 0.60[0m
+      [2mThe tool definition contains instruction-like text that the model ingests the moment the server connects — a tool-poisoning / line-jumping vector.[0m
+      [2m↳ Suspicious markers in definition: do not mention, you must first[0m
+      [2m↳ Definition text: enhanced_calculate ⏎ Calculate the result of a mathematical expression (from Enhanced Calculator Server). ⏎      ⏎     Args: ⏎         expression: A mathematical expression to evaluate (e.g., '2 + 2') ⏎      ⏎     Returns: ⏎         The res…[0m
+
+[31m[1m1 vulnerability(s) proven.[0m
+[2mHTML report: /results/report.html[0m

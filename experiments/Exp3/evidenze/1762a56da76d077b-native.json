@@ -1,0 +1,65 @@
+{
+  "events": [
+    {
+      "type": "server-connected",
+      "serverName": "fixture",
+      "toolCount": 1,
+      "tools": [
+        {
+          "name": "fixture_tool",
+          "description": "List allowed directories. Clients may access file and folder names inside the directory selected by the user.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "tool-scanning",
+      "serverName": "fixture",
+      "toolName": "fixture_tool"
+    },
+    {
+      "type": "tool-analyzed",
+      "serverName": "fixture",
+      "toolName": "fixture_tool",
+      "hasIssues": true,
+      "issues": [
+        "sensitive-file-access"
+      ],
+      "severity": "HIGH"
+    }
+  ],
+  "result": {
+    "serverName": "shield-T03",
+    "configPath": "D:\\docker_proget\\V3\\reports\\campaign-exp3-controls-20261021-7c9e4b12\\attempts\\shield-T03\\config.json",
+    "crossOriginViolation": false,
+    "vulnerabilities": [
+      {
+        "severity": "HIGH",
+        "server": "fixture",
+        "tool": "fixture_tool",
+        "detectionDetails": {
+          "hiddenInstructions": [],
+          "exfiltrationChannels": [],
+          "shadowing": [],
+          "sensitiveFileAccess": [
+            {
+              "type": "File access operation",
+              "pattern": "\\baccess (file|content|directory|folder)",
+              "match": "access file",
+              "context": "...tories. Clients may access file and folder names in..."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+Knowledge Graph MCP Server running on stdio
+=== MCP Scanner Detailed Results ===
+
+Scan Target: stdio:C:/Program Files/nodejs/node.EXE D:/docker_proget/V3/reports/campaign-exp3-multiscanner-20261020-4d8a2f/environment/npm/node_modules/@modelcontextprotocol/server-memory/dist/index.js
+
+Tool 1: create_entities
+Status: completed
+Safe: Yes
+Analyzer Results:
+  • yara_analyzer:
+    - Severity: SAFE
+    - Threat Summary: No threats detected
+    - Threat Names: None
+    - Total Findings: 0
+
+Tool 2: create_relations
+Status: completed
+Safe: Yes
+Analyzer Results:
+  • yara_analyzer:
+    - Severity: SAFE
+    - Threat Summary: No threats detected
+    - Threat Names: None
+    - Total Findings: 0
+
+Tool 3: add_observations
+Status: completed
+Safe: Yes
+Analyzer Results:
+  • yara_analyzer:
+    - Severity: SAFE
+    - Threat Summary: No threats detected
+    - Threat Names: None
+    - Total Findings: 0
+
+Tool 4: delete_entities
+Status: completed
+Safe: Yes
+Analyzer Results:
+  • yara_analyzer:
+    - Severity: SAFE
+    - Threat Summary: No threats detected
+    - Threat Names: None
+    - Total Findings: 0
+
+Tool 5: delete_observations
+Status: completed
+Safe: Yes
+Analyzer Results:
+  • yara_analyzer:
+    - Severity: SAFE
+    - Threat Summary: No threats detected
+    - Threat Names: None
+    - Total Findings: 0
+
+Tool 6: delete_relations
+Status: completed
+Safe: Yes
+Analyzer Results:
+  • yara_analyzer:
+    - Severity: SAFE
+    - Threat Summary: No threats detected
+    - Threat Names: None
+    - Total Findings: 0
+
+Tool 7: read_graph
+Status: completed
+Safe: Yes
+Analyzer Results:
+  • yara_analyzer:
+    - Severity: SAFE
+    - Threat Summary: No threats detected
+    - Threat Names: None
+    - Total Findings: 0
+
+Tool 8: search_nodes
+Status: completed
+Safe: Yes
+Analyzer Results:
+  • yara_analyzer:
+    - Severity: SAFE
+    - Threat Summary: No threats detected
+    - Threat Names: None
+    - Total Findings: 0
+
+Tool 9: open_nodes
+Status: completed
+Safe: Yes
+Analyzer Results:
+  • yara_analyzer:
+    - Severity: SAFE
+    - Threat Summary: No threats detected
+    - Threat Names: None
+    - Total Findings: 0
+

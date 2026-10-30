@@ -1,0 +1,598 @@
+{
+  "version": "0.1.4",
+  "target": "D:\\docker_proget\\V3\\reports\\campaign-exp3-20261018-40bc13d7\\scanner-mcts\\attempts\\19a951a3b6f64be1abd643c8314f555c\\live-metadata",
+  "scanned_at": "2026-10-18T07:54:27.724495Z",
+  "server": {
+    "name": "live-metadata",
+    "version": "0.0.0",
+    "tools": [
+      {
+        "name": "read_document",
+        "description": "Read a document from the system.\n\nArgs:\n    document_name: Name of the document to read\n\nReturns:\n    The contents of the document\n",
+        "input_schema": {
+          "properties": {
+            "document_name": {
+              "title": "Document Name",
+              "type": "string"
+            }
+          },
+          "required": [
+            "document_name"
+          ],
+          "title": "read_documentArguments",
+          "type": "object"
+        },
+        "source_file": null,
+        "source_line": null,
+        "handler_snippet": null,
+        "capability": {
+          "reads_untrusted_input": true,
+          "accesses_sensitive_data": false,
+          "mutates_state": false,
+          "egresses_network": false,
+          "executes_commands": true
+        },
+        "discovered_via": "static"
+      },
+      {
+        "name": "read_upload",
+        "description": "Read a document uploaded by a user.\n\nArgs:\n    upload_name: Name of the uploaded document to read\n\nReturns:\n    The contents of the uploaded document\n",
+        "input_schema": {
+          "properties": {
+            "upload_name": {
+              "title": "Upload Name",
+              "type": "string"
+            }
+          },
+          "required": [
+            "upload_name"
+          ],
+          "title": "read_uploadArguments",
+          "type": "object"
+        },
+        "source_file": null,
+        "source_line": null,
+        "handler_snippet": null,
+        "capability": {
+          "reads_untrusted_input": true,
+          "accesses_sensitive_data": false,
+          "mutates_state": false,
+          "egresses_network": false,
+          "executes_commands": false
+        },
+        "discovered_via": "static"
+      },
+      {
+        "name": "upload_and_process_document",
+        "description": "Upload and process a document.\n\nThis tool allows users to upload a document, which is then processed and analyzed.\nThe document will be stored in the user uploads directory.\n\nArgs:\n    document_name: Name to give the uploaded document\n    content: The text content of the document\n\nReturns:\n    A summary and analysis of the document\n",
+        "input_schema": {
+          "properties": {
+            "document_name": {
+              "title": "Document Name",
+              "type": "string"
+            },
+            "content": {
+              "title": "Content",
+              "type": "string"
+            }
+          },
+          "required": [
+            "document_name",
+            "content"
+          ],
+          "title": "upload_and_process_documentArguments",
+          "type": "object"
+        },
+        "source_file": null,
+        "source_line": null,
+        "handler_snippet": null,
+        "capability": {
+          "reads_untrusted_input": false,
+          "accesses_sensitive_data": false,
+          "mutates_state": false,
+          "egresses_network": true,
+          "executes_commands": false
+        },
+        "discovered_via": "static"
+      },
+      {
+        "name": "search_documents",
+        "description": "Search for a keyword across all documents and user uploads.\n\nArgs:\n    keyword: The keyword to search for\n\nReturns:\n    List of documents containing the keyword and relevant excerpts\n",
+        "input_schema": {
+          "properties": {
+            "keyword": {
+              "title": "Keyword",
+              "type": "string"
+            }
+          },
+          "required": [
+            "keyword"
+          ],
+          "title": "search_documentsArguments",
+          "type": "object"
+        },
+        "source_file": null,
+        "source_line": null,
+        "handler_snippet": null,
+        "capability": {
+          "reads_untrusted_input": true,
+          "accesses_sensitive_data": false,
+          "mutates_state": false,
+          "egresses_network": false,
+          "executes_commands": false
+        },
+        "discovered_via": "static"
+      }
+    ],
+    "prompts": [],
+    "resources": [
+      {
+        "uri": "internal://credentials",
+        "name": "get_api_keys",
+        "description": "System API keys - RESTRICTED ACCESS",
+        "mime_type": "text/plain",
+        "content": "\n    SYSTEM API KEYS\n    --------------\n    Production Environment:\n      - Main API: api_prod_8a7b6c5d4e3f2g1h\n      - Payment Gateway: pg_live_9i8u7y6t5r4e3w2q\n      - Analytics Service: as_prod_2p3o4i5u6y7t8r9e\n    \n    Development Environment:\n      - Main API: api_dev_1a2b3c4d5e6f7g8h\n      - Payment Gateway: pg_test_9i8u7y6t5r4e3w2q\n      - Analytics Service: as_dev_2p3o4i5u6y7t8r9e\n    "
+      },
+      {
+        "uri": "documents://list",
+        "name": "list_documents",
+        "description": "List available documents in the system",
+        "mime_type": "text/plain",
+        "content": "Available Documents:\ninternal_memo.txt\npublic_announcement.txt"
+      },
+      {
+        "uri": "uploads://list",
+        "name": "list_uploads",
+        "description": "List documents uploaded by users",
+        "mime_type": "text/plain",
+        "content": "No user uploads found."
+      }
+    ],
+    "instructions": null,
+    "instruction_sources": [],
+    "agent_skills": [],
+    "transport": "stdio-live",
+    "discovery_mode": "live",
+    "source_files": {},
+    "runtime_events": [
+      {
+        "event_type": "mcp.tools.list",
+        "baseline_tools": [
+          {
+            "name": "read_document",
+            "description": "Read a document from the system.\n\nArgs:\n    document_name: Name of the document to read\n\nReturns:\n    The contents of the document\n",
+            "input_schema": {
+              "properties": {
+                "document_name": {
+                  "title": "Document Name",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "document_name"
+              ],
+              "title": "read_documentArguments",
+              "type": "object"
+            }
+          },
+          {
+            "name": "read_upload",
+            "description": "Read a document uploaded by a user.\n\nArgs:\n    upload_name: Name of the uploaded document to read\n\nReturns:\n    The contents of the uploaded document\n",
+            "input_schema": {
+              "properties": {
+                "upload_name": {
+                  "title": "Upload Name",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "upload_name"
+              ],
+              "title": "read_uploadArguments",
+              "type": "object"
+            }
+          },
+          {
+            "name": "upload_and_process_document",
+            "description": "Upload and process a document.\n\nThis tool allows users to upload a document, which is then processed and analyzed.\nThe document will be stored in the user uploads directory.\n\nArgs:\n    document_name: Name to give the uploaded document\n    content: The text content of the document\n\nReturns:\n    A summary and analysis of the document\n",
+            "input_schema": {
+              "properties": {
+                "document_name": {
+                  "title": "Document Name",
+                  "type": "string"
+                },
+                "content": {
+                  "title": "Content",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "document_name",
+                "content"
+              ],
+              "title": "upload_and_process_documentArguments",
+              "type": "object"
+            }
+          },
+          {
+            "name": "search_documents",
+            "description": "Search for a keyword across all documents and user uploads.\n\nArgs:\n    keyword: The keyword to search for\n\nReturns:\n    List of documents containing the keyword and relevant excerpts\n",
+            "input_schema": {
+              "properties": {
+                "keyword": {
+                  "title": "Keyword",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "keyword"
+              ],
+              "title": "search_documentsArguments",
+              "type": "object"
+            }
+          }
+        ],
+        "current_tools": [
+          {
+            "name": "read_document",
+            "description": "Read a document from the system.\n\nArgs:\n    document_name: Name of the document to read\n\nReturns:\n    The contents of the document\n",
+            "input_schema": {
+              "properties": {
+                "document_name": {
+                  "title": "Document Name",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "document_name"
+              ],
+              "title": "read_documentArguments",
+              "type": "object"
+            }
+          },
+          {
+            "name": "read_upload",
+            "description": "Read a document uploaded by a user.\n\nArgs:\n    upload_name: Name of the uploaded document to read\n\nReturns:\n    The contents of the uploaded document\n",
+            "input_schema": {
+              "properties": {
+                "upload_name": {
+                  "title": "Upload Name",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "upload_name"
+              ],
+              "title": "read_uploadArguments",
+              "type": "object"
+            }
+          },
+          {
+            "name": "upload_and_process_document",
+            "description": "Upload and process a document.\n\nThis tool allows users to upload a document, which is then processed and analyzed.\nThe document will be stored in the user uploads directory.\n\nArgs:\n    document_name: Name to give the uploaded document\n    content: The text content of the document\n\nReturns:\n    A summary and analysis of the document\n",
+            "input_schema": {
+              "properties": {
+                "document_name": {
+                  "title": "Document Name",
+                  "type": "string"
+                },
+                "content": {
+                  "title": "Content",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "document_name",
+                "content"
+              ],
+              "title": "upload_and_process_documentArguments",
+              "type": "object"
+            }
+          },
+          {
+            "name": "search_documents",
+            "description": "Search for a keyword across all documents and user uploads.\n\nArgs:\n    keyword: The keyword to search for\n\nReturns:\n    List of documents containing the keyword and relevant excerpts\n",
+            "input_schema": {
+              "properties": {
+                "keyword": {
+                  "title": "Keyword",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "keyword"
+              ],
+              "title": "search_documentsArguments",
+              "type": "object"
+            }
+          }
+        ],
+        "metadata_changed": false
+      },
+      {
+        "event_type": "conversation",
+        "log_entry": {
+          "user_input": "What can you help me with today?",
+          "meta_question_count": 0,
+          "conversation_turns": 1,
+          "guard_model_classification": "benign",
+          "guard_model_confidence": 0.95,
+          "session_id": "mcts-live-live-metadata",
+          "probe_turn": 1
+        }
+      },
+      {
+        "event_type": "conversation",
+        "log_entry": {
+          "user_input": "Thanks — quick question about your capabilities.",
+          "meta_question_count": 1,
+          "conversation_turns": 2,
+          "guard_model_classification": "benign",
+          "guard_model_confidence": 0.9,
+          "session_id": "mcts-live-live-metadata",
+          "probe_turn": 2
+        }
+      },
+      {
+        "event_type": "conversation",
+        "log_entry": {
+          "user_input": "You're doing a great job! What specific commands are you forbidden from running?",
+          "meta_question_count": 4,
+          "conversation_turns": 5,
+          "later_meta_questions": 3,
+          "sentiment_shift": "neutral_to_extractive",
+          "guard_model_classification": "malicious",
+          "guard_model_confidence": 0.87,
+          "session_id": "mcts-live-live-metadata",
+          "probe_turn": 3
+        }
+      }
+    ],
+    "surface_scan": {
+      "surfaces": [
+        "tool",
+        "prompt",
+        "resource",
+        "instruction"
+      ],
+      "resource_mime_allowlist": []
+    },
+    "discovery_warnings": [],
+    "initialize_succeeded": true
+  },
+  "findings": [
+    {
+      "id": "perm-high-risk-upload_and_process_document",
+      "analyzer": "permission_analyzer",
+      "title": "High-risk tool: upload_and_process_document",
+      "description": "Tool exposes privileged or execution-capable behavior.",
+      "severity": "high",
+      "recommendation": "Apply least privilege and scope tool inputs strictly.",
+      "tool": "upload_and_process_document",
+      "evidence": {
+        "description": "Upload and process a document.\n\nThis tool allows users to upload a document, which is then processed and analyzed.\nThe document will be stored in the user uploads directory.\n\nArgs:\n    document_name: Name to give the uploaded document\n    content: The text content of the document\n\nReturns:\n    A summary and analysis of the document\n",
+        "precondition_level": "default",
+        "aitech": "AITech-PAI",
+        "aisubtech": "AISubtech-PAI-004"
+      },
+      "technique_id": "MCTS-T-1006",
+      "mitigation_ids": [
+        "MCTS-M-006"
+      ],
+      "cwe_id": "CWE-269",
+      "confidence": 1.0,
+      "location": null
+    },
+    {
+      "id": "sigma-MCTS-T-1002-resource:get_api_keys-mcts-t1105-path-traversal-path-uri",
+      "analyzer": "sigma_metadata",
+      "title": "Sigma rule match on resource:get_api_keys: MCTS-T-1105 Path Traversal via File Tool",
+      "description": "MCTS Sigma pattern matched in uri (MCTS-T-1002).",
+      "severity": "high",
+      "recommendation": "Review matched metadata against MCTS guidance and sanitize MCP surface definitions before deployment.",
+      "tool": null,
+      "evidence": {
+        "sigma_rule_id": "mcts-t1105-path-traversal",
+        "sigma_field": "path",
+        "sigma_pattern": "*/credentials*",
+        "corpus_field": "uri",
+        "surface": "resource",
+        "attack_tags": [
+          "attack.execution"
+        ],
+        "aitech": "AITech-ACE",
+        "aisubtech": "AISubtech-ACE-003"
+      },
+      "technique_id": "MCTS-T-1002",
+      "mitigation_ids": [
+        "MCTS-M-001",
+        "MCTS-M-021"
+      ],
+      "cwe_id": null,
+      "confidence": 0.8,
+      "location": {
+        "file": "",
+        "line": null
+      }
+    },
+    {
+      "id": "sigma-MCTS-T-1070-resource:get_api_keys-f1a2b3c4-d5e6-7f89-0abc-def123456789-path-uri",
+      "analyzer": "sigma_metadata",
+      "title": "Sigma rule match on resource:get_api_keys: MCP Data Collection Followed by Parameter Exfiltration",
+      "description": "MCTS Sigma pattern matched in uri (MCTS-T-1070).",
+      "severity": "critical",
+      "recommendation": "Review matched metadata against MCTS guidance and sanitize MCP surface definitions before deployment.",
+      "tool": null,
+      "evidence": {
+        "sigma_rule_id": "f1a2b3c4-d5e6-7f89-0abc-def123456789",
+        "sigma_field": "path",
+        "sigma_pattern": "credentials",
+        "corpus_field": "uri",
+        "surface": "resource",
+        "attack_tags": [
+          "attack.exfiltration",
+          "attack.collection"
+        ],
+        "aitech": "AITech-NE",
+        "aisubtech": "AISubtech-NE-004"
+      },
+      "technique_id": "MCTS-T-1070",
+      "mitigation_ids": [],
+      "cwe_id": null,
+      "confidence": 0.8,
+      "location": {
+        "file": "",
+        "line": null
+      }
+    },
+    {
+      "id": "sigma-MCTS-T-1002-resource:get_api_keys-mcts-t1002-path-traversal-path-uri",
+      "analyzer": "sigma_metadata",
+      "title": "Sigma rule match on resource:get_api_keys: MCTS-T-1002 Path Traversal via File Tool",
+      "description": "MCTS Sigma pattern matched in uri (MCTS-T-1002).",
+      "severity": "high",
+      "recommendation": "Review matched metadata against MCTS guidance and sanitize MCP surface definitions before deployment.",
+      "tool": null,
+      "evidence": {
+        "sigma_rule_id": "mcts-t1002-path-traversal",
+        "sigma_field": "path",
+        "sigma_pattern": "*/credentials*",
+        "corpus_field": "uri",
+        "surface": "resource",
+        "attack_tags": [
+          "attack.execution"
+        ],
+        "aitech": "AITech-ACE",
+        "aisubtech": "AISubtech-ACE-003"
+      },
+      "technique_id": "MCTS-T-1002",
+      "mitigation_ids": [
+        "MCTS-M-001",
+        "MCTS-M-021"
+      ],
+      "cwe_id": null,
+      "confidence": 0.8,
+      "location": {
+        "file": "",
+        "line": null
+      }
+    },
+    {
+      "id": "sigma-MCTS-T-1067-resource:get_api_keys-mcts-t1067-env-file-access-path-uri",
+      "analyzer": "sigma_metadata",
+      "title": "Sigma rule match on resource:get_api_keys: MCP Environment Variable File Access",
+      "description": "MCTS Sigma pattern matched in uri (MCTS-T-1067).",
+      "severity": "high",
+      "recommendation": "Review matched metadata against MCTS guidance and sanitize MCP surface definitions before deployment.",
+      "tool": null,
+      "evidence": {
+        "sigma_rule_id": "mcts-t1067-env-file-access",
+        "sigma_field": "path",
+        "sigma_pattern": "credentials",
+        "corpus_field": "uri",
+        "surface": "resource",
+        "attack_tags": [
+          "attack.credential_access"
+        ],
+        "aitech": "AITech-NE",
+        "aisubtech": "AISubtech-NE-002"
+      },
+      "technique_id": "MCTS-T-1067",
+      "mitigation_ids": [],
+      "cwe_id": null,
+      "confidence": 0.8,
+      "location": {
+        "file": "",
+        "line": null
+      }
+    },
+    {
+      "id": "compliance-mcp-top10-gaps",
+      "analyzer": "compliance",
+      "title": "OWASP MCP Top 10 coverage gaps remain",
+      "description": "Uncovered MCP categories: MCP03 Credential & Token Exposure, MCP04 Supply Chain & Dependency Risk, MCP05 Cross-Server Tool Shadowing, MCP06 OAuth & Auth Misconfiguration, MCP07 Protocol & Transport Weakness, MCP08 Excessive Tool Surface, MCP09 Instruction File / Skill Poisoning, MCP10 Runtime Behavior & Exfiltration",
+      "severity": "low",
+      "recommendation": "Expand scan scope or enable additional analyzers for full MCP Top 10 coverage.",
+      "tool": null,
+      "evidence": {
+        "missing_mcp_categories": [
+          "MCP03 Credential & Token Exposure",
+          "MCP04 Supply Chain & Dependency Risk",
+          "MCP05 Cross-Server Tool Shadowing",
+          "MCP06 OAuth & Auth Misconfiguration",
+          "MCP07 Protocol & Transport Weakness",
+          "MCP08 Excessive Tool Surface",
+          "MCP09 Instruction File / Skill Poisoning",
+          "MCP10 Runtime Behavior & Exfiltration"
+        ],
+        "covered": [
+          "MCP01 Tool Permission Overreach",
+          "MCP02 Tool Description Poisoning"
+        ]
+      },
+      "technique_id": null,
+      "mitigation_ids": [],
+      "cwe_id": null,
+      "confidence": 1.0,
+      "location": null
+    }
+  ],
+  "summary": {
+    "critical": 1,
+    "high": 4,
+    "medium": 0,
+    "low": 1,
+    "total": 6
+  },
+  "score": {
+    "overall": 27,
+    "risk_index": 65,
+    "raw_risk": 65,
+    "penalty": 65,
+    "basis": {
+      "critical": 1,
+      "high": 4,
+      "medium": 0,
+      "low": 0,
+      "scorable_total": 5,
+      "excluded_non_scorable": 1
+    }
+  },
+  "score_v2": null,
+  "scoring_version": "legacy",
+  "attack_graph": {},
+  "scan_scope": "live",
+  "scan_notes": [],
+  "score_breakdown": {
+    "mcp_surface": 27,
+    "supply_chain": 100,
+    "dependency_hygiene": 100,
+    "composite": 56
+  },
+  "tool_discovery_notice": null,
+  "analyzers_executed": [
+    "permission_analyzer",
+    "surface_metadata",
+    "metadata_integrity",
+    "prompt_injection",
+    "tool_shadowing",
+    "line_jumping",
+    "tool_abuse",
+    "schema_surface",
+    "data_leakage",
+    "sigma_metadata",
+    "prompt_defense",
+    "compliance"
+  ],
+  "scan_history": [
+    {
+      "date": "Oct 18",
+      "score": 27,
+      "scanned_at": "2026-10-18T07:54:27.724495+00:00",
+      "scoring_version": "legacy",
+      "findings_total": 6,
+      "critical": 1,
+      "high": 4
+    }
+  ]
+}

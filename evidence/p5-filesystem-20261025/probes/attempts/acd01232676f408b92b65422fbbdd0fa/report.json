@@ -1,0 +1,61 @@
+{
+  "schema": "exp3-probe-report-v1",
+  "producer": "exp3-probe-worker-v1",
+  "target": "R1-filesystem",
+  "attempt_id": "acd01232676f408b92b65422fbbdd0fa",
+  "status": "completed",
+  "target_identity": {
+    "target": "R1-filesystem",
+    "definition_sha256": "f2226e3862e7259c5ebb2e91d0be27a512552691bb26dd494c81ac85b169f7ec",
+    "manifest_sha256": "71156adadb7e944ec4e76beb135ac2d9913523bce20628bb3fc13eccbcb803d9",
+    "transport": "stdio",
+    "version": "1.0.0",
+    "configuration_sha256": "3120106b27412c21cccc43ee2d57840cc97a668f1a16a564abd0e122d696c34e"
+  },
+  "target_command": [
+    "npx",
+    "-y",
+    "@modelcontextprotocol/server-filesystem@1.0.0",
+    "C:\\Users\\ML\\AppData\\Local\\Temp\\mcptargets\\fsroot"
+  ],
+  "scan_target": ".",
+  "planned_findings": [
+    "P5-tool-traversal"
+  ],
+  "profile": "black-box",
+  "raw_ref": "capture.json",
+  "raw_sha256": "9af97a50d440c205216c56a833f1db7a82ec4b7778a9e535f4648b27adde661f",
+  "findings": {
+    "P5-tool-traversal": {
+      "status": "secure",
+      "proof": "traversal via tool non riuscito (187 tentativi su 17 argomenti path-like, 1 tool schema-opachi; prefisso cercato: 'EXP3_CANARY_acd01232676f408b92b65422fbbdd0fa_0dd5a50b330541baa2391812e50d512b')",
+      "details": {
+        "swept": 17,
+        "planned": 17,
+        "tried": 187,
+        "max_attempts": 4096,
+        "reason": "",
+        "complete": true,
+        "blocked": 0,
+        "opaque": 1,
+        "timeouts": 0,
+        "undelivered": [],
+        "errors": [],
+        "payloads_undelivered": 0,
+        "payloads_errored": 0,
+        "defended": 0,
+        "payloads_defended": 0,
+        "schema_defenses": [],
+        "baseline_rejected": [],
+        "baseline_inconclusive": [],
+        "baseline_calls": 0,
+        "max_baselines": 9,
+        "baseline_cap": 0,
+        "baseline_declared_calls": 0,
+        "baseline_guessed_calls": 0,
+        "baseline_declared_units": 0
+      },
+      "evidence_reason": "no supported complete observation for automatic proof"
+    }
+  }
+}

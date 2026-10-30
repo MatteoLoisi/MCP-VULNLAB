@@ -1,0 +1,89 @@
+{
+  "schema": "exp3-probe-report-v1",
+  "producer": "exp3-probe-worker-v1",
+  "target": "R1-filesystem",
+  "attempt_id": "d2806a1b2d834fa79624db0996e03bdf",
+  "status": "completed",
+  "target_identity": {
+    "target": "R1-filesystem",
+    "definition_sha256": "f2226e3862e7259c5ebb2e91d0be27a512552691bb26dd494c81ac85b169f7ec",
+    "manifest_sha256": "71156adadb7e944ec4e76beb135ac2d9913523bce20628bb3fc13eccbcb803d9",
+    "transport": "stdio",
+    "version": "1.0.0",
+    "configuration_sha256": "64ef1662a81b9491c141c91a8e7ddfee96b55a3fff354d738f514d4a22af6b42"
+  },
+  "target_command": [
+    "npx",
+    "-y",
+    "@modelcontextprotocol/server-filesystem@1.0.0",
+    "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\fsroot"
+  ],
+  "scan_target": ".",
+  "planned_findings": [
+    "P2-tool-poisoning"
+  ],
+  "profile": "black-box",
+  "raw_ref": "capture.json",
+  "raw_sha256": "56549c7a7dfd4bc8fad6f7c566711dbe18d86611a2cd0f722be91adda238b069",
+  "findings": {
+    "P2-tool-poisoning": {
+      "status": "secure",
+      "proof": "nessuna istruzione sospetta in 14 DESCRIPTION (avg_score=99)",
+      "details": {
+        "count": 14,
+        "avg_score": 99,
+        "by_severity": {
+          "low": 3
+        },
+        "audit": [
+          {
+            "tool": "write_file",
+            "score": 95,
+            "flags": [
+              {
+                "code": "privileged-no-readonly-hint",
+                "severity": "low",
+                "detail": "verbo privilegiato senza readOnlyHint: verificare least-privilege"
+              }
+            ]
+          },
+          {
+            "tool": "create_directory",
+            "score": 95,
+            "flags": [
+              {
+                "code": "privileged-no-readonly-hint",
+                "severity": "low",
+                "detail": "verbo privilegiato senza readOnlyHint: verificare least-privilege"
+              }
+            ]
+          },
+          {
+            "tool": "move_file",
+            "score": 95,
+            "flags": [
+              {
+                "code": "privileged-no-readonly-hint",
+                "severity": "low",
+                "detail": "verbo privilegiato senza readOnlyHint: verificare least-privilege"
+              }
+            ]
+          },
+          {
+            "tool": "read_file",
+            "score": 100,
+            "flags": []
+          },
+          {
+            "tool": "read_text_file",
+            "score": 100,
+            "flags": []
+          }
+        ]
+      },
+      "evidence_reason": "derived from captured call",
+      "evidence_ref": "evidence/1.json",
+      "evidence_sha256": "979c682b43813c48ab8f53af5fd44ef9200df34434c2d89b95155b43886d9eae"
+    }
+  }
+}

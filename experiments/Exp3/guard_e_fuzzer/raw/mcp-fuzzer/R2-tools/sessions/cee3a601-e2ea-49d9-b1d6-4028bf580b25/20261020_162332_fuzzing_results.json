@@ -1,0 +1,185 @@
+{
+  "protocol_version": "1.0.0",
+  "timestamp": "2026-10-20T16:23:32.686253",
+  "tool_version": "0.7.0",
+  "session_id": "cee3a601-e2ea-49d9-b1d6-4028bf580b25",
+  "output_type": "fuzzing_results",
+  "data": {
+    "mode": "tools",
+    "protocol": "stdio",
+    "endpoint": "C:/Program Files/nodejs/node.EXE C:/Users/ML/AppData/Local/Temp/mcptargets/fuzz-npm/node_modules/@modelcontextprotocol/server-memory/dist/index.js",
+    "total_tools": 9,
+    "total_protocol_types": 0,
+    "tools_tested": [
+      {
+        "name": "create_entities",
+        "runs": 2,
+        "successful": 0,
+        "exceptions": 0,
+        "safety_blocked": 0,
+        "outcomes": {
+          "server_rejected": 0,
+          "accepted_malformed": 2,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0
+        },
+        "success_rate": 0.0,
+        "exception_details": []
+      },
+      {
+        "name": "create_relations",
+        "runs": 2,
+        "successful": 1,
+        "exceptions": 0,
+        "safety_blocked": 0,
+        "outcomes": {
+          "server_rejected": 1,
+          "accepted_malformed": 1,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0
+        },
+        "success_rate": 50.0,
+        "exception_details": []
+      },
+      {
+        "name": "add_observations",
+        "runs": 2,
+        "successful": 2,
+        "exceptions": 0,
+        "safety_blocked": 0,
+        "outcomes": {
+          "server_rejected": 2,
+          "accepted_malformed": 0,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0
+        },
+        "success_rate": 100.0,
+        "exception_details": []
+      },
+      {
+        "name": "delete_entities",
+        "runs": 2,
+        "successful": 0,
+        "exceptions": 0,
+        "safety_blocked": 0,
+        "outcomes": {
+          "server_rejected": 0,
+          "accepted_malformed": 2,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0
+        },
+        "success_rate": 0.0,
+        "exception_details": []
+      },
+      {
+        "name": "delete_observations",
+        "runs": 2,
+        "successful": 0,
+        "exceptions": 0,
+        "safety_blocked": 0,
+        "outcomes": {
+          "server_rejected": 0,
+          "accepted_malformed": 2,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0
+        },
+        "success_rate": 0.0,
+        "exception_details": []
+      },
+      {
+        "name": "delete_relations",
+        "runs": 2,
+        "successful": 0,
+        "exceptions": 0,
+        "safety_blocked": 0,
+        "outcomes": {
+          "server_rejected": 0,
+          "accepted_malformed": 2,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0
+        },
+        "success_rate": 0.0,
+        "exception_details": []
+      },
+      {
+        "name": "read_graph",
+        "runs": 2,
+        "successful": 0,
+        "exceptions": 0,
+        "safety_blocked": 0,
+        "outcomes": {
+          "server_rejected": 0,
+          "accepted_malformed": 2,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0
+        },
+        "success_rate": 0.0,
+        "exception_details": []
+      },
+      {
+        "name": "search_nodes",
+        "runs": 2,
+        "successful": 0,
+        "exceptions": 0,
+        "safety_blocked": 0,
+        "outcomes": {
+          "server_rejected": 0,
+          "accepted_malformed": 2,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0
+        },
+        "success_rate": 0.0,
+        "exception_details": []
+      },
+      {
+        "name": "open_nodes",
+        "runs": 2,
+        "successful": 0,
+        "exceptions": 0,
+        "safety_blocked": 0,
+        "outcomes": {
+          "server_rejected": 0,
+          "accepted_malformed": 2,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0
+        },
+        "success_rate": 0.0,
+        "exception_details": []
+      }
+    ],
+    "protocol_types_tested": [],
+    "spec_summary": {
+      "totals": {
+        "total": 0,
+        "failed": 0,
+        "warned": 0,
+        "passed": 0
+      },
+      "by_spec_id": {}
+    }
+  },
+  "metadata": {
+    "execution_time": "PT0.651606S",
+    "total_tests": 18,
+    "success_rate": 16.666666666666664,
+    "safety_enabled": false
+  }
+}

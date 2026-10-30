@@ -1,0 +1,42 @@
+{
+  "findings": {
+    "by_category": {
+      "injection_reflection": 1
+    },
+    "total": 1
+  },
+  "mode": "tools",
+  "protocols": {
+    "by_type": {},
+    "total": 0,
+    "total_runs": 0
+  },
+  "status": "completed",
+  "tool_discovery": {
+    "detail": "Discovered 1 tool(s)",
+    "failure": "none",
+    "tool_count": 1
+  },
+  "tools": {
+    "by_name": {
+      "sequentialthinking": {
+        "exceptions": 0,
+        "failures": 0,
+        "outcomes": {
+          "accepted_malformed": 0,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0,
+          "server_rejected": 2
+        },
+        "safety_blocked": 0,
+        "success_rate": 100.0,
+        "successful": 2,
+        "total_runs": 2
+      }
+    },
+    "total": 1,
+    "total_runs": 2
+  }
+}

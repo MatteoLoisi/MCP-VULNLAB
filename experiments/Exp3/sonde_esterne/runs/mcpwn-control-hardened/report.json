@@ -1,0 +1,11 @@
+{
+  "tool": "Mcpwn",
+  "version": "1.0",
+  "timestamp": "2026-10-19T17:23:16.057370+00:00",
+  "findings": [],
+  "summary": {
+    "total": 0,
+    "by_type": {},
+    "by_severity": {}
+  }
+}

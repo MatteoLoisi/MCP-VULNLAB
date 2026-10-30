@@ -1,0 +1,990 @@
+{
+  "schema": "exp3-probe-capture-v1",
+  "context": {
+    "target": "c6",
+    "attempt_id": "39803e7147864db2932d51efbeb16828",
+    "target_command": [
+      "python",
+      "D:\\docker_proget\\V3\\tools\\dvmcp_stdio.py",
+      "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\medium\\challenge6"
+    ],
+    "scan_target": "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\medium\\challenge6",
+    "target_identity": {
+      "target": "c6",
+      "definition_sha256": "191b60f02cea5cda48acfe337bd1e110a187f6f3f954c4d8a700880e47a99990",
+      "manifest_sha256": "71156adadb7e944ec4e76beb135ac2d9913523bce20628bb3fc13eccbcb803d9",
+      "transport": "stdio",
+      "version": "79734c19f5104cd11486c90926d245560f53befa",
+      "shim_sha256": "da2c7bfdcb3b319bf3efc0df6f9a1fa1f5b79058ce619860f3821a93739a7766",
+      "configuration_sha256": "f424d738e0b70df143d694be2a787fd5afc6f62b71f3ea7cf290dfbff02376e1"
+    },
+    "planned_findings": [
+      "P2-tool-poisoning"
+    ],
+    "manifest_path": "D:\\docker_proget\\V3\\tools\\exp3\\target_versions.json",
+    "profile": "black-box",
+    "command_marker": "EXP3_CMD_39803e7147864db2932d51efbeb16828",
+    "source_sha256": {
+      "services/real-mcp-adapter/adapter.py": "f01b1003a689b6d9a68e9b63c14ddd6e9ff8c2c11a16c663005e20614284e425",
+      "services/real-mcp-adapter/real_target_check.py": "b15c9a8c047b710f6455d6220318f3e572162fdbfaa57827ff61dabcc20482ce",
+      "services/real-mcp-adapter/metadata_audit.py": "4ed6975cf09110b7515a2da0ba4cb195cc5dea2788b156601a7f68f06620b53c",
+      "tools/exp3/run_probes.py": "c32e46173e010cdd0d2520c8bbdc458fd9fa7bc75acd9c74454a950a28f4efe9",
+      "tools/exp3/probe_worker.py": "448b15c575e767a5e7ee3211598ff8aab932e12b38d8e4ef01699ddac2c62da0",
+      "tools/exp3/probe_capture.py": "b0cde206b99c9453bc0f0eedcfb25c883b39bf7bbcbd99ed25955f987ea2596c",
+      "tools/exp3/process_runner.py": "694f2f87badd1dc02b9e93c05f3890c03b55f02ad556b50ba354a461e1100d62",
+      "tools/exp3/attempt_records.py": "29cfa2287086751f817b668824b853db1c703d5db8db8b0f0c6eeffd62f77411",
+      "tools/exp3/versions.py": "3ba984b32b19f712911fe02782592f8dd169153bed58f65b46c912dd9d06174a",
+      "tools/exp3/evidence.py": "ba7b50ca7f75765f46ba2cfad07833d3f01b36e1226d3052c68ee5c923c96f31"
+    },
+    "runtime": {
+      "python": "3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]",
+      "executable": "C:\\Users\\ML\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+      "platform": "Windows-11-10.0.26300-SP0"
+    }
+  },
+  "calls": [
+    {
+      "id": "f17c21b572ab4ab7aa6de5b07920f0f9",
+      "probe_id": "__handshake__",
+      "method": "fingerprint",
+      "args": [],
+      "kwargs": {},
+      "status": "completed",
+      "result": {
+        "transport": "stdio",
+        "era": "legacy",
+        "discover_error": "risposta non-discover: {'jsonrpc': '2.0', 'id': 1, 'error': {'code': -32602, 'message': 'Invalid request parameters', 'data': ''}}",
+        "initialize": {
+          "protocolVersion": "2025-11-25",
+          "capabilities": {
+            "experimental": {},
+            "prompts": {
+              "listChanged": false
+            },
+            "resources": {
+              "subscribe": false,
+              "listChanged": false
+            },
+            "tools": {
+              "listChanged": false
+            }
+          },
+          "serverInfo": {
+            "name": "Challenge 6 - Indirect Prompt Injection",
+            "version": "1.28.0"
+          }
+        }
+      },
+      "frames": [
+        {
+          "direction": "->",
+          "at": 1792310069.1170313,
+          "payload": {
+            "stdio": [
+              "python",
+              "D:\\docker_proget\\V3\\tools\\dvmcp_stdio.py",
+              "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\medium\\challenge6"
+            ],
+            "body": {
+              "jsonrpc": "2.0",
+              "id": 1,
+              "method": "server/discover",
+              "params": {
+                "_meta": {
+                  "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+                  "io.modelcontextprotocol/clientInfo": {
+                    "name": "mcp-vulnlab-real-target",
+                    "version": "3.0.0"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "direction": "<-",
+          "at": 1792310071.847996,
+          "payload": {
+            "jsonrpc": "2.0",
+            "id": 1,
+            "error": {
+              "code": -32602,
+              "message": "Invalid request parameters",
+              "data": ""
+            }
+          }
+        },
+        {
+          "direction": "->",
+          "at": 1792310071.8480263,
+          "payload": {
+            "stdio": [
+              "python",
+              "D:\\docker_proget\\V3\\tools\\dvmcp_stdio.py",
+              "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\medium\\challenge6"
+            ],
+            "body": {
+              "jsonrpc": "2.0",
+              "id": 2,
+              "method": "server/discover",
+              "params": {}
+            }
+          }
+        },
+        {
+          "direction": "<-",
+          "at": 1792310071.849284,
+          "payload": {
+            "jsonrpc": "2.0",
+            "id": 2,
+            "error": {
+              "code": -32602,
+              "message": "Invalid request parameters",
+              "data": ""
+            }
+          }
+        },
+        {
+          "direction": "->",
+          "at": 1792310071.8493235,
+          "payload": {
+            "stdio": [
+              "python",
+              "D:\\docker_proget\\V3\\tools\\dvmcp_stdio.py",
+              "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\medium\\challenge6"
+            ],
+            "body": {
+              "jsonrpc": "2.0",
+              "id": 3,
+              "method": "initialize",
+              "params": {
+                "protocolVersion": "2025-11-25",
+                "capabilities": {},
+                "clientInfo": {
+                  "name": "mcp-vulnlab-real-target",
+                  "version": "3.0.0"
+                },
+                "_meta": {
+                  "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+                  "io.modelcontextprotocol/clientInfo": {
+                    "name": "mcp-vulnlab-real-target",
+                    "version": "3.0.0"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "direction": "<-",
+          "at": 1792310071.8506188,
+          "payload": {
+            "jsonrpc": "2.0",
+            "id": 3,
+            "result": {
+              "protocolVersion": "2025-11-25",
+              "capabilities": {
+                "experimental": {},
+                "prompts": {
+                  "listChanged": false
+                },
+                "resources": {
+                  "subscribe": false,
+                  "listChanged": false
+                },
+                "tools": {
+                  "listChanged": false
+                }
+              },
+              "serverInfo": {
+                "name": "Challenge 6 - Indirect Prompt Injection",
+                "version": "1.28.0"
+              }
+            }
+          }
+        },
+        {
+          "direction": "->",
+          "at": 1792310071.8506422,
+          "payload": {
+            "stdio": [
+              "python",
+              "D:\\docker_proget\\V3\\tools\\dvmcp_stdio.py",
+              "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\medium\\challenge6"
+            ],
+            "body": {
+              "jsonrpc": "2.0",
+              "method": "notifications/initialized"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "f8335d2cc7824094919207619a6570f9",
+      "probe_id": "P2-tool-poisoning",
+      "method": "list_tools",
+      "args": [],
+      "kwargs": {},
+      "status": "completed",
+      "result": [
+        {
+          "name": "read_document",
+          "description": "Read a document from the system.\n\nArgs:\n    document_name: Name of the document to read\n\nReturns:\n    The contents of the document\n",
+          "inputSchema": {
+            "properties": {
+              "document_name": {
+                "title": "Document Name",
+                "type": "string"
+              }
+            },
+            "required": [
+              "document_name"
+            ],
+            "title": "read_documentArguments",
+            "type": "object"
+          },
+          "outputSchema": {
+            "properties": {
+              "result": {
+                "title": "Result",
+                "type": "string"
+              }
+            },
+            "required": [
+              "result"
+            ],
+            "title": "read_documentOutput",
+            "type": "object"
+          }
+        },
+        {
+          "name": "read_upload",
+          "description": "Read a document uploaded by a user.\n\nArgs:\n    upload_name: Name of the uploaded document to read\n\nReturns:\n    The contents of the uploaded document\n",
+          "inputSchema": {
+            "properties": {
+              "upload_name": {
+                "title": "Upload Name",
+                "type": "string"
+              }
+            },
+            "required": [
+              "upload_name"
+            ],
+            "title": "read_uploadArguments",
+            "type": "object"
+          },
+          "outputSchema": {
+            "properties": {
+              "result": {
+                "title": "Result",
+                "type": "string"
+              }
+            },
+            "required": [
+              "result"
+            ],
+            "title": "read_uploadOutput",
+            "type": "object"
+          }
+        },
+        {
+          "name": "upload_and_process_document",
+          "description": "Upload and process a document.\n\nThis tool allows users to upload a document, which is then processed and analyzed.\nThe document will be stored in the user uploads directory.\n\nArgs:\n    document_name: Name to give the uploaded document\n    content: The text content of the document\n\nReturns:\n    A summary and analysis of the document\n",
+          "inputSchema": {
+            "properties": {
+              "document_name": {
+                "title": "Document Name",
+                "type": "string"
+              },
+              "content": {
+                "title": "Content",
+                "type": "string"
+              }
+            },
+            "required": [
+              "document_name",
+              "content"
+            ],
+            "title": "upload_and_process_documentArguments",
+            "type": "object"
+          },
+          "outputSchema": {
+            "properties": {
+              "result": {
+                "title": "Result",
+                "type": "string"
+              }
+            },
+            "required": [
+              "result"
+            ],
+            "title": "upload_and_process_documentOutput",
+            "type": "object"
+          }
+        },
+        {
+          "name": "search_documents",
+          "description": "Search for a keyword across all documents and user uploads.\n\nArgs:\n    keyword: The keyword to search for\n\nReturns:\n    List of documents containing the keyword and relevant excerpts\n",
+          "inputSchema": {
+            "properties": {
+              "keyword": {
+                "title": "Keyword",
+                "type": "string"
+              }
+            },
+            "required": [
+              "keyword"
+            ],
+            "title": "search_documentsArguments",
+            "type": "object"
+          },
+          "outputSchema": {
+            "properties": {
+              "result": {
+                "title": "Result",
+                "type": "string"
+              }
+            },
+            "required": [
+              "result"
+            ],
+            "title": "search_documentsOutput",
+            "type": "object"
+          }
+        }
+      ],
+      "frames": [
+        {
+          "direction": "->",
+          "at": 1792310071.853665,
+          "payload": {
+            "stdio": [
+              "python",
+              "D:\\docker_proget\\V3\\tools\\dvmcp_stdio.py",
+              "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\medium\\challenge6"
+            ],
+            "body": {
+              "jsonrpc": "2.0",
+              "id": 4,
+              "method": "initialize",
+              "params": {
+                "protocolVersion": "2025-11-25",
+                "capabilities": {},
+                "clientInfo": {
+                  "name": "mcp-vulnlab-real-target",
+                  "version": "3.0.0"
+                },
+                "_meta": {
+                  "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+                  "io.modelcontextprotocol/clientInfo": {
+                    "name": "mcp-vulnlab-real-target",
+                    "version": "3.0.0"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "direction": "<-",
+          "at": 1792310071.8554096,
+          "payload": {
+            "jsonrpc": "2.0",
+            "id": 4,
+            "result": {
+              "protocolVersion": "2025-11-25",
+              "capabilities": {
+                "experimental": {},
+                "prompts": {
+                  "listChanged": false
+                },
+                "resources": {
+                  "subscribe": false,
+                  "listChanged": false
+                },
+                "tools": {
+                  "listChanged": false
+                }
+              },
+              "serverInfo": {
+                "name": "Challenge 6 - Indirect Prompt Injection",
+                "version": "1.28.0"
+              }
+            }
+          }
+        },
+        {
+          "direction": "->",
+          "at": 1792310071.855434,
+          "payload": {
+            "stdio": [
+              "python",
+              "D:\\docker_proget\\V3\\tools\\dvmcp_stdio.py",
+              "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\medium\\challenge6"
+            ],
+            "body": {
+              "jsonrpc": "2.0",
+              "id": 5,
+              "method": "tools/list",
+              "params": {
+                "_meta": {
+                  "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+                  "io.modelcontextprotocol/clientInfo": {
+                    "name": "mcp-vulnlab-real-target",
+                    "version": "3.0.0"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "direction": "<-",
+          "at": 1792310071.8570638,
+          "payload": {
+            "jsonrpc": "2.0",
+            "id": 5,
+            "result": {
+              "tools": [
+                {
+                  "name": "read_document",
+                  "description": "Read a document from the system.\n\nArgs:\n    document_name: Name of the document to read\n\nReturns:\n    The contents of the document\n",
+                  "inputSchema": {
+                    "properties": {
+                      "document_name": {
+                        "title": "Document Name",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "document_name"
+                    ],
+                    "title": "read_documentArguments",
+                    "type": "object"
+                  },
+                  "outputSchema": {
+                    "properties": {
+                      "result": {
+                        "title": "Result",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "result"
+                    ],
+                    "title": "read_documentOutput",
+                    "type": "object"
+                  }
+                },
+                {
+                  "name": "read_upload",
+                  "description": "Read a document uploaded by a user.\n\nArgs:\n    upload_name: Name of the uploaded document to read\n\nReturns:\n    The contents of the uploaded document\n",
+                  "inputSchema": {
+                    "properties": {
+                      "upload_name": {
+                        "title": "Upload Name",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "upload_name"
+                    ],
+                    "title": "read_uploadArguments",
+                    "type": "object"
+                  },
+                  "outputSchema": {
+                    "properties": {
+                      "result": {
+                        "title": "Result",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "result"
+                    ],
+                    "title": "read_uploadOutput",
+                    "type": "object"
+                  }
+                },
+                {
+                  "name": "upload_and_process_document",
+                  "description": "Upload and process a document.\n\nThis tool allows users to upload a document, which is then processed and analyzed.\nThe document will be stored in the user uploads directory.\n\nArgs:\n    document_name: Name to give the uploaded document\n    content: The text content of the document\n\nReturns:\n    A summary and analysis of the document\n",
+                  "inputSchema": {
+                    "properties": {
+                      "document_name": {
+                        "title": "Document Name",
+                        "type": "string"
+                      },
+                      "content": {
+                        "title": "Content",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "document_name",
+                      "content"
+                    ],
+                    "title": "upload_and_process_documentArguments",
+                    "type": "object"
+                  },
+                  "outputSchema": {
+                    "properties": {
+                      "result": {
+                        "title": "Result",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "result"
+                    ],
+                    "title": "upload_and_process_documentOutput",
+                    "type": "object"
+                  }
+                },
+                {
+                  "name": "search_documents",
+                  "description": "Search for a keyword across all documents and user uploads.\n\nArgs:\n    keyword: The keyword to search for\n\nReturns:\n    List of documents containing the keyword and relevant excerpts\n",
+                  "inputSchema": {
+                    "properties": {
+                      "keyword": {
+                        "title": "Keyword",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "keyword"
+                    ],
+                    "title": "search_documentsArguments",
+                    "type": "object"
+                  },
+                  "outputSchema": {
+                    "properties": {
+                      "result": {
+                        "title": "Result",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "result"
+                    ],
+                    "title": "search_documentsOutput",
+                    "type": "object"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "4c73a605a36449419e90c4604260c080",
+      "probe_id": "__cleanup__",
+      "method": "close",
+      "args": [],
+      "kwargs": {},
+      "status": "completed",
+      "result": null,
+      "frames": []
+    }
+  ],
+  "findings": {
+    "P2-tool-poisoning": {
+      "status": "secure",
+      "proof": "nessuna istruzione sospetta in 4 DESCRIPTION (avg_score=100)",
+      "details": {
+        "count": 4,
+        "avg_score": 100,
+        "by_severity": {},
+        "audit": [
+          {
+            "tool": "read_document",
+            "score": 100,
+            "flags": []
+          },
+          {
+            "tool": "read_upload",
+            "score": 100,
+            "flags": []
+          },
+          {
+            "tool": "upload_and_process_document",
+            "score": 100,
+            "flags": []
+          },
+          {
+            "tool": "search_documents",
+            "score": 100,
+            "flags": []
+          }
+        ]
+      }
+    }
+  },
+  "transcript": [
+    {
+      "direction": "->",
+      "at": 1792310069.1170313,
+      "payload": {
+        "stdio": [
+          "python",
+          "D:\\docker_proget\\V3\\tools\\dvmcp_stdio.py",
+          "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\medium\\challenge6"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 1,
+          "method": "server/discover",
+          "params": {
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792310071.847996,
+      "payload": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "error": {
+          "code": -32602,
+          "message": "Invalid request parameters",
+          "data": ""
+        }
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792310071.8480263,
+      "payload": {
+        "stdio": [
+          "python",
+          "D:\\docker_proget\\V3\\tools\\dvmcp_stdio.py",
+          "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\medium\\challenge6"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 2,
+          "method": "server/discover",
+          "params": {}
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792310071.849284,
+      "payload": {
+        "jsonrpc": "2.0",
+        "id": 2,
+        "error": {
+          "code": -32602,
+          "message": "Invalid request parameters",
+          "data": ""
+        }
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792310071.8493235,
+      "payload": {
+        "stdio": [
+          "python",
+          "D:\\docker_proget\\V3\\tools\\dvmcp_stdio.py",
+          "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\medium\\challenge6"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 3,
+          "method": "initialize",
+          "params": {
+            "protocolVersion": "2025-11-25",
+            "capabilities": {},
+            "clientInfo": {
+              "name": "mcp-vulnlab-real-target",
+              "version": "3.0.0"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792310071.8506188,
+      "payload": {
+        "jsonrpc": "2.0",
+        "id": 3,
+        "result": {
+          "protocolVersion": "2025-11-25",
+          "capabilities": {
+            "experimental": {},
+            "prompts": {
+              "listChanged": false
+            },
+            "resources": {
+              "subscribe": false,
+              "listChanged": false
+            },
+            "tools": {
+              "listChanged": false
+            }
+          },
+          "serverInfo": {
+            "name": "Challenge 6 - Indirect Prompt Injection",
+            "version": "1.28.0"
+          }
+        }
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792310071.8506422,
+      "payload": {
+        "stdio": [
+          "python",
+          "D:\\docker_proget\\V3\\tools\\dvmcp_stdio.py",
+          "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\medium\\challenge6"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "method": "notifications/initialized"
+        }
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792310071.853665,
+      "payload": {
+        "stdio": [
+          "python",
+          "D:\\docker_proget\\V3\\tools\\dvmcp_stdio.py",
+          "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\medium\\challenge6"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 4,
+          "method": "initialize",
+          "params": {
+            "protocolVersion": "2025-11-25",
+            "capabilities": {},
+            "clientInfo": {
+              "name": "mcp-vulnlab-real-target",
+              "version": "3.0.0"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792310071.8554096,
+      "payload": {
+        "jsonrpc": "2.0",
+        "id": 4,
+        "result": {
+          "protocolVersion": "2025-11-25",
+          "capabilities": {
+            "experimental": {},
+            "prompts": {
+              "listChanged": false
+            },
+            "resources": {
+              "subscribe": false,
+              "listChanged": false
+            },
+            "tools": {
+              "listChanged": false
+            }
+          },
+          "serverInfo": {
+            "name": "Challenge 6 - Indirect Prompt Injection",
+            "version": "1.28.0"
+          }
+        }
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792310071.855434,
+      "payload": {
+        "stdio": [
+          "python",
+          "D:\\docker_proget\\V3\\tools\\dvmcp_stdio.py",
+          "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\medium\\challenge6"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 5,
+          "method": "tools/list",
+          "params": {
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792310071.8570638,
+      "payload": {
+        "jsonrpc": "2.0",
+        "id": 5,
+        "result": {
+          "tools": [
+            {
+              "name": "read_document",
+              "description": "Read a document from the system.\n\nArgs:\n    document_name: Name of the document to read\n\nReturns:\n    The contents of the document\n",
+              "inputSchema": {
+                "properties": {
+                  "document_name": {
+                    "title": "Document Name",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "document_name"
+                ],
+                "title": "read_documentArguments",
+                "type": "object"
+              },
+              "outputSchema": {
+                "properties": {
+                  "result": {
+                    "title": "Result",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "result"
+                ],
+                "title": "read_documentOutput",
+                "type": "object"
+              }
+            },
+            {
+              "name": "read_upload",
+              "description": "Read a document uploaded by a user.\n\nArgs:\n    upload_name: Name of the uploaded document to read\n\nReturns:\n    The contents of the uploaded document\n",
+              "inputSchema": {
+                "properties": {
+                  "upload_name": {
+                    "title": "Upload Name",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "upload_name"
+                ],
+                "title": "read_uploadArguments",
+                "type": "object"
+              },
+              "outputSchema": {
+                "properties": {
+                  "result": {
+                    "title": "Result",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "result"
+                ],
+                "title": "read_uploadOutput",
+                "type": "object"
+              }
+            },
+            {
+              "name": "upload_and_process_document",
+              "description": "Upload and process a document.\n\nThis tool allows users to upload a document, which is then processed and analyzed.\nThe document will be stored in the user uploads directory.\n\nArgs:\n    document_name: Name to give the uploaded document\n    content: The text content of the document\n\nReturns:\n    A summary and analysis of the document\n",
+              "inputSchema": {
+                "properties": {
+                  "document_name": {
+                    "title": "Document Name",
+                    "type": "string"
+                  },
+                  "content": {
+                    "title": "Content",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "document_name",
+                  "content"
+                ],
+                "title": "upload_and_process_documentArguments",
+                "type": "object"
+              },
+              "outputSchema": {
+                "properties": {
+                  "result": {
+                    "title": "Result",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "result"
+                ],
+                "title": "upload_and_process_documentOutput",
+                "type": "object"
+              }
+            },
+            {
+              "name": "search_documents",
+              "description": "Search for a keyword across all documents and user uploads.\n\nArgs:\n    keyword: The keyword to search for\n\nReturns:\n    List of documents containing the keyword and relevant excerpts\n",
+              "inputSchema": {
+                "properties": {
+                  "keyword": {
+                    "title": "Keyword",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "keyword"
+                ],
+                "title": "search_documentsArguments",
+                "type": "object"
+              },
+              "outputSchema": {
+                "properties": {
+                  "result": {
+                    "title": "Result",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "result"
+                ],
+                "title": "search_documentsOutput",
+                "type": "object"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

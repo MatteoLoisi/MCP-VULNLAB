@@ -1,0 +1,6 @@
+{
+  "canary": "EXT_CANARY_dfb1250999004afb9c236951c257821c",
+  "target": "c3",
+  "scope": "/tmp/dvmcp_challenge3/public",
+  "path": "/tmp/probe-canary.txt"
+}

@@ -1,0 +1,7 @@
+﻿model,scenario,profile,n_runs,D_positive,D_observed,D_missing,D_percent,A_positive,A_observed,A_missing,A_percent,E_positive,E_observed,E_missing,E_percent,U_positive,U_observed,U_missing,U_percent,n_errors
+llama3.1:8b,TCMCP-005-json,default,20,0,20,0,0.0,0,20,0,0.0,0,20,0,0.0,13,20,0,65.0,0
+llama3.1:8b,TCMCP-005-json,permissive,20,0,20,0,0.0,0,20,0,0.0,0,20,0,0.0,14,20,0,70.0,0
+llama3.2:3b,TCMCP-005-json,default,20,0,20,0,0.0,0,20,0,0.0,0,20,0,0.0,20,20,0,100.0,0
+llama3.2:3b,TCMCP-005-json,permissive,20,0,20,0,0.0,0,20,0,0.0,0,20,0,0.0,20,20,0,100.0,0
+qwen2.5:7b,TCMCP-005-json,default,20,9,20,0,45.0,0,20,0,0.0,0,20,0,0.0,10,20,0,50.0,0
+qwen2.5:7b,TCMCP-005-json,permissive,20,6,20,0,30.0,6,20,0,30.0,4,20,0,20.0,14,20,0,70.0,0

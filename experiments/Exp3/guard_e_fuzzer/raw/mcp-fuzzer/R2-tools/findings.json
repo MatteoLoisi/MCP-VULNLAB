@@ -1,0 +1,767 @@
+{
+  "findings": [
+    {
+      "category": "injection_reflection",
+      "severity": "high",
+      "kind": "tool",
+      "target": "create_entities",
+      "run": 1,
+      "detail": "A dangerous input token was reflected verbatim in the response (missing sanitization boundary).",
+      "evidence": {
+        "marker": "<script>"
+      }
+    },
+    {
+      "category": "injection_reflection",
+      "severity": "high",
+      "kind": "tool",
+      "target": "create_entities",
+      "run": 2,
+      "detail": "A dangerous input token was reflected verbatim in the response (missing sanitization boundary).",
+      "evidence": {
+        "marker": "<script>"
+      }
+    },
+    {
+      "category": "injection_reflection",
+      "severity": "high",
+      "kind": "tool",
+      "target": "delete_entities",
+      "run": 2,
+      "detail": "A dangerous input token was reflected verbatim in the response (missing sanitization boundary).",
+      "evidence": {
+        "marker": "<script>"
+      }
+    },
+    {
+      "category": "injection_reflection",
+      "severity": "high",
+      "kind": "tool",
+      "target": "delete_observations",
+      "run": 1,
+      "detail": "A dangerous input token was reflected verbatim in the response (missing sanitization boundary).",
+      "evidence": {
+        "marker": "<script>"
+      }
+    },
+    {
+      "category": "injection_reflection",
+      "severity": "high",
+      "kind": "tool",
+      "target": "read_graph",
+      "run": 1,
+      "detail": "A dangerous input token was reflected verbatim in the response (missing sanitization boundary).",
+      "evidence": {
+        "marker": "<script>"
+      }
+    },
+    {
+      "category": "accepted_malformed",
+      "severity": "medium",
+      "kind": "tool",
+      "target": "create_entities",
+      "run": 1,
+      "detail": "Server returned a non-error response to an attack-pattern or schema-invalid fuzz input.",
+      "evidence": {
+        "input": {
+          "entities": [
+            {
+              "name": "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+              "entityType": "<script>alert(1)</script>",
+              "observations": [
+                "' OR '1'='1",
+                "' OR '1'='1",
+                "test\ufeffvalue",
+                "test\u00a0value",
+                "test\u0000value"
+              ]
+            },
+            {
+              "name": "test\u00a0value",
+              "entityType": "J8OV2gnrD87FMYywRyn",
+              "observations": [
+                "' OR '1'='1",
+                "' OR '1'='1",
+                "<script>alert(1)</script>",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "<script>alert(1)</script>",
+                "test\u0000value",
+                "' OR '1'='1",
+                "' OR '1'='1"
+              ]
+            },
+            {
+              "name": "' OR '1'='1",
+              "entityType": "qNEZDdKq!kPsZlUeGN84$",
+              "observations": [
+                "' OR '1'='1",
+                "' OR '1'='1",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "<script>alert(1)</script>",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "' OR '1'='1",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "<script>alert(1)</script>",
+                "test\u00a0value",
+                "' OR '1'='1"
+              ]
+            },
+            {
+              "name": "<script>alert(1)</script>",
+              "entityType": "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+              "observations": [
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "' OR '1'='1",
+                "<script>alert(1)</script>",
+                "' OR '1'='1",
+                "' OR '1'='1",
+                "' OR '1'='1",
+                "<script>alert(1)</script>",
+                "on3NSQaMVQ",
+                "<script>alert(1)</script>"
+              ]
+            },
+            {
+              "name": "' OR '1'='1",
+              "entityType": "<script>alert(1)</script>",
+              "observations": [
+                "' OR '1'='1",
+                "' OR '1'='1",
+                "test\u00a0value",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "test\u0000value",
+                "qnV8bC6u",
+                "QDH8xsDu3NmZSZI%!u%YoBpRU$HS",
+                "<script>alert(1)</script>",
+                "' OR '1'='1",
+                "test\u0000value"
+              ]
+            },
+            {
+              "name": "<script>alert(1)</script>",
+              "entityType": "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+              "observations": [
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "test\u0000value",
+                "CndR3OARyap#O9!Qdle6s@9tOlq0e",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "test\u00a0value"
+              ]
+            },
+            {
+              "name": "W9WUboUwY!WE",
+              "entityType": "<script>alert(1)</script>",
+              "observations": [
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "8hq2Md$BE#TUSuzHQd",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "test\u200bvalue"
+              ]
+            },
+            {
+              "name": "<script>alert(1)</script>",
+              "entityType": "<script>alert(1)</script>",
+              "observations": [
+                "SlZ7oMXXJmYTEidH7E",
+                "test\u0000value",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "<script>alert(1)</script>",
+                "MKHgS0!9ArMODJDK0qp$h4@whmQeI",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "test\ufeffvalue",
+                "<script>alert(1)</script>"
+              ]
+            },
+            {
+              "name": "elQBB3RJC!CvtEq4Ag3xxGIg$adPF",
+              "entityType": "IwaSHlS7ZJie!vkD%LH@",
+              "observations": [
+                "test\u00a0value",
+                "' OR '1'='1",
+                "test\ufeffvalue",
+                "<script>alert(1)</script>",
+                "' OR '1'='1",
+                "5olCXX3@WQ52Y#lhQWRS9",
+                "' OR '1'='1"
+              ]
+            },
+            {
+              "name": "test\u200bvalue",
+              "entityType": "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+              "observations": [
+                "<script>alert(1)</script>",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "PjFGE@x@a4mNS8lWM9RWdZ",
+                "<script>alert(1)</script>",
+                "' OR '1'='1"
+              ]
+            }
+          ]
+        },
+        "result": "{\"content\": [{\"type\": \"text\", \"text\": \"[\\n  {\\n    \\\"name\\\": \\\"C:\\\\\\\\Users\\\\\\\\ML\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\mcpfuzz-fsroot\\\\\\\\default\\\",\\n    \\\"entityType\\\": \\\"<script>alert(1)</script>\\\",\\n    \\\"observations\\\": [\\n      \\\"' OR '1'='1\\\",\\n      \\\"' OR '1'='1\\\",\\n      \\\"test\\ufeffvalue\\\",\\n      \\\"test\\u00a0value\\\",\\n      \\\"test\\\\u0000value\\\"\\n    ]\\n  },\\n  {\\n    \\\"name\\\": \\\"test\\u00a0value\\\",\\n    \\\"entityType\\\": \\\"J8OV2gnrD87FMYywRyn\\\",\\n    \\\"observations\\\": [\\n      \\\"' OR '1'='1\\\",\\n      \\\"' OR '1'='1\\\",\\n      \\\"<script>alert(1)</script>\\\",\\n      \\\"C:\\\\\\\\Users\\\\\\\\ML\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\mcpfuzz-fsroot\\\\\\\\default\\\",\\n      \\\"<script>alert(1)</script>\\\",\\n      \\\"test\\\\u0000value\\\",\\n      \\\"' OR '1'='1\\\",\\n      \\\"' OR '1'='1\\\"\\n    ]\\n  },\\n  {\\n    \\\"name\\\": \\\"' OR '1'='1\\\",\\n    \\\"entityType\\\": \\\"qNEZDdKq!kPsZlUeGN84$\\\",\\n    \\\"observations\\\": [\\n      \\\"' OR '1'='1\\\",\\n      \\\"' OR '1'='1\\\",\\n      \\\"C:\\\\\\\\Users\\\\\\\\ML\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\mcpfuzz-fsroot\\\\\\\\default\\\",\\n      \\\"<script>alert(1)</script>\\\",\\n      \\\"C:\\\\\\\\Users\\\\\\\\ML\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\mcpfuzz-fsroot\\\\\\\\default\\\",\\n      \\\"' OR '1'='1\\\",\\n      \\\"C:\\\\\\\\Users\\\\\\\\ML\\\\\\\\A...[truncated]"
+      }
+    },
+    {
+      "category": "accepted_malformed",
+      "severity": "medium",
+      "kind": "tool",
+      "target": "create_entities",
+      "run": 2,
+      "detail": "Server returned a non-error response to an attack-pattern or schema-invalid fuzz input.",
+      "evidence": {
+        "input": {
+          "entities": [
+            {
+              "name": "<script>alert(1)</script>",
+              "entityType": "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+              "observations": []
+            },
+            {
+              "name": "test\u200bvalue",
+              "entityType": "test\u00a0value",
+              "observations": [
+                "aLEdxN2%kzyjUc",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default"
+              ]
+            },
+            {
+              "name": "<script>alert(1)</script>",
+              "entityType": "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+              "observations": [
+                "' OR '1'='1",
+                "yEtn",
+                "test\ufeffvalue",
+                "<script>alert(1)</script>",
+                "test\ufeffvalue",
+                "HKJEk9!g@3DkKnwSFp",
+                "<script>alert(1)</script>",
+                "' OR '1'='1",
+                "R8W%9J3H7@p9dJW"
+              ]
+            },
+            {
+              "name": "test\u200bvalue",
+              "entityType": "' OR '1'='1",
+              "observations": [
+                "LfvREcLZ2DYKHnjwE$#yWIXtkByYK",
+                "jYj#uVGEvo3W1%Zb",
+                "test\u200bvalue",
+                "' OR '1'='1",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "' OR '1'='1",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "test\ufeffvalue",
+                "7yg21nZe6X0ck",
+                "<script>alert(1)</script>"
+              ]
+            },
+            {
+              "name": "' OR '1'='1",
+              "entityType": "qn12oBnYyT4%AlP@KUSUAz%N%L",
+              "observations": [
+                "<script>alert(1)</script>",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "<script>alert(1)</script>",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "<script>alert(1)</script>",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "<script>alert(1)</script>"
+              ]
+            },
+            {
+              "name": "<script>alert(1)</script>",
+              "entityType": "' OR '1'='1",
+              "observations": [
+                "test\u202evalue",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "' OR '1'='1",
+                "k7OMyeN!lTQJNDyeS1L@suHNHpPlTf",
+                "test\u200bvalue",
+                "<script>alert(1)</script>"
+              ]
+            },
+            {
+              "name": "<script>alert(1)</script>",
+              "entityType": "test\u00a0value",
+              "observations": [
+                "test\u200bvalue",
+                "s34$p$",
+                "hk40bMbfzUkyVgbrjRT6j81LIAl",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "<script>alert(1)</script>",
+                "",
+                "<script>alert(1)</script>",
+                "test\u202evalue",
+                "' OR '1'='1",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default"
+              ]
+            },
+            {
+              "name": "<script>alert(1)</script>",
+              "entityType": "8",
+              "observations": []
+            },
+            {
+              "name": "u6#LQq5BQyIqYQXBbi6XiOo",
+              "entityType": "G5fAm$u0NOZoD!y9Nsewg8Y",
+              "observations": []
+            },
+            {
+              "name": "test\ufeffvalue",
+              "entityType": "test\u0000value",
+              "observations": [
+                "' OR '1'='1",
+                "wW4asr7Wmd7Doq5ccQxZEk",
+                "test\ufeffvalue",
+                "test\u00a0value",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "UKI"
+              ]
+            }
+          ]
+        },
+        "result": "{\"content\": [{\"type\": \"text\", \"text\": \"[\\n  {\\n    \\\"name\\\": \\\"u6#LQq5BQyIqYQXBbi6XiOo\\\",\\n    \\\"entityType\\\": \\\"G5fAm$u0NOZoD!y9Nsewg8Y\\\",\\n    \\\"observations\\\": []\\n  },\\n  {\\n    \\\"name\\\": \\\"test\\ufeffvalue\\\",\\n    \\\"entityType\\\": \\\"test\\\\u0000value\\\",\\n    \\\"observations\\\": [\\n      \\\"' OR '1'='1\\\",\\n      \\\"wW4asr7Wmd7Doq5ccQxZEk\\\",\\n      \\\"test\\ufeffvalue\\\",\\n      \\\"test\\u00a0value\\\",\\n      \\\"C:\\\\\\\\Users\\\\\\\\ML\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\mcpfuzz-fsroot\\\\\\\\default\\\",\\n      \\\"UKI\\\"\\n    ]\\n  }\\n]\"}, {\"type\": \"text\", \"text\": \"Skipped 8 entities that already exist: <script>alert(1)</script>, test\\u200bvalue, <script>alert(1)</script>, test\\u200bvalue, ' OR '1'='1, <script>alert(1)</script>, <script>alert(1)</script>, <script>alert(1)</script>. Their observations were not added; use add_observations for existing entities.\"}], \"structuredContent\": {\"entities\": [{\"name\": \"u6#LQq5BQyIqYQXBbi6XiOo\", \"entityType\": \"G5fAm$u0NOZoD!y9Nsewg8Y\", \"observations\": []}, {\"name\": \"test\\ufeffvalue\", \"entityType\": \"test\\u0000value\", \"observations\": [\"' OR '1'='1\", \"wW4asr7Wmd7Doq5ccQxZEk\", \"test\\ufeffvalue\", \"test\\u00a0value\", \"C:\\\\Users\\\\ML\\\\AppData\\\\Local\\\\Temp\\\\mcpfuzz-fsroot\\\\default\", ...[truncated]"
+      }
+    },
+    {
+      "category": "accepted_malformed",
+      "severity": "medium",
+      "kind": "tool",
+      "target": "create_relations",
+      "run": 1,
+      "detail": "Server returned a non-error response to an attack-pattern or schema-invalid fuzz input.",
+      "evidence": {
+        "input": {
+          "relations": []
+        },
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "[]"
+            }
+          ],
+          "structuredContent": {
+            "relations": []
+          }
+        }
+      }
+    },
+    {
+      "category": "accepted_malformed",
+      "severity": "medium",
+      "kind": "tool",
+      "target": "delete_entities",
+      "run": 1,
+      "detail": "Server returned a non-error response to an attack-pattern or schema-invalid fuzz input.",
+      "evidence": {
+        "input": {
+          "entityNames": [
+            "test\ufeffvalue",
+            "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+            "<script>alert(1)</script>",
+            "jUVy2n@!PbpA5CsbO",
+            "S@JxVIN%3QGkwnsD45",
+            "test\u200bvalue",
+            "NlA3ezmMlI",
+            "<script>alert(1)</script>",
+            "l4VmaAhgOez8ot$4dnz"
+          ]
+        },
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "Deleted 5 of 9 entities. Not found: jUVy2n@!PbpA5CsbO, S@JxVIN%3QGkwnsD45, NlA3ezmMlI, l4VmaAhgOez8ot$4dnz"
+            }
+          ],
+          "structuredContent": {
+            "success": true,
+            "message": "Deleted 5 of 9 entities. Not found: jUVy2n@!PbpA5CsbO, S@JxVIN%3QGkwnsD45, NlA3ezmMlI, l4VmaAhgOez8ot$4dnz"
+          }
+        }
+      }
+    },
+    {
+      "category": "accepted_malformed",
+      "severity": "medium",
+      "kind": "tool",
+      "target": "delete_entities",
+      "run": 2,
+      "detail": "Server returned a non-error response to an attack-pattern or schema-invalid fuzz input.",
+      "evidence": {
+        "input": {
+          "entityNames": [
+            "%Q%kU@xxo",
+            "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+            "s4g98fY3aQ!kIfHtm$0WS!SB68",
+            "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+            "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+            "<script>alert(1)</script>"
+          ]
+        },
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "Deleted 0 of 6 entities. Not found: %Q%kU@xxo, C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default, s4g98fY3aQ!kIfHtm$0WS!SB68, C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default, C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default, <script>alert(1)</script>"
+            }
+          ],
+          "structuredContent": {
+            "success": true,
+            "message": "Deleted 0 of 6 entities. Not found: %Q%kU@xxo, C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default, s4g98fY3aQ!kIfHtm$0WS!SB68, C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default, C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default, <script>alert(1)</script>"
+          }
+        }
+      }
+    },
+    {
+      "category": "accepted_malformed",
+      "severity": "medium",
+      "kind": "tool",
+      "target": "delete_observations",
+      "run": 1,
+      "detail": "Server returned a non-error response to an attack-pattern or schema-invalid fuzz input.",
+      "evidence": {
+        "input": {
+          "deletions": [
+            {
+              "entityName": "' OR '1'='1",
+              "observations": [
+                "' OR '1'='1",
+                "kudGx5kXs96s0z$YBS",
+                "' OR '1'='1",
+                "<script>alert(1)</script>",
+                "test\u00a0value",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "CZYR",
+                "test\u200bvalue",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default"
+              ]
+            },
+            {
+              "entityName": "' OR '1'='1",
+              "observations": [
+                "' OR '1'='1",
+                "test\ufeffvalue",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "' OR '1'='1",
+                "<script>alert(1)</script>",
+                "sopSWy3A",
+                "' OR '1'='1",
+                "zyleE6a0Bt",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "TDKHO4p94a00qa1ddwqT$%cWqmiuc"
+              ]
+            },
+            {
+              "entityName": "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+              "observations": []
+            },
+            {
+              "entityName": "test\u202evalue",
+              "observations": [
+                "' OR '1'='1",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "OoP8xoetEemaHENj",
+                "' OR '1'='1",
+                "e#eNz1lDosOuwxyXIbKTAAsmnGJE",
+                "<script>alert(1)</script>",
+                "test\u00a0value",
+                "LuyJjWMT52Zj",
+                "<script>alert(1)</script>",
+                "' OR '1'='1"
+              ]
+            },
+            {
+              "entityName": "<script>alert(1)</script>",
+              "observations": []
+            },
+            {
+              "entityName": "' OR '1'='1",
+              "observations": []
+            },
+            {
+              "entityName": "C90#YGIWyaTs3pqdYVV",
+              "observations": [
+                "' OR '1'='1"
+              ]
+            },
+            {
+              "entityName": "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+              "observations": [
+                "<script>alert(1)</script>",
+                "' OR '1'='1",
+                "' OR '1'='1",
+                "' OR '1'='1",
+                "<script>alert(1)</script>",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "test\u200bvalue",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "' OR '1'='1",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default"
+              ]
+            },
+            {
+              "entityName": "d0Pj5qOVu84w",
+              "observations": [
+                "test\u00a0value",
+                "test\u200bvalue",
+                "' OR '1'='1",
+                "<script>alert(1)</script>",
+                "GOps1Paip5Ez2MbTonRt3J1yKHii",
+                "test\ufeffvalue",
+                "P%VaHHVgu06WUQyaPz1RKlk",
+                "test\ufeffvalue",
+                "J8umt1Jw4OyZXrGn@hNbrM",
+                "UN2h$ZpA%iVm"
+              ]
+            },
+            {
+              "entityName": "test\u0000value",
+              "observations": [
+                "' OR '1'='1",
+                "' OR '1'='1",
+                "<script>alert(1)</script>",
+                "test\u0000value",
+                "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+                "' OR '1'='1",
+                "' OR '1'='1"
+              ]
+            }
+          ]
+        },
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "Deleted 10 of 57 observations. Entities not found: C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default, test\u202evalue, <script>alert(1)</script>, C90#YGIWyaTs3pqdYVV, C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default, d0Pj5qOVu84w, test\u0000value"
+            }
+          ],
+          "structuredContent": {
+            "success": true,
+            "message": "Deleted 10 of 57 observations. Entities not found: C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default, test\u202evalue, <script>alert(1)</script>, C90#YGIWyaTs3pqdYVV, C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default, d0Pj5qOVu84w, test\u0000value"
+          }
+        }
+      }
+    },
+    {
+      "category": "accepted_malformed",
+      "severity": "medium",
+      "kind": "tool",
+      "target": "delete_observations",
+      "run": 2,
+      "detail": "Server returned a non-error response to an attack-pattern or schema-invalid fuzz input.",
+      "evidence": {
+        "input": {
+          "deletions": []
+        },
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "Observations deleted successfully"
+            }
+          ],
+          "structuredContent": {
+            "success": true,
+            "message": "Observations deleted successfully"
+          }
+        }
+      }
+    },
+    {
+      "category": "accepted_malformed",
+      "severity": "medium",
+      "kind": "tool",
+      "target": "delete_relations",
+      "run": 1,
+      "detail": "Server returned a non-error response to an attack-pattern or schema-invalid fuzz input.",
+      "evidence": {
+        "input": {
+          "relations": []
+        },
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "Relations deleted successfully"
+            }
+          ],
+          "structuredContent": {
+            "success": true,
+            "message": "Relations deleted successfully"
+          }
+        }
+      }
+    },
+    {
+      "category": "accepted_malformed",
+      "severity": "medium",
+      "kind": "tool",
+      "target": "delete_relations",
+      "run": 2,
+      "detail": "Server returned a non-error response to an attack-pattern or schema-invalid fuzz input.",
+      "evidence": {
+        "input": {
+          "relations": [
+            {
+              "from": "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\OR11",
+              "to": "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\1Oq1J8sI4q3jgrIwoC",
+              "relationType": "<script>alert(1)</script>"
+            },
+            {
+              "from": "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\testvalue",
+              "to": "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\0q9kGkgxCCynGeKTLnv",
+              "relationType": "' OR '1'='1"
+            },
+            {
+              "from": "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\OR11",
+              "to": "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\testvalue",
+              "relationType": "<script>alert(1)</script>"
+            },
+            {
+              "from": "<script>alert(1)</script>",
+              "to": "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\NZpa7HnHlRSFkKs",
+              "relationType": "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default"
+            },
+            {
+              "from": "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\OR11",
+              "to": "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\testvalue",
+              "relationType": "' OR '1'='1"
+            }
+          ]
+        },
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "Deleted 0 of 5 relations. The rest matched nothing."
+            }
+          ],
+          "structuredContent": {
+            "success": true,
+            "message": "Deleted 0 of 5 relations. The rest matched nothing."
+          }
+        }
+      }
+    },
+    {
+      "category": "accepted_malformed",
+      "severity": "medium",
+      "kind": "tool",
+      "target": "read_graph",
+      "run": 1,
+      "detail": "Server returned a non-error response to an attack-pattern or schema-invalid fuzz input.",
+      "evidence": {
+        "input": {
+          "extra_field_0": "<script>alert(1)</script>",
+          "extra_field_1": "test\u0000hidden"
+        },
+        "result": "{\"content\": [{\"type\": \"text\", \"text\": \"{\\n  \\\"entities\\\": [\\n    {\\n      \\\"name\\\": \\\"test\\u00a0value\\\",\\n      \\\"entityType\\\": \\\"J8OV2gnrD87FMYywRyn\\\",\\n      \\\"observations\\\": [\\n        \\\"' OR '1'='1\\\",\\n        \\\"' OR '1'='1\\\",\\n        \\\"<script>alert(1)</script>\\\",\\n        \\\"C:\\\\\\\\Users\\\\\\\\ML\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\mcpfuzz-fsroot\\\\\\\\default\\\",\\n        \\\"<script>alert(1)</script>\\\",\\n        \\\"test\\\\u0000value\\\",\\n        \\\"' OR '1'='1\\\",\\n        \\\"' OR '1'='1\\\"\\n      ]\\n    },\\n    {\\n      \\\"name\\\": \\\"' OR '1'='1\\\",\\n      \\\"entityType\\\": \\\"qNEZDdKq!kPsZlUeGN84$\\\",\\n      \\\"observations\\\": []\\n    },\\n    {\\n      \\\"name\\\": \\\"W9WUboUwY!WE\\\",\\n      \\\"entityType\\\": \\\"<script>alert(1)</script>\\\",\\n      \\\"observations\\\": [\\n        \\\"C:\\\\\\\\Users\\\\\\\\ML\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\mcpfuzz-fsroot\\\\\\\\default\\\",\\n        \\\"8hq2Md$BE#TUSuzHQd\\\",\\n        \\\"C:\\\\\\\\Users\\\\\\\\ML\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\mcpfuzz-fsroot\\\\\\\\default\\\",\\n        \\\"C:\\\\\\\\Users\\\\\\\\ML\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\mcpfuzz-fsroot\\\\\\\\default\\\",\\n        \\\"test\\u200bvalue\\\"\\n      ]\\n    },\\n    {\\n      \\\"name\\\": \\\"elQBB3RJC!CvtEq4Ag3xxGIg$adPF\\\",\\n      \\\"entityType\\\": \\\"IwaSHlS7ZJie!vkD%LH@...[truncated]"
+      }
+    },
+    {
+      "category": "accepted_malformed",
+      "severity": "medium",
+      "kind": "tool",
+      "target": "read_graph",
+      "run": 2,
+      "detail": "Server returned a non-error response to an attack-pattern or schema-invalid fuzz input.",
+      "evidence": {
+        "input": {
+          "extra_field_0": "test\u0000hidden",
+          "extra_field_1": "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\passwd"
+        },
+        "result": "{\"content\": [{\"type\": \"text\", \"text\": \"{\\n  \\\"entities\\\": [\\n    {\\n      \\\"name\\\": \\\"test\\u00a0value\\\",\\n      \\\"entityType\\\": \\\"J8OV2gnrD87FMYywRyn\\\",\\n      \\\"observations\\\": [\\n        \\\"' OR '1'='1\\\",\\n        \\\"' OR '1'='1\\\",\\n        \\\"<script>alert(1)</script>\\\",\\n        \\\"C:\\\\\\\\Users\\\\\\\\ML\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\mcpfuzz-fsroot\\\\\\\\default\\\",\\n        \\\"<script>alert(1)</script>\\\",\\n        \\\"test\\\\u0000value\\\",\\n        \\\"' OR '1'='1\\\",\\n        \\\"' OR '1'='1\\\"\\n      ]\\n    },\\n    {\\n      \\\"name\\\": \\\"' OR '1'='1\\\",\\n      \\\"entityType\\\": \\\"qNEZDdKq!kPsZlUeGN84$\\\",\\n      \\\"observations\\\": []\\n    },\\n    {\\n      \\\"name\\\": \\\"W9WUboUwY!WE\\\",\\n      \\\"entityType\\\": \\\"<script>alert(1)</script>\\\",\\n      \\\"observations\\\": [\\n        \\\"C:\\\\\\\\Users\\\\\\\\ML\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\mcpfuzz-fsroot\\\\\\\\default\\\",\\n        \\\"8hq2Md$BE#TUSuzHQd\\\",\\n        \\\"C:\\\\\\\\Users\\\\\\\\ML\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\mcpfuzz-fsroot\\\\\\\\default\\\",\\n        \\\"C:\\\\\\\\Users\\\\\\\\ML\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\mcpfuzz-fsroot\\\\\\\\default\\\",\\n        \\\"test\\u200bvalue\\\"\\n      ]\\n    },\\n    {\\n      \\\"name\\\": \\\"elQBB3RJC!CvtEq4Ag3xxGIg$adPF\\\",\\n      \\\"entityType\\\": \\\"IwaSHlS7ZJie!vkD%LH@...[truncated]"
+      }
+    },
+    {
+      "category": "accepted_malformed",
+      "severity": "medium",
+      "kind": "tool",
+      "target": "search_nodes",
+      "run": null,
+      "detail": "Server returned a non-error response to an attack-pattern or schema-invalid fuzz input.",
+      "evidence": {
+        "input": {
+          "query": "' OR '1'='1"
+        },
+        "result": "{\"content\": [{\"type\": \"text\", \"text\": \"{\\n  \\\"entities\\\": [\\n    {\\n      \\\"name\\\": \\\"test\\u00a0value\\\",\\n      \\\"entityType\\\": \\\"J8OV2gnrD87FMYywRyn\\\",\\n      \\\"observations\\\": [\\n        \\\"' OR '1'='1\\\",\\n        \\\"' OR '1'='1\\\",\\n        \\\"<script>alert(1)</script>\\\",\\n        \\\"C:\\\\\\\\Users\\\\\\\\ML\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\mcpfuzz-fsroot\\\\\\\\default\\\",\\n        \\\"<script>alert(1)</script>\\\",\\n        \\\"test\\\\u0000value\\\",\\n        \\\"' OR '1'='1\\\",\\n        \\\"' OR '1'='1\\\"\\n      ]\\n    },\\n    {\\n      \\\"name\\\": \\\"' OR '1'='1\\\",\\n      \\\"entityType\\\": \\\"qNEZDdKq!kPsZlUeGN84$\\\",\\n      \\\"observations\\\": []\\n    },\\n    {\\n      \\\"name\\\": \\\"elQBB3RJC!CvtEq4Ag3xxGIg$adPF\\\",\\n      \\\"entityType\\\": \\\"IwaSHlS7ZJie!vkD%LH@\\\",\\n      \\\"observations\\\": [\\n        \\\"test\\u00a0value\\\",\\n        \\\"' OR '1'='1\\\",\\n        \\\"test\\ufeffvalue\\\",\\n        \\\"<script>alert(1)</script>\\\",\\n        \\\"' OR '1'='1\\\",\\n        \\\"5olCXX3@WQ52Y#lhQWRS9\\\",\\n        \\\"' OR '1'='1\\\"\\n      ]\\n    }\\n  ],\\n  \\\"relations\\\": []\\n}\"}], \"structuredContent\": {\"entities\": [{\"name\": \"test\\u00a0value\", \"entityType\": \"J8OV2gnrD87FMYywRyn\", \"observations\": [\"' OR '1'='1\", \"' OR '1'='1\", \"<script>alert(1)</script>\",...[truncated]",
+        "runs": [
+          1,
+          2
+        ],
+        "count": 2
+      }
+    },
+    {
+      "category": "accepted_malformed",
+      "severity": "medium",
+      "kind": "tool",
+      "target": "open_nodes",
+      "run": 1,
+      "detail": "Server returned a non-error response to an attack-pattern or schema-invalid fuzz input.",
+      "evidence": {
+        "input": {
+          "names": [
+            "2Q@7",
+            "Jju",
+            "<script>alert(1)</script>"
+          ]
+        },
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\n  \"entities\": [],\n  \"relations\": []\n}"
+            }
+          ],
+          "structuredContent": {
+            "entities": [],
+            "relations": []
+          }
+        }
+      }
+    },
+    {
+      "category": "accepted_malformed",
+      "severity": "medium",
+      "kind": "tool",
+      "target": "open_nodes",
+      "run": 2,
+      "detail": "Server returned a non-error response to an attack-pattern or schema-invalid fuzz input.",
+      "evidence": {
+        "input": {
+          "names": [
+            "<script>alert(1)</script>",
+            "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+            "test\u0000value",
+            "' OR '1'='1"
+          ]
+        },
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\n  \"entities\": [\n    {\n      \"name\": \"' OR '1'='1\",\n      \"entityType\": \"qNEZDdKq!kPsZlUeGN84$\",\n      \"observations\": []\n    }\n  ],\n  \"relations\": []\n}"
+            }
+          ],
+          "structuredContent": {
+            "entities": [
+              {
+                "name": "' OR '1'='1",
+                "entityType": "qNEZDdKq!kPsZlUeGN84$",
+                "observations": []
+              }
+            ],
+            "relations": []
+          }
+        }
+      }
+    }
+  ],
+  "count": 19
+}

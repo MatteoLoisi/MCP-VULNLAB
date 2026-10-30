@@ -1,0 +1,48 @@
+{
+  "schema": "exp3-probe-report-v1",
+  "producer": "exp3-probe-worker-v1",
+  "target": "c2",
+  "attempt_id": "55ff4a21484b47529e5a5367e9656d8d",
+  "status": "completed",
+  "target_identity": {
+    "target": "c2",
+    "definition_sha256": "1fb55a5e794d2abe517bf4c4f04f13b7bdfc34316f21cae5b07c2ff07ae825fb",
+    "manifest_sha256": "71156adadb7e944ec4e76beb135ac2d9913523bce20628bb3fc13eccbcb803d9",
+    "transport": "stdio",
+    "version": "79734c19f5104cd11486c90926d245560f53befa",
+    "shim_sha256": "da2c7bfdcb3b319bf3efc0df6f9a1fa1f5b79058ce619860f3821a93739a7766",
+    "configuration_sha256": "056f92e88e3132c9ec412277c603bafc6ac8b92e8780fc2a5da46078245bb1cf"
+  },
+  "target_command": [
+    "python",
+    "D:\\docker_proget\\V3\\tools\\dvmcp_stdio.py",
+    "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\easy\\challenge2"
+  ],
+  "scan_target": "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\easy\\challenge2",
+  "planned_findings": [
+    "P4-arg-injection"
+  ],
+  "profile": "grey-box",
+  "raw_ref": "capture.json",
+  "raw_sha256": "4570e615dc1b460fd1dca68354a2847b30a2d42fccbf522e6e4ffa6783e9a460",
+  "findings": {
+    "P4-arg-injection": {
+      "status": "secure",
+      "proof": "marker-probe senza esecuzione su ['search_company_database'] (9 tentativi)",
+      "details": {
+        "swept": 1,
+        "planned": 1,
+        "tried": 9,
+        "max_attempts": 24,
+        "reason": "",
+        "complete": true,
+        "tools": [
+          "search_company_database"
+        ],
+        "tools_planned": 1,
+        "noresponse": 0
+      },
+      "evidence_reason": "no supported complete observation for automatic proof"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "schema": "exp3-evidence-v1",
+  "target": "c3",
+  "attempt_id": "d903353394c04571814886dccda235b2",
+  "finding_id": "P5-tool-traversal",
+  "type": "file_read",
+  "request": {
+    "id": "9dfbb1c497664ecebd9d3488f328f962",
+    "captured_args": [
+      "read_file",
+      {
+        "filename": "D:\\docker_proget\\V3\\reports\\campaign-exp3-20261018-40bc13d7\\effects\\P5-c3\\attempts\\d903353394c04571814886dccda235b2\\canary.txt"
+      }
+    ],
+    "captured_kwargs": {},
+    "path": "D:\\docker_proget\\V3\\reports\\campaign-exp3-20261018-40bc13d7\\effects\\P5-c3\\attempts\\d903353394c04571814886dccda235b2\\canary.txt"
+  },
+  "response": {
+    "request_id": "9dfbb1c497664ecebd9d3488f328f962",
+    "completed": true,
+    "ok": true,
+    "path": "D:\\docker_proget\\V3\\reports\\campaign-exp3-20261018-40bc13d7\\effects\\P5-c3\\attempts\\d903353394c04571814886dccda235b2\\canary.txt",
+    "content": "EXP3_CANARY_d903353394c04571814886dccda235b2_d4849e313f594a02aecf2288481e3298"
+  },
+  "outside_allowed_scope": true,
+  "expected": {
+    "path": "D:\\docker_proget\\V3\\reports\\campaign-exp3-20261018-40bc13d7\\effects\\P5-c3\\attempts\\d903353394c04571814886dccda235b2\\canary.txt",
+    "content_sha256": "d750c416544b5e6dd24719ef9ad5f6f1ea0b7028075231b9eada50252c483094"
+  },
+  "coverage_complete": false,
+  "coverage_reason": "positive observed; remaining sweep not certified",
+  "capture_ref": "capture.json",
+  "capture_sha256": "5362454908ebc1bd1c799ee69be71c260aa8987cfc3b231f958ad357a18fe76f",
+  "source_call_index": 2
+}

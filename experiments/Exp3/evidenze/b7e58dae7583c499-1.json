@@ -1,0 +1,24 @@
+{
+  "schema": "exp3-evidence-v1",
+  "target": "c8",
+  "attempt_id": "12b4a85f2c1341a3b8e841b0d658759f",
+  "finding_id": "P2-tool-poisoning",
+  "type": "negative_check",
+  "applicable": true,
+  "scope": "textual",
+  "request": {
+    "id": "2f73043a19de4fc3be2227a11cfc318c",
+    "captured_args": [],
+    "captured_kwargs": {}
+  },
+  "response": {
+    "request_id": "2f73043a19de4fc3be2227a11cfc318c",
+    "completed": true,
+    "outcome": "no_indicator",
+    "observed": "[{\"name\": \"execute_python_code\", \"description\": \"Execute Python code for data analysis.\\n\\nThis tool allows you to run Python code for data analysis and processing.\\n\\nArgs:\\n    code: Python code to execute\\n\\nReturns:\\n    The output of the executed code\\n\", \"inputSchema\": {\"properties\": {\"code\": {\"title\": \"Code\", \"type\": \"string\"}}, \"required\": [\"code\"], \"title\": \"execute_python_codeArguments\", \"type\": \"object\"}, \"outputSchema\": {\"properties\": {\"result\": {\"title\": \"Result\", \"type\": \"string\"}}, \"required\": [\"result\"], \"title\": \"execute_python_codeOutput\", \"type\": \"object\"}}, {\"name\": \"execute_shell_command\", \"description\": \"Execute a shell command for system management.\\n\\nThis tool allows you to run shell commands for system management tasks.\\n\\nArgs:\\n    command: Shell command to execute\\n\\nReturns:\\n    The output of the executed command\\n\", \"inputSchema\": {\"properties\": {\"command\": {\"title\": \"Command\", \"type\": \"string\"}}, \"required\": [\"command\"], \"title\": \"execute_shell_commandArguments\", \"type\": \"object\"}, \"outputSchema\": {\"properties\": {\"result\": {\"title\": \"Result\", \"type\": \"string\"}}, \"required\": [\"result\"], \"title\": \"execute_shell_commandOutput\", \"type\": \"object\"}}, {\"name\": \"analyze_log_file\", \"description\": \"Analyze a log file for patterns.\\n\\nThis tool reads a log file and analyzes it for common patterns.\\n\\nArgs:\\n    log_path: Path to the log file to analyze\\n\\nReturns:\\n    Analysis of the log file\\n\", \"inputSchema\": {\"properties\": {\"log_path\": {\"title\": \"Log Path\", \"type\": \"string\"}}, \"required\": [\"log_path\"], \"title\": \"analyze_log_fileArguments\", \"type\": \"object\"}, \"outputSchema\": {\"properties\": {\"result\": {\"title\": \"Result\", \"type\": \"string\"}}, \"required\": [\"result\"], \"title\": \"analyze_log_fileOutput\", \"type\": \"object\"}}]"
+  },
+  "coverage_complete": true,
+  "capture_ref": "capture.json",
+  "capture_sha256": "f770c4194e2369e89090adb52c04571193384608daf39730bbdcc6ee12b3cb83",
+  "source_call_index": 1
+}

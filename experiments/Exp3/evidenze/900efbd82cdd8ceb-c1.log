@@ -1,0 +1,15 @@
+Processing request of type ListToolsRequest
+=== MCP Scanner Detailed Results ===
+
+Scan Target: stdio:C:/Users/ML/AppData/Local/Programs/Python/Python313/python.exe D:/docker_proget/V3/tools/dvmcp_stdio.py C:/Users/ML/AppData/Local/Temp/mcptargets/dvmcp/challenges/easy/challenge1
+
+Tool 1: get_user_info
+Status: completed
+Safe: Yes
+Analyzer Results:
+  • yara_analyzer:
+    - Severity: SAFE
+    - Threat Summary: No threats detected
+    - Threat Names: None
+    - Total Findings: 0
+

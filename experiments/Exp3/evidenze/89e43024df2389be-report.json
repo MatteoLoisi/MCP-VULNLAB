@@ -1,0 +1,73 @@
+{
+  "schema": "exp3-probe-report-v1",
+  "producer": "exp3-probe-worker-v1",
+  "target": "c8",
+  "attempt_id": "12b4a85f2c1341a3b8e841b0d658759f",
+  "status": "completed",
+  "target_identity": {
+    "target": "c8",
+    "definition_sha256": "36c3d3f534eb3d74a8bbf6a803ac01776d0199ed07f07950726eeaaf63e6534a",
+    "manifest_sha256": "71156adadb7e944ec4e76beb135ac2d9913523bce20628bb3fc13eccbcb803d9",
+    "transport": "stdio",
+    "version": "79734c19f5104cd11486c90926d245560f53befa",
+    "shim_sha256": "da2c7bfdcb3b319bf3efc0df6f9a1fa1f5b79058ce619860f3821a93739a7766",
+    "configuration_sha256": "9bd899c15c358f67d166792a4622bd9188f411e2466ddfbf4ef1c3a649b2de94"
+  },
+  "target_command": [
+    "python",
+    "D:\\docker_proget\\V3\\tools\\dvmcp_stdio.py",
+    "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\hard\\challenge8"
+  ],
+  "scan_target": "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\hard\\challenge8",
+  "planned_findings": [
+    "P2-tool-poisoning"
+  ],
+  "profile": "black-box",
+  "raw_ref": "capture.json",
+  "raw_sha256": "f770c4194e2369e89090adb52c04571193384608daf39730bbdcc6ee12b3cb83",
+  "findings": {
+    "P2-tool-poisoning": {
+      "status": "secure",
+      "proof": "nessuna istruzione sospetta in 3 DESCRIPTION (avg_score=97)",
+      "details": {
+        "count": 3,
+        "avg_score": 97,
+        "by_severity": {
+          "low": 2
+        },
+        "audit": [
+          {
+            "tool": "execute_python_code",
+            "score": 95,
+            "flags": [
+              {
+                "code": "privileged-no-readonly-hint",
+                "severity": "low",
+                "detail": "verbo privilegiato senza readOnlyHint: verificare least-privilege"
+              }
+            ]
+          },
+          {
+            "tool": "execute_shell_command",
+            "score": 95,
+            "flags": [
+              {
+                "code": "privileged-no-readonly-hint",
+                "severity": "low",
+                "detail": "verbo privilegiato senza readOnlyHint: verificare least-privilege"
+              }
+            ]
+          },
+          {
+            "tool": "analyze_log_file",
+            "score": 100,
+            "flags": []
+          }
+        ]
+      },
+      "evidence_reason": "derived from captured call",
+      "evidence_ref": "evidence/1.json",
+      "evidence_sha256": "b7e58dae7583c49974c2b84512639780b3022272f0874edff4a716fb793467df"
+    }
+  }
+}

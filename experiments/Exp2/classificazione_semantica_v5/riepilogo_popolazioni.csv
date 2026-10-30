@@ -1,0 +1,6 @@
+﻿source,population,cases,queries,TP,TN,FP,FN,Unknown,correct,correct_percent
+S10,validazione,24,120,46,60,0,10,4,106,88.33333333333333
+S11,sviluppo,12,60,28,30,0,0,2,58,96.66666666666667
+S12,acquisizioni_mcp,6,30,25,0,0,5,0,25,83.33333333333333
+S13,artifact_statici,6,30,24,0,0,5,1,24,80.0
+S14,file_sqlite,6,30,15,10,0,0,5,25,83.33333333333333

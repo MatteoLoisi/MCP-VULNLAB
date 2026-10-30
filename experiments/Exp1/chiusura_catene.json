@@ -1,0 +1,54 @@
+{
+  "schema": "exp1-definitive-closure-review-v1",
+  "source_campaign": "D:\\docker_proget\\V3\\reports\\campaign-exp1-final-20261018-e72c9a04",
+  "historical_closure_status": "closed_with_missing_and_archive_drift",
+  "planned": 480,
+  "recorded": 479,
+  "missing": 1,
+  "missing_original_indices": [
+    250
+  ],
+  "technical_errors": 12,
+  "totals": {
+    "D": 0,
+    "A": 0,
+    "E": 0,
+    "U": 211,
+    "C": 352,
+    "F_copy": 0
+  },
+  "denominators": {
+    "D": 467,
+    "A": 467,
+    "E": 467,
+    "U": 467,
+    "C": 467,
+    "F_copy": 467
+  },
+  "populations": {
+    "before_interruption": 249,
+    "after_restart": 230
+  },
+  "excluded": {
+    "D": 13,
+    "A": 13,
+    "E": 13,
+    "U": 13,
+    "C": 13,
+    "F_copy": 13
+  },
+  "input_hashes": {
+    "attempts-reconciled-20261021.json": "554faa6738e926c563c64ce70a39e3eb442b4a08ec9e986da8f5df26756dcc11",
+    "protocol.json": "b389a7676d5852ee4b22e931fd84cecda1ff1e21b3659a949113d531a378184b",
+    "summary.json": "13b72ef4b646c2dfca480b6bf0641dcb05100119fd972ad5b2fd41d734bbbfc7",
+    "closure-manifest.json": "153ac0d68cfe4c808ed2d66d356eb0132e2e6bb182c8bda6ea637cb613ff0302",
+    "observations.csv": "7251685b7e5affd957ae42b1d1c3bb1f5d93f926eb346b811478c7f6998943c4"
+  },
+  "analysis_sha256": "1169a3cceb0933c091cf9c854e2fff2f12e2c1e5d1dde9fddbaa68e5acc76bf1",
+  "decision": "Definitive 479/480 historical dataset; no replacement of lost attempt; future data and supplement remain separate.",
+  "limitations": [
+    "Four previously derived documents have declared provenance drift.",
+    "Reconciled ledger is retrospective, not the original pre-execution ledger.",
+    "Current review does not attest original archive integrity or causal policy efficacy."
+  ]
+}

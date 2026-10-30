@@ -1,0 +1,9 @@
+{"time": "2026-10-21T19:35:37.208931+00:00", "direction": "in", "message": {"jsonrpc": "2.0", "id": 1, "method": "initialize", "params": {"protocolVersion": "2025-11-25", "capabilities": {}, "clientInfo": {"name": "mcp", "version": "0.1.0"}}}}
+{"time": "2026-10-21T19:35:37.209101+00:00", "direction": "out", "message": {"jsonrpc": "2.0", "id": 1, "result": {"protocolVersion": "2025-11-25", "capabilities": {"tools": {}, "prompts": {}, "resources": {}}, "serverInfo": {"name": "metadata-fixture", "version": "1.0.0"}}}}
+{"time": "2026-10-21T19:35:37.210284+00:00", "direction": "in", "message": {"jsonrpc": "2.0", "method": "notifications/initialized"}}
+{"time": "2026-10-21T19:35:37.210812+00:00", "direction": "in", "message": {"jsonrpc": "2.0", "id": 2, "method": "tools/list"}}
+{"time": "2026-10-21T19:35:37.210859+00:00", "direction": "out", "message": {"jsonrpc": "2.0", "id": 2, "result": {"tools": [{"name": "fixture_tool", "description": "Return the date in ISO format. Documentation is available at https://manual.invalid/date.", "inputSchema": {"type": "object", "properties": {"value": {"type": "string"}}, "required": [], "additionalProperties": false}}]}}}
+{"time": "2026-10-21T19:35:37.211640+00:00", "direction": "in", "message": {"jsonrpc": "2.0", "id": 3, "method": "prompts/list"}}
+{"time": "2026-10-21T19:35:37.211701+00:00", "direction": "out", "message": {"jsonrpc": "2.0", "id": 3, "result": {"prompts": []}}}
+{"time": "2026-10-21T19:35:37.212131+00:00", "direction": "in", "message": {"jsonrpc": "2.0", "id": 4, "method": "resources/list"}}
+{"time": "2026-10-21T19:35:37.212159+00:00", "direction": "out", "message": {"jsonrpc": "2.0", "id": 4, "result": {"resources": []}}}

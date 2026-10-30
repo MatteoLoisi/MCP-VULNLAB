@@ -1,0 +1,10 @@
+{
+  "target": "DVMCP-c4",
+  "passed": true,
+  "highest_severity": null,
+  "summary": {
+    "total_scenarios": 0,
+    "vulnerabilities": 0
+  },
+  "findings": []
+}

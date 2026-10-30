@@ -1,0 +1,68 @@
+{
+  "schema": "exp3-probe-report-v1",
+  "producer": "exp3-probe-worker-v1",
+  "target": "c5",
+  "attempt_id": "38c80ad90abb4ece9bf1fad6c86505ec",
+  "status": "completed",
+  "target_identity": {
+    "target": "c5",
+    "definition_sha256": "bd28657cf74b9180838c1d30689e12831dd2ba887ca5e746cd4e4e7cc30247e0",
+    "manifest_sha256": "71156adadb7e944ec4e76beb135ac2d9913523bce20628bb3fc13eccbcb803d9",
+    "transport": "stdio",
+    "version": "79734c19f5104cd11486c90926d245560f53befa",
+    "shim_sha256": "da2c7bfdcb3b319bf3efc0df6f9a1fa1f5b79058ce619860f3821a93739a7766",
+    "configuration_sha256": "3dce655a0b6c4e927b153e13a8fe42f64264d9a4f93776be9c2c175067f9f025"
+  },
+  "target_command": [
+    "python",
+    "D:\\docker_proget\\V3\\tools\\dvmcp_stdio.py",
+    "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\medium\\challenge5"
+  ],
+  "scan_target": "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\medium\\challenge5",
+  "planned_findings": [
+    "P2-tool-poisoning"
+  ],
+  "profile": "black-box",
+  "raw_ref": "capture.json",
+  "raw_sha256": "51484b77ca02b20a45f40421f3a82f5d4590da1e4f8333081ddc439163350573",
+  "findings": {
+    "P2-tool-poisoning": {
+      "status": "vulnerable",
+      "proof": "istruzioni malevole in DESCRIPTION di: ['enhanced_calculate (covert-instruction)']",
+      "details": {
+        "count": 2,
+        "avg_score": 65,
+        "by_severity": {
+          "critical": 1,
+          "medium": 1
+        },
+        "audit": [
+          {
+            "tool": "enhanced_calculate",
+            "score": 30,
+            "flags": [
+              {
+                "code": "covert-instruction",
+                "severity": "critical",
+                "detail": "istruzione di azione + occultamento in DESCRIPTION (redirezione a una risorsa senza menzionarla)"
+              },
+              {
+                "code": "secret-word",
+                "severity": "medium",
+                "detail": "parola sensibile in DESCRIPTION: secret"
+              }
+            ]
+          },
+          {
+            "tool": "trusted_calculate",
+            "score": 100,
+            "flags": []
+          }
+        ]
+      },
+      "evidence_reason": "derived from captured call",
+      "evidence_ref": "evidence/1.json",
+      "evidence_sha256": "bd5ddac6dbfec0d634df690687ed244e35edc900e5a8f85cf60f47594e7d5312"
+    }
+  }
+}

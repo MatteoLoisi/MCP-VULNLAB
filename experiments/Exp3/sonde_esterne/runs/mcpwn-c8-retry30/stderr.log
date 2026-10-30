@@ -1,0 +1,32 @@
+[INFO] Starting Mcpwn
+[INFO] Discovery phase...
+[INFO] Found 3 tools, 1 resources
+[INFO] Testing tool injection...
+[WARNING] execute_shell_command: command_injection via command
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'uid=\\d+\\([^)]+\\)', 'match': 'uid=1001(targetuser)'}
+[WARNING] execute_shell_command: command_injection via command
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'uid=\\d+\\([^)]+\\)', 'match': 'uid=1001(targetuser)'}
+[WARNING] execute_shell_command: command_injection via command
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'uid=\\d+\\([^)]+\\)', 'match': 'uid=1001(targetuser)'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'gid=\\d+\\([^)]+\\)', 'match': 'gid=1001(targetuser)'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'groups=\\d+', 'match': 'groups=1001'}
+[WARNING] execute_shell_command: command_injection via command
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'Linux.*\\d+\\.\\d+\\.\\d+', 'match': 'Linux a5a1a7e6540f 6.18.54.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct  6 19:13:07 UTC 2026 x86_64 GNU/Linux\\n"}],"structuredContent":{"result":"Command executed successfully:\\n\\nLinux a5a1a7e6540f 6.18.54.1'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'GNU/Linux', 'match': 'GNU/Linux'}
+[WARNING] execute_shell_command: BLIND_RCE_TIMING via command
+[WARNING]   Detection: Timing delay: 10.45s
+[WARNING] execute_shell_command: command_injection via command
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 10.445823192596436}
+[WARNING] execute_shell_command: BLIND_RCE_TIMING via command
+[WARNING]   Detection: Timing delay: 10.01s
+[WARNING] execute_shell_command: command_injection via command
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 10.0054771900177}
+[WARNING] execute_shell_command: command_injection via command
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'root:.*:0:0', 'match': 'root:x:0:0:root:/root:/bin/bash: not found\\n"}],"structuredContent":{"result":"Error executing command: /bin/sh: 1: root:x:0:0'}
+[WARNING]   Detection: {'type': 'FILE_READ', 'indicator': 'root:x:', 'match': 'root:x:'}
+[WARNING] execute_shell_command: command_injection via command
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'root:.*:0:0', 'match': 'root:x:0:0:root:/root:/bin/bash: not found\\n"}],"structuredContent":{"result":"Error executing command: /bin/sh: 1: root:x:0:0'}
+[WARNING]   Detection: {'type': 'FILE_READ', 'indicator': 'root:x:', 'match': 'root:x:'}
+[INFO] Skipping subscription flood (safe mode)
+[INFO] Mcpwn complete
+[INFO] JSON report: /results/report.json

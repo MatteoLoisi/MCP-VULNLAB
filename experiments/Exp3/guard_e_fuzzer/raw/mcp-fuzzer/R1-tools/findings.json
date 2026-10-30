@@ -1,0 +1,117 @@
+{
+  "findings": [
+    {
+      "category": "injection_reflection",
+      "severity": "high",
+      "kind": "tool",
+      "target": "read_multiple_files",
+      "run": 2,
+      "detail": "A dangerous input token was reflected verbatim in the response (missing sanitization boundary).",
+      "evidence": {
+        "marker": "<script>"
+      }
+    },
+    {
+      "category": "accepted_malformed",
+      "severity": "medium",
+      "kind": "tool",
+      "target": "read_multiple_files",
+      "run": 1,
+      "detail": "Server returned a non-error response to an attack-pattern or schema-invalid fuzz input.",
+      "evidence": {
+        "input": {
+          "paths": [
+            "test\u202evalue"
+          ]
+        },
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "test\u202evalue: Error - ENOENT: no such file or directory, open 'C:\\Users\\ML\\AppData\\Local\\Temp\\mcptargets\\fuzz-r1-root\\test\u202evalue'"
+            }
+          ],
+          "structuredContent": {
+            "content": "test\u202evalue: Error - ENOENT: no such file or directory, open 'C:\\Users\\ML\\AppData\\Local\\Temp\\mcptargets\\fuzz-r1-root\\test\u202evalue'"
+          }
+        }
+      }
+    },
+    {
+      "category": "accepted_malformed",
+      "severity": "medium",
+      "kind": "tool",
+      "target": "read_multiple_files",
+      "run": 2,
+      "detail": "Server returned a non-error response to an attack-pattern or schema-invalid fuzz input.",
+      "evidence": {
+        "input": {
+          "paths": [
+            "' OR '1'='1",
+            "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+            "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+            "<script>alert(1)</script>",
+            "<script>alert(1)</script>",
+            "test\u00a0value",
+            "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\default",
+            "<script>alert(1)</script>",
+            "VTs!nYOZQ5C!t1tkEvU",
+            "test\u202evalue"
+          ]
+        },
+        "result": "{\"content\": [{\"type\": \"text\", \"text\": \"' OR '1'='1: Error - ENOENT: no such file or directory, open 'C:\\\\Users\\\\ML\\\\AppData\\\\Local\\\\Temp\\\\mcptargets\\\\fuzz-r1-root\\\\' OR '1'='1'\\n---\\nC:\\\\Users\\\\ML\\\\AppData\\\\Local\\\\Temp\\\\mcpfuzz-fsroot\\\\default: Error - Access denied - path outside allowed directories: C:\\\\Users\\\\ML\\\\AppData\\\\Local\\\\Temp\\\\mcpfuzz-fsroot\\\\default not in C:\\\\Users\\\\ML\\\\AppData\\\\Local\\\\Temp\\\\mcptargets\\\\fuzz-r1-root\\n---\\nC:\\\\Users\\\\ML\\\\AppData\\\\Local\\\\Temp\\\\mcpfuzz-fsroot\\\\default: Error - Access denied - path outside allowed directories: C:\\\\Users\\\\ML\\\\AppData\\\\Local\\\\Temp\\\\mcpfuzz-fsroot\\\\default not in C:\\\\Users\\\\ML\\\\AppData\\\\Local\\\\Temp\\\\mcptargets\\\\fuzz-r1-root\\n---\\n<script>alert(1)</script>: Error - ENOENT: no such file or directory, open 'C:\\\\Users\\\\ML\\\\AppData\\\\Local\\\\Temp\\\\mcptargets\\\\fuzz-r1-root\\\\<script>alert(1)<\\\\script>'\\n---\\n<script>alert(1)</script>: Error - ENOENT: no such file or directory, open 'C:\\\\Users\\\\ML\\\\AppData\\\\Local\\\\Temp\\\\mcptargets\\\\fuzz-r1-root\\\\<script>alert(1)<\\\\script>'\\n---\\ntest\\u00a0value: Error - ENOENT: no such file or directory, open 'C:\\\\Users\\\\ML\\\\AppData\\\\Local\\\\Temp\\\\mcptargets\\\\fuzz-r1-root\\\\test\\u00a0value'\\n---\\nC:\\\\Use...[truncated]"
+      }
+    },
+    {
+      "category": "accepted_malformed",
+      "severity": "medium",
+      "kind": "tool",
+      "target": "list_allowed_directories",
+      "run": 1,
+      "detail": "Server returned a non-error response to an attack-pattern or schema-invalid fuzz input.",
+      "evidence": {
+        "input": {
+          "extra_field_0": "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\passwd",
+          "extra_field_1": "valid-value"
+        },
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "Allowed directories:\nC:\\Users\\ML\\AppData\\Local\\Temp\\mcptargets\\fuzz-r1-root"
+            }
+          ],
+          "structuredContent": {
+            "content": "Allowed directories:\nC:\\Users\\ML\\AppData\\Local\\Temp\\mcptargets\\fuzz-r1-root"
+          }
+        }
+      }
+    },
+    {
+      "category": "accepted_malformed",
+      "severity": "medium",
+      "kind": "tool",
+      "target": "list_allowed_directories",
+      "run": 2,
+      "detail": "Server returned a non-error response to an attack-pattern or schema-invalid fuzz input.",
+      "evidence": {
+        "input": {
+          "extra_field_0": "test\u0000hidden",
+          "extra_field_1": "C:\\Users\\ML\\AppData\\Local\\Temp\\mcpfuzz-fsroot\\passwd"
+        },
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "Allowed directories:\nC:\\Users\\ML\\AppData\\Local\\Temp\\mcptargets\\fuzz-r1-root"
+            }
+          ],
+          "structuredContent": {
+            "content": "Allowed directories:\nC:\\Users\\ML\\AppData\\Local\\Temp\\mcptargets\\fuzz-r1-root"
+          }
+        }
+      }
+    }
+  ],
+  "count": 5
+}

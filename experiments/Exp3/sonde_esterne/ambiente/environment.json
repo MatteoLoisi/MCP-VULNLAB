@@ -1,0 +1,18 @@
+{
+  "target_image": "sha256:bd6a8b02142a686ee95c11ec9519d91e345e17eccb9837880c4e98665a5b075e",
+  "network": "none; loopback callback permitted",
+  "runtime_comparison": "Nuova replica Linux separata dalla campagna Windows precedente",
+  "python": "3.11.16",
+  "schema": "external-scanner-pilot-v1",
+  "source_files": {
+    "V3/services/real-mcp-adapter/metadata_audit.py": "4ed6975cf09110b7515a2da0ba4cb195cc5dea2788b156601a7f68f06620b53c",
+    "V3/tools/dvmcp_stdio.py": "da2c7bfdcb3b319bf3efc0df6f9a1fa1f5b79058ce619860f3821a93739a7766",
+    "V3/services/real-mcp-adapter/real_target_check.py": "b15c9a8c047b710f6455d6220318f3e572162fdbfaa57827ff61dabcc20482ce",
+    "V3/services/real-mcp-adapter/adapter.py": "f01b1003a689b6d9a68e9b63c14ddd6e9ff8c2c11a16c663005e20614284e425"
+  },
+  "dvmcp_commit": "79734c19f5104cd11486c90926d245560f53befa",
+  "date": "2026-10-19",
+  "snyk": "Non eseguito: richiede protocollo con API remota; questo pilot locale usa RedCell e Mcpwn",
+  "fetch_image": "sha256:c29a123573416fc47722f75b7709d87fb3b93f915f204311014968884c4fd8f2",
+  "mcp_sdk": "1.29.1"
+}

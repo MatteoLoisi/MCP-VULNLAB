@@ -1,0 +1,25 @@
+{
+  "schema": "exp3-probe-attempt-v1",
+  "target": "R1-filesystem",
+  "attempt_id": "acd01232676f408b92b65422fbbdd0fa",
+  "status": "completed",
+  "started_at": "2026-10-25T16:09:20.608545+00:00",
+  "context_ref": "attempts/acd01232676f408b92b65422fbbdd0fa/context.json",
+  "context_sha256": "c7cf5a613216db8a38041b5273021bb04c36a4759a6ec087085438bde7a56fb0",
+  "worker_command": [
+    "C:\\Users\\ML\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+    "-B",
+    "D:\\docker_proget\\V4\\tools\\exp3\\probe_worker.py",
+    "--context",
+    "D:\\docker_proget\\V4\\output\\r6-p5-filesystem-20261025-01\\probes\\attempts\\acd01232676f408b92b65422fbbdd0fa\\context.json",
+    "--out",
+    "D:\\docker_proget\\V4\\output\\r6-p5-filesystem-20261025-01\\probes\\attempts\\acd01232676f408b92b65422fbbdd0fa"
+  ],
+  "returncode": 0,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "report_ref": "attempts/acd01232676f408b92b65422fbbdd0fa/report.json",
+  "report_sha256": "1ce271182936939d439eb8a8943f46f7a73ea9479633436c26ddc812408103fd",
+  "measurement_errors": [],
+  "ended_at": "2026-10-25T16:09:34.647545+00:00"
+}

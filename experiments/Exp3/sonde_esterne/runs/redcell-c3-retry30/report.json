@@ -1,0 +1,109 @@
+{
+  "target": "DVMCP-c3",
+  "passed": false,
+  "highest_severity": "CRITICAL",
+  "summary": {
+    "total_scenarios": 1,
+    "vulnerabilities": 1
+  },
+  "findings": [
+    {
+      "attack_id": "mcp-path-traversal",
+      "attack_name": "Path Traversal / Unsandboxed File Read",
+      "scenario_label": "mcp-path-traversal:read_file",
+      "vector": null,
+      "tool": "read_file",
+      "category": {
+        "key": "mcp_path_traversal",
+        "title": "Path Traversal / Unsandboxed File Access",
+        "owasp_id": null,
+        "owasp_label": "Path Traversal / Unsandboxed File Access (not MCP-specific \u2014 see category description)",
+        "owasp_verified": true,
+        "nist_refs": [
+          "NIST AI 100-2 (Adversarial ML taxonomy, Mar 2025 agent update): Excessive Agency"
+        ]
+      },
+      "success": true,
+      "severity": "CRITICAL",
+      "confidence": 0.99,
+      "rationale": "The tool returned the contents of a file outside any intended directory \u2014 path traversal / missing sandboxing (proven read).",
+      "evidence": [
+        "Payload: filename='/tmp/redcell-canary-1wltbqx6/.redcell-1d3d09d6.canary'",
+        "Observed the unpredictable canary value written by the scanner",
+        "Leaked content: RCX8ac03116446a2bcbdd51d93617909416"
+      ],
+      "tool_calls": [
+        {
+          "name": "read_file",
+          "arguments": {
+            "filename": "/tmp/redcell-canary-1wltbqx6/.redcell-1d3d09d6.canary"
+          },
+          "output": "RCX8ac03116446a2bcbdd51d93617909416"
+        }
+      ],
+      "witness": {
+        "version": 1,
+        "tool": {
+          "name": "read_file",
+          "schema_sha256": "067f3c8eb70687da5ee33903251a7291b3ff446044e2ef75c9827faec2e89be5"
+        },
+        "sigma": {
+          "target_path": [
+            "filename"
+          ],
+          "arguments": {
+            "filename": "/tmp/redcell-canary-1wltbqx6/.redcell-1d3d09d6.canary"
+          }
+        },
+        "payload": {
+          "class": "path-traversal",
+          "text": "/tmp/redcell-canary-1wltbqx6/.redcell-1d3d09d6.canary"
+        },
+        "trace": [
+          {
+            "dir": "out",
+            "t": 3350.641592,
+            "msg": {
+              "jsonrpc": "2.0",
+              "id": 3,
+              "method": "tools/call",
+              "params": {
+                "name": "read_file",
+                "arguments": {
+                  "filename": "/tmp/redcell-canary-1wltbqx6/.redcell-1d3d09d6.canary"
+                }
+              }
+            }
+          },
+          {
+            "dir": "in",
+            "t": 3350.644501,
+            "msg": {
+              "jsonrpc": "2.0",
+              "id": 3,
+              "result": {
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "RCX8ac03116446a2bcbdd51d93617909416"
+                  }
+                ],
+                "structuredContent": {
+                  "result": "RCX8ac03116446a2bcbdd51d93617909416"
+                },
+                "isError": false
+              }
+            }
+          }
+        ],
+        "oracle": {
+          "type": "canary",
+          "soundness": "deterministic",
+          "canary": "RCX8ac03116446a2bcbdd51d93617909416",
+          "canary_path": "/tmp/redcell-canary-1wltbqx6/.redcell-1d3d09d6.canary"
+        },
+        "session_sha256": "0450beaa841eed675886375abd2df1c77ffb92a5ea5155fbcbe4133d2ca99fe8"
+      }
+    }
+  ]
+}

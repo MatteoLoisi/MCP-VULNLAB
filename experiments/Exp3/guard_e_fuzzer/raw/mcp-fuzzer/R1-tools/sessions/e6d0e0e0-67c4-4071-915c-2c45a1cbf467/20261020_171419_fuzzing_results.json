@@ -1,0 +1,270 @@
+{
+  "protocol_version": "1.0.0",
+  "timestamp": "2026-10-20T17:14:19.382059",
+  "tool_version": "0.7.0",
+  "session_id": "e6d0e0e0-67c4-4071-915c-2c45a1cbf467",
+  "output_type": "fuzzing_results",
+  "data": {
+    "mode": "tools",
+    "protocol": "stdio",
+    "endpoint": "C:/Program Files/nodejs/node.EXE C:/Users/ML/AppData/Local/Temp/mcptargets/fuzz-npm/node_modules/@modelcontextprotocol/server-filesystem/dist/index.js C:/Users/ML/AppData/Local/Temp/mcptargets/fuzz-r1-root",
+    "total_tools": 14,
+    "total_protocol_types": 0,
+    "tools_tested": [
+      {
+        "name": "read_file",
+        "runs": 2,
+        "successful": 2,
+        "exceptions": 0,
+        "safety_blocked": 0,
+        "outcomes": {
+          "server_rejected": 2,
+          "accepted_malformed": 0,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0
+        },
+        "success_rate": 100.0,
+        "exception_details": []
+      },
+      {
+        "name": "read_text_file",
+        "runs": 2,
+        "successful": 2,
+        "exceptions": 0,
+        "safety_blocked": 0,
+        "outcomes": {
+          "server_rejected": 2,
+          "accepted_malformed": 0,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0
+        },
+        "success_rate": 100.0,
+        "exception_details": []
+      },
+      {
+        "name": "read_media_file",
+        "runs": 2,
+        "successful": 2,
+        "exceptions": 0,
+        "safety_blocked": 0,
+        "outcomes": {
+          "server_rejected": 2,
+          "accepted_malformed": 0,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0
+        },
+        "success_rate": 100.0,
+        "exception_details": []
+      },
+      {
+        "name": "read_multiple_files",
+        "runs": 2,
+        "successful": 0,
+        "exceptions": 0,
+        "safety_blocked": 0,
+        "outcomes": {
+          "server_rejected": 0,
+          "accepted_malformed": 2,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0
+        },
+        "success_rate": 0.0,
+        "exception_details": []
+      },
+      {
+        "name": "write_file",
+        "runs": 2,
+        "successful": 2,
+        "exceptions": 0,
+        "safety_blocked": 0,
+        "outcomes": {
+          "server_rejected": 2,
+          "accepted_malformed": 0,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0
+        },
+        "success_rate": 100.0,
+        "exception_details": []
+      },
+      {
+        "name": "edit_file",
+        "runs": 2,
+        "successful": 2,
+        "exceptions": 0,
+        "safety_blocked": 0,
+        "outcomes": {
+          "server_rejected": 2,
+          "accepted_malformed": 0,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0
+        },
+        "success_rate": 100.0,
+        "exception_details": []
+      },
+      {
+        "name": "create_directory",
+        "runs": 2,
+        "successful": 2,
+        "exceptions": 0,
+        "safety_blocked": 0,
+        "outcomes": {
+          "server_rejected": 2,
+          "accepted_malformed": 0,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0
+        },
+        "success_rate": 100.0,
+        "exception_details": []
+      },
+      {
+        "name": "list_directory",
+        "runs": 2,
+        "successful": 2,
+        "exceptions": 0,
+        "safety_blocked": 0,
+        "outcomes": {
+          "server_rejected": 2,
+          "accepted_malformed": 0,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0
+        },
+        "success_rate": 100.0,
+        "exception_details": []
+      },
+      {
+        "name": "list_directory_with_sizes",
+        "runs": 2,
+        "successful": 2,
+        "exceptions": 0,
+        "safety_blocked": 0,
+        "outcomes": {
+          "server_rejected": 2,
+          "accepted_malformed": 0,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0
+        },
+        "success_rate": 100.0,
+        "exception_details": []
+      },
+      {
+        "name": "directory_tree",
+        "runs": 2,
+        "successful": 2,
+        "exceptions": 0,
+        "safety_blocked": 0,
+        "outcomes": {
+          "server_rejected": 2,
+          "accepted_malformed": 0,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0
+        },
+        "success_rate": 100.0,
+        "exception_details": []
+      },
+      {
+        "name": "move_file",
+        "runs": 2,
+        "successful": 2,
+        "exceptions": 0,
+        "safety_blocked": 0,
+        "outcomes": {
+          "server_rejected": 2,
+          "accepted_malformed": 0,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0
+        },
+        "success_rate": 100.0,
+        "exception_details": []
+      },
+      {
+        "name": "search_files",
+        "runs": 2,
+        "successful": 2,
+        "exceptions": 0,
+        "safety_blocked": 0,
+        "outcomes": {
+          "server_rejected": 2,
+          "accepted_malformed": 0,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0
+        },
+        "success_rate": 100.0,
+        "exception_details": []
+      },
+      {
+        "name": "get_file_info",
+        "runs": 2,
+        "successful": 2,
+        "exceptions": 0,
+        "safety_blocked": 0,
+        "outcomes": {
+          "server_rejected": 2,
+          "accepted_malformed": 0,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0
+        },
+        "success_rate": 100.0,
+        "exception_details": []
+      },
+      {
+        "name": "list_allowed_directories",
+        "runs": 2,
+        "successful": 0,
+        "exceptions": 0,
+        "safety_blocked": 0,
+        "outcomes": {
+          "server_rejected": 0,
+          "accepted_malformed": 2,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0
+        },
+        "success_rate": 0.0,
+        "exception_details": []
+      }
+    ],
+    "protocol_types_tested": [],
+    "spec_summary": {
+      "totals": {
+        "total": 0,
+        "failed": 0,
+        "warned": 0,
+        "passed": 0
+      },
+      "by_spec_id": {}
+    }
+  },
+  "metadata": {
+    "execution_time": "PT0.951205S",
+    "total_tests": 28,
+    "success_rate": 85.71428571428571,
+    "safety_enabled": false
+  }
+}

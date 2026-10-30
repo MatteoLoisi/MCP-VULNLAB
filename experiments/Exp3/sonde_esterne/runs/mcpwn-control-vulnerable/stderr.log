@@ -1,0 +1,11 @@
+[INFO] Starting Mcpwn
+[INFO] Discovery phase...
+[INFO] Found 6 tools, 0 resources
+[INFO] Testing tool injection...
+[WARNING] run_command: command_injection via command
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'uid=\\d+\\([^)]+\\)', 'match': 'uid=1001(targetuser)'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'gid=\\d+\\([^)]+\\)', 'match': 'gid=1001(targetuser)'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'groups=\\d+', 'match': 'groups=1001'}
+[INFO] Skipping subscription flood (safe mode)
+[INFO] Mcpwn complete
+[INFO] JSON report: /results/report.json

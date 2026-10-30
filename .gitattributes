@@ -1,0 +1,3 @@
+# Evidence files keep their original bytes: their SHA-256 values are recorded.
+experiments/** -text
+evidence/p5-filesystem-20261025/** -text

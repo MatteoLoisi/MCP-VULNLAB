@@ -1,0 +1,786 @@
+{
+  "schema": "exp3-probe-capture-v1",
+  "context": {
+    "target": "R3-sequential-thinking",
+    "attempt_id": "3a468eea40ee483289233153491cd611",
+    "target_command": [
+      "npx",
+      "-y",
+      "@modelcontextprotocol/server-sequential-thinking@1.0.0"
+    ],
+    "scan_target": ".",
+    "target_identity": {
+      "target": "R3-sequential-thinking",
+      "definition_sha256": "5ffdcf15365957adb37956943db5e8b46a9eec307b07a662c48f9e0940ae2371",
+      "manifest_sha256": "71156adadb7e944ec4e76beb135ac2d9913523bce20628bb3fc13eccbcb803d9",
+      "transport": "stdio",
+      "version": "1.0.0",
+      "configuration_sha256": "71c4056e04cd23299215d0e837e0773eaa33ebe23ea99c7bda8afa3cc35e8872"
+    },
+    "planned_findings": [
+      "P2-tool-poisoning"
+    ],
+    "manifest_path": "D:\\docker_proget\\V3\\tools\\exp3\\target_versions.json",
+    "profile": "black-box",
+    "command_marker": "EXP3_CMD_3a468eea40ee483289233153491cd611",
+    "source_sha256": {
+      "services/real-mcp-adapter/adapter.py": "f01b1003a689b6d9a68e9b63c14ddd6e9ff8c2c11a16c663005e20614284e425",
+      "services/real-mcp-adapter/real_target_check.py": "b15c9a8c047b710f6455d6220318f3e572162fdbfaa57827ff61dabcc20482ce",
+      "services/real-mcp-adapter/metadata_audit.py": "4ed6975cf09110b7515a2da0ba4cb195cc5dea2788b156601a7f68f06620b53c",
+      "tools/exp3/run_probes.py": "c32e46173e010cdd0d2520c8bbdc458fd9fa7bc75acd9c74454a950a28f4efe9",
+      "tools/exp3/probe_worker.py": "448b15c575e767a5e7ee3211598ff8aab932e12b38d8e4ef01699ddac2c62da0",
+      "tools/exp3/probe_capture.py": "b0cde206b99c9453bc0f0eedcfb25c883b39bf7bbcbd99ed25955f987ea2596c",
+      "tools/exp3/process_runner.py": "694f2f87badd1dc02b9e93c05f3890c03b55f02ad556b50ba354a461e1100d62",
+      "tools/exp3/attempt_records.py": "29cfa2287086751f817b668824b853db1c703d5db8db8b0f0c6eeffd62f77411",
+      "tools/exp3/versions.py": "3ba984b32b19f712911fe02782592f8dd169153bed58f65b46c912dd9d06174a",
+      "tools/exp3/evidence.py": "ba7b50ca7f75765f46ba2cfad07833d3f01b36e1226d3052c68ee5c923c96f31"
+    },
+    "runtime": {
+      "python": "3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]",
+      "executable": "C:\\Users\\ML\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+      "platform": "Windows-11-10.0.26300-SP0"
+    }
+  },
+  "calls": [
+    {
+      "id": "d8ddb3e521264a2fb48e0e8480a73bab",
+      "probe_id": "__handshake__",
+      "method": "fingerprint",
+      "args": [],
+      "kwargs": {},
+      "status": "completed",
+      "result": {
+        "transport": "stdio",
+        "era": "legacy",
+        "discover_error": "risposta non-discover: {'jsonrpc': '2.0', 'id': 1, 'error': {'code': -32601, 'message': 'Method not found'}}",
+        "initialize": {
+          "protocolVersion": "2025-11-25",
+          "capabilities": {
+            "tools": {
+              "listChanged": true
+            }
+          },
+          "serverInfo": {
+            "name": "sequential-thinking-server",
+            "version": "1.0.0"
+          }
+        }
+      },
+      "frames": [
+        {
+          "direction": "->",
+          "at": 1792309989.2522833,
+          "payload": {
+            "stdio": [
+              "npx",
+              "-y",
+              "@modelcontextprotocol/server-sequential-thinking@1.0.0"
+            ],
+            "body": {
+              "jsonrpc": "2.0",
+              "id": 1,
+              "method": "server/discover",
+              "params": {
+                "_meta": {
+                  "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+                  "io.modelcontextprotocol/clientInfo": {
+                    "name": "mcp-vulnlab-real-target",
+                    "version": "3.0.0"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "direction": "<-",
+          "at": 1792309992.2044845,
+          "payload": {
+            "jsonrpc": "2.0",
+            "id": 1,
+            "error": {
+              "code": -32601,
+              "message": "Method not found"
+            }
+          }
+        },
+        {
+          "direction": "->",
+          "at": 1792309992.2045472,
+          "payload": {
+            "stdio": [
+              "npx",
+              "-y",
+              "@modelcontextprotocol/server-sequential-thinking@1.0.0"
+            ],
+            "body": {
+              "jsonrpc": "2.0",
+              "id": 2,
+              "method": "initialize",
+              "params": {
+                "protocolVersion": "2025-11-25",
+                "capabilities": {},
+                "clientInfo": {
+                  "name": "mcp-vulnlab-real-target",
+                  "version": "3.0.0"
+                }
+              }
+            }
+          }
+        },
+        {
+          "direction": "<-",
+          "at": 1792309992.2075098,
+          "payload": {
+            "result": {
+              "protocolVersion": "2025-11-25",
+              "capabilities": {
+                "tools": {
+                  "listChanged": true
+                }
+              },
+              "serverInfo": {
+                "name": "sequential-thinking-server",
+                "version": "1.0.0"
+              }
+            },
+            "jsonrpc": "2.0",
+            "id": 2
+          }
+        },
+        {
+          "direction": "->",
+          "at": 1792309992.207544,
+          "payload": {
+            "stdio": [
+              "npx",
+              "-y",
+              "@modelcontextprotocol/server-sequential-thinking@1.0.0"
+            ],
+            "body": {
+              "jsonrpc": "2.0",
+              "method": "notifications/initialized"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "4037b2868d2c475bac5ef1ae4b50915c",
+      "probe_id": "P2-tool-poisoning",
+      "method": "list_tools",
+      "args": [],
+      "kwargs": {},
+      "status": "completed",
+      "result": [
+        {
+          "name": "sequentialthinking",
+          "title": "Sequential Thinking",
+          "description": "A detailed tool for dynamic and reflective problem-solving through thoughts.\nThis tool helps analyze problems through a flexible thinking process that can adapt and evolve.\nEach thought can build on, question, or revise previous insights as understanding deepens.\n\nWhen to use this tool:\n- Breaking down complex problems into steps\n- Planning and design with room for revision\n- Analysis that might need course correction\n- Problems where the full scope might not be clear initially\n- Problems that require a multi-step solution\n- Tasks that need to maintain context over multiple steps\n- Situations where irrelevant information needs to be filtered out\n\nKey features:\n- You can adjust total_thoughts up or down as you progress\n- You can question or revise previous thoughts\n- You can add more thoughts even after reaching what seemed like the end\n- You can express uncertainty and explore alternative approaches\n- Not every thought needs to build linearly - you can branch or backtrack\n- Generates a solution hypothesis\n- Verifies the hypothesis based on the Chain of Thought steps\n- Repeats the process until satisfied\n- Provides a correct answer\n\nParameters explained:\n- thought: Your current thinking step, which can include:\n  * Regular analytical steps\n  * Revisions of previous thoughts\n  * Questions about previous decisions\n  * Realizations about needing more analysis\n  * Changes in approach\n  * Hypothesis generation\n  * Hypothesis verification\n- nextThoughtNeeded: True if you need more thinking, even if at what seemed like the end\n- thoughtNumber: Current number in sequence (can go beyond initial total if needed)\n- totalThoughts: Current estimate of thoughts needed (can be adjusted up/down)\n- isRevision: A boolean indicating if this thought revises previous thinking\n- revisesThought: If is_revision is true, which thought number is being reconsidered\n- branchFromThought: If branching, which thought number is the branching point\n- branchId: Identifier for the current branch (if any)\n- needsMoreThoughts: If reaching end but realizing more thoughts needed\n\nYou should:\n1. Start with an initial estimate of needed thoughts, but be ready to adjust\n2. Feel free to question or revise previous thoughts\n3. Don't hesitate to add more thoughts if needed, even at the \"end\"\n4. Express uncertainty when present\n5. Mark thoughts that revise previous thinking or branch into new paths\n6. Ignore information that is irrelevant to the current step\n7. Generate a solution hypothesis when appropriate\n8. Verify the hypothesis based on the Chain of Thought steps\n9. Repeat the process until satisfied with the solution\n10. Provide a single, ideally correct answer as the final output\n11. Only set nextThoughtNeeded to false when truly done and a satisfactory answer is reached",
+          "inputSchema": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "object",
+            "properties": {
+              "thought": {
+                "type": "string",
+                "description": "Your current thinking step"
+              },
+              "nextThoughtNeeded": {
+                "description": "Whether another thought step is needed",
+                "type": [
+                  "boolean",
+                  "string"
+                ]
+              },
+              "thoughtNumber": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 9007199254740991,
+                "description": "Current thought number (numeric value, e.g., 1, 2, 3)"
+              },
+              "totalThoughts": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 9007199254740991,
+                "description": "Estimated total thoughts needed (numeric value, e.g., 5, 10)"
+              },
+              "isRevision": {
+                "description": "Whether this revises previous thinking",
+                "type": [
+                  "boolean",
+                  "string"
+                ]
+              },
+              "revisesThought": {
+                "description": "Which thought is being reconsidered",
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 9007199254740991
+              },
+              "branchFromThought": {
+                "description": "Branching point thought number",
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 9007199254740991
+              },
+              "branchId": {
+                "description": "Branch identifier",
+                "type": "string"
+              },
+              "needsMoreThoughts": {
+                "description": "If more thoughts are needed",
+                "type": [
+                  "boolean",
+                  "string"
+                ]
+              }
+            },
+            "required": [
+              "thought",
+              "nextThoughtNeeded",
+              "thoughtNumber",
+              "totalThoughts"
+            ]
+          },
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": false,
+            "idempotentHint": false,
+            "openWorldHint": false
+          },
+          "execution": {
+            "taskSupport": "forbidden"
+          },
+          "outputSchema": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "object",
+            "properties": {
+              "thoughtNumber": {
+                "type": "number"
+              },
+              "totalThoughts": {
+                "type": "number"
+              },
+              "nextThoughtNeeded": {
+                "type": "boolean"
+              },
+              "branches": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "thoughtHistoryLength": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "thoughtNumber",
+              "totalThoughts",
+              "nextThoughtNeeded",
+              "branches",
+              "thoughtHistoryLength"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "frames": [
+        {
+          "direction": "->",
+          "at": 1792309992.2103949,
+          "payload": {
+            "stdio": [
+              "npx",
+              "-y",
+              "@modelcontextprotocol/server-sequential-thinking@1.0.0"
+            ],
+            "body": {
+              "jsonrpc": "2.0",
+              "id": 3,
+              "method": "initialize",
+              "params": {
+                "protocolVersion": "2025-11-25",
+                "capabilities": {},
+                "clientInfo": {
+                  "name": "mcp-vulnlab-real-target",
+                  "version": "3.0.0"
+                }
+              }
+            }
+          }
+        },
+        {
+          "direction": "<-",
+          "at": 1792309992.2110417,
+          "payload": {
+            "result": {
+              "protocolVersion": "2025-11-25",
+              "capabilities": {
+                "tools": {
+                  "listChanged": true
+                }
+              },
+              "serverInfo": {
+                "name": "sequential-thinking-server",
+                "version": "1.0.0"
+              }
+            },
+            "jsonrpc": "2.0",
+            "id": 3
+          }
+        },
+        {
+          "direction": "->",
+          "at": 1792309992.211072,
+          "payload": {
+            "stdio": [
+              "npx",
+              "-y",
+              "@modelcontextprotocol/server-sequential-thinking@1.0.0"
+            ],
+            "body": {
+              "jsonrpc": "2.0",
+              "id": 4,
+              "method": "tools/list",
+              "params": {}
+            }
+          }
+        },
+        {
+          "direction": "<-",
+          "at": 1792309992.2151184,
+          "payload": {
+            "result": {
+              "tools": [
+                {
+                  "name": "sequentialthinking",
+                  "title": "Sequential Thinking",
+                  "description": "A detailed tool for dynamic and reflective problem-solving through thoughts.\nThis tool helps analyze problems through a flexible thinking process that can adapt and evolve.\nEach thought can build on, question, or revise previous insights as understanding deepens.\n\nWhen to use this tool:\n- Breaking down complex problems into steps\n- Planning and design with room for revision\n- Analysis that might need course correction\n- Problems where the full scope might not be clear initially\n- Problems that require a multi-step solution\n- Tasks that need to maintain context over multiple steps\n- Situations where irrelevant information needs to be filtered out\n\nKey features:\n- You can adjust total_thoughts up or down as you progress\n- You can question or revise previous thoughts\n- You can add more thoughts even after reaching what seemed like the end\n- You can express uncertainty and explore alternative approaches\n- Not every thought needs to build linearly - you can branch or backtrack\n- Generates a solution hypothesis\n- Verifies the hypothesis based on the Chain of Thought steps\n- Repeats the process until satisfied\n- Provides a correct answer\n\nParameters explained:\n- thought: Your current thinking step, which can include:\n  * Regular analytical steps\n  * Revisions of previous thoughts\n  * Questions about previous decisions\n  * Realizations about needing more analysis\n  * Changes in approach\n  * Hypothesis generation\n  * Hypothesis verification\n- nextThoughtNeeded: True if you need more thinking, even if at what seemed like the end\n- thoughtNumber: Current number in sequence (can go beyond initial total if needed)\n- totalThoughts: Current estimate of thoughts needed (can be adjusted up/down)\n- isRevision: A boolean indicating if this thought revises previous thinking\n- revisesThought: If is_revision is true, which thought number is being reconsidered\n- branchFromThought: If branching, which thought number is the branching point\n- branchId: Identifier for the current branch (if any)\n- needsMoreThoughts: If reaching end but realizing more thoughts needed\n\nYou should:\n1. Start with an initial estimate of needed thoughts, but be ready to adjust\n2. Feel free to question or revise previous thoughts\n3. Don't hesitate to add more thoughts if needed, even at the \"end\"\n4. Express uncertainty when present\n5. Mark thoughts that revise previous thinking or branch into new paths\n6. Ignore information that is irrelevant to the current step\n7. Generate a solution hypothesis when appropriate\n8. Verify the hypothesis based on the Chain of Thought steps\n9. Repeat the process until satisfied with the solution\n10. Provide a single, ideally correct answer as the final output\n11. Only set nextThoughtNeeded to false when truly done and a satisfactory answer is reached",
+                  "inputSchema": {
+                    "$schema": "http://json-schema.org/draft-07/schema#",
+                    "type": "object",
+                    "properties": {
+                      "thought": {
+                        "type": "string",
+                        "description": "Your current thinking step"
+                      },
+                      "nextThoughtNeeded": {
+                        "description": "Whether another thought step is needed",
+                        "type": [
+                          "boolean",
+                          "string"
+                        ]
+                      },
+                      "thoughtNumber": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 9007199254740991,
+                        "description": "Current thought number (numeric value, e.g., 1, 2, 3)"
+                      },
+                      "totalThoughts": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 9007199254740991,
+                        "description": "Estimated total thoughts needed (numeric value, e.g., 5, 10)"
+                      },
+                      "isRevision": {
+                        "description": "Whether this revises previous thinking",
+                        "type": [
+                          "boolean",
+                          "string"
+                        ]
+                      },
+                      "revisesThought": {
+                        "description": "Which thought is being reconsidered",
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 9007199254740991
+                      },
+                      "branchFromThought": {
+                        "description": "Branching point thought number",
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 9007199254740991
+                      },
+                      "branchId": {
+                        "description": "Branch identifier",
+                        "type": "string"
+                      },
+                      "needsMoreThoughts": {
+                        "description": "If more thoughts are needed",
+                        "type": [
+                          "boolean",
+                          "string"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "thought",
+                      "nextThoughtNeeded",
+                      "thoughtNumber",
+                      "totalThoughts"
+                    ]
+                  },
+                  "annotations": {
+                    "readOnlyHint": false,
+                    "destructiveHint": false,
+                    "idempotentHint": false,
+                    "openWorldHint": false
+                  },
+                  "execution": {
+                    "taskSupport": "forbidden"
+                  },
+                  "outputSchema": {
+                    "$schema": "http://json-schema.org/draft-07/schema#",
+                    "type": "object",
+                    "properties": {
+                      "thoughtNumber": {
+                        "type": "number"
+                      },
+                      "totalThoughts": {
+                        "type": "number"
+                      },
+                      "nextThoughtNeeded": {
+                        "type": "boolean"
+                      },
+                      "branches": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "thoughtHistoryLength": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "thoughtNumber",
+                      "totalThoughts",
+                      "nextThoughtNeeded",
+                      "branches",
+                      "thoughtHistoryLength"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              ]
+            },
+            "jsonrpc": "2.0",
+            "id": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "425fcd38f7e443cabe8f1e85bad1f407",
+      "probe_id": "__cleanup__",
+      "method": "close",
+      "args": [],
+      "kwargs": {},
+      "status": "completed",
+      "result": null,
+      "frames": []
+    }
+  ],
+  "findings": {
+    "P2-tool-poisoning": {
+      "status": "secure",
+      "proof": "nessuna istruzione sospetta in 1 DESCRIPTION (avg_score=100)",
+      "details": {
+        "count": 1,
+        "avg_score": 100,
+        "by_severity": {},
+        "audit": [
+          {
+            "tool": "sequentialthinking",
+            "score": 100,
+            "flags": []
+          }
+        ]
+      }
+    }
+  },
+  "transcript": [
+    {
+      "direction": "->",
+      "at": 1792309989.2522833,
+      "payload": {
+        "stdio": [
+          "npx",
+          "-y",
+          "@modelcontextprotocol/server-sequential-thinking@1.0.0"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 1,
+          "method": "server/discover",
+          "params": {
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792309992.2044845,
+      "payload": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "error": {
+          "code": -32601,
+          "message": "Method not found"
+        }
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792309992.2045472,
+      "payload": {
+        "stdio": [
+          "npx",
+          "-y",
+          "@modelcontextprotocol/server-sequential-thinking@1.0.0"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 2,
+          "method": "initialize",
+          "params": {
+            "protocolVersion": "2025-11-25",
+            "capabilities": {},
+            "clientInfo": {
+              "name": "mcp-vulnlab-real-target",
+              "version": "3.0.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792309992.2075098,
+      "payload": {
+        "result": {
+          "protocolVersion": "2025-11-25",
+          "capabilities": {
+            "tools": {
+              "listChanged": true
+            }
+          },
+          "serverInfo": {
+            "name": "sequential-thinking-server",
+            "version": "1.0.0"
+          }
+        },
+        "jsonrpc": "2.0",
+        "id": 2
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792309992.207544,
+      "payload": {
+        "stdio": [
+          "npx",
+          "-y",
+          "@modelcontextprotocol/server-sequential-thinking@1.0.0"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "method": "notifications/initialized"
+        }
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792309992.2103949,
+      "payload": {
+        "stdio": [
+          "npx",
+          "-y",
+          "@modelcontextprotocol/server-sequential-thinking@1.0.0"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 3,
+          "method": "initialize",
+          "params": {
+            "protocolVersion": "2025-11-25",
+            "capabilities": {},
+            "clientInfo": {
+              "name": "mcp-vulnlab-real-target",
+              "version": "3.0.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792309992.2110417,
+      "payload": {
+        "result": {
+          "protocolVersion": "2025-11-25",
+          "capabilities": {
+            "tools": {
+              "listChanged": true
+            }
+          },
+          "serverInfo": {
+            "name": "sequential-thinking-server",
+            "version": "1.0.0"
+          }
+        },
+        "jsonrpc": "2.0",
+        "id": 3
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1792309992.211072,
+      "payload": {
+        "stdio": [
+          "npx",
+          "-y",
+          "@modelcontextprotocol/server-sequential-thinking@1.0.0"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 4,
+          "method": "tools/list",
+          "params": {}
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1792309992.2151184,
+      "payload": {
+        "result": {
+          "tools": [
+            {
+              "name": "sequentialthinking",
+              "title": "Sequential Thinking",
+              "description": "A detailed tool for dynamic and reflective problem-solving through thoughts.\nThis tool helps analyze problems through a flexible thinking process that can adapt and evolve.\nEach thought can build on, question, or revise previous insights as understanding deepens.\n\nWhen to use this tool:\n- Breaking down complex problems into steps\n- Planning and design with room for revision\n- Analysis that might need course correction\n- Problems where the full scope might not be clear initially\n- Problems that require a multi-step solution\n- Tasks that need to maintain context over multiple steps\n- Situations where irrelevant information needs to be filtered out\n\nKey features:\n- You can adjust total_thoughts up or down as you progress\n- You can question or revise previous thoughts\n- You can add more thoughts even after reaching what seemed like the end\n- You can express uncertainty and explore alternative approaches\n- Not every thought needs to build linearly - you can branch or backtrack\n- Generates a solution hypothesis\n- Verifies the hypothesis based on the Chain of Thought steps\n- Repeats the process until satisfied\n- Provides a correct answer\n\nParameters explained:\n- thought: Your current thinking step, which can include:\n  * Regular analytical steps\n  * Revisions of previous thoughts\n  * Questions about previous decisions\n  * Realizations about needing more analysis\n  * Changes in approach\n  * Hypothesis generation\n  * Hypothesis verification\n- nextThoughtNeeded: True if you need more thinking, even if at what seemed like the end\n- thoughtNumber: Current number in sequence (can go beyond initial total if needed)\n- totalThoughts: Current estimate of thoughts needed (can be adjusted up/down)\n- isRevision: A boolean indicating if this thought revises previous thinking\n- revisesThought: If is_revision is true, which thought number is being reconsidered\n- branchFromThought: If branching, which thought number is the branching point\n- branchId: Identifier for the current branch (if any)\n- needsMoreThoughts: If reaching end but realizing more thoughts needed\n\nYou should:\n1. Start with an initial estimate of needed thoughts, but be ready to adjust\n2. Feel free to question or revise previous thoughts\n3. Don't hesitate to add more thoughts if needed, even at the \"end\"\n4. Express uncertainty when present\n5. Mark thoughts that revise previous thinking or branch into new paths\n6. Ignore information that is irrelevant to the current step\n7. Generate a solution hypothesis when appropriate\n8. Verify the hypothesis based on the Chain of Thought steps\n9. Repeat the process until satisfied with the solution\n10. Provide a single, ideally correct answer as the final output\n11. Only set nextThoughtNeeded to false when truly done and a satisfactory answer is reached",
+              "inputSchema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "type": "object",
+                "properties": {
+                  "thought": {
+                    "type": "string",
+                    "description": "Your current thinking step"
+                  },
+                  "nextThoughtNeeded": {
+                    "description": "Whether another thought step is needed",
+                    "type": [
+                      "boolean",
+                      "string"
+                    ]
+                  },
+                  "thoughtNumber": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 9007199254740991,
+                    "description": "Current thought number (numeric value, e.g., 1, 2, 3)"
+                  },
+                  "totalThoughts": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 9007199254740991,
+                    "description": "Estimated total thoughts needed (numeric value, e.g., 5, 10)"
+                  },
+                  "isRevision": {
+                    "description": "Whether this revises previous thinking",
+                    "type": [
+                      "boolean",
+                      "string"
+                    ]
+                  },
+                  "revisesThought": {
+                    "description": "Which thought is being reconsidered",
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 9007199254740991
+                  },
+                  "branchFromThought": {
+                    "description": "Branching point thought number",
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 9007199254740991
+                  },
+                  "branchId": {
+                    "description": "Branch identifier",
+                    "type": "string"
+                  },
+                  "needsMoreThoughts": {
+                    "description": "If more thoughts are needed",
+                    "type": [
+                      "boolean",
+                      "string"
+                    ]
+                  }
+                },
+                "required": [
+                  "thought",
+                  "nextThoughtNeeded",
+                  "thoughtNumber",
+                  "totalThoughts"
+                ]
+              },
+              "annotations": {
+                "readOnlyHint": false,
+                "destructiveHint": false,
+                "idempotentHint": false,
+                "openWorldHint": false
+              },
+              "execution": {
+                "taskSupport": "forbidden"
+              },
+              "outputSchema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "type": "object",
+                "properties": {
+                  "thoughtNumber": {
+                    "type": "number"
+                  },
+                  "totalThoughts": {
+                    "type": "number"
+                  },
+                  "nextThoughtNeeded": {
+                    "type": "boolean"
+                  },
+                  "branches": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "thoughtHistoryLength": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "thoughtNumber",
+                  "totalThoughts",
+                  "nextThoughtNeeded",
+                  "branches",
+                  "thoughtHistoryLength"
+                ],
+                "additionalProperties": false
+              }
+            }
+          ]
+        },
+        "jsonrpc": "2.0",
+        "id": 4
+      }
+    }
+  ]
+}

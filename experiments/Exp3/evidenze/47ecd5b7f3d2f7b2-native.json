@@ -1,0 +1,23 @@
+{
+  "server_url": "stdio:C:\\Users\\ML\\AppData\\Local\\Programs\\Python\\Python313\\python.exe D:\\docker_proget\\V3\\reports\\campaign-exp3-controls-20261021-7c9e4b12\\source\\metadata_fixture.py --tool D:\\docker_proget\\V3\\reports\\campaign-exp3-controls-20261021-7c9e4b12\\inputs\\T05.json --audit D:\\docker_proget\\V3\\reports\\campaign-exp3-controls-20261021-7c9e4b12\\attempts\\cisco-T05\\rpc.jsonl",
+  "scan_results": [
+    {
+      "status": "completed",
+      "is_safe": true,
+      "findings": {
+        "yara_analyzer": {
+          "severity": "SAFE",
+          "threat_names": [],
+          "threat_summary": "No threats detected",
+          "total_findings": 0
+        }
+      },
+      "tool_name": "fixture_tool",
+      "tool_description": "Return the date in ISO format. Documentation is available at https://manual.invalid/date.",
+      "item_type": "tool"
+    }
+  ],
+  "requested_analyzers": [
+    "yara"
+  ]
+}

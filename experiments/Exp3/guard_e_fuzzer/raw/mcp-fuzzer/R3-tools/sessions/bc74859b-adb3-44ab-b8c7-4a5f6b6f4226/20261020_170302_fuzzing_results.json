@@ -1,0 +1,49 @@
+{
+  "protocol_version": "1.0.0",
+  "timestamp": "2026-10-20T17:03:02.240661",
+  "tool_version": "0.7.0",
+  "session_id": "bc74859b-adb3-44ab-b8c7-4a5f6b6f4226",
+  "output_type": "fuzzing_results",
+  "data": {
+    "mode": "tools",
+    "protocol": "stdio",
+    "endpoint": "C:/Program Files/nodejs/node.EXE C:/Users/ML/AppData/Local/Temp/mcptargets/fuzz-npm/node_modules/@modelcontextprotocol/server-sequential-thinking/dist/index.js",
+    "total_tools": 1,
+    "total_protocol_types": 0,
+    "tools_tested": [
+      {
+        "name": "sequentialthinking",
+        "runs": 2,
+        "successful": 2,
+        "exceptions": 0,
+        "safety_blocked": 0,
+        "outcomes": {
+          "server_rejected": 2,
+          "accepted_malformed": 0,
+          "anomaly": 0,
+          "crashed": 0,
+          "exceptions": 0,
+          "safety_blocked": 0
+        },
+        "success_rate": 100.0,
+        "exception_details": []
+      }
+    ],
+    "protocol_types_tested": [],
+    "spec_summary": {
+      "totals": {
+        "total": 0,
+        "failed": 0,
+        "warned": 0,
+        "passed": 0
+      },
+      "by_spec_id": {}
+    }
+  },
+  "metadata": {
+    "execution_time": "PT0.444968S",
+    "total_tests": 2,
+    "success_rate": 100.0,
+    "safety_enabled": false
+  }
+}

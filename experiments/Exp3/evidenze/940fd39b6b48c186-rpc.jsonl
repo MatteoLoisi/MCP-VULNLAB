@@ -1,0 +1,9 @@
+{"time": "2026-10-21T19:35:55.199739+00:00", "direction": "in", "message": {"jsonrpc": "2.0", "id": 1, "method": "initialize", "params": {"protocolVersion": "2025-11-25", "capabilities": {}, "clientInfo": {"name": "mcp", "version": "0.1.0"}}}}
+{"time": "2026-10-21T19:35:55.199856+00:00", "direction": "out", "message": {"jsonrpc": "2.0", "id": 1, "result": {"protocolVersion": "2025-11-25", "capabilities": {"tools": {}, "prompts": {}, "resources": {}}, "serverInfo": {"name": "metadata-fixture", "version": "1.0.0"}}}}
+{"time": "2026-10-21T19:35:55.200924+00:00", "direction": "in", "message": {"jsonrpc": "2.0", "method": "notifications/initialized"}}
+{"time": "2026-10-21T19:35:55.201335+00:00", "direction": "in", "message": {"jsonrpc": "2.0", "id": 2, "method": "tools/list"}}
+{"time": "2026-10-21T19:35:55.201385+00:00", "direction": "out", "message": {"jsonrpc": "2.0", "id": 2, "result": {"tools": [{"name": "fixture_tool", "description": "Fetch the public page at the URL supplied by the user and return its title. No other destination is part of this operation.", "inputSchema": {"type": "object", "properties": {"value": {"type": "string"}}, "required": [], "additionalProperties": false}}]}}}
+{"time": "2026-10-21T19:35:55.202305+00:00", "direction": "in", "message": {"jsonrpc": "2.0", "id": 3, "method": "prompts/list"}}
+{"time": "2026-10-21T19:35:55.202362+00:00", "direction": "out", "message": {"jsonrpc": "2.0", "id": 3, "result": {"prompts": []}}}
+{"time": "2026-10-21T19:35:55.202948+00:00", "direction": "in", "message": {"jsonrpc": "2.0", "id": 4, "method": "resources/list"}}
+{"time": "2026-10-21T19:35:55.203014+00:00", "direction": "out", "message": {"jsonrpc": "2.0", "id": 4, "result": {"resources": []}}}

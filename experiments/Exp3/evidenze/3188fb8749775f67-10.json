@@ -1,0 +1,33 @@
+{
+  "schema": "exp3-evidence-v1",
+  "target": "c8",
+  "attempt_id": "131efd897eb74f82ad64b30851b16d1c",
+  "finding_id": "P4-arg-injection",
+  "type": "command_output",
+  "request": {
+    "id": "aaa9de6fbf5c4416860a5a65a67cfd92",
+    "captured_args": [
+      "execute_shell_command",
+      {
+        "command": "whoami & echo EXP3_CMD_131efd897eb74f82ad64b30851b16d1c & rem "
+      }
+    ],
+    "captured_kwargs": {},
+    "marker": "EXP3_CMD_131efd897eb74f82ad64b30851b16d1c"
+  },
+  "response": {
+    "request_id": "aaa9de6fbf5c4416860a5a65a67cfd92",
+    "completed": true,
+    "ok": true,
+    "output": "Command executed successfully:\n\nlaptop-drfhjk35\\ml\r\nEXP3_CMD_131efd897eb74f82ad64b30851b16d1c \r\n",
+    "content_sha256": "6a95d8b6790e74e2b98dd4d150ed5fcd1715ada343ae1910ef54616fc5f4048f"
+  },
+  "expected": {
+    "marker": "EXP3_CMD_131efd897eb74f82ad64b30851b16d1c"
+  },
+  "coverage_complete": false,
+  "coverage_reason": "positive observed; remaining sweep not certified",
+  "capture_ref": "capture.json",
+  "capture_sha256": "ba068d6ef92e038ff7db209c38d90ecd551ea8250423af535a22052aac6b2b12",
+  "source_call_index": 10
+}

@@ -1,0 +1,90 @@
+{
+  "schema": "exp3-probe-report-v1",
+  "producer": "exp3-probe-worker-v1",
+  "target": "c10",
+  "attempt_id": "a3840c8d5ae04e709dd15db42bc7032b",
+  "status": "completed",
+  "target_identity": {
+    "target": "c10",
+    "definition_sha256": "bc275307e6134027064df8a077cf5cdefd1c79b2882ec8b95785856cf315447e",
+    "manifest_sha256": "71156adadb7e944ec4e76beb135ac2d9913523bce20628bb3fc13eccbcb803d9",
+    "transport": "stdio",
+    "version": "79734c19f5104cd11486c90926d245560f53befa",
+    "shim_sha256": "da2c7bfdcb3b319bf3efc0df6f9a1fa1f5b79058ce619860f3821a93739a7766",
+    "configuration_sha256": "37bee720d3a05921b1fada3d5865dcc8fbaf23dd4a25be019f9b0cecfaf92d9f"
+  },
+  "target_command": [
+    "python",
+    "D:\\docker_proget\\V3\\tools\\dvmcp_stdio.py",
+    "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\hard\\challenge10"
+  ],
+  "scan_target": "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\hard\\challenge10",
+  "planned_findings": [
+    "P2-tool-poisoning"
+  ],
+  "profile": "black-box",
+  "raw_ref": "capture.json",
+  "raw_sha256": "d720ed5d3cb54b2601391d26fb58255eff849b41b73920fe3b12d9e5d256af29",
+  "findings": {
+    "P2-tool-poisoning": {
+      "status": "vulnerable",
+      "proof": "istruzioni malevole in DESCRIPTION di: ['malicious_check_system_status (covert-instruction)']",
+      "details": {
+        "count": 6,
+        "avg_score": 87,
+        "by_severity": {
+          "medium": 2,
+          "critical": 1
+        },
+        "audit": [
+          {
+            "tool": "malicious_check_system_status",
+            "score": 40,
+            "flags": [
+              {
+                "code": "covert-instruction",
+                "severity": "critical",
+                "detail": "istruzione di azione + occultamento in DESCRIPTION (redirezione a una risorsa senza menzionarla)"
+              }
+            ]
+          },
+          {
+            "tool": "authenticate",
+            "score": 90,
+            "flags": [
+              {
+                "code": "secret-word",
+                "severity": "medium",
+                "detail": "parola sensibile in DESCRIPTION: password"
+              }
+            ]
+          },
+          {
+            "tool": "get_user_profile",
+            "score": 90,
+            "flags": [
+              {
+                "code": "secret-word",
+                "severity": "medium",
+                "detail": "parola sensibile in DESCRIPTION: password"
+              }
+            ]
+          },
+          {
+            "tool": "run_system_diagnostic",
+            "score": 100,
+            "flags": []
+          },
+          {
+            "tool": "check_system_status",
+            "score": 100,
+            "flags": []
+          }
+        ]
+      },
+      "evidence_reason": "derived from captured call",
+      "evidence_ref": "evidence/1.json",
+      "evidence_sha256": "e5926f9bb1f797cb083d730303d4577b2e62d9343fb0ad0087321a54d54384ad"
+    }
+  }
+}

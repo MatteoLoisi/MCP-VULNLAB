@@ -1,0 +1,11 @@
+{
+  "tool": "list_allowed_directories",
+  "isError": false,
+  "content": [
+    "Allowed directories:\nC:\\Users\\ML\\AppData\\Local\\Temp\\mcptargets\\fuzz-r1-root"
+  ],
+  "structured": {
+    "content": "Allowed directories:\nC:\\Users\\ML\\AppData\\Local\\Temp\\mcptargets\\fuzz-r1-root"
+  },
+  "conclusion": "returns only the configured allowed root; no file content, no sensitive access"
+}

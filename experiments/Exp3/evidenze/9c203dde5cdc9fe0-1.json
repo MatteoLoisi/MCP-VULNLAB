@@ -1,0 +1,24 @@
+{
+  "schema": "exp3-evidence-v1",
+  "target": "c4",
+  "attempt_id": "f20cdc7f3379490cbd3b0bb21ea1e18b",
+  "finding_id": "P2-tool-poisoning",
+  "type": "negative_check",
+  "applicable": true,
+  "scope": "textual",
+  "request": {
+    "id": "ca12eaab9bb3439ebc5fdbb34b8a0cae",
+    "captured_args": [],
+    "captured_kwargs": {}
+  },
+  "response": {
+    "request_id": "ca12eaab9bb3439ebc5fdbb34b8a0cae",
+    "completed": true,
+    "outcome": "no_indicator",
+    "observed": "[{\"name\": \"get_weather_forecast\", \"description\": \"Get the weather forecast for a specified city.\\n\\nArgs:\\n    city: The name of the city to get the forecast for\\n\\nReturns:\\n    The weather forecast for the specified city\\n\", \"inputSchema\": {\"properties\": {\"city\": {\"title\": \"City\", \"type\": \"string\"}}, \"required\": [\"city\"], \"title\": \"get_weather_forecastArguments\", \"type\": \"object\"}, \"outputSchema\": {\"properties\": {\"result\": {\"title\": \"Result\", \"type\": \"string\"}}, \"required\": [\"result\"], \"title\": \"get_weather_forecastOutput\", \"type\": \"object\"}}, {\"name\": \"reset_challenge\", \"description\": \"Reset the challenge state to start over\", \"inputSchema\": {\"properties\": {}, \"title\": \"reset_challengeArguments\", \"type\": \"object\"}, \"outputSchema\": {\"properties\": {\"result\": {\"title\": \"Result\", \"type\": \"string\"}}, \"required\": [\"result\"], \"title\": \"reset_challengeOutput\", \"type\": \"object\"}}]"
+  },
+  "coverage_complete": true,
+  "capture_ref": "capture.json",
+  "capture_sha256": "37a6cbedf5542a959c0e6b7a3a8e79d7f56ce7a2f7da54e8f4a0a382e337a2ef",
+  "source_call_index": 1
+}

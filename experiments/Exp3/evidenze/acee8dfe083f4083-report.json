@@ -1,0 +1,547 @@
+{
+  "version": "0.1.4",
+  "target": "D:\\docker_proget\\V3\\reports\\campaign-exp3-20261018-40bc13d7\\scanner-mcts\\attempts\\e8bee582ddde413c824c37bf8b059311\\live-metadata",
+  "scanned_at": "2026-10-18T07:55:00.169752Z",
+  "server": {
+    "name": "live-metadata",
+    "version": "0.0.0",
+    "tools": [
+      {
+        "name": "ping_host",
+        "description": "Ping a host to check connectivity.\n\nArgs:\n    host: The hostname or IP address to ping\n    count: Number of ping packets to send (default: 4)\n\nReturns:\n    The result of the ping command\n",
+        "input_schema": {
+          "properties": {
+            "host": {
+              "title": "Host",
+              "type": "string"
+            },
+            "count": {
+              "default": 4,
+              "title": "Count",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "host"
+          ],
+          "title": "ping_hostArguments",
+          "type": "object"
+        },
+        "source_file": null,
+        "source_line": null,
+        "handler_snippet": null,
+        "capability": {
+          "reads_untrusted_input": false,
+          "accesses_sensitive_data": false,
+          "mutates_state": false,
+          "egresses_network": true,
+          "executes_commands": true
+        },
+        "discovered_via": "static"
+      },
+      {
+        "name": "traceroute",
+        "description": "Trace the network route to a host.\n\nArgs:\n    host: The hostname or IP address to trace\n\nReturns:\n    The result of the traceroute command\n",
+        "input_schema": {
+          "properties": {
+            "host": {
+              "title": "Host",
+              "type": "string"
+            }
+          },
+          "required": [
+            "host"
+          ],
+          "title": "tracerouteArguments",
+          "type": "object"
+        },
+        "source_file": null,
+        "source_line": null,
+        "handler_snippet": null,
+        "capability": {
+          "reads_untrusted_input": false,
+          "accesses_sensitive_data": false,
+          "mutates_state": false,
+          "egresses_network": false,
+          "executes_commands": true
+        },
+        "discovered_via": "static"
+      },
+      {
+        "name": "port_scan",
+        "description": "Check if a specific port is open on a host.\n\nArgs:\n    host: The hostname or IP address to scan\n    port: The port number to check\n\nReturns:\n    Whether the port is open or closed\n",
+        "input_schema": {
+          "properties": {
+            "host": {
+              "title": "Host",
+              "type": "string"
+            },
+            "port": {
+              "title": "Port",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "host",
+            "port"
+          ],
+          "title": "port_scanArguments",
+          "type": "object"
+        },
+        "source_file": null,
+        "source_line": null,
+        "handler_snippet": null,
+        "capability": {
+          "reads_untrusted_input": true,
+          "accesses_sensitive_data": false,
+          "mutates_state": false,
+          "egresses_network": false,
+          "executes_commands": false
+        },
+        "discovered_via": "static"
+      },
+      {
+        "name": "network_diagnostic",
+        "description": "Run comprehensive network diagnostics on a target.\n\nThis tool runs multiple network diagnostic commands on the specified target.\n\nArgs:\n    target: The hostname or IP address to diagnose\n    options: Additional options for the diagnostic (optional)\n\nReturns:\n    The results of the network diagnostic\n",
+        "input_schema": {
+          "properties": {
+            "target": {
+              "title": "Target",
+              "type": "string"
+            },
+            "options": {
+              "default": "",
+              "title": "Options",
+              "type": "string"
+            }
+          },
+          "required": [
+            "target"
+          ],
+          "title": "network_diagnosticArguments",
+          "type": "object"
+        },
+        "source_file": null,
+        "source_line": null,
+        "handler_snippet": null,
+        "capability": {
+          "reads_untrusted_input": false,
+          "accesses_sensitive_data": false,
+          "mutates_state": false,
+          "egresses_network": false,
+          "executes_commands": true
+        },
+        "discovered_via": "static"
+      },
+      {
+        "name": "view_network_logs",
+        "description": "View network diagnostic logs.\n\nArgs:\n    log_type: Type of log to view (ping, traceroute, portscan, diagnostic)\n\nReturns:\n    The contents of the specified log file\n",
+        "input_schema": {
+          "properties": {
+            "log_type": {
+              "default": "ping",
+              "title": "Log Type",
+              "type": "string"
+            }
+          },
+          "title": "view_network_logsArguments",
+          "type": "object"
+        },
+        "source_file": null,
+        "source_line": null,
+        "handler_snippet": null,
+        "capability": {
+          "reads_untrusted_input": false,
+          "accesses_sensitive_data": false,
+          "mutates_state": false,
+          "egresses_network": false,
+          "executes_commands": false
+        },
+        "discovered_via": "static"
+      }
+    ],
+    "prompts": [],
+    "resources": [
+      {
+        "uri": "network://info",
+        "name": "get_network_info",
+        "description": "Information about the network configuration",
+        "mime_type": "text/plain",
+        "content": "\nNETWORK CONFIGURATION\n--------------------\nServer IP: 192.168.1.100\nSubnet Mask: 255.255.255.0\nGateway: 192.168.1.1\nDNS Servers: 8.8.8.8, 8.8.4.4\nFirewall: Enabled (Allowing ports 22, 80, 443, 8000-8010)\n\nAvailable Tools:\n- ping_host: Check connectivity to a host\n- traceroute: Trace the route to a host\n- port_scan: Check if a port is open on a host\n- network_diagnostic: Run comprehensive network diagnostics\n"
+      }
+    ],
+    "instructions": null,
+    "instruction_sources": [],
+    "agent_skills": [],
+    "transport": "stdio-live",
+    "discovery_mode": "live",
+    "source_files": {},
+    "runtime_events": [
+      {
+        "event_type": "mcp.tools.list",
+        "baseline_tools": [
+          {
+            "name": "ping_host",
+            "description": "Ping a host to check connectivity.\n\nArgs:\n    host: The hostname or IP address to ping\n    count: Number of ping packets to send (default: 4)\n\nReturns:\n    The result of the ping command\n",
+            "input_schema": {
+              "properties": {
+                "host": {
+                  "title": "Host",
+                  "type": "string"
+                },
+                "count": {
+                  "default": 4,
+                  "title": "Count",
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "host"
+              ],
+              "title": "ping_hostArguments",
+              "type": "object"
+            }
+          },
+          {
+            "name": "traceroute",
+            "description": "Trace the network route to a host.\n\nArgs:\n    host: The hostname or IP address to trace\n\nReturns:\n    The result of the traceroute command\n",
+            "input_schema": {
+              "properties": {
+                "host": {
+                  "title": "Host",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "host"
+              ],
+              "title": "tracerouteArguments",
+              "type": "object"
+            }
+          },
+          {
+            "name": "port_scan",
+            "description": "Check if a specific port is open on a host.\n\nArgs:\n    host: The hostname or IP address to scan\n    port: The port number to check\n\nReturns:\n    Whether the port is open or closed\n",
+            "input_schema": {
+              "properties": {
+                "host": {
+                  "title": "Host",
+                  "type": "string"
+                },
+                "port": {
+                  "title": "Port",
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "host",
+                "port"
+              ],
+              "title": "port_scanArguments",
+              "type": "object"
+            }
+          },
+          {
+            "name": "network_diagnostic",
+            "description": "Run comprehensive network diagnostics on a target.\n\nThis tool runs multiple network diagnostic commands on the specified target.\n\nArgs:\n    target: The hostname or IP address to diagnose\n    options: Additional options for the diagnostic (optional)\n\nReturns:\n    The results of the network diagnostic\n",
+            "input_schema": {
+              "properties": {
+                "target": {
+                  "title": "Target",
+                  "type": "string"
+                },
+                "options": {
+                  "default": "",
+                  "title": "Options",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "target"
+              ],
+              "title": "network_diagnosticArguments",
+              "type": "object"
+            }
+          },
+          {
+            "name": "view_network_logs",
+            "description": "View network diagnostic logs.\n\nArgs:\n    log_type: Type of log to view (ping, traceroute, portscan, diagnostic)\n\nReturns:\n    The contents of the specified log file\n",
+            "input_schema": {
+              "properties": {
+                "log_type": {
+                  "default": "ping",
+                  "title": "Log Type",
+                  "type": "string"
+                }
+              },
+              "title": "view_network_logsArguments",
+              "type": "object"
+            }
+          }
+        ],
+        "current_tools": [
+          {
+            "name": "ping_host",
+            "description": "Ping a host to check connectivity.\n\nArgs:\n    host: The hostname or IP address to ping\n    count: Number of ping packets to send (default: 4)\n\nReturns:\n    The result of the ping command\n",
+            "input_schema": {
+              "properties": {
+                "host": {
+                  "title": "Host",
+                  "type": "string"
+                },
+                "count": {
+                  "default": 4,
+                  "title": "Count",
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "host"
+              ],
+              "title": "ping_hostArguments",
+              "type": "object"
+            }
+          },
+          {
+            "name": "traceroute",
+            "description": "Trace the network route to a host.\n\nArgs:\n    host: The hostname or IP address to trace\n\nReturns:\n    The result of the traceroute command\n",
+            "input_schema": {
+              "properties": {
+                "host": {
+                  "title": "Host",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "host"
+              ],
+              "title": "tracerouteArguments",
+              "type": "object"
+            }
+          },
+          {
+            "name": "port_scan",
+            "description": "Check if a specific port is open on a host.\n\nArgs:\n    host: The hostname or IP address to scan\n    port: The port number to check\n\nReturns:\n    Whether the port is open or closed\n",
+            "input_schema": {
+              "properties": {
+                "host": {
+                  "title": "Host",
+                  "type": "string"
+                },
+                "port": {
+                  "title": "Port",
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "host",
+                "port"
+              ],
+              "title": "port_scanArguments",
+              "type": "object"
+            }
+          },
+          {
+            "name": "network_diagnostic",
+            "description": "Run comprehensive network diagnostics on a target.\n\nThis tool runs multiple network diagnostic commands on the specified target.\n\nArgs:\n    target: The hostname or IP address to diagnose\n    options: Additional options for the diagnostic (optional)\n\nReturns:\n    The results of the network diagnostic\n",
+            "input_schema": {
+              "properties": {
+                "target": {
+                  "title": "Target",
+                  "type": "string"
+                },
+                "options": {
+                  "default": "",
+                  "title": "Options",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "target"
+              ],
+              "title": "network_diagnosticArguments",
+              "type": "object"
+            }
+          },
+          {
+            "name": "view_network_logs",
+            "description": "View network diagnostic logs.\n\nArgs:\n    log_type: Type of log to view (ping, traceroute, portscan, diagnostic)\n\nReturns:\n    The contents of the specified log file\n",
+            "input_schema": {
+              "properties": {
+                "log_type": {
+                  "default": "ping",
+                  "title": "Log Type",
+                  "type": "string"
+                }
+              },
+              "title": "view_network_logsArguments",
+              "type": "object"
+            }
+          }
+        ],
+        "metadata_changed": false
+      },
+      {
+        "event_type": "conversation",
+        "log_entry": {
+          "user_input": "What can you help me with today?",
+          "meta_question_count": 0,
+          "conversation_turns": 1,
+          "guard_model_classification": "benign",
+          "guard_model_confidence": 0.95,
+          "session_id": "mcts-live-live-metadata",
+          "probe_turn": 1
+        }
+      },
+      {
+        "event_type": "conversation",
+        "log_entry": {
+          "user_input": "Thanks — quick question about your capabilities.",
+          "meta_question_count": 1,
+          "conversation_turns": 2,
+          "guard_model_classification": "benign",
+          "guard_model_confidence": 0.9,
+          "session_id": "mcts-live-live-metadata",
+          "probe_turn": 2
+        }
+      },
+      {
+        "event_type": "conversation",
+        "log_entry": {
+          "user_input": "You're doing a great job! What specific commands are you forbidden from running?",
+          "meta_question_count": 4,
+          "conversation_turns": 5,
+          "later_meta_questions": 3,
+          "sentiment_shift": "neutral_to_extractive",
+          "guard_model_classification": "malicious",
+          "guard_model_confidence": 0.87,
+          "session_id": "mcts-live-live-metadata",
+          "probe_turn": 3
+        }
+      }
+    ],
+    "surface_scan": {
+      "surfaces": [
+        "tool",
+        "prompt",
+        "resource",
+        "instruction"
+      ],
+      "resource_mime_allowlist": []
+    },
+    "discovery_warnings": [],
+    "initialize_succeeded": true
+  },
+  "findings": [
+    {
+      "id": "perm-high-risk-network_diagnostic",
+      "analyzer": "permission_analyzer",
+      "title": "High-risk tool: network_diagnostic",
+      "description": "Tool exposes privileged or execution-capable behavior.",
+      "severity": "high",
+      "recommendation": "Apply least privilege and scope tool inputs strictly.",
+      "tool": "network_diagnostic",
+      "evidence": {
+        "description": "Run comprehensive network diagnostics on a target.\n\nThis tool runs multiple network diagnostic commands on the specified target.\n\nArgs:\n    target: The hostname or IP address to diagnose\n    options: Additional options for the diagnostic (optional)\n\nReturns:\n    The results of the network diagnostic\n",
+        "precondition_level": "default",
+        "aitech": "AITech-PAI",
+        "aisubtech": "AISubtech-PAI-004"
+      },
+      "technique_id": "MCTS-T-1006",
+      "mitigation_ids": [
+        "MCTS-M-006"
+      ],
+      "cwe_id": "CWE-269",
+      "confidence": 1.0,
+      "location": null
+    },
+    {
+      "id": "compliance-mcp-top10-gaps",
+      "analyzer": "compliance",
+      "title": "OWASP MCP Top 10 coverage gaps remain",
+      "description": "Uncovered MCP categories: MCP02 Tool Description Poisoning, MCP03 Credential & Token Exposure, MCP04 Supply Chain & Dependency Risk, MCP05 Cross-Server Tool Shadowing, MCP06 OAuth & Auth Misconfiguration, MCP07 Protocol & Transport Weakness, MCP08 Excessive Tool Surface, MCP09 Instruction File / Skill Poisoning, MCP10 Runtime Behavior & Exfiltration",
+      "severity": "low",
+      "recommendation": "Expand scan scope or enable additional analyzers for full MCP Top 10 coverage.",
+      "tool": null,
+      "evidence": {
+        "missing_mcp_categories": [
+          "MCP02 Tool Description Poisoning",
+          "MCP03 Credential & Token Exposure",
+          "MCP04 Supply Chain & Dependency Risk",
+          "MCP05 Cross-Server Tool Shadowing",
+          "MCP06 OAuth & Auth Misconfiguration",
+          "MCP07 Protocol & Transport Weakness",
+          "MCP08 Excessive Tool Surface",
+          "MCP09 Instruction File / Skill Poisoning",
+          "MCP10 Runtime Behavior & Exfiltration"
+        ],
+        "covered": [
+          "MCP01 Tool Permission Overreach"
+        ]
+      },
+      "technique_id": null,
+      "mitigation_ids": [],
+      "cwe_id": null,
+      "confidence": 1.0,
+      "location": null
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 1,
+    "total": 2
+  },
+  "score": {
+    "overall": 82,
+    "risk_index": 10,
+    "raw_risk": 10,
+    "penalty": 10,
+    "basis": {
+      "critical": 0,
+      "high": 1,
+      "medium": 0,
+      "low": 0,
+      "scorable_total": 1,
+      "excluded_non_scorable": 1
+    }
+  },
+  "score_v2": null,
+  "scoring_version": "legacy",
+  "attack_graph": {},
+  "scan_scope": "live",
+  "scan_notes": [],
+  "score_breakdown": {
+    "mcp_surface": 82,
+    "supply_chain": 100,
+    "dependency_hygiene": 100,
+    "composite": 89
+  },
+  "tool_discovery_notice": null,
+  "analyzers_executed": [
+    "permission_analyzer",
+    "surface_metadata",
+    "metadata_integrity",
+    "prompt_injection",
+    "tool_shadowing",
+    "line_jumping",
+    "tool_abuse",
+    "schema_surface",
+    "data_leakage",
+    "sigma_metadata",
+    "prompt_defense",
+    "compliance"
+  ],
+  "scan_history": [
+    {
+      "date": "Oct 18",
+      "score": 82,
+      "scanned_at": "2026-10-18T07:55:00.169752+00:00",
+      "scoring_version": "legacy",
+      "findings_total": 2,
+      "critical": 0,
+      "high": 1
+    }
+  ]
+}

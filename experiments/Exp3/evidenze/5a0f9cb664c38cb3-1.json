@@ -1,0 +1,24 @@
+{
+  "schema": "exp3-evidence-v1",
+  "target": "c6",
+  "attempt_id": "39803e7147864db2932d51efbeb16828",
+  "finding_id": "P2-tool-poisoning",
+  "type": "negative_check",
+  "applicable": true,
+  "scope": "textual",
+  "request": {
+    "id": "f8335d2cc7824094919207619a6570f9",
+    "captured_args": [],
+    "captured_kwargs": {}
+  },
+  "response": {
+    "request_id": "f8335d2cc7824094919207619a6570f9",
+    "completed": true,
+    "outcome": "no_indicator",
+    "observed": "[{\"name\": \"read_document\", \"description\": \"Read a document from the system.\\n\\nArgs:\\n    document_name: Name of the document to read\\n\\nReturns:\\n    The contents of the document\\n\", \"inputSchema\": {\"properties\": {\"document_name\": {\"title\": \"Document Name\", \"type\": \"string\"}}, \"required\": [\"document_name\"], \"title\": \"read_documentArguments\", \"type\": \"object\"}, \"outputSchema\": {\"properties\": {\"result\": {\"title\": \"Result\", \"type\": \"string\"}}, \"required\": [\"result\"], \"title\": \"read_documentOutput\", \"type\": \"object\"}}, {\"name\": \"read_upload\", \"description\": \"Read a document uploaded by a user.\\n\\nArgs:\\n    upload_name: Name of the uploaded document to read\\n\\nReturns:\\n    The contents of the uploaded document\\n\", \"inputSchema\": {\"properties\": {\"upload_name\": {\"title\": \"Upload Name\", \"type\": \"string\"}}, \"required\": [\"upload_name\"], \"title\": \"read_uploadArguments\", \"type\": \"object\"}, \"outputSchema\": {\"properties\": {\"result\": {\"title\": \"Result\", \"type\": \"string\"}}, \"required\": [\"result\"], \"title\": \"read_uploadOutput\", \"type\": \"object\"}}, {\"name\": \"upload_and_process_document\", \"description\": \"Upload and process a document.\\n\\nThis tool allows users to upload a document, which is then processed and analyzed.\\nThe document will be stored in the user uploads directory.\\n\\nArgs:\\n    document_name: Name to give the uploaded document\\n    content: The text content of the document\\n\\nReturns:\\n    A summary and analysis of the document\\n\", \"inputSchema\": {\"properties\": {\"document_name\": {\"title\": \"Document Name\", \"type\": \"string\"}, \"content\": {\"title\": \"Content\", \"type\": \"string\"}}, \"required\": [\"document_name\", \"content\"], \"title\": \"upload_and_process_documentArguments\", \"type\": \"object\"}, \"outputSchema\": {\"properties\": {\"result\": {\"title\": \"Result\", \"type\": \"string\"}}, \"required\": [\"result\"], \"title\": \"upload_and_process_documentOutput\", \"type\": \"object\"}}, {\"name\": \"search_documents\", \"description\": \"Search for a keyword across all documents and user uploads.\\n\\nArgs:\\n    keyword: The keyword to search for\\n\\nReturns:\\n    List of documents containing the keyword and relevant excerpts\\n\", \"inputSchema\": {\"properties\": {\"keyword\": {\"title\": \"Keyword\", \"type\": \"string\"}}, \"required\": [\"keyword\"], \"title\": \"search_documentsArguments\", \"type\": \"object\"}, \"outputSchema\": {\"properties\": {\"result\": {\"title\": \"Result\", \"type\": \"string\"}}, \"required\": [\"result\"], \"title\": \"search_documentsOutput\", \"type\": \"object\"}}]"
+  },
+  "coverage_complete": true,
+  "capture_ref": "capture.json",
+  "capture_sha256": "934ace6b19afda6649f4c0087a87434f0de458c671c77d1a943dcac1c0538d69",
+  "source_call_index": 1
+}

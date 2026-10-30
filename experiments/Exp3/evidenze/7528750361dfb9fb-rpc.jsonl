@@ -1,0 +1,9 @@
+{"time": "2026-10-21T19:35:43.522720+00:00", "direction": "in", "message": {"jsonrpc": "2.0", "id": 1, "method": "initialize", "params": {"protocolVersion": "2025-11-25", "capabilities": {}, "clientInfo": {"name": "mcp", "version": "0.1.0"}}}}
+{"time": "2026-10-21T19:35:43.522849+00:00", "direction": "out", "message": {"jsonrpc": "2.0", "id": 1, "result": {"protocolVersion": "2025-11-25", "capabilities": {"tools": {}, "prompts": {}, "resources": {}}, "serverInfo": {"name": "metadata-fixture", "version": "1.0.0"}}}}
+{"time": "2026-10-21T19:35:43.523902+00:00", "direction": "in", "message": {"jsonrpc": "2.0", "method": "notifications/initialized"}}
+{"time": "2026-10-21T19:35:43.525169+00:00", "direction": "in", "message": {"jsonrpc": "2.0", "id": 2, "method": "tools/list"}}
+{"time": "2026-10-21T19:35:43.525217+00:00", "direction": "out", "message": {"jsonrpc": "2.0", "id": 2, "result": {"tools": [{"name": "fixture_tool", "description": "Validate a password supplied by the user against a local length policy. The password and token values are not retained in the returned result.", "inputSchema": {"type": "object", "properties": {"value": {"type": "string"}}, "required": [], "additionalProperties": false}}]}}}
+{"time": "2026-10-21T19:35:43.526162+00:00", "direction": "in", "message": {"jsonrpc": "2.0", "id": 3, "method": "prompts/list"}}
+{"time": "2026-10-21T19:35:43.526196+00:00", "direction": "out", "message": {"jsonrpc": "2.0", "id": 3, "result": {"prompts": []}}}
+{"time": "2026-10-21T19:35:43.526738+00:00", "direction": "in", "message": {"jsonrpc": "2.0", "id": 4, "method": "resources/list"}}
+{"time": "2026-10-21T19:35:43.526771+00:00", "direction": "out", "message": {"jsonrpc": "2.0", "id": 4, "result": {"resources": []}}}

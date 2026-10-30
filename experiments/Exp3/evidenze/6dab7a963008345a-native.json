@@ -1,0 +1,44 @@
+{
+  "events": [
+    {
+      "type": "server-connected",
+      "serverName": "fixture",
+      "toolCount": 1,
+      "tools": [
+        {
+          "name": "fixture_tool",
+          "description": "Convert a distance from metres to kilometres. The value is a decimal number.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "tool-scanning",
+      "serverName": "fixture",
+      "toolName": "fixture_tool"
+    },
+    {
+      "type": "tool-analyzed",
+      "serverName": "fixture",
+      "toolName": "fixture_tool",
+      "hasIssues": false,
+      "issues": [],
+      "severity": "MEDIUM"
+    }
+  ],
+  "result": {
+    "serverName": "shield-T01",
+    "configPath": "D:\\docker_proget\\V3\\reports\\campaign-exp3-controls-20261021-7c9e4b12\\attempts\\shield-T01\\config.json",
+    "crossOriginViolation": false,
+    "vulnerabilities": []
+  }
+}

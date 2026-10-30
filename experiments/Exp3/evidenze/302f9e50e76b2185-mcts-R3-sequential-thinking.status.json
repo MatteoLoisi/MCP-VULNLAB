@@ -1,0 +1,80 @@
+{
+  "schema": "exp3-scanner-attempt-v1",
+  "target": "R3-sequential-thinking",
+  "attempt_id": "782b1eddf29f40da840dc9d1fcf056d0",
+  "started_at": "2026-10-18T07:52:59.753173+00:00",
+  "status": "completed",
+  "returncode": 0,
+  "target_identity": {
+    "target": "R3-sequential-thinking",
+    "definition_sha256": "5ffdcf15365957adb37956943db5e8b46a9eec307b07a662c48f9e0940ae2371",
+    "manifest_sha256": "71156adadb7e944ec4e76beb135ac2d9913523bce20628bb3fc13eccbcb803d9",
+    "transport": "stdio",
+    "version": "1.0.0",
+    "configuration_sha256": "71c4056e04cd23299215d0e837e0773eaa33ebe23ea99c7bda8afa3cc35e8872"
+  },
+  "scanner_identity": {
+    "name": "mcp-mcts",
+    "version": "0.1.4",
+    "executable": "D:\\docker_proget\\V3\\tools\\exp3\\venv-mcts\\Scripts\\mcts.exe",
+    "executable_sha256": "403d12511a65eb662a2ddaba6e9efe69226f6ca4c5b0c141632b35eb3c0391a9",
+    "source_tree_sha256": "fb08bdf507c536993d555cc144ca4819fff35dc89de88f6ff4749aaf00478aa6",
+    "dependencies_sha256": "b18b54a8ec1fbec97086088d79e72d36811268f35cbeb837e9613ae4fd4846ae"
+  },
+  "target_command": [
+    "npx",
+    "-y",
+    "@modelcontextprotocol/server-sequential-thinking@1.0.0"
+  ],
+  "scan_target": ".",
+  "scanner_input": "D:\\docker_proget\\V3\\reports\\campaign-exp3-20261018-40bc13d7\\scanner-mcts\\attempts\\782b1eddf29f40da840dc9d1fcf056d0\\live-metadata",
+  "scanner_protocol": {
+    "schema": "exp3-mcts-live-metadata-v1",
+    "input": "absent-local-path",
+    "scoring": "legacy",
+    "analyzers": [
+      "permission_analyzer",
+      "surface_metadata",
+      "metadata_integrity",
+      "prompt_injection",
+      "tool_shadowing",
+      "line_jumping",
+      "tool_abuse",
+      "schema_surface",
+      "data_leakage",
+      "sigma_metadata",
+      "prompt_defense"
+    ],
+    "repository_files": "excluded",
+    "runtime_events": "excluded_from_verdict",
+    "native_pagination": "not_preserved_by_pinned_scanner"
+  },
+  "scanner_protocol_sha256": "c36fcb7eef3eb9036b537084c3ec14c6d4f0b965a529384abfbb738dd6884472",
+  "scanner_command": [
+    "D:\\docker_proget\\V3\\tools\\exp3\\venv-mcts\\Scripts\\mcts.exe",
+    "scan",
+    "--live",
+    "--command",
+    "npx",
+    "--args",
+    "-y,@modelcontextprotocol/server-sequential-thinking@1.0.0",
+    "--i-understand-live-risk",
+    "-o",
+    "mcts-R3-sequential-thinking-782b1eddf29f40da840dc9d1fcf056d0.json",
+    "-f",
+    "json",
+    "--theme",
+    "minimal",
+    "--no-progress",
+    "--scoring",
+    "legacy",
+    "--analyzers",
+    "permission_analyzer,surface_metadata,metadata_integrity,prompt_injection,tool_shadowing,line_jumping,tool_abuse,schema_surface,data_leakage,sigma_metadata,prompt_defense",
+    "D:\\docker_proget\\V3\\reports\\campaign-exp3-20261018-40bc13d7\\scanner-mcts\\attempts\\782b1eddf29f40da840dc9d1fcf056d0\\live-metadata"
+  ],
+  "stdout_sha256": "a332e492c41b94283d9fdd4170abc5d854558af9373157dc42c46d86b827f070",
+  "stderr_sha256": "c2ccd81cf433d30726a5e3466f252264aec3312e544327bac156067e0e273eda",
+  "report_ref": "scanner-mcts/attempts/782b1eddf29f40da840dc9d1fcf056d0/report.json",
+  "report_sha256": "ef7dc6a3be890981dd927a89d7142969b1e3f641a4900c35c7bc30ef701629ad",
+  "ended_at": "2026-10-18T07:53:08.246888+00:00"
+}

@@ -1,0 +1,117 @@
+{
+  "target": "mcp-server-fetch-local",
+  "passed": false,
+  "highest_severity": "HIGH",
+  "summary": {
+    "total_scenarios": 1,
+    "vulnerabilities": 1
+  },
+  "findings": [
+    {
+      "attack_id": "mcp-ssrf",
+      "attack_name": "Server-Side Request Forgery",
+      "scenario_label": "mcp-ssrf:fetch",
+      "vector": null,
+      "tool": "fetch",
+      "category": {
+        "key": "mcp_ssrf",
+        "title": "Server-Side Request Forgery",
+        "owasp_id": null,
+        "owasp_label": "Server-Side Request Forgery (not MCP-specific \u2014 see category description)",
+        "owasp_verified": true,
+        "nist_refs": [
+          "NIST AI 100-2 (Adversarial ML taxonomy, Mar 2025 agent update): Excessive Agency"
+        ]
+      },
+      "success": true,
+      "severity": "HIGH",
+      "confidence": 0.98,
+      "rationale": "The tool issued an outbound request to an attacker-chosen URL with no allow-listing \u2014 SSRF (a real request reached our loopback oracle).",
+      "evidence": [
+        "Payload: url='http://127.0.0.1:38261/RCXbd699ac35bf7a5479ea7f5c28b91bdb4'",
+        "The MCP server made a live request to our callback (token RCXbd699ac35bf7a5479ea7f5c28b91bdb4 received) \u2014 it would equally reach http://169.254.169.254/ cloud metadata."
+      ],
+      "tool_calls": [
+        {
+          "name": "fetch",
+          "arguments": {
+            "url": "http://127.0.0.1:38261/RCXbd699ac35bf7a5479ea7f5c28b91bdb4"
+          },
+          "output": "(callback hit)"
+        }
+      ],
+      "witness": {
+        "version": 1,
+        "tool": {
+          "name": "fetch",
+          "schema_sha256": "ccf108c2895e365b58df3e083b0785ce492eb987a0ca1f44c710ee1056927b4f"
+        },
+        "sigma": {
+          "target_path": [
+            "url"
+          ],
+          "arguments": {
+            "url": "http://127.0.0.1:38261/RCXbd699ac35bf7a5479ea7f5c28b91bdb4"
+          }
+        },
+        "payload": {
+          "class": "ssrf",
+          "text": "http://127.0.0.1:38261/RCXbd699ac35bf7a5479ea7f5c28b91bdb4"
+        },
+        "trace": [
+          {
+            "dir": "out",
+            "t": 4333.875028,
+            "msg": {
+              "jsonrpc": "2.0",
+              "id": 4,
+              "method": "tools/call",
+              "params": {
+                "name": "fetch",
+                "arguments": {
+                  "url": "http://127.0.0.1:38261/RCXbd699ac35bf7a5479ea7f5c28b91bdb4"
+                }
+              }
+            }
+          },
+          {
+            "dir": "in",
+            "t": 4334.94205,
+            "msg": {
+              "jsonrpc": "2.0",
+              "id": 4,
+              "result": {
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Contents of http://127.0.0.1:38261/RCXbd699ac35bf7a5479ea7f5c28b91bdb4:\nok"
+                  }
+                ],
+                "isError": false
+              }
+            }
+          }
+        ],
+        "oracle": {
+          "type": "oob",
+          "soundness": "deterministic",
+          "expect_path": "RCXbd699ac35bf7a5479ea7f5c28b91bdb4",
+          "hits": [
+            {
+              "path": "RCXbd699ac35bf7a5479ea7f5c28b91bdb4",
+              "peer": "127.0.0.1:35970",
+              "t": 1792430766.3763092,
+              "receipt": "8e30cbc3a8f32b283b0b401e15ec3f0d5ee04b268f89619ec67f08e2f7306989"
+            }
+          ],
+          "receipt_key": "c7965ca2447a05ecff1b4f479c694027ce13ef17e11a5e1a1e06ef0031d9d532",
+          "listener": {
+            "host": "127.0.0.1",
+            "port": 38261
+          }
+        },
+        "session_sha256": "cebe8986c1a38072f0448c24a366b090aaeceb771772bed0fc036f9b85ecbc27"
+      }
+    }
+  ]
+}

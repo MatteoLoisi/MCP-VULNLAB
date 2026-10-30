@@ -1,0 +1,43 @@
+{
+  "schema": "exp3-probe-report-v1",
+  "producer": "exp3-probe-worker-v1",
+  "target": "c8",
+  "attempt_id": "131efd897eb74f82ad64b30851b16d1c",
+  "status": "completed",
+  "target_identity": {
+    "target": "c8",
+    "definition_sha256": "36c3d3f534eb3d74a8bbf6a803ac01776d0199ed07f07950726eeaaf63e6534a",
+    "manifest_sha256": "71156adadb7e944ec4e76beb135ac2d9913523bce20628bb3fc13eccbcb803d9",
+    "transport": "stdio",
+    "version": "79734c19f5104cd11486c90926d245560f53befa",
+    "shim_sha256": "da2c7bfdcb3b319bf3efc0df6f9a1fa1f5b79058ce619860f3821a93739a7766",
+    "configuration_sha256": "9bd899c15c358f67d166792a4622bd9188f411e2466ddfbf4ef1c3a649b2de94"
+  },
+  "target_command": [
+    "python",
+    "D:\\docker_proget\\V3\\tools\\dvmcp_stdio.py",
+    "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\hard\\challenge8"
+  ],
+  "scan_target": "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\hard\\challenge8",
+  "planned_findings": [
+    "P4-arg-injection"
+  ],
+  "profile": "grey-box",
+  "raw_ref": "capture.json",
+  "raw_sha256": "ba068d6ef92e038ff7db209c38d90ecd551ea8250423af535a22052aac6b2b12",
+  "findings": {
+    "P4-arg-injection": {
+      "status": "vulnerable",
+      "proof": "esecuzione marcata via execute_shell_command.command (marker senza wrapper)",
+      "details": {
+        "tool": "execute_shell_command",
+        "arg": "command",
+        "tried": 7,
+        "output": "Command executed successfully:\n\nlaptop-drfhjk35\\ml\r\nEXP3_CMD_131efd897eb74f82ad64b30851b16d1c \r\n"
+      },
+      "evidence_reason": "derived from captured call",
+      "evidence_ref": "evidence/10.json",
+      "evidence_sha256": "3188fb8749775f67c665769501ac43c3758a94c5abe28ef96a9b75ea475057f6"
+    }
+  }
+}

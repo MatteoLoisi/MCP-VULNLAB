@@ -1,0 +1,20 @@
+﻿tool,target,mode,status,runs,tools,findings,critical,high,medium,evidence_class,notes
+mcp-guard,c3,static-clean,completed,1,0,2,0,2,0,static_indicator,"clean server.py; 2 path taint (lines 94,99)"
+mcp-guard,c8,static-clean,completed,1,0,3,1,2,0,static_indicator,"clean server.py; 1 shell taint (110), 1 hardcoded AWS example (24), 1 path taint (140)"
+mcp-guard,c9,static-clean,completed,1,0,5,4,1,0,static_indicator,"clean server.py; 4 shell taint (55,88,127,189), 1 path taint (230)"
+mcp-guard,c3,static-full,completed,1,0,3,0,3,0,static_indicator,include 1 adapter false positive at dvmcp_stdio.py:151
+mcp-guard,c8,static-full,completed,1,0,4,1,3,0,static_indicator,include 1 adapter false positive at dvmcp_stdio.py:151
+mcp-guard,c9,static-full,completed,1,0,6,4,2,0,static_indicator,include 1 adapter false positive at dvmcp_stdio.py:151
+mcp-guard,c8,dynamic-docker,incomplete,1,0,0,0,0,0,incomplete,handshake failed; host Windows venv path injected into python:3.11-alpine; c3/c9 not run
+mcp-guard,c3,dynamic-outer-docker,completed,8,2,1,0,1,0,dynamic_canary,outer Docker; --sandbox none inside; read_file canary path traversal
+mcp-guard,c8,dynamic-outer-docker,completed,8,3,2,1,1,0,dynamic_canary,outer Docker; --sandbox none inside; execute_shell_command canary + analyze_log_file path canary
+mcp-guard,c9,dynamic-outer-docker,completed,8,5,0,0,0,0,dynamic_canary,"outer Docker; 8 probes, no finding; false negative vs harness ping_host injection"
+docker-harness,c3,read_file,completed,1,1,0,0,0,0,demonstrated_effect,"P5; observed SYSTEM CREDENTIALS - HIGHLY RESTRICTED; args {""filename"": ""../../tmp/dvmcp_challenge3/private/system_credentials.txt""}"
+docker-harness,c8,execute_shell_command,completed,1,1,0,0,0,0,demonstrated_effect,"P4; observed MCPGUARD_DYNAMIC_C8_20261020; args {""command"": ""echo MCPGUARD_DYNAMIC_C8_20261020""}"
+docker-harness,c9,ping_host,completed,1,1,0,0,0,0,demonstrated_effect,"P4; observed MCPGUARD_DYNAMIC_C9_20261020; args {""host"": ""127.0.0.1; echo MCPGUARD_DYNAMIC_C9_20261020"", ""count"": 1}"
+mcp-fuzzer,c2,protocol-aggressive,completed,53,0,23,0,0,23,robustness,accepted_malformed; 0 crashes/exceptions/safety-blocked; no tools discovered
+mcp-fuzzer,c2,tools-realistic,completed,4,2,4,0,0,4,robustness,"accepted_malformed; 0 crashes/exceptions/safety-blocked; SQL-looking input echoed, no DB access"
+mcp-fuzzer,R2-memory,tools-realistic,completed,18,9,19,0,5,14,robustness,"14 accepted_malformed + 5 injection_reflection; 0 crashes; <script> marker stored/reflected, no HTML UI; not XSS"
+mcp-fuzzer,R1-filesystem,tools-realistic,completed,28,14,5,0,1,4,robustness,4 accepted_malformed + 1 injection_reflection; 0 crashes; run from temp fuzz-r1-root so MCP roots=cwd is isolated
+mcp-fuzzer,R3-sequential-thinking,tools-realistic,completed,2,1,1,0,1,0,robustness,1 injection_reflection; sequentialthinking echoes thought text; 0 crashes
+triage,R1-filesystem,list_allowed_directories,completed,1,1,0,0,0,0,negative_check,returns only configured allowed root; confirms MCP-Shield flag is heuristic FP

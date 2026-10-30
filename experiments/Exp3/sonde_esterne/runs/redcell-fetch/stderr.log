@@ -1,0 +1,4 @@
+
+MCP server error: MCP server closed the connection before responding (server stderr:
+/usr/local/bin/python: No module named mcp_server_fetch
+)

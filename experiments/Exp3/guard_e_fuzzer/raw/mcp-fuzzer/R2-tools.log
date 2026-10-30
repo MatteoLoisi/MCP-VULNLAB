@@ -1,0 +1,116 @@
+MCP Fuzzer v0.7.0 - Configuration Used:
+
+                       MCP Fuzzer Complete Configuration                       
++-----------------------------------------------------------------------------+
+| Category | Parameter                | Value                                 |
+|----------+--------------------------+---------------------------------------|
+| Core     | Mode                     | TOOLS                                 |
+| Core     | Phase                    | REALISTIC                             |
+| Core     | Protocol Phase           | REALISTIC                             |
+| Core     | Protocol                 | STDIO                                 |
+| Core     | Endpoint                 | C:/Program Files/nodejs/node.EXE      |
+|          |                          | C:/Users/ML/AppData/Local/Temp/mcpta… |
+| Auth     | Status                   | No authentication configured          |
+| Timing   | Timeout                  | 30.0                                  |
+| Fuzzing  | Runs                     | 2                                     |
+| Fuzzing  | Runs Per Type            | 5                                     |
+| Fuzzing  | Stateful                 | False                                 |
+| Fuzzing  | Stateful Runs            | 5                                     |
+| Fuzzing  | Havoc                    | False                                 |
+| Fuzzing  | Corpus                   | True                                  |
+| Safety   | Enable Safety System     | True                                  |
+| Safety   | Fs Root                  | C:/Users/ML/AppData/Local/Temp/mcpfu… |
+| Safety   | No Network               | True                                  |
+| Output   | Output Dir               | reports/campaign-exp3-effect-tools-2… |
+| Process  | Watchdog Check Interval  | 1.0                                   |
+| Process  | Watchdog Process Timeout | 30.0                                  |
+| Process  | Watchdog Extra Buffer    | 5.0                                   |
+| Process  | Watchdog Max Hang Time   | 60.0                                  |
+| Process  | Max Concurrency          | 5                                     |
+| Advanced | Log Level                | INFO                                  |
++-----------------------------------------------------------------------------+
+
+                            Built Command Arguments                            
++-----------------------------------------------------------------------------+
+| Final Command Line                                                          |
+|-----------------------------------------------------------------------------|
+| C:\Users\ML\AppData\Local\uv\cache\archive-v0\r6IQj9WIgRWExWUY\Scripts\mcp… |
+| --mode tools --phase realistic --protocol-phase realistic --protocol stdio  |
+| --endpoint C:/Program Files/nodejs/node.EXE                                 |
+| C:/Users/ML/AppData/Local/Temp/mcptargets/fuzz-npm/node_modules/@modelcont… |
+| --runs 2 --runs-per-type 5 --timeout 30.0 --fs-root                         |
+| C:/Users/ML/AppData/Local/Temp/mcpfuzz-fsroot --output-dir                  |
+| reports/campaign-exp3-effect-tools-20261020-b6e2a1/raw/mcp-fuzzer/R2-tools  |
+| --log-level INFO --enable-safety-system --no-network                        |
++-----------------------------------------------------------------------------+
+
+This argv will be passed to the internal fuzzer process.
+
+Starting MCP Fuzzer...
+
+2026-10-20 16:23:32,667 - root - WARNING - Recorded 19 finding(s) across 2 categor(y/ies) in reports\campaign-exp3-effect-tools-20261020-b6e2a1\raw\mcp-fuzzer\R2-tools\findings.json (create_entities:injection_reflection, create_entities:injection_reflection, delete_entities:injection_reflection, delete_observations:injection_reflection, read_graph:injection_reflection)
+                           MCP Tool Fuzzing Summary                            
++-----------------------------------------------------------------------------+
+|                     |      |         | Accept… |         |         |        |
+| Tool                | Runs | Reject… | Bad     | Anomal… | Except… | Safety |
+|---------------------+------+---------+---------+---------+---------+--------|
+| create_entities     | 2    | 0       | 2       | 0       | 0       | 0      |
+| create_relations    | 2    | 1       | 1       | 0       | 0       | 0      |
+| add_observations    | 2    | 2       | 0       | 0       | 0       | 0      |
+| delete_entities     | 2    | 0       | 2       | 0       | 0       | 0      |
+| delete_observations | 2    | 0       | 2       | 0       | 0       | 0      |
+| delete_relations    | 2    | 0       | 2       | 0       | 0       | 0      |
+| read_graph          | 2    | 0       | 2       | 0       | 0       | 0      |
+| search_nodes        | 2    | 0       | 2       | 0       | 0       | 0      |
+| open_nodes          | 2    | 0       | 2       | 0       | 0       | 0      |
++-----------------------------------------------------------------------------+
+
+Tool Execution Statistics
+Total Tools Tested: 9
+Total Fuzzing Runs: 18
+Total Server-Rejected Inputs: 3
+Total Accepted-Malformed Findings: 15
+Total Transport/Protocol Anomalies: 0
+Total Crashes: 0
+Total Exceptions: 0
+Total Safety Blocked: 0
+Overall Handled-Correctly Rate: 16.7%
+
+Vulnerabilities Found: 8
+  • create_entities: 2/2 failed runs (100.0%)
+  • create_relations: 1/2 failed runs (50.0%)
+  • delete_entities: 2/2 failed runs (100.0%)
+  • delete_observations: 2/2 failed runs (100.0%)
+  • delete_relations: 2/2 failed runs (100.0%)
+  • read_graph: 2/2 failed runs (100.0%)
+  • search_nodes: 2/2 failed runs (100.0%)
+  • open_nodes: 2/2 failed runs (100.0%)
+
+=== MCP Fuzzer Summary ===
+Mode: tools
+Status: completed — 9 tool(s) fuzzed
+
+Tool Results:
+  create_entities: 2 runs, 0 handled correctly, 2 findings/failures, 0 safety-blocked
+      (0 server-rejected input, 2 accepted-malformed findings, 0 transport/protocol anomalies, 0 crashes)
+  create_relations: 2 runs, 1 handled correctly, 1 findings/failures, 0 safety-blocked
+      (1 server-rejected input, 1 accepted-malformed findings, 0 transport/protocol anomalies, 0 crashes)
+  add_observations: 2 runs, 2 handled correctly, 0 findings/failures, 0 safety-blocked
+      (2 server-rejected input, 0 accepted-malformed findings, 0 transport/protocol anomalies, 0 crashes)
+  delete_entities: 2 runs, 0 handled correctly, 2 findings/failures, 0 safety-blocked
+      (0 server-rejected input, 2 accepted-malformed findings, 0 transport/protocol anomalies, 0 crashes)
+  delete_observations: 2 runs, 0 handled correctly, 2 findings/failures, 0 safety-blocked
+      (0 server-rejected input, 2 accepted-malformed findings, 0 transport/protocol anomalies, 0 crashes)
+  delete_relations: 2 runs, 0 handled correctly, 2 findings/failures, 0 safety-blocked
+      (0 server-rejected input, 2 accepted-malformed findings, 0 transport/protocol anomalies, 0 crashes)
+  read_graph: 2 runs, 0 handled correctly, 2 findings/failures, 0 safety-blocked
+      (0 server-rejected input, 2 accepted-malformed findings, 0 transport/protocol anomalies, 0 crashes)
+  search_nodes: 2 runs, 0 handled correctly, 2 findings/failures, 0 safety-blocked
+      (0 server-rejected input, 2 accepted-malformed findings, 0 transport/protocol anomalies, 0 crashes)
+  open_nodes: 2 runs, 0 handled correctly, 2 findings/failures, 0 safety-blocked
+      (0 server-rejected input, 2 accepted-malformed findings, 0 transport/protocol anomalies, 0 crashes)
+
+Findings by category:
+  accepted_malformed: 14
+  injection_reflection: 5
+

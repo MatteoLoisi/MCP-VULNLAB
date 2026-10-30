@@ -1,0 +1,56 @@
+{
+  "target": "R1-filesystem",
+  "attempt_id": "acd01232676f408b92b65422fbbdd0fa",
+  "target_command": [
+    "npx",
+    "-y",
+    "@modelcontextprotocol/server-filesystem@1.0.0",
+    "C:\\Users\\ML\\AppData\\Local\\Temp\\mcptargets\\fsroot"
+  ],
+  "scan_target": ".",
+  "target_identity": {
+    "target": "R1-filesystem",
+    "definition_sha256": "f2226e3862e7259c5ebb2e91d0be27a512552691bb26dd494c81ac85b169f7ec",
+    "manifest_sha256": "71156adadb7e944ec4e76beb135ac2d9913523bce20628bb3fc13eccbcb803d9",
+    "transport": "stdio",
+    "version": "1.0.0",
+    "configuration_sha256": "3120106b27412c21cccc43ee2d57840cc97a668f1a16a564abd0e122d696c34e"
+  },
+  "planned_findings": [
+    "P5-tool-traversal"
+  ],
+  "manifest_path": "D:\\docker_proget\\V4\\tools\\exp3\\target_versions.json",
+  "profile": "black-box",
+  "command_marker": "EXP3_CMD_acd01232676f408b92b65422fbbdd0fa",
+  "probes": {
+    "P5": {
+      "max_attempts": 4096
+    }
+  },
+  "catalog": false,
+  "source_sha256": {
+    "services/real-mcp-adapter/adapter.py": "f01b1003a689b6d9a68e9b63c14ddd6e9ff8c2c11a16c663005e20614284e425",
+    "services/real-mcp-adapter/real_target_check.py": "54ab09612e4328cfa909376dd56184e453a6cc0a4d1cdb66653ab39c5a7c1fae",
+    "services/real-mcp-adapter/metadata_audit.py": "4ed6975cf09110b7515a2da0ba4cb195cc5dea2788b156601a7f68f06620b53c",
+    "services/real-mcp-adapter/inspector_recon.py": "748f7e9c64195fe9c34240c8fe9a7ae8cda342c747cb9f0fe3e0b4d1bb0b77dc",
+    "tools/exp3/run_probes.py": "a9a942fb20b02b84539ed895cd18bad47112326bc44b1fb6f0e8cb85acfefa55",
+    "tools/exp3/probe_worker.py": "a718fb7fe66056b4f1d1705ae7cb41308025b1000c3503304b1b77210bc12cf3",
+    "tools/exp3/probe_capture.py": "865df0f3df438938a7f49f92bdf330b428c708a768936711628187b47bf038fd",
+    "tools/exp3/process_runner.py": "694f2f87badd1dc02b9e93c05f3890c03b55f02ad556b50ba354a461e1100d62",
+    "tools/exp3/attempt_records.py": "29cfa2287086751f817b668824b853db1c703d5db8db8b0f0c6eeffd62f77411",
+    "tools/exp3/versions.py": "3ba984b32b19f712911fe02782592f8dd169153bed58f65b46c912dd9d06174a",
+    "tools/exp3/evidence.py": "ba7b50ca7f75765f46ba2cfad07833d3f01b36e1226d3052c68ee5c923c96f31"
+  },
+  "runtime": {
+    "python": "3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]",
+    "executable": "C:\\Users\\ML\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "canary": {
+    "path": "D:\\docker_proget\\V4\\output\\r6-p5-filesystem-20261025-01\\probes\\attempts\\acd01232676f408b92b65422fbbdd0fa\\canary.txt",
+    "content": "EXP3_CANARY_acd01232676f408b92b65422fbbdd0fa_0dd5a50b330541baa2391812e50d512b",
+    "content_sha256": "f47b7fbece31db86b8ee9c5bdf8bb9e6c1cd3ac710654a6934a3af14aa2c24ec",
+    "allowed_root": "C:\\Users\\ML\\AppData\\Local\\Temp\\mcptargets\\fsroot",
+    "read_back": true
+  }
+}

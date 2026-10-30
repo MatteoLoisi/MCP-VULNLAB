@@ -1,0 +1,122 @@
+{
+  "findings": {
+    "by_category": {
+      "accepted_malformed": 23
+    },
+    "total": 23
+  },
+  "mode": "protocol",
+  "protocols": {
+    "by_type": {
+      "CallToolRequest": {
+        "failures": 4,
+        "total_runs": 4
+      },
+      "CancelTaskRequest": {
+        "failures": 0,
+        "total_runs": 2
+      },
+      "CancelledNotification": {
+        "failures": 2,
+        "total_runs": 2
+      },
+      "CompleteRequest": {
+        "failures": 0,
+        "total_runs": 2
+      },
+      "CreateMessageRequest": {
+        "failures": 0,
+        "total_runs": 2
+      },
+      "ElicitRequest": {
+        "failures": 0,
+        "total_runs": 2
+      },
+      "GenericJSONRPCRequest": {
+        "failures": 0,
+        "total_runs": 2
+      },
+      "GetPromptRequest": {
+        "failures": 2,
+        "total_runs": 2
+      },
+      "GetTaskPayloadRequest": {
+        "failures": 0,
+        "total_runs": 2
+      },
+      "GetTaskRequest": {
+        "failures": 0,
+        "total_runs": 2
+      },
+      "InitializeRequest": {
+        "failures": 2,
+        "total_runs": 2
+      },
+      "InitializedNotification": {
+        "failures": 2,
+        "total_runs": 2
+      },
+      "ListPromptsRequest": {
+        "failures": 2,
+        "total_runs": 2
+      },
+      "ListResourceTemplatesRequest": {
+        "failures": 2,
+        "total_runs": 2
+      },
+      "ListResourcesRequest": {
+        "failures": 2,
+        "total_runs": 2
+      },
+      "ListRootsRequest": {
+        "failures": 0,
+        "total_runs": 2
+      },
+      "ListTasksRequest": {
+        "failures": 0,
+        "total_runs": 3
+      },
+      "ListToolsRequest": {
+        "failures": 2,
+        "total_runs": 2
+      },
+      "PingRequest": {
+        "failures": 2,
+        "total_runs": 2
+      },
+      "ProgressNotification": {
+        "failures": 2,
+        "total_runs": 2
+      },
+      "ReadResourceRequest": {
+        "failures": 4,
+        "total_runs": 4
+      },
+      "SetLevelRequest": {
+        "failures": 0,
+        "total_runs": 2
+      },
+      "SubscribeRequest": {
+        "failures": 0,
+        "total_runs": 2
+      },
+      "UnsubscribeRequest": {
+        "failures": 0,
+        "total_runs": 2
+      }
+    },
+    "total": 24,
+    "total_runs": 53
+  },
+  "status": "completed",
+  "tool_discovery": {
+    "detail": "",
+    "failure": "none",
+    "tool_count": 0
+  },
+  "tools": {
+    "by_name": {},
+    "total": 0,
+    "total_runs": 0
+  }
+}

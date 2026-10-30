@@ -1,0 +1,9 @@
+{"time": "2026-10-21T19:35:24.665529+00:00", "direction": "in", "message": {"jsonrpc": "2.0", "id": 1, "method": "initialize", "params": {"protocolVersion": "2025-11-25", "capabilities": {}, "clientInfo": {"name": "mcp", "version": "0.1.0"}}}}
+{"time": "2026-10-21T19:35:24.665641+00:00", "direction": "out", "message": {"jsonrpc": "2.0", "id": 1, "result": {"protocolVersion": "2025-11-25", "capabilities": {"tools": {}, "prompts": {}, "resources": {}}, "serverInfo": {"name": "metadata-fixture", "version": "1.0.0"}}}}
+{"time": "2026-10-21T19:35:24.666672+00:00", "direction": "in", "message": {"jsonrpc": "2.0", "method": "notifications/initialized"}}
+{"time": "2026-10-21T19:35:24.668008+00:00", "direction": "in", "message": {"jsonrpc": "2.0", "id": 2, "method": "tools/list"}}
+{"time": "2026-10-21T19:35:24.668069+00:00", "direction": "out", "message": {"jsonrpc": "2.0", "id": 2, "result": {"tools": [{"name": "fixture_tool", "description": "Convert a distance from metres to kilometres. The value is a decimal number.", "inputSchema": {"type": "object", "properties": {"value": {"type": "string"}}, "required": [], "additionalProperties": false}}]}}}
+{"time": "2026-10-21T19:35:24.668941+00:00", "direction": "in", "message": {"jsonrpc": "2.0", "id": 3, "method": "prompts/list"}}
+{"time": "2026-10-21T19:35:24.669011+00:00", "direction": "out", "message": {"jsonrpc": "2.0", "id": 3, "result": {"prompts": []}}}
+{"time": "2026-10-21T19:35:24.669548+00:00", "direction": "in", "message": {"jsonrpc": "2.0", "id": 4, "method": "resources/list"}}
+{"time": "2026-10-21T19:35:24.669585+00:00", "direction": "out", "message": {"jsonrpc": "2.0", "id": 4, "result": {"resources": []}}}

@@ -1,0 +1,215 @@
+{
+  "protocol_version": "1.0.0",
+  "timestamp": "2026-10-20T16:16:03.126695",
+  "tool_version": "0.7.0",
+  "session_id": "3ff1e777-da0c-4b66-aefb-57d5d6acf112",
+  "output_type": "fuzzing_results",
+  "data": {
+    "mode": "protocol",
+    "protocol": "stdio",
+    "endpoint": "C:/Users/ML/AppData/Local/Programs/Python/Python313/python.exe D:/docker_proget/V3/tools/dvmcp_stdio.py C:/Users/ML/AppData/Local/Temp/mcptargets/dvmcp/challenges/easy/challenge2",
+    "total_tools": 0,
+    "total_protocol_types": 24,
+    "tools_tested": [],
+    "protocol_types_tested": [
+      {
+        "type": "InitializeRequest",
+        "runs": 2,
+        "successful": 0,
+        "errors": 2,
+        "success_rate": 0.0
+      },
+      {
+        "type": "InitializedNotification",
+        "runs": 2,
+        "successful": 0,
+        "errors": 2,
+        "success_rate": 0.0
+      },
+      {
+        "type": "ListToolsRequest",
+        "runs": 2,
+        "successful": 0,
+        "errors": 2,
+        "success_rate": 0.0
+      },
+      {
+        "type": "CallToolRequest",
+        "runs": 4,
+        "successful": 0,
+        "errors": 4,
+        "success_rate": 0.0
+      },
+      {
+        "type": "ListResourcesRequest",
+        "runs": 2,
+        "successful": 0,
+        "errors": 2,
+        "success_rate": 0.0
+      },
+      {
+        "type": "ReadResourceRequest",
+        "runs": 4,
+        "successful": 0,
+        "errors": 4,
+        "success_rate": 0.0
+      },
+      {
+        "type": "ListPromptsRequest",
+        "runs": 2,
+        "successful": 0,
+        "errors": 2,
+        "success_rate": 0.0
+      },
+      {
+        "type": "GetPromptRequest",
+        "runs": 2,
+        "successful": 0,
+        "errors": 2,
+        "success_rate": 0.0
+      },
+      {
+        "type": "ListRootsRequest",
+        "runs": 2,
+        "successful": 2,
+        "errors": 0,
+        "success_rate": 100.0
+      },
+      {
+        "type": "SetLevelRequest",
+        "runs": 2,
+        "successful": 2,
+        "errors": 0,
+        "success_rate": 100.0
+      },
+      {
+        "type": "CompleteRequest",
+        "runs": 2,
+        "successful": 2,
+        "errors": 0,
+        "success_rate": 100.0
+      },
+      {
+        "type": "ListResourceTemplatesRequest",
+        "runs": 2,
+        "successful": 0,
+        "errors": 2,
+        "success_rate": 0.0
+      },
+      {
+        "type": "ElicitRequest",
+        "runs": 2,
+        "successful": 2,
+        "errors": 0,
+        "success_rate": 100.0
+      },
+      {
+        "type": "PingRequest",
+        "runs": 2,
+        "successful": 0,
+        "errors": 2,
+        "success_rate": 0.0
+      },
+      {
+        "type": "SubscribeRequest",
+        "runs": 2,
+        "successful": 2,
+        "errors": 0,
+        "success_rate": 100.0
+      },
+      {
+        "type": "UnsubscribeRequest",
+        "runs": 2,
+        "successful": 2,
+        "errors": 0,
+        "success_rate": 100.0
+      },
+      {
+        "type": "CreateMessageRequest",
+        "runs": 2,
+        "successful": 2,
+        "errors": 0,
+        "success_rate": 100.0
+      },
+      {
+        "type": "ListTasksRequest",
+        "runs": 3,
+        "successful": 3,
+        "errors": 0,
+        "success_rate": 100.0
+      },
+      {
+        "type": "GetTaskRequest",
+        "runs": 2,
+        "successful": 2,
+        "errors": 0,
+        "success_rate": 100.0
+      },
+      {
+        "type": "GetTaskPayloadRequest",
+        "runs": 2,
+        "successful": 2,
+        "errors": 0,
+        "success_rate": 100.0
+      },
+      {
+        "type": "CancelTaskRequest",
+        "runs": 2,
+        "successful": 2,
+        "errors": 0,
+        "success_rate": 100.0
+      },
+      {
+        "type": "ProgressNotification",
+        "runs": 2,
+        "successful": 0,
+        "errors": 2,
+        "success_rate": 0.0
+      },
+      {
+        "type": "CancelledNotification",
+        "runs": 2,
+        "successful": 0,
+        "errors": 2,
+        "success_rate": 0.0
+      },
+      {
+        "type": "GenericJSONRPCRequest",
+        "runs": 2,
+        "successful": 2,
+        "errors": 0,
+        "success_rate": 100.0
+      }
+    ],
+    "spec_summary": {
+      "totals": {
+        "total": 11,
+        "failed": 4,
+        "warned": 0,
+        "passed": 7
+      },
+      "by_spec_id": {
+        "MCP-Schema": {
+          "spec_url": "https://modelcontextprotocol.io/specification/2025-11-25/schema",
+          "total": 7,
+          "failed": 0,
+          "warned": 0,
+          "passed": 7
+        },
+        "MCP-Protocol": {
+          "spec_url": "https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities",
+          "total": 4,
+          "failed": 4,
+          "warned": 0,
+          "passed": 0
+        }
+      }
+    }
+  },
+  "metadata": {
+    "execution_time": "PT4.162963S",
+    "total_tests": 53,
+    "success_rate": 47.16981132075472,
+    "safety_enabled": false
+  }
+}

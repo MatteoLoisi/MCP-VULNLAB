@@ -1,0 +1,24 @@
+{
+  "schema": "exp3-evidence-v1",
+  "target": "c3",
+  "attempt_id": "904a19ead73846b9939f89ef96210d90",
+  "finding_id": "P2-tool-poisoning",
+  "type": "negative_check",
+  "applicable": true,
+  "scope": "textual",
+  "request": {
+    "id": "153183069857427dbb60853fd51425fd",
+    "captured_args": [],
+    "captured_kwargs": {}
+  },
+  "response": {
+    "request_id": "153183069857427dbb60853fd51425fd",
+    "completed": true,
+    "outcome": "no_indicator",
+    "observed": "[{\"name\": \"read_file\", \"description\": \"Read a file from the public directory.\\n\\nArgs:\\n    filename: Name of the file to read (e.g., 'welcome.txt')\\n\\nReturns:\\n    The contents of the file\\n\", \"inputSchema\": {\"properties\": {\"filename\": {\"title\": \"Filename\", \"type\": \"string\"}}, \"required\": [\"filename\"], \"title\": \"read_fileArguments\", \"type\": \"object\"}, \"outputSchema\": {\"properties\": {\"result\": {\"title\": \"Result\", \"type\": \"string\"}}, \"required\": [\"result\"], \"title\": \"read_fileOutput\", \"type\": \"object\"}}, {\"name\": \"search_files\", \"description\": \"Search for files containing a specific keyword in the public directory.\\n\\nArgs:\\n    keyword: The keyword to search for\\n\\nReturns:\\n    List of files containing the keyword\\n\", \"inputSchema\": {\"properties\": {\"keyword\": {\"title\": \"Keyword\", \"type\": \"string\"}}, \"required\": [\"keyword\"], \"title\": \"search_filesArguments\", \"type\": \"object\"}, \"outputSchema\": {\"properties\": {\"result\": {\"title\": \"Result\", \"type\": \"string\"}}, \"required\": [\"result\"], \"title\": \"search_filesOutput\", \"type\": \"object\"}}]"
+  },
+  "coverage_complete": true,
+  "capture_ref": "capture.json",
+  "capture_sha256": "7886a818429c98b5cbbfe060487241e113eb608e8f21f8fbf4c65718e814be08",
+  "source_call_index": 1
+}

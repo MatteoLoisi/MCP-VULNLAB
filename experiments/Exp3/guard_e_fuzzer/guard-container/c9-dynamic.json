@@ -1,0 +1,137 @@
+{
+  "schema_version": "2.0.0",
+  "tool_version": "2.0.0",
+  "target": "/target",
+  "target_commit": null,
+  "started_at": "2026-10-20T15:27:43.069639+00:00",
+  "finished_at": "2026-10-20T15:27:55.412191+00:00",
+  "server_info": {
+    "root": "/target",
+    "server_type": "python",
+    "is_mcp_server": true,
+    "name": null,
+    "version": null,
+    "entrypoint": "--entrypoint: python dvmcp_stdio.py .",
+    "launch_argv": [
+      "python",
+      "dvmcp_stdio.py",
+      "."
+    ],
+    "launch_candidates": [
+      {
+        "source": "--entrypoint override",
+        "argv": [
+          "python",
+          "dvmcp_stdio.py",
+          "."
+        ],
+        "requires_build": false,
+        "note": ""
+      }
+    ],
+    "launch_python": "/tmp/mcpguard-venvs/937456f730114c41/bin/python",
+    "build_argv": null,
+    "install_argv": null,
+    "transport": "stdio",
+    "manifest_files": [
+      "requirements.txt"
+    ],
+    "lockfiles": [
+      "requirements.txt"
+    ],
+    "dependencies": {
+      "mcp": "1.28.0"
+    },
+    "detection_notes": [
+      "no [project.scripts] entry, no importable __main__ module and no mcp.json; nothing in the project declares how to start it"
+    ]
+  },
+  "stages": [
+    {
+      "stage": "acquire",
+      "ran": true,
+      "reason": null,
+      "duration_s": 0.005,
+      "artifacts": {
+        "root": "/target"
+      }
+    },
+    {
+      "stage": "detect",
+      "ran": true,
+      "reason": null,
+      "duration_s": 0.009,
+      "artifacts": {
+        "server_type": "python",
+        "is_mcp_server": true,
+        "entrypoint": null,
+        "notes": [
+          "no [project.scripts] entry, no importable __main__ module and no mcp.json; nothing in the project declares how to start it"
+        ]
+      }
+    },
+    {
+      "stage": "static",
+      "ran": false,
+      "reason": "disabled by --no-static",
+      "duration_s": 0.0,
+      "artifacts": {}
+    },
+    {
+      "stage": "dependencies",
+      "ran": false,
+      "reason": "OSError: [Errno 30] Read-only file system: '/.cache'",
+      "duration_s": 0.038,
+      "artifacts": {}
+    },
+    {
+      "stage": "dynamic",
+      "ran": true,
+      "reason": null,
+      "duration_s": 12.327,
+      "artifacts": {
+        "probes_run": 8,
+        "handshake_rtt_ms": 316.7,
+        "venv": "/tmp/mcpguard-venvs/937456f730114c41",
+        "python_install_source": "requirements.txt",
+        "python_install_mode": "wheels-only",
+        "candidates_tried": [
+          {
+            "source": "--entrypoint override",
+            "argv": "python dvmcp_stdio.py .",
+            "ok": true,
+            "reason": null
+          }
+        ],
+        "launch_argv": "/tmp/mcpguard-venvs/937456f730114c41/bin/python dvmcp_stdio.py .",
+        "launch_source": "--entrypoint override",
+        "server_name": "Challenge 9 - Remote Access Control",
+        "capabilities": [
+          "experimental",
+          "prompts",
+          "resources",
+          "tools"
+        ],
+        "tools_discovered": 5,
+        "resources_discovered": 1,
+        "stderr_tail": "  Field required [type=missing, input_value={'id': 902, 'method': 'ping'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing\nJSONRPCResponse.result\n  Field required [type=missing, input_value={'id': 902, 'method': 'ping'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing\nJSONRPCError.jsonrpc\n  Field required [type=missing, input_value={'id': 902, 'method': 'ping'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing\nJSONRPCError.error\n  Field required [type=missing, input_value={'id': 902, 'method': 'ping'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing\nProcessing request of type PingRequest\nReceived exception from stream: 1 validation error for JSONRPCMessage\n  Invalid JSON: expected ident at line 1 column 2 [type=json_invalid, input_value='not json at all\\n', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/json_invalid\nProcessing request of type PingRequest\nProcessing request of type PingRequest\nProcessing request of type PingRequest\nProcessing request of type PingRequest\nProcessing request of type PingRequest"
+      }
+    }
+  ],
+  "summary": {
+    "total": 0,
+    "by_severity": {
+      "none": 0,
+      "low": 0,
+      "medium": 0,
+      "high": 0,
+      "critical": 0
+    },
+    "by_source": {
+      "static": 0,
+      "dynamic": 0,
+      "dependency": 0
+    }
+  },
+  "findings": []
+}

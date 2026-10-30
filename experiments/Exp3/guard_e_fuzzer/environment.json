@@ -1,0 +1,145 @@
+{
+  "campaign": "campaign-exp3-effect-tools-20261020-b6e2a1",
+  "date": "2026-10-20",
+  "pins": {
+    "mcp_guard": {
+      "commit": "e782de38d98219047c4dab3232395d8636c678c3",
+      "version": "2.0.0",
+      "tag_note": "GitHub tag v1.0.0 non coincide con __version__ 2.0.0"
+    },
+    "mcp_fuzzer": {
+      "version": "0.7.0",
+      "commit": "98c5d388f4edba9744bebb1f2dc72e2b537ee3b9"
+    },
+    "dvmcp": {
+      "commit": "79734c19f5104cd11486c90926d245560f53befa"
+    }
+  },
+  "runtime": {
+    "python": "3.13.3",
+    "docker": "29.9.1",
+    "node": "24.18.0",
+    "npm": "12.0.1",
+    "uv": "0.12.1"
+  },
+  "targets": {
+    "c3": {
+      "server_py_sha256": "dc16ad40aeb20c33d222c5461080be1745cce0a859efd8701a1c9529db15d633",
+      "clean_server_py_sha256": "dc16ad40aeb20c33d222c5461080be1745cce0a859efd8701a1c9529db15d633",
+      "adapter_sha256": "da2c7bfdcb3b319bf3efc0df6f9a1fa1f5b79058ce619860f3821a93739a7766",
+      "requirements": "mcp==1.28.0"
+    },
+    "c8": {
+      "server_py_sha256": "21ae92e1c04121b2d20aada88af2f988da485a7c73f60f22c0bb7e96e431778b",
+      "clean_server_py_sha256": "21ae92e1c04121b2d20aada88af2f988da485a7c73f60f22c0bb7e96e431778b",
+      "adapter_sha256": "da2c7bfdcb3b319bf3efc0df6f9a1fa1f5b79058ce619860f3821a93739a7766",
+      "requirements": "mcp==1.28.0"
+    },
+    "c9": {
+      "server_py_sha256": "81cdc1a6632844400ac7f9c969fe299b5e66e4bc300eb592392a83da0534b76b",
+      "clean_server_py_sha256": "81cdc1a6632844400ac7f9c969fe299b5e66e4bc300eb592392a83da0534b76b",
+      "adapter_sha256": "da2c7bfdcb3b319bf3efc0df6f9a1fa1f5b79058ce619860f3821a93739a7766",
+      "requirements": "mcp==1.28.0"
+    }
+  },
+  "commands": {
+    "guard_static_clean": "uvx --from git+https://github.com/SaravanaGuhan/mcp-guard@e782de38d98219047c4dab3232395d8636c678c3 mcp-guard targets-static/<id> --no-deps --format json --fail-on none",
+    "guard_dynamic_c8": "uvx --from git+https://github.com/SaravanaGuhan/mcp-guard@e782de38d98219047c4dab3232395d8636c678c3 mcp-guard targets/c8 --allow-execute --sandbox docker --entrypoint \"python dvmcp_stdio.py .\" --no-static --no-deps --probe-budget 20 --handshake-timeout 15 --timeout 60 --format json --fail-on none",
+    "fuzzer_protocol_c2": "uvx --from mcp-fuzzer==0.7.0 mcp-fuzzer --mode protocol --protocol stdio --endpoint \"C:/Users/ML/AppData/Local/Programs/Python/Python313/python.exe D:/docker_proget/V3/tools/dvmcp_stdio.py C:/Users/ML/AppData/Local/Temp/mcptargets/dvmcp/challenges/easy/challenge2\" --runs-per-type 2 --protocol-phase aggressive --seed 42 --timeout 30 --fs-root C:/Users/ML/AppData/Local/Temp/mcpfuzz-fsroot --enable-safety-system --no-network",
+    "fuzzer_tools_c2": "uvx --from mcp-fuzzer==0.7.0 mcp-fuzzer --mode tools --protocol stdio --endpoint \"C:/Users/ML/AppData/Local/Programs/Python/Python313/python.exe D:/docker_proget/V3/tools/dvmcp_stdio.py C:/Users/ML/AppData/Local/Temp/mcptargets/dvmcp/challenges/easy/challenge2\" --phase realistic --runs 2 --seed 42 --timeout 30 --fs-root C:/Users/ML/AppData/Local/Temp/mcpfuzz-fsroot --enable-safety-system --no-network",
+    "fuzzer_tools_R2": "uvx --from mcp-fuzzer==0.7.0 mcp-fuzzer --mode tools --protocol stdio --endpoint \"C:/Program Files/nodejs/node.EXE C:/Users/ML/AppData/Local/Temp/mcptargets/fuzz-npm/node_modules/@modelcontextprotocol/server-memory/dist/index.js\" --phase realistic --runs 2 --seed 42 --timeout 30 --fs-root C:/Users/ML/AppData/Local/Temp/mcpfuzz-fsroot --enable-safety-system --no-network",
+    "harness_build": "docker build -f harness/Dockerfile.<id> -t mcp-effect-<id> .",
+    "harness_run": "docker run --rm --network none --read-only --tmpfs /tmp:rw,exec,size=64m --user 1000:1000 --memory 512m --pids-limit 128 --cap-drop ALL --security-opt no-new-privileges mcp-effect-<id> --tool <tool> --args <json>",
+    "fuzzer_tools_R1": "cd C:/Users/ML/AppData/Local/Temp/mcptargets/fuzz-r1-root && uvx --from mcp-fuzzer==0.7.0 mcp-fuzzer --mode tools --protocol stdio --endpoint \"C:/Program Files/nodejs/node.EXE C:/Users/ML/AppData/Local/Temp/mcptargets/fuzz-npm/node_modules/@modelcontextprotocol/server-filesystem/dist/index.js C:/Users/ML/AppData/Local/Temp/mcptargets/fuzz-r1-root\" --phase realistic --runs 2 --seed 42 --timeout 30 --fs-root C:/Users/ML/AppData/Local/Temp/mcpfuzz-fsroot --enable-safety-system --no-network",
+    "fuzzer_tools_R3": "uvx --from mcp-fuzzer==0.7.0 mcp-fuzzer --mode tools --protocol stdio --endpoint \"C:/Program Files/nodejs/node.EXE C:/Users/ML/AppData/Local/Temp/mcptargets/fuzz-npm/node_modules/@modelcontextprotocol/server-sequential-thinking/dist/index.js\" --phase realistic --runs 2 --seed 42 --timeout 30 --fs-root C:/Users/ML/AppData/Local/Temp/mcpfuzz-fsroot --enable-safety-system --no-network",
+    "guard_dynamic_outer": "docker run --rm --network none --read-only --tmpfs /tmp:rw,exec,size=512m --user 1000:1000 --memory 1g --pids-limit 256 --cap-drop ALL --security-opt no-new-privileges -v <target>:/target:ro mcp-guard-runner:20261020 /target --allow-execute --sandbox none --entrypoint \"python dvmcp_stdio.py .\" --no-static --probe-budget 20 --handshake-timeout 15 --timeout 60 --format json --fail-on none"
+  },
+  "guard_dynamic_bug": {
+    "target": "c8",
+    "status": "incomplete",
+    "handshake_s": "93.5",
+    "reason": "MCP Guard 2.0.0 in Docker sostituisce python con la venv Windows host; il percorso non esiste in python:3.11-alpine e le dipendenze non sono installate nel container.",
+    "not_run": "c3,c9 in official Docker mode; outer-Docker workaround run for c3/c8/c9"
+  },
+  "fuzzer_targets": {
+    "c2": "DVMCP challenge2, Python 3.13.3 + mcp 1.28.0",
+    "R2-memory": "@modelcontextprotocol/server-memory@1.0.0, Node 24.18.0",
+    "R1-filesystem": "@modelcontextprotocol/server-filesystem@1.0.0, Node 24.18.0; run cwd = fuzz-r1-root because client roots replaces server args with cwd",
+    "R3-sequential-thinking": "@modelcontextprotocol/server-sequential-thinking@1.0.0, Node 24.18.0"
+  },
+  "harness": {
+    "kind": "custom Docker stdio effect probe; not MCP Guard",
+    "image": "python:3.13-slim + mcp==1.28.0",
+    "files": [
+      "harness/effect_probe.py",
+      "harness/Dockerfile.c3",
+      "harness/Dockerfile.c8",
+      "harness/Dockerfile.c9"
+    ],
+    "container_flags": [
+      "--network none",
+      "--read-only",
+      "--tmpfs /tmp:rw,exec,size=64m",
+      "--user 1000:1000",
+      "--memory 512m",
+      "--pids-limit 128",
+      "--cap-drop ALL",
+      "--security-opt no-new-privileges"
+    ],
+    "images": {
+      "c3": "sha256:f4f7d40cf6f177bd5ed248c3ae27bb31fc014701f923e7468046c8525e4cce28",
+      "c8": "sha256:5e46ca1045486746d0bf54c0a9d5b714f15ece7607ec0847601021a02f286fb5",
+      "c9": "sha256:b501917f9622d61271f8e18786f6b54d27d6346094577df73253c696f17dbf7e"
+    },
+    "effect": "c3 P5 read traversal; c8 P4 shell execution; c9 P4 command injection"
+  },
+  "triage": {
+    "R1_list_allowed_directories": {
+      "target": "R1-filesystem",
+      "tool": "list_allowed_directories",
+      "evidence_class": "negative_check",
+      "result": "returns only the configured allowed root C:/Users/ML/AppData/Local/Temp/mcptargets/fuzz-r1-root; no file content",
+      "raw": "raw/r1-triage/list-allowed.json",
+      "note": "confirms the MCP-Shield \"Sensitive file access\" flag is a heuristic false positive; not an independent review"
+    }
+  },
+  "fuzzer_roots_note": "MCP Fuzzer 0.7.0 client roots uses its working directory; R1 must run with cwd=fuzz-r1-root. Earlier non-isolated runs are under raw/mcp-fuzzer/superseded/.",
+  "guard_dynamic_outer_docker": {
+    "status": "completed",
+    "image": "mcp-guard-runner:20261020",
+    "dockerfile": "guard-container/Dockerfile",
+    "isolation": "outer Docker: --network none --read-only --tmpfs /tmp --user 1000:1000 --cap-drop ALL --security-opt no-new-privileges",
+    "inner_sandbox": "none",
+    "caveat": "not MCP Guard official Docker sandbox; the inner Docker sandbox is incomplete on Windows. The outer container supplies isolation.",
+    "results": {
+      "c3": {
+        "findings": 1,
+        "high": 1,
+        "p": [
+          "P5 path traversal read_file canary"
+        ]
+      },
+      "c8": {
+        "findings": 2,
+        "critical": 1,
+        "high": 1,
+        "p": [
+          "P4 shell execute_shell_command canary",
+          "P5 path traversal analyze_log_file canary"
+        ]
+      },
+      "c9": {
+        "findings": 0,
+        "p": [
+          "P4 not proven by Guard; false negative vs harness ping_host injection"
+        ]
+      }
+    },
+    "raw": [
+      "guard-container/c3-dynamic.json",
+      "guard-container/c8-dynamic.json",
+      "guard-container/c9-dynamic.json"
+    ],
+    "image_id": "sha256:57c8059a0401267590180e2f9c55a2ca1b6d51f76af8c2784588733d67e3a1ae"
+  }
+}

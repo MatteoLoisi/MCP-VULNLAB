@@ -1,0 +1,176 @@
+MCP Fuzzer v0.7.0 - Configuration Used:
+
+                       MCP Fuzzer Complete Configuration                       
++-----------------------------------------------------------------------------+
+| Category | Parameter                | Value                                 |
+|----------+--------------------------+---------------------------------------|
+| Core     | Mode                     | PROTOCOL                              |
+| Core     | Phase                    | AGGRESSIVE                            |
+| Core     | Protocol Phase           | AGGRESSIVE                            |
+| Core     | Protocol                 | STDIO                                 |
+| Core     | Endpoint                 | C:/Users/ML/AppData/Local/Programs/P… |
+|          |                          | D:/docker_proget/V3/tools/dvmcp_stdi… |
+|          |                          | C:/Users/ML/AppData/Local/Temp/mcpta… |
+| Auth     | Status                   | No authentication configured          |
+| Timing   | Timeout                  | 30.0                                  |
+| Fuzzing  | Runs                     | 10                                    |
+| Fuzzing  | Runs Per Type            | 2                                     |
+| Fuzzing  | Stateful                 | False                                 |
+| Fuzzing  | Stateful Runs            | 5                                     |
+| Fuzzing  | Havoc                    | False                                 |
+| Fuzzing  | Corpus                   | True                                  |
+| Safety   | Enable Safety System     | True                                  |
+| Safety   | Fs Root                  | reports/campaign-exp3-effect-tools-2… |
+| Safety   | No Network               | True                                  |
+| Output   | Output Dir               | reports/campaign-exp3-effect-tools-2… |
+| Process  | Watchdog Check Interval  | 1.0                                   |
+| Process  | Watchdog Process Timeout | 30.0                                  |
+| Process  | Watchdog Extra Buffer    | 5.0                                   |
+| Process  | Watchdog Max Hang Time   | 60.0                                  |
+| Process  | Max Concurrency          | 5                                     |
+| Advanced | Log Level                | INFO                                  |
++-----------------------------------------------------------------------------+
+
+                            Built Command Arguments                            
++-----------------------------------------------------------------------------+
+| Final Command Line                                                          |
+|-----------------------------------------------------------------------------|
+| C:\Users\ML\AppData\Local\uv\cache\archive-v0\r6IQj9WIgRWExWUY\Scripts\mcp… |
+| --mode protocol --phase aggressive --protocol-phase aggressive --protocol   |
+| stdio --endpoint                                                            |
+| C:/Users/ML/AppData/Local/Programs/Python/Python313/python.exe              |
+| D:/docker_proget/V3/tools/dvmcp_stdio.py                                    |
+| C:/Users/ML/AppData/Local/Temp/mcptargets/dvmcp/challenges/easy/challenge2  |
+| --runs 10 --runs-per-type 2 --timeout 30.0 --fs-root                        |
+| reports/campaign-exp3-effect-tools-20261020-b6e2a1/fuzz-root --output-dir   |
+| reports/campaign-exp3-effect-tools-20261020-b6e2a1/raw/mcp-fuzzer/c2        |
+| --log-level INFO --enable-safety-system --no-network                        |
++-----------------------------------------------------------------------------+
+
+This argv will be passed to the internal fuzzer process.
+
+Starting MCP Fuzzer...
+
+2026-10-20 16:15:58,957 - root - ERROR - Failed to initialize filesystem sandbox with root 'reports/campaign-exp3-effect-tools-20261020-b6e2a1/fuzz-root': Sandbox path D:\docker_proget\V3\reports\campaign-exp3-effect-tools-20261020-b6e2a1\fuzz-root must be under HOME, temp directory, or /tmp
+2026-10-20 16:15:58,959 - root - WARNING - Failed to set filesystem root 'reports/campaign-exp3-effect-tools-20261020-b6e2a1/fuzz-root': Sandbox path D:\docker_proget\V3 must be under HOME, temp directory, or /tmp
+Negotiated MCP spec version 2025-11-25; compliance checks below.
+                       MCP Compliance Checks                        
++------------------------------------------------------------------+
+| Status | Check           | Spec       | Message                  |
+|--------+-----------------+------------+--------------------------|
+| PASS   | schema-validate | MCP-Schema | Schema validation passed |
+| PASS   | schema-validate | MCP-Schema | Schema validation passed |
+| PASS   | schema-validate | MCP-Schema | Schema validation passed |
+| PASS   | schema-validate | MCP-Schema | Schema validation passed |
+| PASS   | schema-validate | MCP-Schema | Schema validation passed |
+| PASS   | schema-validate | MCP-Schema | Schema validation passed |
+| PASS   | schema-validate | MCP-Schema | Schema validation passed |
++------------------------------------------------------------------+
+            Total: 7 | Failed: 0 | Warned: 0 | Passed: 7            
+2026-10-20 16:16:02,817 - root - ERROR - Server returned error: {'code': 0, 'message': 'Unknown resource: file:///etc/passwd'}
+2026-10-20 16:16:02,819 - root - ERROR - Server returned error: {'code': 0, 'message': 'Unknown resource: file:///etc/passwd'}
+2026-10-20 16:16:02,854 - root - ERROR - Server returned error: {'code': 0, 'message': 'Unknown prompt: test\u202evalue_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A'}
+2026-10-20 16:16:02,856 - root - ERROR - Server returned error: {'code': 0, 'message': "Unknown prompt: ' OR '1'='1_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A_A"}
+2026-10-20 16:16:02,865 - root - ERROR - Server returned error: {'code': -32602, 'message': 'Invalid request parameters', 'data': ''}
+2026-10-20 16:16:02,867 - root - ERROR - Server returned error: {'code': -32602, 'message': 'Invalid request parameters', 'data': ''}
+2026-10-20 16:16:02,876 - root - ERROR - Server returned error: {'code': -32601, 'message': 'Method not found'}
+2026-10-20 16:16:02,878 - root - ERROR - Server returned error: {'code': -32601, 'message': 'Method not found'}
+2026-10-20 16:16:02,910 - root - ERROR - Server returned error: {'code': -32601, 'message': 'Method not found'}
+2026-10-20 16:16:02,913 - root - ERROR - Server returned error: {'code': -32601, 'message': 'Method not found'}
+2026-10-20 16:16:02,945 - root - ERROR - Server returned error: {'code': -32602, 'message': 'Invalid request parameters', 'data': ''}
+2026-10-20 16:16:02,947 - root - ERROR - Server returned error: {'code': -32602, 'message': 'Invalid request parameters', 'data': ''}
+2026-10-20 16:16:02,969 - root - ERROR - Server returned error: {'code': -32601, 'message': 'Method not found'}
+2026-10-20 16:16:02,971 - root - ERROR - Server returned error: {'code': -32601, 'message': 'Method not found'}
+2026-10-20 16:16:02,980 - root - ERROR - Server returned error: {'code': -32601, 'message': 'Method not found'}
+2026-10-20 16:16:02,982 - root - ERROR - Server returned error: {'code': -32601, 'message': 'Method not found'}
+2026-10-20 16:16:03,003 - root - ERROR - Server returned error: {'code': -32602, 'message': 'Invalid request parameters', 'data': ''}
+2026-10-20 16:16:03,007 - root - ERROR - Server returned error: {'code': -32602, 'message': 'Invalid request parameters', 'data': ''}
+2026-10-20 16:16:03,017 - root - ERROR - Server returned error: {'code': -32601, 'message': 'Method not found'}
+2026-10-20 16:16:03,020 - root - ERROR - Server returned error: {'code': -32601, 'message': 'Method not found'}
+2026-10-20 16:16:03,030 - root - ERROR - Server returned error: {'code': -32601, 'message': 'Method not found'}
+2026-10-20 16:16:03,032 - root - ERROR - Server returned error: {'code': -32601, 'message': 'Method not found'}
+2026-10-20 16:16:03,041 - root - ERROR - Server returned error: {'code': -32601, 'message': 'Method not found'}
+2026-10-20 16:16:03,043 - root - ERROR - Server returned error: {'code': -32601, 'message': 'Method not found'}
+2026-10-20 16:16:03,054 - root - ERROR - Server returned error: {'code': -32601, 'message': 'Method not found'}
+2026-10-20 16:16:03,056 - root - ERROR - Server returned error: {'code': -32601, 'message': 'Method not found'}
+2026-10-20 16:16:03,077 - root - ERROR - Server returned error: {'code': -32602, 'message': 'Invalid request parameters', 'data': ''}
+2026-10-20 16:16:03,078 - root - ERROR - Server returned error: {'code': -32602, 'message': 'Invalid request parameters', 'data': ''}
+2026-10-20 16:16:03,095 - root - ERROR - Server returned error: {'code': -32601, 'message': 'Method not found'}
+2026-10-20 16:16:03,095 - mcp_fuzzer.client.protocol_client - WARNING - Failed to list tasks: Server returned error
+2026-10-20 16:16:03,096 - root - ERROR - Server returned error: {'code': -32601, 'message': 'Method not found'}
+2026-10-20 16:16:03,097 - root - ERROR - Server returned error: {'code': -32601, 'message': 'Method not found'}
+2026-10-20 16:16:03,097 - mcp_fuzzer.client.protocol_client - WARNING - Failed to list tasks: Server returned error
+2026-10-20 16:16:03,098 - root - ERROR - Server returned error: {'code': -32601, 'message': 'Method not found'}
+2026-10-20 16:16:03,098 - mcp_fuzzer.client.protocol_client - WARNING - Failed to list tasks: Server returned error
+2026-10-20 16:16:03,099 - root - ERROR - Server returned error: {'code': -32601, 'message': 'Method not found'}
+2026-10-20 16:16:03,099 - mcp_fuzzer.client.protocol_client - WARNING - Failed to list tasks: Server returned error
+2026-10-20 16:16:03,107 - root - WARNING - Recorded 23 finding(s) across 1 categor(y/ies) in reports\campaign-exp3-effect-tools-20261020-b6e2a1\raw\mcp-fuzzer\c2\findings.json (InitializeRequest:accepted_malformed, InitializeRequest:accepted_malformed, InitializedNotification:accepted_malformed, ListToolsRequest:accepted_malformed, ListToolsRequest:accepted_malformed)
+                    MCP Protocol Fuzzing Summary                     
++-------------------------------------------------------------------+
+| Protocol Type                | Total Runs | Errors | Success Rate |
+|------------------------------+------------+--------+--------------|
+| InitializeRequest            | 2          | 2      | 0.0%         |
+| InitializedNotification      | 2          | 2      | 0.0%         |
+| ListToolsRequest             | 2          | 2      | 0.0%         |
+| CallToolRequest              | 4          | 4      | 0.0%         |
+| ListResourcesRequest         | 2          | 2      | 0.0%         |
+| ReadResourceRequest          | 4          | 4      | 0.0%         |
+| ListPromptsRequest           | 2          | 2      | 0.0%         |
+| GetPromptRequest             | 2          | 2      | 0.0%         |
+| ListRootsRequest             | 2          | 0      | 100.0%       |
+| SetLevelRequest              | 2          | 0      | 100.0%       |
+| CompleteRequest              | 2          | 0      | 100.0%       |
+| ListResourceTemplatesRequest | 2          | 2      | 0.0%         |
+| ElicitRequest                | 2          | 0      | 100.0%       |
+| PingRequest                  | 2          | 2      | 0.0%         |
+| SubscribeRequest             | 2          | 0      | 100.0%       |
+| UnsubscribeRequest           | 2          | 0      | 100.0%       |
+| CreateMessageRequest         | 2          | 0      | 100.0%       |
+| ListTasksRequest             | 3          | 0      | 100.0%       |
+| GetTaskRequest               | 2          | 0      | 100.0%       |
+| GetTaskPayloadRequest        | 2          | 0      | 100.0%       |
+| CancelTaskRequest            | 2          | 0      | 100.0%       |
+| ProgressNotification         | 2          | 2      | 0.0%         |
+| CancelledNotification        | 2          | 2      | 0.0%         |
+| GenericJSONRPCRequest        | 2          | 0      | 100.0%       |
++-------------------------------------------------------------------+
+               MCP Resource Item Fuzzing Summary               
++-------------------------------------------------------------+
+| Resource               | Total Runs | Errors | Success Rate |
+|------------------------+------------+--------+--------------|
+| company://public       | 1          | 1      | 0.0%         |
+| company://confidential | 1          | 1      | 0.0%         |
++-------------------------------------------------------------+
+
+=== MCP Fuzzer Summary ===
+Mode: protocol
+
+Protocol Results:
+  InitializeRequest: 2 runs, 0 server-rejected, 2 accepted-malformed findings
+  InitializedNotification: 2 runs, 0 server-rejected, 2 accepted-malformed findings
+  ListToolsRequest: 2 runs, 0 server-rejected, 2 accepted-malformed findings
+  CallToolRequest: 4 runs, 0 server-rejected, 4 accepted-malformed findings
+  ListResourcesRequest: 2 runs, 0 server-rejected, 2 accepted-malformed findings
+  ReadResourceRequest: 4 runs, 0 server-rejected, 2 accepted-malformed findings
+  ListPromptsRequest: 2 runs, 0 server-rejected, 2 accepted-malformed findings
+  GetPromptRequest: 2 runs, 0 server-rejected, 0 accepted-malformed findings
+  ListRootsRequest: 2 runs, 2 server-rejected, 0 accepted-malformed findings
+  SetLevelRequest: 2 runs, 2 server-rejected, 0 accepted-malformed findings
+  CompleteRequest: 2 runs, 2 server-rejected, 0 accepted-malformed findings
+  ListResourceTemplatesRequest: 2 runs, 0 server-rejected, 2 accepted-malformed findings
+  ElicitRequest: 2 runs, 2 server-rejected, 0 accepted-malformed findings
+  PingRequest: 2 runs, 0 server-rejected, 2 accepted-malformed findings
+  SubscribeRequest: 2 runs, 2 server-rejected, 0 accepted-malformed findings
+  UnsubscribeRequest: 2 runs, 2 server-rejected, 0 accepted-malformed findings
+  CreateMessageRequest: 2 runs, 2 server-rejected, 0 accepted-malformed findings
+  ListTasksRequest: 3 runs, 3 server-rejected, 0 accepted-malformed findings
+  GetTaskRequest: 2 runs, 2 server-rejected, 0 accepted-malformed findings
+  GetTaskPayloadRequest: 2 runs, 2 server-rejected, 0 accepted-malformed findings
+  CancelTaskRequest: 2 runs, 2 server-rejected, 0 accepted-malformed findings
+  ProgressNotification: 2 runs, 0 server-rejected, 2 accepted-malformed findings
+  CancelledNotification: 2 runs, 0 server-rejected, 2 accepted-malformed findings
+  GenericJSONRPCRequest: 2 runs, 2 server-rejected, 0 accepted-malformed findings
+
+Findings by category:
+  accepted_malformed: 23
+

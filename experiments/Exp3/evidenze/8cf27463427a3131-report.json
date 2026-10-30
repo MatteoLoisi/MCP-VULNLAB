@@ -1,0 +1,48 @@
+{
+  "schema": "exp3-probe-report-v1",
+  "producer": "exp3-probe-worker-v1",
+  "target": "R3-sequential-thinking",
+  "attempt_id": "3a468eea40ee483289233153491cd611",
+  "status": "completed",
+  "target_identity": {
+    "target": "R3-sequential-thinking",
+    "definition_sha256": "5ffdcf15365957adb37956943db5e8b46a9eec307b07a662c48f9e0940ae2371",
+    "manifest_sha256": "71156adadb7e944ec4e76beb135ac2d9913523bce20628bb3fc13eccbcb803d9",
+    "transport": "stdio",
+    "version": "1.0.0",
+    "configuration_sha256": "71c4056e04cd23299215d0e837e0773eaa33ebe23ea99c7bda8afa3cc35e8872"
+  },
+  "target_command": [
+    "npx",
+    "-y",
+    "@modelcontextprotocol/server-sequential-thinking@1.0.0"
+  ],
+  "scan_target": ".",
+  "planned_findings": [
+    "P2-tool-poisoning"
+  ],
+  "profile": "black-box",
+  "raw_ref": "capture.json",
+  "raw_sha256": "92eee75e6645375ad972d642da223a9675cfa81cc9524c4259ef6337489054d6",
+  "findings": {
+    "P2-tool-poisoning": {
+      "status": "secure",
+      "proof": "nessuna istruzione sospetta in 1 DESCRIPTION (avg_score=100)",
+      "details": {
+        "count": 1,
+        "avg_score": 100,
+        "by_severity": {},
+        "audit": [
+          {
+            "tool": "sequentialthinking",
+            "score": 100,
+            "flags": []
+          }
+        ]
+      },
+      "evidence_reason": "derived from captured call",
+      "evidence_ref": "evidence/1.json",
+      "evidence_sha256": "b79bb8b93561a8337b2ddc4b2cc43e8b828ba35119a7d4b532d857fde00cc603"
+    }
+  }
+}

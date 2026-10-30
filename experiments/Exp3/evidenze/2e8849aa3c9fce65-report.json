@@ -1,0 +1,100 @@
+{
+  "schema": "exp3-probe-report-v1",
+  "producer": "exp3-probe-worker-v1",
+  "target": "R2-memory",
+  "attempt_id": "7bb0c3551dcb49feab0b3046a65e2375",
+  "status": "completed",
+  "target_identity": {
+    "target": "R2-memory",
+    "definition_sha256": "1aa19728bd4be87355e60b9fec0812099a5840dd5c99c79f44c04051ae879d3b",
+    "manifest_sha256": "71156adadb7e944ec4e76beb135ac2d9913523bce20628bb3fc13eccbcb803d9",
+    "transport": "stdio",
+    "version": "1.0.0",
+    "configuration_sha256": "a26544d370f73377712bd0933a337c3964113ea82fc17f4c75558cb8105bbd78"
+  },
+  "target_command": [
+    "npx",
+    "-y",
+    "@modelcontextprotocol/server-memory@1.0.0"
+  ],
+  "scan_target": ".",
+  "planned_findings": [
+    "P2-tool-poisoning"
+  ],
+  "profile": "black-box",
+  "raw_ref": "capture.json",
+  "raw_sha256": "62b409e0df00d77d9ba059240aaf07155e900679439cbff780e4a35767e517a7",
+  "findings": {
+    "P2-tool-poisoning": {
+      "status": "secure",
+      "proof": "nessuna istruzione sospetta in 9 DESCRIPTION (avg_score=97)",
+      "details": {
+        "count": 9,
+        "avg_score": 97,
+        "by_severity": {
+          "low": 5
+        },
+        "audit": [
+          {
+            "tool": "create_entities",
+            "score": 95,
+            "flags": [
+              {
+                "code": "privileged-no-readonly-hint",
+                "severity": "low",
+                "detail": "verbo privilegiato senza readOnlyHint: verificare least-privilege"
+              }
+            ]
+          },
+          {
+            "tool": "create_relations",
+            "score": 95,
+            "flags": [
+              {
+                "code": "privileged-no-readonly-hint",
+                "severity": "low",
+                "detail": "verbo privilegiato senza readOnlyHint: verificare least-privilege"
+              }
+            ]
+          },
+          {
+            "tool": "delete_entities",
+            "score": 95,
+            "flags": [
+              {
+                "code": "privileged-no-readonly-hint",
+                "severity": "low",
+                "detail": "verbo privilegiato senza readOnlyHint: verificare least-privilege"
+              }
+            ]
+          },
+          {
+            "tool": "delete_observations",
+            "score": 95,
+            "flags": [
+              {
+                "code": "privileged-no-readonly-hint",
+                "severity": "low",
+                "detail": "verbo privilegiato senza readOnlyHint: verificare least-privilege"
+              }
+            ]
+          },
+          {
+            "tool": "delete_relations",
+            "score": 95,
+            "flags": [
+              {
+                "code": "privileged-no-readonly-hint",
+                "severity": "low",
+                "detail": "verbo privilegiato senza readOnlyHint: verificare least-privilege"
+              }
+            ]
+          }
+        ]
+      },
+      "evidence_reason": "derived from captured call",
+      "evidence_ref": "evidence/1.json",
+      "evidence_sha256": "71ece8ed74a11253d674be0534778630e7a8f2510a0c3ddd491f69139bd4d959"
+    }
+  }
+}

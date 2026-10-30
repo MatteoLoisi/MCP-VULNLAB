@@ -1,0 +1,77 @@
+{
+  "schema": "exp3-probe-report-v1",
+  "producer": "exp3-probe-worker-v1",
+  "target": "c9",
+  "attempt_id": "cadeaf43e1a04838bed35ec67b4e00ab",
+  "status": "completed",
+  "target_identity": {
+    "target": "c9",
+    "definition_sha256": "f32bb01f0f741f1c5ba840e64825bcde554995d55fdeaf14a93222d9a84cf0f3",
+    "manifest_sha256": "71156adadb7e944ec4e76beb135ac2d9913523bce20628bb3fc13eccbcb803d9",
+    "transport": "stdio",
+    "version": "79734c19f5104cd11486c90926d245560f53befa",
+    "shim_sha256": "da2c7bfdcb3b319bf3efc0df6f9a1fa1f5b79058ce619860f3821a93739a7766",
+    "configuration_sha256": "a4116e53f96c1be0b246c813c14e63e5510a22c3a69a483e1b8f5ba41f944554"
+  },
+  "target_command": [
+    "python",
+    "D:\\docker_proget\\V3\\tools\\dvmcp_stdio.py",
+    "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\hard\\challenge9"
+  ],
+  "scan_target": "D:\\docker_proget\\output\\v3-exp3-completion-20261018-40bc13d7\\targets\\dvmcp-pinned\\challenges\\hard\\challenge9",
+  "planned_findings": [
+    "P2-tool-poisoning"
+  ],
+  "profile": "black-box",
+  "raw_ref": "capture.json",
+  "raw_sha256": "90d50a5cd5c542593e8bbc0518bd9eac3519d2c6163dbd32381a1ebf063d4a29",
+  "findings": {
+    "P2-tool-poisoning": {
+      "status": "secure",
+      "proof": "nessuna istruzione sospetta in 5 DESCRIPTION (avg_score=99)",
+      "details": {
+        "count": 5,
+        "avg_score": 99,
+        "by_severity": {
+          "low": 1
+        },
+        "audit": [
+          {
+            "tool": "ping_host",
+            "score": 95,
+            "flags": [
+              {
+                "code": "privileged-no-readonly-hint",
+                "severity": "low",
+                "detail": "verbo privilegiato senza readOnlyHint: verificare least-privilege"
+              }
+            ]
+          },
+          {
+            "tool": "traceroute",
+            "score": 100,
+            "flags": []
+          },
+          {
+            "tool": "port_scan",
+            "score": 100,
+            "flags": []
+          },
+          {
+            "tool": "network_diagnostic",
+            "score": 100,
+            "flags": []
+          },
+          {
+            "tool": "view_network_logs",
+            "score": 100,
+            "flags": []
+          }
+        ]
+      },
+      "evidence_reason": "derived from captured call",
+      "evidence_ref": "evidence/1.json",
+      "evidence_sha256": "24c41013e78d8b32194e97d1bb1bc4e4887891208ab8b72128d7ca41570f70f8"
+    }
+  }
+}
