@@ -1,34 +1,34 @@
 ﻿target,scanner,state,exit_code,start_utc,end_utc,request_timeout,selected_for_comparison,error,proof
-ssrf-1-webresearch,Local P6 probes,vulnerable,0,2026-10-23T19:50:14.099991+00:00,2026-10-23T19:50:19.843942+00:00,,si,,raw/p6/ssrf-1-webresearch.json
-ssrf-1-webresearch,MCTS,completed,0,2026-10-23T19:50:20.186242+00:00,2026-10-23T19:50:31.032844+00:00,,si,,raw/mcts/ssrf-1-webresearch.json
-ssrf-1-webresearch,Cisco YARA,finished,0,2026-10-23T19:50:31.158632+00:00,2026-10-23T19:50:48.589289+00:00,,si,,
-ssrf-1-webresearch,MCP-Shield without Claude,finished,0,2026-10-23T19:50:52.447524+00:00,2026-10-23T19:51:32.173172+00:00,,si,,
-ssrf-1-webresearch,"MCP Fuzzer, realistic seed 42",finished,0,2026-10-23T19:51:33.896562+00:00,2026-10-23T19:52:12.991928+00:00,,si,,
-ssrf-2-openwebsearch-216,Local P6 probes,vulnerable,0,2026-10-23T19:52:14.990119+00:00,2026-10-23T19:52:40.113994+00:00,,si,,raw/p6/ssrf-2-openwebsearch-216.json
-ssrf-2-openwebsearch-216,MCTS,completed,0,2026-10-23T19:52:43.873718+00:00,2026-10-23T19:52:51.373925+00:00,,si,,raw/mcts/ssrf-2-openwebsearch-216.json
-ssrf-2-openwebsearch-216,Cisco YARA,finished,0,2026-10-23T19:52:53.167147+00:00,2026-10-23T19:53:09.825558+00:00,,si,,
-ssrf-2-openwebsearch-216,MCP-Shield without Claude,finished,0,2026-10-23T19:53:12.339802+00:00,2026-10-23T19:53:43.197208+00:00,,si,,
-ssrf-2-openwebsearch-216,"MCP Fuzzer, realistic seed 42",finished,0,2026-10-23T19:53:45.763227+00:00,2026-10-23T19:53:50.610884+00:00,,si,,
-ssrf-3-openwebsearch-217,Local P6 probes,vulnerable,0,2026-10-23T19:53:53.238038+00:00,2026-10-23T19:54:08.552423+00:00,,si,,raw/p6/ssrf-3-openwebsearch-217.json
-ssrf-3-openwebsearch-217,MCTS,completed,0,2026-10-23T19:54:09.200614+00:00,2026-10-23T19:54:16.662458+00:00,,si,,raw/mcts/ssrf-3-openwebsearch-217.json
-ssrf-3-openwebsearch-217,Cisco YARA,finished,0,2026-10-23T19:54:17.219228+00:00,2026-10-23T19:54:34.993552+00:00,,si,,
-ssrf-3-openwebsearch-217,MCP-Shield without Claude,finished,0,2026-10-23T19:54:37.354899+00:00,2026-10-23T19:55:08.878680+00:00,,si,,
-ssrf-3-openwebsearch-217,"MCP Fuzzer, realistic seed 42",finished,0,2026-10-23T19:55:12.265933+00:00,2026-10-23T19:55:17.644789+00:00,,si,,
-ssrf-4-openwebsearch-218,Local P6 probes,secure,0,2026-10-23T19:55:20.650675+00:00,2026-10-23T19:55:36.313074+00:00,,si,,raw/p6/ssrf-4-openwebsearch-218.json
-ssrf-4-openwebsearch-218,MCTS,completed,0,2026-10-23T19:55:39.382511+00:00,2026-10-23T19:55:46.910162+00:00,,si,,raw/mcts/ssrf-4-openwebsearch-218.json
-ssrf-4-openwebsearch-218,Cisco YARA,finished,0,2026-10-23T19:55:50.126995+00:00,2026-10-23T19:56:05.568832+00:00,,si,,
-ssrf-4-openwebsearch-218,MCP-Shield without Claude,finished,0,2026-10-23T19:56:08.884186+00:00,2026-10-23T19:56:39.915675+00:00,,si,,
-ssrf-4-openwebsearch-218,"MCP Fuzzer, realistic seed 42",finished,0,2026-10-23T19:56:40.904668+00:00,2026-10-23T19:56:45.970782+00:00,,si,,
-ssrf-5-openwebsearch-2111,Local P6 probes,secure,0,2026-10-23T19:56:46.224623+00:00,2026-10-23T19:57:01.913240+00:00,,si,,raw/p6/ssrf-5-openwebsearch-2111.json
-ssrf-5-openwebsearch-2111,MCTS,completed,0,2026-10-23T19:57:02.160891+00:00,2026-10-23T19:57:10.247156+00:00,,si,,raw/mcts/ssrf-5-openwebsearch-2111.json
-ssrf-5-openwebsearch-2111,Cisco YARA,finished,0,2026-10-23T19:57:11.062141+00:00,2026-10-23T19:57:27.374921+00:00,,si,,
-ssrf-5-openwebsearch-2111,MCP-Shield without Claude,finished,0,2026-10-23T19:57:28.806892+00:00,2026-10-23T19:58:00.657389+00:00,,si,,
-ssrf-5-openwebsearch-2111,"MCP Fuzzer, realistic seed 42",finished,0,2026-10-23T19:58:01.881893+00:00,2026-10-23T19:58:08.694171+00:00,,si,,
-ssrf-1-webresearch,"MCP Guard, static without dependencies",finished,0,2026-10-23T19:59:00.131485+00:00,2026-10-23T20:00:42.981599+00:00,,si,,attempts/guard-ssrf-1-webresearch/status.json
-ssrf-2-openwebsearch-216,"MCP Guard, static without dependencies",finished,0,2026-10-23T20:00:47.085117+00:00,2026-10-23T20:01:27.272256+00:00,,si,,attempts/guard-ssrf-2-openwebsearch-216/status.json
-ssrf-3-openwebsearch-217,"MCP Guard, static without dependencies",finished,0,2026-10-23T20:01:32.815722+00:00,2026-10-23T20:02:18.563904+00:00,,si,,attempts/guard-ssrf-3-openwebsearch-217/status.json
-ssrf-4-openwebsearch-218,"MCP Guard, static without dependencies",finished,0,2026-10-23T20:02:22.846769+00:00,2026-10-23T20:03:03.321897+00:00,,si,,attempts/guard-ssrf-4-openwebsearch-218/status.json
-ssrf-5-openwebsearch-2111,"MCP Guard, static without dependencies",finished,0,2026-10-23T20:03:07.839905+00:00,2026-10-23T20:03:48.875236+00:00,,si,,attempts/guard-ssrf-5-openwebsearch-2111/status.json
+ssrf-1-webresearch,Local P6 probes,vulnerable,0,2026-10-23T19:50:14.099991+00:00,2026-10-23T19:50:19.843942+00:00,,yes,,raw/p6/ssrf-1-webresearch.json
+ssrf-1-webresearch,MCTS,completed,0,2026-10-23T19:50:20.186242+00:00,2026-10-23T19:50:31.032844+00:00,,yes,,raw/mcts/ssrf-1-webresearch.json
+ssrf-1-webresearch,Cisco YARA,finished,0,2026-10-23T19:50:31.158632+00:00,2026-10-23T19:50:48.589289+00:00,,yes,,
+ssrf-1-webresearch,MCP-Shield without Claude,finished,0,2026-10-23T19:50:52.447524+00:00,2026-10-23T19:51:32.173172+00:00,,yes,,
+ssrf-1-webresearch,"MCP Fuzzer, realistic seed 42",finished,0,2026-10-23T19:51:33.896562+00:00,2026-10-23T19:52:12.991928+00:00,,yes,,
+ssrf-2-openwebsearch-216,Local P6 probes,vulnerable,0,2026-10-23T19:52:14.990119+00:00,2026-10-23T19:52:40.113994+00:00,,yes,,raw/p6/ssrf-2-openwebsearch-216.json
+ssrf-2-openwebsearch-216,MCTS,completed,0,2026-10-23T19:52:43.873718+00:00,2026-10-23T19:52:51.373925+00:00,,yes,,raw/mcts/ssrf-2-openwebsearch-216.json
+ssrf-2-openwebsearch-216,Cisco YARA,finished,0,2026-10-23T19:52:53.167147+00:00,2026-10-23T19:53:09.825558+00:00,,yes,,
+ssrf-2-openwebsearch-216,MCP-Shield without Claude,finished,0,2026-10-23T19:53:12.339802+00:00,2026-10-23T19:53:43.197208+00:00,,yes,,
+ssrf-2-openwebsearch-216,"MCP Fuzzer, realistic seed 42",finished,0,2026-10-23T19:53:45.763227+00:00,2026-10-23T19:53:50.610884+00:00,,yes,,
+ssrf-3-openwebsearch-217,Local P6 probes,vulnerable,0,2026-10-23T19:53:53.238038+00:00,2026-10-23T19:54:08.552423+00:00,,yes,,raw/p6/ssrf-3-openwebsearch-217.json
+ssrf-3-openwebsearch-217,MCTS,completed,0,2026-10-23T19:54:09.200614+00:00,2026-10-23T19:54:16.662458+00:00,,yes,,raw/mcts/ssrf-3-openwebsearch-217.json
+ssrf-3-openwebsearch-217,Cisco YARA,finished,0,2026-10-23T19:54:17.219228+00:00,2026-10-23T19:54:34.993552+00:00,,yes,,
+ssrf-3-openwebsearch-217,MCP-Shield without Claude,finished,0,2026-10-23T19:54:37.354899+00:00,2026-10-23T19:55:08.878680+00:00,,yes,,
+ssrf-3-openwebsearch-217,"MCP Fuzzer, realistic seed 42",finished,0,2026-10-23T19:55:12.265933+00:00,2026-10-23T19:55:17.644789+00:00,,yes,,
+ssrf-4-openwebsearch-218,Local P6 probes,secure,0,2026-10-23T19:55:20.650675+00:00,2026-10-23T19:55:36.313074+00:00,,yes,,raw/p6/ssrf-4-openwebsearch-218.json
+ssrf-4-openwebsearch-218,MCTS,completed,0,2026-10-23T19:55:39.382511+00:00,2026-10-23T19:55:46.910162+00:00,,yes,,raw/mcts/ssrf-4-openwebsearch-218.json
+ssrf-4-openwebsearch-218,Cisco YARA,finished,0,2026-10-23T19:55:50.126995+00:00,2026-10-23T19:56:05.568832+00:00,,yes,,
+ssrf-4-openwebsearch-218,MCP-Shield without Claude,finished,0,2026-10-23T19:56:08.884186+00:00,2026-10-23T19:56:39.915675+00:00,,yes,,
+ssrf-4-openwebsearch-218,"MCP Fuzzer, realistic seed 42",finished,0,2026-10-23T19:56:40.904668+00:00,2026-10-23T19:56:45.970782+00:00,,yes,,
+ssrf-5-openwebsearch-2111,Local P6 probes,secure,0,2026-10-23T19:56:46.224623+00:00,2026-10-23T19:57:01.913240+00:00,,yes,,raw/p6/ssrf-5-openwebsearch-2111.json
+ssrf-5-openwebsearch-2111,MCTS,completed,0,2026-10-23T19:57:02.160891+00:00,2026-10-23T19:57:10.247156+00:00,,yes,,raw/mcts/ssrf-5-openwebsearch-2111.json
+ssrf-5-openwebsearch-2111,Cisco YARA,finished,0,2026-10-23T19:57:11.062141+00:00,2026-10-23T19:57:27.374921+00:00,,yes,,
+ssrf-5-openwebsearch-2111,MCP-Shield without Claude,finished,0,2026-10-23T19:57:28.806892+00:00,2026-10-23T19:58:00.657389+00:00,,yes,,
+ssrf-5-openwebsearch-2111,"MCP Fuzzer, realistic seed 42",finished,0,2026-10-23T19:58:01.881893+00:00,2026-10-23T19:58:08.694171+00:00,,yes,,
+ssrf-1-webresearch,"MCP Guard, static without dependencies",finished,0,2026-10-23T19:59:00.131485+00:00,2026-10-23T20:00:42.981599+00:00,,yes,,attempts/guard-ssrf-1-webresearch/status.json
+ssrf-2-openwebsearch-216,"MCP Guard, static without dependencies",finished,0,2026-10-23T20:00:47.085117+00:00,2026-10-23T20:01:27.272256+00:00,,yes,,attempts/guard-ssrf-2-openwebsearch-216/status.json
+ssrf-3-openwebsearch-217,"MCP Guard, static without dependencies",finished,0,2026-10-23T20:01:32.815722+00:00,2026-10-23T20:02:18.563904+00:00,,yes,,attempts/guard-ssrf-3-openwebsearch-217/status.json
+ssrf-4-openwebsearch-218,"MCP Guard, static without dependencies",finished,0,2026-10-23T20:02:22.846769+00:00,2026-10-23T20:03:03.321897+00:00,,yes,,attempts/guard-ssrf-4-openwebsearch-218/status.json
+ssrf-5-openwebsearch-2111,"MCP Guard, static without dependencies",finished,0,2026-10-23T20:03:07.839905+00:00,2026-10-23T20:03:48.875236+00:00,,yes,,attempts/guard-ssrf-5-openwebsearch-2111/status.json
 ssrf-2-openwebsearch-216,RedCell,finished,2,2026-10-23T20:09:57.468041+00:00,2026-10-23T20:10:12.907702+00:00,,no,Start-up/protocol error; not an SSRF negative,attempts/redcell-ssrf-2-openwebsearch-216/status.json
 ssrf-3-openwebsearch-217,RedCell,finished,2,2026-10-23T20:10:13.088046+00:00,2026-10-23T20:10:35.029271+00:00,,no,Start-up/protocol error; not an SSRF negative,attempts/redcell-ssrf-3-openwebsearch-217/status.json
 ssrf-4-openwebsearch-218,RedCell,finished,2,2026-10-23T20:10:39.246137+00:00,2026-10-23T20:11:14.180565+00:00,,no,Start-up/protocol error; not an SSRF negative,attempts/redcell-ssrf-4-openwebsearch-218/status.json
@@ -42,13 +42,13 @@ ssrf-3-openwebsearch-217,RedCell,finished,2,2026-10-23T20:15:59.233720+00:00,202
 ssrf-4-openwebsearch-218,RedCell,finished,2,2026-10-23T20:17:15.352911+00:00,2026-10-23T20:17:57.500059+00:00,30,no,Start-up/protocol error; not an SSRF negative,attempts/redcell-ssrf-4-openwebsearch-218-retry30/status.json
 ssrf-5-openwebsearch-2111,RedCell,finished,2,2026-10-23T20:18:00.052560+00:00,2026-10-23T20:18:55.355110+00:00,30,no,Start-up/protocol error; not an SSRF negative,attempts/redcell-ssrf-5-openwebsearch-2111-retry30/status.json
 ssrf-2-openwebsearch-216,"Mcpwn, API SSRFTest",interrupted_preparation,,2026-10-23T20:18:57.705798+00:00,2026-10-23T21:32:21.892472+00:00,30,no,Stopped after initialization failures to extract unchanged target dependencies inside Linux,attempts/mcpwn-ssrf-2-openwebsearch-216-retry30/status.json
-ssrf-1-webresearch,RedCell,finished,1,2026-10-23T21:32:22.971298+00:00,2026-10-23T21:33:17.714514+00:00,30,si,,attempts/redcell-ssrf-1-webresearch-linux-local/status.json
-ssrf-1-webresearch,"Mcpwn, API SSRFTest",finished,0,2026-10-23T21:33:17.848573+00:00,2026-10-23T21:34:18.700494+00:00,30,si,,attempts/mcpwn-ssrf-1-webresearch-linux-local/status.json
-ssrf-2-openwebsearch-216,RedCell,finished,0,2026-10-23T21:34:21.813368+00:00,2026-10-23T21:34:47.700802+00:00,30,si,,attempts/redcell-ssrf-2-openwebsearch-216-linux-local/status.json
-ssrf-2-openwebsearch-216,"Mcpwn, API SSRFTest",finished,0,2026-10-23T21:34:50.098507+00:00,2026-10-23T21:35:18.640446+00:00,30,si,,attempts/mcpwn-ssrf-2-openwebsearch-216-linux-local/status.json
-ssrf-3-openwebsearch-217,RedCell,finished,0,2026-10-23T21:35:21.103549+00:00,2026-10-23T21:35:46.322004+00:00,30,si,,attempts/redcell-ssrf-3-openwebsearch-217-linux-local/status.json
-ssrf-3-openwebsearch-217,"Mcpwn, API SSRFTest",finished,0,2026-10-23T21:35:48.557531+00:00,2026-10-23T21:36:15.714466+00:00,30,si,,attempts/mcpwn-ssrf-3-openwebsearch-217-linux-local/status.json
-ssrf-4-openwebsearch-218,RedCell,finished,0,2026-10-23T21:36:17.276781+00:00,2026-10-23T21:36:40.086089+00:00,30,si,,attempts/redcell-ssrf-4-openwebsearch-218-linux-local/status.json
-ssrf-4-openwebsearch-218,"Mcpwn, API SSRFTest",finished,0,2026-10-23T21:36:41.275564+00:00,2026-10-23T21:37:06.063895+00:00,30,si,,attempts/mcpwn-ssrf-4-openwebsearch-218-linux-local/status.json
-ssrf-5-openwebsearch-2111,RedCell,finished,0,2026-10-23T21:37:06.315234+00:00,2026-10-23T21:37:29.817207+00:00,30,si,,attempts/redcell-ssrf-5-openwebsearch-2111-linux-local/status.json
-ssrf-5-openwebsearch-2111,"Mcpwn, API SSRFTest",finished,0,2026-10-23T21:37:29.832232+00:00,2026-10-23T21:38:02.121093+00:00,30,si,,attempts/mcpwn-ssrf-5-openwebsearch-2111-linux-local/status.json
+ssrf-1-webresearch,RedCell,finished,1,2026-10-23T21:32:22.971298+00:00,2026-10-23T21:33:17.714514+00:00,30,yes,,attempts/redcell-ssrf-1-webresearch-linux-local/status.json
+ssrf-1-webresearch,"Mcpwn, API SSRFTest",finished,0,2026-10-23T21:33:17.848573+00:00,2026-10-23T21:34:18.700494+00:00,30,yes,,attempts/mcpwn-ssrf-1-webresearch-linux-local/status.json
+ssrf-2-openwebsearch-216,RedCell,finished,0,2026-10-23T21:34:21.813368+00:00,2026-10-23T21:34:47.700802+00:00,30,yes,,attempts/redcell-ssrf-2-openwebsearch-216-linux-local/status.json
+ssrf-2-openwebsearch-216,"Mcpwn, API SSRFTest",finished,0,2026-10-23T21:34:50.098507+00:00,2026-10-23T21:35:18.640446+00:00,30,yes,,attempts/mcpwn-ssrf-2-openwebsearch-216-linux-local/status.json
+ssrf-3-openwebsearch-217,RedCell,finished,0,2026-10-23T21:35:21.103549+00:00,2026-10-23T21:35:46.322004+00:00,30,yes,,attempts/redcell-ssrf-3-openwebsearch-217-linux-local/status.json
+ssrf-3-openwebsearch-217,"Mcpwn, API SSRFTest",finished,0,2026-10-23T21:35:48.557531+00:00,2026-10-23T21:36:15.714466+00:00,30,yes,,attempts/mcpwn-ssrf-3-openwebsearch-217-linux-local/status.json
+ssrf-4-openwebsearch-218,RedCell,finished,0,2026-10-23T21:36:17.276781+00:00,2026-10-23T21:36:40.086089+00:00,30,yes,,attempts/redcell-ssrf-4-openwebsearch-218-linux-local/status.json
+ssrf-4-openwebsearch-218,"Mcpwn, API SSRFTest",finished,0,2026-10-23T21:36:41.275564+00:00,2026-10-23T21:37:06.063895+00:00,30,yes,,attempts/mcpwn-ssrf-4-openwebsearch-218-linux-local/status.json
+ssrf-5-openwebsearch-2111,RedCell,finished,0,2026-10-23T21:37:06.315234+00:00,2026-10-23T21:37:29.817207+00:00,30,yes,,attempts/redcell-ssrf-5-openwebsearch-2111-linux-local/status.json
+ssrf-5-openwebsearch-2111,"Mcpwn, API SSRFTest",finished,0,2026-10-23T21:37:29.832232+00:00,2026-10-23T21:38:02.121093+00:00,30,yes,,attempts/mcpwn-ssrf-5-openwebsearch-2111-linux-local/status.json

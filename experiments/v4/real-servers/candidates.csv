@@ -13,8 +13,8 @@ npm,mcp-server-code-runner,devops,,found,0.1.8,MIT,git+https://github.com/formul
 npm,@eslint/mcp,devops,,found,0.3.15,Apache-2.0,git+https://github.com/eslint/rewrite.git,56194,api.npmjs.org last-week,2026-10-29,True,True,True,True
 npm,@agent-infra/mcp-server-filesystem,filesystem,,found,1.2.29,MIT,git+https://github.com/bytedance/UI-TARS-desktop.git,320,api.npmjs.org last-week,2026-10-29,True,True,True,True
 npm,mcp-ripgrep,filesystem,,found,0.4.0,MIT,git+https://github.com/mcollina/mcp-ripgrep.git,793,api.npmjs.org last-week,2026-10-29,True,True,True,True
-npm,@sylphlab/pdf-reader-mcp,note e conoscenza,,found,0.3.23,MIT,git+https://github.com/sylphlab/pdf-reader-mcp.git,760,api.npmjs.org last-week,2026-10-29,True,True,True,True
-npm,mcp-mermaid,note e conoscenza,,found,0.4.1,MIT,git+https://github.com/hustcc/mcp-mermaid.git,4071,api.npmjs.org last-week,2026-10-29,True,True,True,True
+npm,@sylphlab/pdf-reader-mcp,notes and knowledge,,found,0.3.23,MIT,git+https://github.com/sylphlab/pdf-reader-mcp.git,760,api.npmjs.org last-week,2026-10-29,True,True,True,True
+npm,mcp-mermaid,notes and knowledge,,found,0.4.1,MIT,git+https://github.com/hustcc/mcp-mermaid.git,4071,api.npmjs.org last-week,2026-10-29,True,True,True,True
 npm,mcp-server-sqlite-npx,database,,found,0.8.0,ISC,,1526,api.npmjs.org last-week,2026-10-29,True,True,False,False
 npm,@modelcontextprotocol/server-postgres,database,servizio,found,0.6.2,MIT,,179402,api.npmjs.org last-week,2026-10-29,False,,,False
 npm,@benborla29/mcp-server-mysql,database,servizio,found,2.0.9,MIT,git+https://github.com/benborla/mcp-server-mysql.git,20177,api.npmjs.org last-week,2026-10-29,False,,,False
@@ -29,8 +29,8 @@ pypi,mcp-server-duckdb,database,,found,1.1.0,The MIT License (MIT)  Copyright (c
 pypi,mcp-server-motherduck,database,,found,1.1.0,,,4967,pypistats.org recent last_week,2026-10-29,True,False,,False
 pypi,mcp-alchemy,database,servizio,found,2026.10.15.202659,,https://github.com/runekaagaard/mcp-alchemy/discussions,4506,pypistats.org recent last_week,2026-10-29,False,,,False
 pypi,mcp-server-qdrant,database,,found,0.8.1,Apache-2.0,,12846,pypistats.org recent last_week,2026-10-29,True,True,False,False
-pypi,markitdown-mcp,note e conoscenza,,found,0.0.1a8,MIT,https://github.com/microsoft/markitdown#readme,31320,pypistats.org recent last_week,2026-10-29,True,True,True,True
-pypi,mcp-pandoc,note e conoscenza,,found,0.11.1,,,6696,pypistats.org recent last_week,2026-10-29,True,True,True,True
+pypi,markitdown-mcp,notes and knowledge,,found,0.0.1a8,MIT,https://github.com/microsoft/markitdown#readme,31320,pypistats.org recent last_week,2026-10-29,True,True,True,True
+pypi,mcp-pandoc,notes and knowledge,,found,0.11.1,,,6696,pypistats.org recent last_week,2026-10-29,True,True,True,True
 pypi,mcp-server-docker,devops,,found,0.3.0,"GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007  Copyright (C) 2007 Free Soft",https://github.com/ckreiling/mcp-server-docker/issues,3346,pypistats.org recent last_week,2026-10-29,True,True,False,False
 pypi,mcp-server-tree-sitter,devops,,found,0.7.0,MIT,https://github.com/wrale/mcp-server-tree-sitter/issues,553,pypistats.org recent last_week,2026-10-29,True,True,False,False
 pypi,jupyter-mcp-server,devops,servizio,found,2.2.4,"BSD 3-Clause License
@@ -45,4 +45,4 @@ pypi,awslabs.aws-documentation-mcp-server,ricerca,rete,found,1.2.3,Apache-2.0,ht
 pypi,awslabs.core-mcp-server,devops,,found,1.0.27,Apache-2.0,https://github.com/awslabs/mcp/issues,137,pypistats.org recent last_week,2026-10-29,False,,,False
 pypi,mcp-server-todoist,api saas,credenziali,not_found: HTTPError HTTP Error 404: Not Found,,,,,,2026-10-29,False,,,False
 pypi,redis-mcp-server,database,servizio,found,0.5.1,MIT,https://github.com/redis/mcp-redis,3770,pypistats.org recent last_week,2026-10-29,False,,,False
-pypi,mcp-obsidian,note e conoscenza,servizio,found,0.2.3,,,5068,pypistats.org recent last_week,2026-10-29,False,,,False
+pypi,mcp-obsidian,notes and knowledge,servizio,found,0.2.3,,,5068,pypistats.org recent last_week,2026-10-29,False,,,False
