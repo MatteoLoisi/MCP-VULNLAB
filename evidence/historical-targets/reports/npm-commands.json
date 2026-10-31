@@ -1,0 +1,1724 @@
+{
+  "tool": "real-target-check",
+  "version": "3.1.0",
+  "started_at": "2026-10-11T11:18:56.511492+00:00",
+  "target": {
+    "transport": "stdio",
+    "base_url": null,
+    "mcp_path": null,
+    "tls_ca": null,
+    "command": [
+      "C:\\Users\\ML\\AppData\\Roaming\\npm\\npx.CMD",
+      "-y",
+      "mcp-server-commands"
+    ],
+    "profile": "black-box"
+  },
+  "findings": {
+    "P1-fingerprint": {
+      "status": "info",
+      "proof": "era=legacy transport=stdio",
+      "details": {
+        "transport": "stdio",
+        "era": "legacy",
+        "discover_error": "risposta non-discover: {'jsonrpc': '2.0', 'id': 1, 'error': {'code': -32601, 'message': 'Method not found'}}",
+        "initialize": {
+          "protocolVersion": "2024-11-05",
+          "capabilities": {
+            "tools": {},
+            "prompts": {}
+          },
+          "serverInfo": {
+            "name": "mcp-server-commands",
+            "version": "0.8.2",
+            "description": "Run commands on this win32 machine"
+          }
+        }
+      }
+    },
+    "P2-tool-poisoning": {
+      "status": "secure",
+      "proof": "nessuna istruzione sospetta in 1 DESCRIPTION (avg_score=100)",
+      "details": {
+        "count": 1,
+        "avg_score": 100,
+        "by_severity": {},
+        "audit": [
+          {
+            "tool": "run_process",
+            "score": 100,
+            "flags": []
+          }
+        ]
+      }
+    },
+    "P9-behavioral": {
+      "status": "info",
+      "proof": "1 tool esclusi dal guard black-box (nome write/exec-like): nessuna chiamata è partita",
+      "details": {
+        "swept": 0,
+        "planned": 0,
+        "tried": 0,
+        "max_attempts": 5,
+        "reason": "nessun candidato sondabile",
+        "complete": false,
+        "eligible": 0,
+        "excluded_guard": 1
+      }
+    },
+    "P10-influence": {
+      "status": "secure",
+      "proof": "nessuna influenza rilevata (0 confronti)",
+      "details": {
+        "swept": 0,
+        "planned": 0,
+        "tried": 0,
+        "max_attempts": 4,
+        "reason": "",
+        "complete": true,
+        "eligible": 0
+      }
+    },
+    "P11-token-shape": {
+      "status": "skipped",
+      "proof": "nessun tool auth-like e nessun argomento sondabile: superficie 'token' assente",
+      "details": {
+        "swept": 0,
+        "planned": 0,
+        "tried": 0,
+        "max_attempts": 6,
+        "reason": "",
+        "complete": true,
+        "eligible": 0,
+        "leak_calls": 0,
+        "leak_planned": 0
+      }
+    },
+    "P3-resource-traversal": {
+      "status": "secure",
+      "proof": "resources/list non implementata: superficie resources/read assente",
+      "details": {}
+    },
+    "P15-resource-content": {
+      "status": "secure",
+      "proof": "resources/list non implementata: superficie risorse assente",
+      "details": {}
+    },
+    "P4-arg-injection": {
+      "status": "info",
+      "proof": "capacità exec esposta ma non sondata in black-box: ['run_process'] (riusa con --allow-write per il marker-probe); write-like: ['run_process']",
+      "details": {}
+    },
+    "P5-tool-traversal": {
+      "status": "skipped",
+      "proof": "P5 richiede --canary-file (nome del segreto sibling)",
+      "details": {}
+    },
+    "P6-ssrf-collaborator": {
+      "status": "skipped",
+      "proof": "nessun argomento URL-like o host-like da sondare: superficie SSRF assente (o nomi non riconosciuti da URL_ARG_RE/HOST_ARG_RE)",
+      "details": {
+        "hits": [],
+        "tried": 0,
+        "blocked": 0,
+        "swept": 0,
+        "url_args": 0,
+        "planned": 0,
+        "host_args": 0,
+        "responses": 0,
+        "policy_rejections": 0,
+        "unresolved_errors": 0,
+        "error_samples": [],
+        "max_attempts": 60,
+        "complete": false
+      }
+    },
+    "P8-sqli": {
+      "status": "info",
+      "proof": "1 tool con argomenti stringa esclusi dal guard black-box (nome write/exec-like): nessuna chiamata è partita",
+      "details": {
+        "swept": 0,
+        "planned": 0,
+        "tried": 0,
+        "max_attempts": 24,
+        "reason": "nessun candidato sondabile",
+        "complete": false,
+        "excluded_guard": 1
+      }
+    },
+    "P13-authz": {
+      "status": "secure",
+      "proof": "P13: 3 controlli superati (black-box)",
+      "details": {
+        "checks": {
+          "no-auth": {
+            "status": "secure",
+            "proof": "nessun tool sensibile raggiungibile senza credenziali"
+          },
+          "idor": {
+            "status": "secure",
+            "proof": "nessuna espansione IDOR osservata"
+          },
+          "confused-deputy": {
+            "status": "secure",
+            "proof": "nessun argomento di ruolo elevato onorato"
+          }
+        },
+        "discovery": "black-box"
+      }
+    },
+    "P14-dos": {
+      "status": "info",
+      "proof": "P14: nessun HIT, 1 controlli inconclusivi: ['rate-limit']",
+      "details": {
+        "checks": {
+          "schema-ref-cycle": {
+            "status": "secure",
+            "proof": "nessuno schema con $ref circolare/annidamento estremo"
+          },
+          "rate-limit": {
+            "status": "info",
+            "proof": "nessun throttling su 12 tools/list read-only (TCMCP-102)"
+          },
+          "unbounded-input": {
+            "status": "skipped",
+            "proof": "nessun tool read-only con argomento stringa"
+          }
+        },
+        "discovery": "triage (mai verdetto)"
+      }
+    }
+  },
+  "transcript": [
+    {
+      "direction": "->",
+      "at": 1791717536.5294654,
+      "payload": {
+        "stdio": [
+          "C:\\Users\\ML\\AppData\\Roaming\\npm\\npx.CMD",
+          "-y",
+          "mcp-server-commands"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 1,
+          "method": "server/discover",
+          "params": {
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791717539.055916,
+      "payload": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "error": {
+          "code": -32601,
+          "message": "Method not found"
+        }
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791717539.0559688,
+      "payload": {
+        "stdio": [
+          "C:\\Users\\ML\\AppData\\Roaming\\npm\\npx.CMD",
+          "-y",
+          "mcp-server-commands"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 2,
+          "method": "initialize",
+          "params": {
+            "protocolVersion": "2025-11-25",
+            "capabilities": {},
+            "clientInfo": {
+              "name": "mcp-vulnlab-real-target",
+              "version": "3.0.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791717539.0576916,
+      "payload": {
+        "result": {
+          "protocolVersion": "2024-11-05",
+          "capabilities": {
+            "tools": {},
+            "prompts": {}
+          },
+          "serverInfo": {
+            "name": "mcp-server-commands",
+            "version": "0.8.2",
+            "description": "Run commands on this win32 machine"
+          }
+        },
+        "jsonrpc": "2.0",
+        "id": 2
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791717539.0577147,
+      "payload": {
+        "stdio": [
+          "C:\\Users\\ML\\AppData\\Roaming\\npm\\npx.CMD",
+          "-y",
+          "mcp-server-commands"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "method": "notifications/initialized"
+        }
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791717539.0577571,
+      "payload": {
+        "stdio": [
+          "C:\\Users\\ML\\AppData\\Roaming\\npm\\npx.CMD",
+          "-y",
+          "mcp-server-commands"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 3,
+          "method": "initialize",
+          "params": {
+            "protocolVersion": "2025-11-25",
+            "capabilities": {},
+            "clientInfo": {
+              "name": "mcp-vulnlab-real-target",
+              "version": "3.0.0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791717539.0586798,
+      "payload": {
+        "result": {
+          "protocolVersion": "2024-11-05",
+          "capabilities": {
+            "tools": {},
+            "prompts": {}
+          },
+          "serverInfo": {
+            "name": "mcp-server-commands",
+            "version": "0.8.2",
+            "description": "Run commands on this win32 machine"
+          }
+        },
+        "jsonrpc": "2.0",
+        "id": 3
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791717539.0587006,
+      "payload": {
+        "stdio": [
+          "C:\\Users\\ML\\AppData\\Roaming\\npm\\npx.CMD",
+          "-y",
+          "mcp-server-commands"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 4,
+          "method": "tools/list",
+          "params": {}
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791717539.0593016,
+      "payload": {
+        "result": {
+          "tools": [
+            {
+              "name": "run_process",
+              "description": "Run a process on this win32 machine",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "command_line": {
+                    "type": "string",
+                    "description": "Shell mode: a shell command line executed via the system's default shell. Supports pipes, redirects, globbing. Cannot be combined with 'argv'."
+                  },
+                  "argv": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Executable mode: directly spawn a process. argv[0] is the executable, followed by arguments passed verbatim (no shell interpretation). Cannot be combined with 'command_line'."
+                  },
+                  "cwd": {
+                    "type": "string",
+                    "description": "Optional to set working directory"
+                  },
+                  "stdin_text": {
+                    "type": "string",
+                    "description": "Optional text written to STDIN (written fully, then closed). Useful for heredoc-style input or file contents."
+                  },
+                  "timeout_ms": {
+                    "type": "number",
+                    "description": "Optional timeout in milliseconds, defaults to 30,000ms"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "jsonrpc": "2.0",
+        "id": 4
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791717539.05947,
+      "payload": {
+        "stdio": [
+          "C:\\Users\\ML\\AppData\\Roaming\\npm\\npx.CMD",
+          "-y",
+          "mcp-server-commands"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 5,
+          "method": "tools/list",
+          "params": {}
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791717539.0599554,
+      "payload": {
+        "result": {
+          "tools": [
+            {
+              "name": "run_process",
+              "description": "Run a process on this win32 machine",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "command_line": {
+                    "type": "string",
+                    "description": "Shell mode: a shell command line executed via the system's default shell. Supports pipes, redirects, globbing. Cannot be combined with 'argv'."
+                  },
+                  "argv": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Executable mode: directly spawn a process. argv[0] is the executable, followed by arguments passed verbatim (no shell interpretation). Cannot be combined with 'command_line'."
+                  },
+                  "cwd": {
+                    "type": "string",
+                    "description": "Optional to set working directory"
+                  },
+                  "stdin_text": {
+                    "type": "string",
+                    "description": "Optional text written to STDIN (written fully, then closed). Useful for heredoc-style input or file contents."
+                  },
+                  "timeout_ms": {
+                    "type": "number",
+                    "description": "Optional timeout in milliseconds, defaults to 30,000ms"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "jsonrpc": "2.0",
+        "id": 5
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791717539.0600247,
+      "payload": {
+        "stdio": [
+          "C:\\Users\\ML\\AppData\\Roaming\\npm\\npx.CMD",
+          "-y",
+          "mcp-server-commands"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 6,
+          "method": "tools/list",
+          "params": {}
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791717539.0605202,
+      "payload": {
+        "result": {
+          "tools": [
+            {
+              "name": "run_process",
+              "description": "Run a process on this win32 machine",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "command_line": {
+                    "type": "string",
+                    "description": "Shell mode: a shell command line executed via the system's default shell. Supports pipes, redirects, globbing. Cannot be combined with 'argv'."
+                  },
+                  "argv": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Executable mode: directly spawn a process. argv[0] is the executable, followed by arguments passed verbatim (no shell interpretation). Cannot be combined with 'command_line'."
+                  },
+                  "cwd": {
+                    "type": "string",
+                    "description": "Optional to set working directory"
+                  },
+                  "stdin_text": {
+                    "type": "string",
+                    "description": "Optional text written to STDIN (written fully, then closed). Useful for heredoc-style input or file contents."
+                  },
+                  "timeout_ms": {
+                    "type": "number",
+                    "description": "Optional timeout in milliseconds, defaults to 30,000ms"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "jsonrpc": "2.0",
+        "id": 6
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791717539.0605607,
+      "payload": {
+        "stdio": [
+          "C:\\Users\\ML\\AppData\\Roaming\\npm\\npx.CMD",
+          "-y",
+          "mcp-server-commands"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 7,
+          "method": "tools/list",
+          "params": {}
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791717539.0609653,
+      "payload": {
+        "result": {
+          "tools": [
+            {
+              "name": "run_process",
+              "description": "Run a process on this win32 machine",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "command_line": {
+                    "type": "string",
+                    "description": "Shell mode: a shell command line executed via the system's default shell. Supports pipes, redirects, globbing. Cannot be combined with 'argv'."
+                  },
+                  "argv": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Executable mode: directly spawn a process. argv[0] is the executable, followed by arguments passed verbatim (no shell interpretation). Cannot be combined with 'command_line'."
+                  },
+                  "cwd": {
+                    "type": "string",
+                    "description": "Optional to set working directory"
+                  },
+                  "stdin_text": {
+                    "type": "string",
+                    "description": "Optional text written to STDIN (written fully, then closed). Useful for heredoc-style input or file contents."
+                  },
+                  "timeout_ms": {
+                    "type": "number",
+                    "description": "Optional timeout in milliseconds, defaults to 30,000ms"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "jsonrpc": "2.0",
+        "id": 7
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791717539.0610154,
+      "payload": {
+        "stdio": [
+          "C:\\Users\\ML\\AppData\\Roaming\\npm\\npx.CMD",
+          "-y",
+          "mcp-server-commands"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 8,
+          "method": "resources/list",
+          "params": {}
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791717539.061413,
+      "payload": {
+        "jsonrpc": "2.0",
+        "id": 8,
+        "error": {
+          "code": -32601,
+          "message": "Method not found"
+        }
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791717539.0614405,
+      "payload": {
+        "stdio": [
+          "C:\\Users\\ML\\AppData\\Roaming\\npm\\npx.CMD",
+          "-y",
+          "mcp-server-commands"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 9,
+          "method": "resources/list",
+          "params": {}
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791717539.0617666,
+      "payload": {
+        "jsonrpc": "2.0",
+        "id": 9,
+        "error": {
+          "code": -32601,
+          "message": "Method not found"
+        }
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791717539.0617893,
+      "payload": {
+        "stdio": [
+          "C:\\Users\\ML\\AppData\\Roaming\\npm\\npx.CMD",
+          "-y",
+          "mcp-server-commands"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 10,
+          "method": "tools/list",
+          "params": {}
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791717539.0621166,
+      "payload": {
+        "result": {
+          "tools": [
+            {
+              "name": "run_process",
+              "description": "Run a process on this win32 machine",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "command_line": {
+                    "type": "string",
+                    "description": "Shell mode: a shell command line executed via the system's default shell. Supports pipes, redirects, globbing. Cannot be combined with 'argv'."
+                  },
+                  "argv": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Executable mode: directly spawn a process. argv[0] is the executable, followed by arguments passed verbatim (no shell interpretation). Cannot be combined with 'command_line'."
+                  },
+                  "cwd": {
+                    "type": "string",
+                    "description": "Optional to set working directory"
+                  },
+                  "stdin_text": {
+                    "type": "string",
+                    "description": "Optional text written to STDIN (written fully, then closed). Useful for heredoc-style input or file contents."
+                  },
+                  "timeout_ms": {
+                    "type": "number",
+                    "description": "Optional timeout in milliseconds, defaults to 30,000ms"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "jsonrpc": "2.0",
+        "id": 10
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791717539.0641248,
+      "payload": {
+        "stdio": [
+          "C:\\Users\\ML\\AppData\\Roaming\\npm\\npx.CMD",
+          "-y",
+          "mcp-server-commands"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 11,
+          "method": "tools/list",
+          "params": {}
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791717539.06457,
+      "payload": {
+        "result": {
+          "tools": [
+            {
+              "name": "run_process",
+              "description": "Run a process on this win32 machine",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "command_line": {
+                    "type": "string",
+                    "description": "Shell mode: a shell command line executed via the system's default shell. Supports pipes, redirects, globbing. Cannot be combined with 'argv'."
+                  },
+                  "argv": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Executable mode: directly spawn a process. argv[0] is the executable, followed by arguments passed verbatim (no shell interpretation). Cannot be combined with 'command_line'."
+                  },
+                  "cwd": {
+                    "type": "string",
+                    "description": "Optional to set working directory"
+                  },
+                  "stdin_text": {
+                    "type": "string",
+                    "description": "Optional text written to STDIN (written fully, then closed). Useful for heredoc-style input or file contents."
+                  },
+                  "timeout_ms": {
+                    "type": "number",
+                    "description": "Optional timeout in milliseconds, defaults to 30,000ms"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "jsonrpc": "2.0",
+        "id": 11
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791717539.585443,
+      "payload": {
+        "stdio": [
+          "C:\\Users\\ML\\AppData\\Roaming\\npm\\npx.CMD",
+          "-y",
+          "mcp-server-commands"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 12,
+          "method": "tools/list",
+          "params": {}
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791717539.5862575,
+      "payload": {
+        "result": {
+          "tools": [
+            {
+              "name": "run_process",
+              "description": "Run a process on this win32 machine",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "command_line": {
+                    "type": "string",
+                    "description": "Shell mode: a shell command line executed via the system's default shell. Supports pipes, redirects, globbing. Cannot be combined with 'argv'."
+                  },
+                  "argv": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Executable mode: directly spawn a process. argv[0] is the executable, followed by arguments passed verbatim (no shell interpretation). Cannot be combined with 'command_line'."
+                  },
+                  "cwd": {
+                    "type": "string",
+                    "description": "Optional to set working directory"
+                  },
+                  "stdin_text": {
+                    "type": "string",
+                    "description": "Optional text written to STDIN (written fully, then closed). Useful for heredoc-style input or file contents."
+                  },
+                  "timeout_ms": {
+                    "type": "number",
+                    "description": "Optional timeout in milliseconds, defaults to 30,000ms"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "jsonrpc": "2.0",
+        "id": 12
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791717539.5863426,
+      "payload": {
+        "stdio": [
+          "C:\\Users\\ML\\AppData\\Roaming\\npm\\npx.CMD",
+          "-y",
+          "mcp-server-commands"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 13,
+          "method": "tools/list",
+          "params": {}
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791717539.587139,
+      "payload": {
+        "result": {
+          "tools": [
+            {
+              "name": "run_process",
+              "description": "Run a process on this win32 machine",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "command_line": {
+                    "type": "string",
+                    "description": "Shell mode: a shell command line executed via the system's default shell. Supports pipes, redirects, globbing. Cannot be combined with 'argv'."
+                  },
+                  "argv": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Executable mode: directly spawn a process. argv[0] is the executable, followed by arguments passed verbatim (no shell interpretation). Cannot be combined with 'command_line'."
+                  },
+                  "cwd": {
+                    "type": "string",
+                    "description": "Optional to set working directory"
+                  },
+                  "stdin_text": {
+                    "type": "string",
+                    "description": "Optional text written to STDIN (written fully, then closed). Useful for heredoc-style input or file contents."
+                  },
+                  "timeout_ms": {
+                    "type": "number",
+                    "description": "Optional timeout in milliseconds, defaults to 30,000ms"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "jsonrpc": "2.0",
+        "id": 13
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791717539.5872686,
+      "payload": {
+        "stdio": [
+          "C:\\Users\\ML\\AppData\\Roaming\\npm\\npx.CMD",
+          "-y",
+          "mcp-server-commands"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 14,
+          "method": "tools/list",
+          "params": {}
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791717539.5883856,
+      "payload": {
+        "result": {
+          "tools": [
+            {
+              "name": "run_process",
+              "description": "Run a process on this win32 machine",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "command_line": {
+                    "type": "string",
+                    "description": "Shell mode: a shell command line executed via the system's default shell. Supports pipes, redirects, globbing. Cannot be combined with 'argv'."
+                  },
+                  "argv": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Executable mode: directly spawn a process. argv[0] is the executable, followed by arguments passed verbatim (no shell interpretation). Cannot be combined with 'command_line'."
+                  },
+                  "cwd": {
+                    "type": "string",
+                    "description": "Optional to set working directory"
+                  },
+                  "stdin_text": {
+                    "type": "string",
+                    "description": "Optional text written to STDIN (written fully, then closed). Useful for heredoc-style input or file contents."
+                  },
+                  "timeout_ms": {
+                    "type": "number",
+                    "description": "Optional timeout in milliseconds, defaults to 30,000ms"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "jsonrpc": "2.0",
+        "id": 14
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791717539.5884602,
+      "payload": {
+        "stdio": [
+          "C:\\Users\\ML\\AppData\\Roaming\\npm\\npx.CMD",
+          "-y",
+          "mcp-server-commands"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 15,
+          "method": "tools/list",
+          "params": {}
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791717539.5891519,
+      "payload": {
+        "result": {
+          "tools": [
+            {
+              "name": "run_process",
+              "description": "Run a process on this win32 machine",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "command_line": {
+                    "type": "string",
+                    "description": "Shell mode: a shell command line executed via the system's default shell. Supports pipes, redirects, globbing. Cannot be combined with 'argv'."
+                  },
+                  "argv": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Executable mode: directly spawn a process. argv[0] is the executable, followed by arguments passed verbatim (no shell interpretation). Cannot be combined with 'command_line'."
+                  },
+                  "cwd": {
+                    "type": "string",
+                    "description": "Optional to set working directory"
+                  },
+                  "stdin_text": {
+                    "type": "string",
+                    "description": "Optional text written to STDIN (written fully, then closed). Useful for heredoc-style input or file contents."
+                  },
+                  "timeout_ms": {
+                    "type": "number",
+                    "description": "Optional timeout in milliseconds, defaults to 30,000ms"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "jsonrpc": "2.0",
+        "id": 15
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791717539.5891814,
+      "payload": {
+        "stdio": [
+          "C:\\Users\\ML\\AppData\\Roaming\\npm\\npx.CMD",
+          "-y",
+          "mcp-server-commands"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 16,
+          "method": "tools/list",
+          "params": {}
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791717539.5897236,
+      "payload": {
+        "result": {
+          "tools": [
+            {
+              "name": "run_process",
+              "description": "Run a process on this win32 machine",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "command_line": {
+                    "type": "string",
+                    "description": "Shell mode: a shell command line executed via the system's default shell. Supports pipes, redirects, globbing. Cannot be combined with 'argv'."
+                  },
+                  "argv": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Executable mode: directly spawn a process. argv[0] is the executable, followed by arguments passed verbatim (no shell interpretation). Cannot be combined with 'command_line'."
+                  },
+                  "cwd": {
+                    "type": "string",
+                    "description": "Optional to set working directory"
+                  },
+                  "stdin_text": {
+                    "type": "string",
+                    "description": "Optional text written to STDIN (written fully, then closed). Useful for heredoc-style input or file contents."
+                  },
+                  "timeout_ms": {
+                    "type": "number",
+                    "description": "Optional timeout in milliseconds, defaults to 30,000ms"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "jsonrpc": "2.0",
+        "id": 16
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791717539.589747,
+      "payload": {
+        "stdio": [
+          "C:\\Users\\ML\\AppData\\Roaming\\npm\\npx.CMD",
+          "-y",
+          "mcp-server-commands"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 17,
+          "method": "tools/list",
+          "params": {}
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791717539.5902393,
+      "payload": {
+        "result": {
+          "tools": [
+            {
+              "name": "run_process",
+              "description": "Run a process on this win32 machine",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "command_line": {
+                    "type": "string",
+                    "description": "Shell mode: a shell command line executed via the system's default shell. Supports pipes, redirects, globbing. Cannot be combined with 'argv'."
+                  },
+                  "argv": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Executable mode: directly spawn a process. argv[0] is the executable, followed by arguments passed verbatim (no shell interpretation). Cannot be combined with 'command_line'."
+                  },
+                  "cwd": {
+                    "type": "string",
+                    "description": "Optional to set working directory"
+                  },
+                  "stdin_text": {
+                    "type": "string",
+                    "description": "Optional text written to STDIN (written fully, then closed). Useful for heredoc-style input or file contents."
+                  },
+                  "timeout_ms": {
+                    "type": "number",
+                    "description": "Optional timeout in milliseconds, defaults to 30,000ms"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "jsonrpc": "2.0",
+        "id": 17
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791717539.5902658,
+      "payload": {
+        "stdio": [
+          "C:\\Users\\ML\\AppData\\Roaming\\npm\\npx.CMD",
+          "-y",
+          "mcp-server-commands"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 18,
+          "method": "tools/list",
+          "params": {}
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791717539.5907204,
+      "payload": {
+        "result": {
+          "tools": [
+            {
+              "name": "run_process",
+              "description": "Run a process on this win32 machine",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "command_line": {
+                    "type": "string",
+                    "description": "Shell mode: a shell command line executed via the system's default shell. Supports pipes, redirects, globbing. Cannot be combined with 'argv'."
+                  },
+                  "argv": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Executable mode: directly spawn a process. argv[0] is the executable, followed by arguments passed verbatim (no shell interpretation). Cannot be combined with 'command_line'."
+                  },
+                  "cwd": {
+                    "type": "string",
+                    "description": "Optional to set working directory"
+                  },
+                  "stdin_text": {
+                    "type": "string",
+                    "description": "Optional text written to STDIN (written fully, then closed). Useful for heredoc-style input or file contents."
+                  },
+                  "timeout_ms": {
+                    "type": "number",
+                    "description": "Optional timeout in milliseconds, defaults to 30,000ms"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "jsonrpc": "2.0",
+        "id": 18
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791717539.5907457,
+      "payload": {
+        "stdio": [
+          "C:\\Users\\ML\\AppData\\Roaming\\npm\\npx.CMD",
+          "-y",
+          "mcp-server-commands"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 19,
+          "method": "tools/list",
+          "params": {}
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791717539.5912073,
+      "payload": {
+        "result": {
+          "tools": [
+            {
+              "name": "run_process",
+              "description": "Run a process on this win32 machine",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "command_line": {
+                    "type": "string",
+                    "description": "Shell mode: a shell command line executed via the system's default shell. Supports pipes, redirects, globbing. Cannot be combined with 'argv'."
+                  },
+                  "argv": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Executable mode: directly spawn a process. argv[0] is the executable, followed by arguments passed verbatim (no shell interpretation). Cannot be combined with 'command_line'."
+                  },
+                  "cwd": {
+                    "type": "string",
+                    "description": "Optional to set working directory"
+                  },
+                  "stdin_text": {
+                    "type": "string",
+                    "description": "Optional text written to STDIN (written fully, then closed). Useful for heredoc-style input or file contents."
+                  },
+                  "timeout_ms": {
+                    "type": "number",
+                    "description": "Optional timeout in milliseconds, defaults to 30,000ms"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "jsonrpc": "2.0",
+        "id": 19
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791717539.5912335,
+      "payload": {
+        "stdio": [
+          "C:\\Users\\ML\\AppData\\Roaming\\npm\\npx.CMD",
+          "-y",
+          "mcp-server-commands"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 20,
+          "method": "tools/list",
+          "params": {}
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791717539.5918396,
+      "payload": {
+        "result": {
+          "tools": [
+            {
+              "name": "run_process",
+              "description": "Run a process on this win32 machine",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "command_line": {
+                    "type": "string",
+                    "description": "Shell mode: a shell command line executed via the system's default shell. Supports pipes, redirects, globbing. Cannot be combined with 'argv'."
+                  },
+                  "argv": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Executable mode: directly spawn a process. argv[0] is the executable, followed by arguments passed verbatim (no shell interpretation). Cannot be combined with 'command_line'."
+                  },
+                  "cwd": {
+                    "type": "string",
+                    "description": "Optional to set working directory"
+                  },
+                  "stdin_text": {
+                    "type": "string",
+                    "description": "Optional text written to STDIN (written fully, then closed). Useful for heredoc-style input or file contents."
+                  },
+                  "timeout_ms": {
+                    "type": "number",
+                    "description": "Optional timeout in milliseconds, defaults to 30,000ms"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "jsonrpc": "2.0",
+        "id": 20
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791717539.591867,
+      "payload": {
+        "stdio": [
+          "C:\\Users\\ML\\AppData\\Roaming\\npm\\npx.CMD",
+          "-y",
+          "mcp-server-commands"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 21,
+          "method": "tools/list",
+          "params": {}
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791717539.5922818,
+      "payload": {
+        "result": {
+          "tools": [
+            {
+              "name": "run_process",
+              "description": "Run a process on this win32 machine",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "command_line": {
+                    "type": "string",
+                    "description": "Shell mode: a shell command line executed via the system's default shell. Supports pipes, redirects, globbing. Cannot be combined with 'argv'."
+                  },
+                  "argv": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Executable mode: directly spawn a process. argv[0] is the executable, followed by arguments passed verbatim (no shell interpretation). Cannot be combined with 'command_line'."
+                  },
+                  "cwd": {
+                    "type": "string",
+                    "description": "Optional to set working directory"
+                  },
+                  "stdin_text": {
+                    "type": "string",
+                    "description": "Optional text written to STDIN (written fully, then closed). Useful for heredoc-style input or file contents."
+                  },
+                  "timeout_ms": {
+                    "type": "number",
+                    "description": "Optional timeout in milliseconds, defaults to 30,000ms"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "jsonrpc": "2.0",
+        "id": 21
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791717539.5923035,
+      "payload": {
+        "stdio": [
+          "C:\\Users\\ML\\AppData\\Roaming\\npm\\npx.CMD",
+          "-y",
+          "mcp-server-commands"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 22,
+          "method": "tools/list",
+          "params": {}
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791717539.5927696,
+      "payload": {
+        "result": {
+          "tools": [
+            {
+              "name": "run_process",
+              "description": "Run a process on this win32 machine",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "command_line": {
+                    "type": "string",
+                    "description": "Shell mode: a shell command line executed via the system's default shell. Supports pipes, redirects, globbing. Cannot be combined with 'argv'."
+                  },
+                  "argv": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Executable mode: directly spawn a process. argv[0] is the executable, followed by arguments passed verbatim (no shell interpretation). Cannot be combined with 'command_line'."
+                  },
+                  "cwd": {
+                    "type": "string",
+                    "description": "Optional to set working directory"
+                  },
+                  "stdin_text": {
+                    "type": "string",
+                    "description": "Optional text written to STDIN (written fully, then closed). Useful for heredoc-style input or file contents."
+                  },
+                  "timeout_ms": {
+                    "type": "number",
+                    "description": "Optional timeout in milliseconds, defaults to 30,000ms"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "jsonrpc": "2.0",
+        "id": 22
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791717539.5927906,
+      "payload": {
+        "stdio": [
+          "C:\\Users\\ML\\AppData\\Roaming\\npm\\npx.CMD",
+          "-y",
+          "mcp-server-commands"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 23,
+          "method": "tools/list",
+          "params": {}
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791717539.593341,
+      "payload": {
+        "result": {
+          "tools": [
+            {
+              "name": "run_process",
+              "description": "Run a process on this win32 machine",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "command_line": {
+                    "type": "string",
+                    "description": "Shell mode: a shell command line executed via the system's default shell. Supports pipes, redirects, globbing. Cannot be combined with 'argv'."
+                  },
+                  "argv": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Executable mode: directly spawn a process. argv[0] is the executable, followed by arguments passed verbatim (no shell interpretation). Cannot be combined with 'command_line'."
+                  },
+                  "cwd": {
+                    "type": "string",
+                    "description": "Optional to set working directory"
+                  },
+                  "stdin_text": {
+                    "type": "string",
+                    "description": "Optional text written to STDIN (written fully, then closed). Useful for heredoc-style input or file contents."
+                  },
+                  "timeout_ms": {
+                    "type": "number",
+                    "description": "Optional timeout in milliseconds, defaults to 30,000ms"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "jsonrpc": "2.0",
+        "id": 23
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791717539.5933669,
+      "payload": {
+        "stdio": [
+          "C:\\Users\\ML\\AppData\\Roaming\\npm\\npx.CMD",
+          "-y",
+          "mcp-server-commands"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 24,
+          "method": "tools/list",
+          "params": {}
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791717539.593894,
+      "payload": {
+        "result": {
+          "tools": [
+            {
+              "name": "run_process",
+              "description": "Run a process on this win32 machine",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "command_line": {
+                    "type": "string",
+                    "description": "Shell mode: a shell command line executed via the system's default shell. Supports pipes, redirects, globbing. Cannot be combined with 'argv'."
+                  },
+                  "argv": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Executable mode: directly spawn a process. argv[0] is the executable, followed by arguments passed verbatim (no shell interpretation). Cannot be combined with 'command_line'."
+                  },
+                  "cwd": {
+                    "type": "string",
+                    "description": "Optional to set working directory"
+                  },
+                  "stdin_text": {
+                    "type": "string",
+                    "description": "Optional text written to STDIN (written fully, then closed). Useful for heredoc-style input or file contents."
+                  },
+                  "timeout_ms": {
+                    "type": "number",
+                    "description": "Optional timeout in milliseconds, defaults to 30,000ms"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "jsonrpc": "2.0",
+        "id": 24
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791717539.5939245,
+      "payload": {
+        "stdio": [
+          "C:\\Users\\ML\\AppData\\Roaming\\npm\\npx.CMD",
+          "-y",
+          "mcp-server-commands"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 25,
+          "method": "tools/list",
+          "params": {}
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791717539.5945184,
+      "payload": {
+        "result": {
+          "tools": [
+            {
+              "name": "run_process",
+              "description": "Run a process on this win32 machine",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "command_line": {
+                    "type": "string",
+                    "description": "Shell mode: a shell command line executed via the system's default shell. Supports pipes, redirects, globbing. Cannot be combined with 'argv'."
+                  },
+                  "argv": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Executable mode: directly spawn a process. argv[0] is the executable, followed by arguments passed verbatim (no shell interpretation). Cannot be combined with 'command_line'."
+                  },
+                  "cwd": {
+                    "type": "string",
+                    "description": "Optional to set working directory"
+                  },
+                  "stdin_text": {
+                    "type": "string",
+                    "description": "Optional text written to STDIN (written fully, then closed). Useful for heredoc-style input or file contents."
+                  },
+                  "timeout_ms": {
+                    "type": "number",
+                    "description": "Optional timeout in milliseconds, defaults to 30,000ms"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "jsonrpc": "2.0",
+        "id": 25
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791717539.59454,
+      "payload": {
+        "stdio": [
+          "C:\\Users\\ML\\AppData\\Roaming\\npm\\npx.CMD",
+          "-y",
+          "mcp-server-commands"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 26,
+          "method": "tools/list",
+          "params": {}
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791717539.5950632,
+      "payload": {
+        "result": {
+          "tools": [
+            {
+              "name": "run_process",
+              "description": "Run a process on this win32 machine",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "command_line": {
+                    "type": "string",
+                    "description": "Shell mode: a shell command line executed via the system's default shell. Supports pipes, redirects, globbing. Cannot be combined with 'argv'."
+                  },
+                  "argv": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Executable mode: directly spawn a process. argv[0] is the executable, followed by arguments passed verbatim (no shell interpretation). Cannot be combined with 'command_line'."
+                  },
+                  "cwd": {
+                    "type": "string",
+                    "description": "Optional to set working directory"
+                  },
+                  "stdin_text": {
+                    "type": "string",
+                    "description": "Optional text written to STDIN (written fully, then closed). Useful for heredoc-style input or file contents."
+                  },
+                  "timeout_ms": {
+                    "type": "number",
+                    "description": "Optional timeout in milliseconds, defaults to 30,000ms"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "jsonrpc": "2.0",
+        "id": 26
+      }
+    }
+  ],
+  "recon": {},
+  "_elapsed": 3.4,
+  "provenance": {
+    "run_id": "battery-20261011T111820-756a307642dd",
+    "command": [
+      "C:\\Users\\ML\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+      "D:\\docker_proget\\V2\\services\\real-mcp-adapter\\real_target_check.py",
+      "--stdio-cmd",
+      "npx -y mcp-server-commands",
+      "--ssrf-probe",
+      "--authz-probe",
+      "--dos-probe",
+      "--out",
+      "D:\\docker_proget\\V2\\reports\\analisi\\runs\\battery-20261011T111820-756a307642dd\\battery-npm-commands.json"
+    ],
+    "cwd": "D:\\docker_proget\\V2",
+    "runtime": {
+      "python": "3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]",
+      "executable": "C:\\Users\\ML\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "source_sha256": {
+      "tools/real_target_battery.py": "683f52b7558402ed836ebbbc9cf16f4c8f4158b45f2d549da7f6f84cf32d8193",
+      "services/real-mcp-adapter/real_target_check.py": "77038396aa2cdb9787128868af861ce6975ecd19d7adc034b9d82c5c1f361922",
+      "services/real-mcp-adapter/adapter.py": "9e6ea46db7da0793885892e44d4b4195d6fbe5e039ffe4dbaa0e6c87eac901b2",
+      "services/real-mcp-adapter/metadata_audit.py": "4ed6975cf09110b7515a2da0ba4cb195cc5dea2788b156601a7f68f06620b53c",
+      "tools/dvmcp_stdio.py": "da2c7bfdcb3b319bf3efc0df6f9a1fa1f5b79058ce619860f3821a93739a7766"
+    },
+    "target_package_versions": "not independently resolved; see exact launch command"
+  }
+}

@@ -8,7 +8,7 @@ Data and evidence from MCP-VulnLab, a laboratory for testing the security of LLM
 | --- | --- |
 | [matrix.xlsx](matrix.xlsx) | Test matrix: 136 scenarios, external targets and SSRF configurations, with classifications, verdicts and file references. The **Legend** sheet explains codes and verdicts. |
 | [results/](results/) | Result tables of the scenario catalogue and of the external-target probes, in CSV format. |
-| [evidence/](evidence/) | Original reports of the catalogue campaign, and the complete P5 sweep on Filesystem `1.0.0` (17/17 tool–argument combinations): [p5-filesystem-20261025/](evidence/p5-filesystem-20261025/README.md). |
+| [evidence/](evidence/) | Original reports cited by the matrix and the result tables: catalogue campaign (`catalogue/`), historical test battery on 27 target configurations (`historical-targets/`), 14 external targets and three P4 follow-ups (`external-targets/`, `p4-followups/`), five SSRF configurations with their campaign manifest (`ssrf/`), the October 12 repeat runs of TCMCP-204 (`followups/`), and the complete P5 sweep on Filesystem `1.0.0` (17/17 tool–argument combinations): [p5-filesystem-20261025/](evidence/p5-filesystem-20261025/README.md). |
 | [experiments/](experiments/) | Data of the three experiments: agentic runs, content classification, scanners and probes. Later executions are in [experiments/v4/](experiments/v4/README.md). |
 | [supplementary/](supplementary/) | Notes on the catalogue taxonomy, a quantitative comparison with related benchmarks, and the agentic version of the laboratory. |
 

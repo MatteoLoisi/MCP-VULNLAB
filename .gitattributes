@@ -1,3 +1,8 @@
 # Evidence files keep their original bytes: their SHA-256 values are recorded.
 experiments/** -text
 evidence/p5-filesystem-20261025/** -text
+evidence/historical-targets/** -text
+evidence/external-targets/** -text
+evidence/p4-followups/** -text
+evidence/ssrf/** -text
+evidence/followups/** -text

@@ -1,0 +1,2024 @@
+{
+  "tool": "real-target-check",
+  "version": "3.1.0",
+  "started_at": "2026-10-08T12:32:52.933306+00:00",
+  "target": {
+    "transport": "stdio",
+    "base_url": null,
+    "mcp_path": null,
+    "tls_ca": null,
+    "command": [
+      "C:\\Program Files\\nodejs\\node.EXE",
+      "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+    ],
+    "profile": "black-box"
+  },
+  "findings": {
+    "P1-fingerprint": {
+      "status": "info",
+      "proof": "era=unknown transport=stdio",
+      "details": {
+        "transport": "stdio",
+        "era": "unknown",
+        "discover_error": "target stdio: nessuna risposta con id=1 entro il timeout",
+        "error": "target stdio: nessuna risposta con id=2 entro il timeout"
+      }
+    },
+    "P2-tool-poisoning": {
+      "status": "secure",
+      "proof": "nessuna istruzione sospetta in 6 DESCRIPTION (avg_score=100)",
+      "details": {
+        "count": 6,
+        "avg_score": 100,
+        "by_severity": {},
+        "audit": [
+          {
+            "tool": "search",
+            "score": 100,
+            "flags": []
+          },
+          {
+            "tool": "fetchLinuxDoArticle",
+            "score": 100,
+            "flags": []
+          },
+          {
+            "tool": "fetchCsdnArticle",
+            "score": 100,
+            "flags": []
+          },
+          {
+            "tool": "fetchGithubReadme",
+            "score": 100,
+            "flags": []
+          },
+          {
+            "tool": "fetchWebContent",
+            "score": 100,
+            "flags": []
+          }
+        ]
+      }
+    },
+    "P9-behavioral": {
+      "status": "skipped",
+      "proof": "fuori selezione --probes",
+      "details": {}
+    },
+    "P10-influence": {
+      "status": "skipped",
+      "proof": "fuori selezione --probes",
+      "details": {}
+    },
+    "P11-token-shape": {
+      "status": "skipped",
+      "proof": "fuori selezione --probes",
+      "details": {}
+    },
+    "P3-resource-traversal": {
+      "status": "skipped",
+      "proof": "fuori selezione --probes",
+      "details": {}
+    },
+    "P15-resource-content": {
+      "status": "skipped",
+      "proof": "fuori selezione --probes",
+      "details": {}
+    },
+    "P4-arg-injection": {
+      "status": "skipped",
+      "proof": "fuori selezione --probes",
+      "details": {}
+    },
+    "P5-tool-traversal": {
+      "status": "skipped",
+      "proof": "fuori selezione --probes",
+      "details": {}
+    },
+    "P6-ssrf-collaborator": {
+      "status": "secure",
+      "proof": "nessuna SSRF verso loopback (30 tentativi su 5 argomenti URL/host-like, 0 bloccati)",
+      "details": {
+        "hits": [],
+        "tried": 30,
+        "blocked": 0,
+        "swept": 5,
+        "url_args": 5,
+        "planned": 5,
+        "host_args": 0,
+        "responses": 0,
+        "policy_rejections": 30,
+        "unresolved_errors": 0,
+        "error_samples": [],
+        "max_attempts": 60,
+        "complete": true
+      }
+    },
+    "P8-sqli": {
+      "status": "skipped",
+      "proof": "fuori selezione --probes",
+      "details": {}
+    }
+  },
+  "transcript": [
+    {
+      "direction": "->",
+      "at": 1791462772.9682205,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 1,
+          "method": "server/discover",
+          "params": {
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462787.9813406,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 2,
+          "method": "initialize",
+          "params": {
+            "protocolVersion": "2025-11-25",
+            "capabilities": {},
+            "clientInfo": {
+              "name": "mcp-vulnlab-real-target",
+              "version": "3.0.0"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462802.9938076,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 3,
+          "method": "initialize",
+          "params": {
+            "protocolVersion": "2025-11-25",
+            "capabilities": {},
+            "clientInfo": {
+              "name": "mcp-vulnlab-real-target",
+              "version": "3.0.0"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.1180556,
+      "payload": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "error": {
+          "code": -32601,
+          "message": "Method not found"
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.1266112,
+      "payload": {
+        "result": {
+          "protocolVersion": "2025-11-25",
+          "capabilities": {
+            "tools": {
+              "listChanged": true
+            }
+          },
+          "serverInfo": {
+            "name": "web-search",
+            "version": "1.2.0"
+          }
+        },
+        "jsonrpc": "2.0",
+        "id": 2
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.1267288,
+      "payload": {
+        "result": {
+          "protocolVersion": "2025-11-25",
+          "capabilities": {
+            "tools": {
+              "listChanged": true
+            }
+          },
+          "serverInfo": {
+            "name": "web-search",
+            "version": "1.2.0"
+          }
+        },
+        "jsonrpc": "2.0",
+        "id": 3
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.1267607,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "method": "notifications/initialized"
+        }
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.1268213,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 4,
+          "method": "tools/list",
+          "params": {
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.1452618,
+      "payload": {
+        "result": {
+          "tools": [
+            {
+              "name": "search",
+              "description": "Search the web using multiple engines (e.g., Baidu, Bing, DuckDuckGo, CSDN, Exa, Brave, Juejin(掘金), Startpage, Sogou(搜狗)) with no API key required. searchMode meanings: omit or set auto to use the server configured SEARCH_MODE; request forces request-based search; playwright forces browser-based search.",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "limit": {
+                    "type": "number",
+                    "minimum": 1,
+                    "maximum": 50,
+                    "default": 10
+                  },
+                  "searchMode": {
+                    "type": "string",
+                    "enum": [
+                      "request",
+                      "auto",
+                      "playwright"
+                    ]
+                  },
+                  "engines": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 1,
+                    "default": [
+                      "bing"
+                    ]
+                  }
+                },
+                "required": [
+                  "query"
+                ],
+                "additionalProperties": false,
+                "$schema": "http://json-schema.org/draft-07/schema#"
+              },
+              "execution": {
+                "taskSupport": "forbidden"
+              }
+            },
+            {
+              "name": "fetchLinuxDoArticle",
+              "description": "Fetch full article content from a linux.do post URL",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false,
+                "$schema": "http://json-schema.org/draft-07/schema#"
+              },
+              "execution": {
+                "taskSupport": "forbidden"
+              }
+            },
+            {
+              "name": "fetchCsdnArticle",
+              "description": "Fetch full article content from a csdn post URL",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false,
+                "$schema": "http://json-schema.org/draft-07/schema#"
+              },
+              "execution": {
+                "taskSupport": "forbidden"
+              }
+            },
+            {
+              "name": "fetchGithubReadme",
+              "description": "Fetch README content from a GitHub repository URL",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false,
+                "$schema": "http://json-schema.org/draft-07/schema#"
+              },
+              "execution": {
+                "taskSupport": "forbidden"
+              }
+            },
+            {
+              "name": "fetchWebContent",
+              "description": "Fetch content from a public HTTP(S) URL (supports Markdown files and normal web pages)",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "maxChars": {
+                    "type": "integer",
+                    "minimum": 1000,
+                    "maximum": 200000,
+                    "default": 30000
+                  },
+                  "readability": {
+                    "type": "boolean"
+                  },
+                  "includeLinks": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false,
+                "$schema": "http://json-schema.org/draft-07/schema#"
+              },
+              "execution": {
+                "taskSupport": "forbidden"
+              }
+            },
+            {
+              "name": "fetchJuejinArticle",
+              "description": "Fetch full article content from a Juejin(掘金) post URL",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false,
+                "$schema": "http://json-schema.org/draft-07/schema#"
+              },
+              "execution": {
+                "taskSupport": "forbidden"
+              }
+            }
+          ]
+        },
+        "jsonrpc": "2.0",
+        "id": 4
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.1651812,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 5,
+          "method": "tools/list",
+          "params": {
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.1682851,
+      "payload": {
+        "result": {
+          "tools": [
+            {
+              "name": "search",
+              "description": "Search the web using multiple engines (e.g., Baidu, Bing, DuckDuckGo, CSDN, Exa, Brave, Juejin(掘金), Startpage, Sogou(搜狗)) with no API key required. searchMode meanings: omit or set auto to use the server configured SEARCH_MODE; request forces request-based search; playwright forces browser-based search.",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "limit": {
+                    "type": "number",
+                    "minimum": 1,
+                    "maximum": 50,
+                    "default": 10
+                  },
+                  "searchMode": {
+                    "type": "string",
+                    "enum": [
+                      "request",
+                      "auto",
+                      "playwright"
+                    ]
+                  },
+                  "engines": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 1,
+                    "default": [
+                      "bing"
+                    ]
+                  }
+                },
+                "required": [
+                  "query"
+                ],
+                "additionalProperties": false,
+                "$schema": "http://json-schema.org/draft-07/schema#"
+              },
+              "execution": {
+                "taskSupport": "forbidden"
+              }
+            },
+            {
+              "name": "fetchLinuxDoArticle",
+              "description": "Fetch full article content from a linux.do post URL",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false,
+                "$schema": "http://json-schema.org/draft-07/schema#"
+              },
+              "execution": {
+                "taskSupport": "forbidden"
+              }
+            },
+            {
+              "name": "fetchCsdnArticle",
+              "description": "Fetch full article content from a csdn post URL",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false,
+                "$schema": "http://json-schema.org/draft-07/schema#"
+              },
+              "execution": {
+                "taskSupport": "forbidden"
+              }
+            },
+            {
+              "name": "fetchGithubReadme",
+              "description": "Fetch README content from a GitHub repository URL",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false,
+                "$schema": "http://json-schema.org/draft-07/schema#"
+              },
+              "execution": {
+                "taskSupport": "forbidden"
+              }
+            },
+            {
+              "name": "fetchWebContent",
+              "description": "Fetch content from a public HTTP(S) URL (supports Markdown files and normal web pages)",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "maxChars": {
+                    "type": "integer",
+                    "minimum": 1000,
+                    "maximum": 200000,
+                    "default": 30000
+                  },
+                  "readability": {
+                    "type": "boolean"
+                  },
+                  "includeLinks": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false,
+                "$schema": "http://json-schema.org/draft-07/schema#"
+              },
+              "execution": {
+                "taskSupport": "forbidden"
+              }
+            },
+            {
+              "name": "fetchJuejinArticle",
+              "description": "Fetch full article content from a Juejin(掘金) post URL",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                },
+                "required": [
+                  "url"
+                ],
+                "additionalProperties": false,
+                "$schema": "http://json-schema.org/draft-07/schema#"
+              },
+              "execution": {
+                "taskSupport": "forbidden"
+              }
+            }
+          ]
+        },
+        "jsonrpc": "2.0",
+        "id": 5
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.2519739,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 6,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchLinuxDoArticle",
+            "arguments": {
+              "url": "http://127.0.0.1:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.2596364,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchLinuxDoArticle: URL must be from linux.do and end with .json at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 6
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.2627485,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 7,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchLinuxDoArticle",
+            "arguments": {
+              "url": "http://localhost:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.2654996,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchLinuxDoArticle: URL must be from linux.do and end with .json at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 7
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.2656932,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 8,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchLinuxDoArticle",
+            "arguments": {
+              "url": "http://[::ffff:127.0.0.1]:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.2692497,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchLinuxDoArticle: URL must be from linux.do and end with .json at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 8
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.269423,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 9,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchLinuxDoArticle",
+            "arguments": {
+              "url": "http://2130706433:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.272182,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchLinuxDoArticle: URL must be from linux.do and end with .json at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 9
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.2723203,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 10,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchLinuxDoArticle",
+            "arguments": {
+              "url": "http://0177.0.0.1:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.275609,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchLinuxDoArticle: URL must be from linux.do and end with .json at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 10
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.2757964,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 11,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchLinuxDoArticle",
+            "arguments": {
+              "url": "http://0.0.0.0:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.2788382,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchLinuxDoArticle: URL must be from linux.do and end with .json at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 11
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.27902,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 12,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchCsdnArticle",
+            "arguments": {
+              "url": "http://127.0.0.1:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.2816565,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchCsdnArticle: URL must be from blog.csdn.net contains /article/details/ path at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 12
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.2818198,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 13,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchCsdnArticle",
+            "arguments": {
+              "url": "http://localhost:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.2843852,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchCsdnArticle: URL must be from blog.csdn.net contains /article/details/ path at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 13
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.2846014,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 14,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchCsdnArticle",
+            "arguments": {
+              "url": "http://[::ffff:127.0.0.1]:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.2872384,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchCsdnArticle: URL must be from blog.csdn.net contains /article/details/ path at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 14
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.2873945,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 15,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchCsdnArticle",
+            "arguments": {
+              "url": "http://2130706433:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.2897472,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchCsdnArticle: URL must be from blog.csdn.net contains /article/details/ path at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 15
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.2899537,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 16,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchCsdnArticle",
+            "arguments": {
+              "url": "http://0177.0.0.1:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.2930794,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchCsdnArticle: URL must be from blog.csdn.net contains /article/details/ path at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 16
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.2932737,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 17,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchCsdnArticle",
+            "arguments": {
+              "url": "http://0.0.0.0:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.295107,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchCsdnArticle: URL must be from blog.csdn.net contains /article/details/ path at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 17
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.2953558,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 18,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchGithubReadme",
+            "arguments": {
+              "url": "http://127.0.0.1:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.2984114,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchGithubReadme: URL must be a valid GitHub repository URL (supports HTTPS, SSH formats) at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 18
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.2989,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 19,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchGithubReadme",
+            "arguments": {
+              "url": "http://localhost:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.3018143,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchGithubReadme: URL must be a valid GitHub repository URL (supports HTTPS, SSH formats) at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 19
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.3019962,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 20,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchGithubReadme",
+            "arguments": {
+              "url": "http://[::ffff:127.0.0.1]:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.3041563,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchGithubReadme: URL must be a valid GitHub repository URL (supports HTTPS, SSH formats) at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 20
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.304407,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 21,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchGithubReadme",
+            "arguments": {
+              "url": "http://2130706433:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.3076148,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchGithubReadme: URL must be a valid GitHub repository URL (supports HTTPS, SSH formats) at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 21
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.307848,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 22,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchGithubReadme",
+            "arguments": {
+              "url": "http://0177.0.0.1:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.310892,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchGithubReadme: URL must be a valid GitHub repository URL (supports HTTPS, SSH formats) at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 22
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.3110657,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 23,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchGithubReadme",
+            "arguments": {
+              "url": "http://0.0.0.0:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.312758,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchGithubReadme: URL must be a valid GitHub repository URL (supports HTTPS, SSH formats) at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 23
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.3129082,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 24,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchWebContent",
+            "arguments": {
+              "url": "http://127.0.0.1:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.3170204,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchWebContent: URL must be a public HTTP(S) address (private/local network targets are blocked) at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 24
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.3174706,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 25,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchWebContent",
+            "arguments": {
+              "url": "http://localhost:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.3204682,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchWebContent: URL must be a public HTTP(S) address (private/local network targets are blocked) at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 25
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.3206737,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 26,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchWebContent",
+            "arguments": {
+              "url": "http://[::ffff:127.0.0.1]:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.3363426,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchWebContent: URL must be a public HTTP(S) address (private/local network targets are blocked) at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 26
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.3364725,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 27,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchWebContent",
+            "arguments": {
+              "url": "http://2130706433:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.3386364,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchWebContent: URL must be a public HTTP(S) address (private/local network targets are blocked) at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 27
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.3388274,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 28,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchWebContent",
+            "arguments": {
+              "url": "http://0177.0.0.1:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.3419197,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchWebContent: URL must be a public HTTP(S) address (private/local network targets are blocked) at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 28
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.3421106,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 29,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchWebContent",
+            "arguments": {
+              "url": "http://0.0.0.0:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.344463,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchWebContent: URL must be a public HTTP(S) address (private/local network targets are blocked) at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 29
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.3446743,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 30,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchJuejinArticle",
+            "arguments": {
+              "url": "http://127.0.0.1:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.3472955,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchJuejinArticle: URL must be from juejin.cn and contain /post/ path at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 30
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.3475058,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 31,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchJuejinArticle",
+            "arguments": {
+              "url": "http://localhost:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.3493612,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchJuejinArticle: URL must be from juejin.cn and contain /post/ path at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 31
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.3495605,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 32,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchJuejinArticle",
+            "arguments": {
+              "url": "http://[::ffff:127.0.0.1]:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.352253,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchJuejinArticle: URL must be from juejin.cn and contain /post/ path at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 32
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.35243,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 33,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchJuejinArticle",
+            "arguments": {
+              "url": "http://2130706433:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.3552332,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchJuejinArticle: URL must be from juejin.cn and contain /post/ path at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 33
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.3553858,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 34,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchJuejinArticle",
+            "arguments": {
+              "url": "http://0177.0.0.1:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.3567922,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchJuejinArticle: URL must be from juejin.cn and contain /post/ path at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 34
+      }
+    },
+    {
+      "direction": "->",
+      "at": 1791462809.3573718,
+      "payload": {
+        "stdio": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:/Users/ML/AppData/Local/npm-cache/_npx/1381d66b0e87a07e/node_modules/open-websearch/build/index.js"
+        ],
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 35,
+          "method": "tools/call",
+          "params": {
+            "name": "fetchJuejinArticle",
+            "arguments": {
+              "url": "http://0.0.0.0:53444/internal/ops"
+            },
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "mcp-vulnlab-real-target",
+                "version": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "direction": "<-",
+      "at": 1791462809.3593438,
+      "payload": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "MCP error -32602: Input validation error: Invalid arguments for tool fetchJuejinArticle: URL must be from juejin.cn and contain /post/ path at url"
+            }
+          ],
+          "isError": true
+        },
+        "jsonrpc": "2.0",
+        "id": 35
+      }
+    }
+  ],
+  "recon": {}
+}

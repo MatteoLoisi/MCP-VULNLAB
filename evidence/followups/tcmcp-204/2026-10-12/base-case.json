@@ -1,0 +1,68 @@
+{
+  "status": "vulnerable",
+  "mcp_mode": "command_injection",
+  "passed_file_value": "PING 127.0.0.1 (127.0.0.1) 56(84) bytes of data.\n64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.046 ms\n64 bytes from 127.0.0.1: icmp_seq=2 ttl=64 time=0.047 ms\n64 bytes from 127.0.0.1: icmp_seq=3 ttl=64 time=0.054 ms\n64 bytes from 127.0.0.1: icmp_seq=4 ttl=64 time=0.063 ms\n\n--- 127.0.0.1 ping statistics ---\n4 packets transmitted, 4 received, 0% packet loss, time 3049ms\nrtt min/avg/max/mdev = 0.046/0.052/0.063/0.006 ms\nTEST_TOKEN_6ad1c51a594899f59c79c9b7cec4a12f8dfc790d",
+  "evidence": {
+    "triggered": true,
+    "vulnerability": "command_injection",
+    "proof": "PING 127.0.0.1 (127.0.0.1) 56(84) bytes of data.\n64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.046 ms\n64 bytes from 127.0.0.1: icmp_seq=2 ttl=64 time=0.047 ms\n64 bytes from 127.0.0.1: icmp_seq=3 ttl=64 time=0.054 ms\n64 bytes from 127.0.0.1: icmp_seq=4 ttl=64 time=0.063 ms\n\n--- 127.0.0.1 ping statistics ---\n4 packets transmitted, 4 received, 0% packet loss, time 3049ms\nrtt min/avg/max/mdev = 0.046/0.052/0.063/0.006 ms\nTEST_TOKEN_6ad1c51a594899f59c79c9b7cec4a12f8dfc790d",
+    "tool_result": {
+      "mode": "mcp_client",
+      "tool": "network_ping",
+      "result": "PING 127.0.0.1 (127.0.0.1) 56(84) bytes of data.\n64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.046 ms\n64 bytes from 127.0.0.1: icmp_seq=2 ttl=64 time=0.047 ms\n64 bytes from 127.0.0.1: icmp_seq=3 ttl=64 time=0.054 ms\n64 bytes from 127.0.0.1: icmp_seq=4 ttl=64 time=0.063 ms\n\n--- 127.0.0.1 ping statistics ---\n4 packets transmitted, 4 received, 0% packet loss, time 3049ms\nrtt min/avg/max/mdev = 0.046/0.052/0.063/0.006 ms\nTEST_TOKEN_6ad1c51a594899f59c79c9b7cec4a12f8dfc790d",
+      "audit_id": "2720a55e5ba26bb6",
+      "policy_applied": "allow",
+      "profile_used": "permissive",
+      "arguments": {},
+      "request_body": {
+        "name": "network_ping",
+        "arguments": {}
+      },
+      "status_code": 200
+    },
+    "exfiltration": {
+      "network_capture": {
+        "checked": true,
+        "found": true,
+        "pcap_exists": true,
+        "requests_found": 0,
+        "matched_requests": [
+          {
+            "note": "String match in raw pcap (non-HTTP payload)",
+            "pcap_file": "/app/captures/llm-harness.pcap"
+          },
+          {
+            "note": "String match in raw pcap (non-HTTP payload)",
+            "pcap_file": "/app/captures/mcp-client.pcap"
+          },
+          {
+            "note": "String match in raw pcap (non-HTTP payload)",
+            "pcap_file": "/app/captures/mcp-server.pcap"
+          }
+        ],
+        "pcap_files_checked": [
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap",
+          "/app/captures/evil-server.pcap",
+          "/app/captures/llm-harness.pcap",
+          "/app/captures/mcp-client.pcap",
+          "/app/captures/mcp-server.pcap",
+          "/app/captures/oauth-mock.pcap",
+          "/app/captures/real-target-demo.pcap",
+          "/app/captures/vuln-server-insecure.pcap",
+          "/app/captures/vuln-server-no-tls.pcap",
+          "/app/captures/vuln-server-ssrf-proxy.pcap"
+        ],
+        "errors": [],
+        "retries_used": 1
+      }
+    }
+  }
+}
